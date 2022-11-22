@@ -16,8 +16,6 @@ module.exports = {
       },
       colors: {
         casualBlue: "#072c73",
-        blueTransp: "#062c7357",
-        pBrown: "#9A7159",
         primaryText: "#291719",
         secondaryText: "#CB747D",
         blueLight: "#DDEDEA",
