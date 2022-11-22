@@ -3,7 +3,7 @@ import Sotim from "~/sources/images/sotim.jpg";
 import Bike from "~/sources/images/bike.jpg";
 import Cubes from "~/sources/images/3cubes.png";
 
-import { Link } from "~/components";
+import { Link, Nav } from "~/components";
 
 export default function Index() {
   const [time, setTime] = React.useState<Date>(new Date());
@@ -26,15 +26,8 @@ export default function Index() {
         src={Sotim}
         className="max-h-[180px] w-full origin-bottom border-b-4 border-primaryText object-cover"
       />
-      <nav className="flex flex-row items-baseline gap-x-8 px-24 pt-12 pb-16 text-lg xl:px-44">
-        <Link href="ha-ish.com">What is this?</Link>
-        <Link href="#">Stuff</Link>
-        <Link href="#">Archive</Link>
-        <Link href="#">
-          <span className="text-3xl">🚲</span> Bike Blog
-        </Link>
-      </nav>
-      <div className="px-24 pb-16 xl:px-44">
+      <Nav />
+      <div className="content-container">
         <div className="flex flex-row justify-between gap-x-20">
           <h1 className="font-wremena text-9xl font-bold text-primaryText">
             Hey, How did you get here?
@@ -56,11 +49,11 @@ export default function Index() {
         </div>
         <section className="mb-48 mt-8 grid min-h-[580px] grid-cols-[40%_60%] gap-x-6">
           <div className="flex flex-col justify-end gap-y-14">
-            <h2 className="font-wremena text-5xl text-casualBlue lg:text-6xl">
+            <h2 className="font-wremena text-5xl text-casualBlue 2xl:text-6xl">
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in
               Spline app to show how beautiful it is
             </h2>
-            <p className="border-2 border-primaryText bg-pinkLight px-6 py-4 font-sligoil text-base text-primaryText lg:text-lg ">
+            <p className="border-2 border-primaryText bg-pinkLight px-6 py-4 font-sligoil text-base text-primaryText 2xl:text-lg ">
               <strong className="mb-1 block underline">
                 Project Essential 3 User Manual:
               </strong>
@@ -79,9 +72,13 @@ export default function Index() {
           {/*  height="100%"*/}
           {/*></iframe>*/}
         </section>
-        <img src={Cubes} width="180px" className="mx-auto mb-48 lg:w-[250px]" />
+        <img
+          src={Cubes}
+          width="180px"
+          className="mx-auto mb-48 2xl:w-[250px]"
+        />
         <section className="mb-48 text-primaryText">
-          <h3 className="mb-14 font-wremena text-8xl text-primaryText first-letter:text-9xl first-letter:font-bold first-letter:text-secondaryText">
+          <h3 className="mb-14 font-wremena text-7xl text-primaryText first-letter:text-9xl first-letter:font-bold first-letter:text-secondaryText 2xl:text-8xl">
             What can you do here ↴
           </h3>
           <ul className="mx-auto flex w-max list-decimal flex-col gap-y-4  font-sligoil text-3xl backdrop-blur-sm">
@@ -130,43 +127,6 @@ export default function Index() {
           </ul>
         </section>
       </div>
-      <section className="flex h-[600px] border-t-4 border-primaryText bg-poster bg-cover bg-center text-white">
-        <footer className="mt-auto flex h-40 w-full items-center justify-center gap-x-4 bg-pinkTransp p-6 font-sligoil text-lg text-pinkLight backdrop-blur-sm">
-          <span>
-            Created with ❤️ with{" "}
-            <Link
-              className="text-blueLight underline hover:text-secondaryText"
-              href="https://remix.run/"
-            >
-              Remix
-            </Link>
-          </span>
-          <span className="text-pinkLight">|</span>
-          <span>
-            Fonts{" "}
-            <Link
-              className="text-white underline hover:text-secondaryText"
-              href="https://typefaces.temporarystate.net/preview/Wremena"
-            >
-              Wremena
-            </Link>{" "}
-            &{" "}
-            <Link
-              className="text-blueLight underline hover:text-secondaryText"
-              href="https://velvetyne.fr/fonts/sligoil/"
-            >
-              Sligoil
-            </Link>
-          </span>
-          <span className="text-blueLight">|</span>
-          <Link
-            className="text-blueLight underline hover:text-secondaryText"
-            href="https://twitter.com/eli8levit"
-          >
-            My Twitter
-          </Link>
-        </footer>
-      </section>
     </div>
   );
 }

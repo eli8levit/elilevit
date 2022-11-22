@@ -9,6 +9,7 @@ import {
 } from "@remix-run/react";
 import mainCssUrl from "./styles/main.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
+import { Footer } from "~/components";
 
 export const links: LinksFunction = () => {
   return [
@@ -25,13 +26,14 @@ export const meta: MetaFunction = () => ({
 
 export default function App() {
   return (
-    <html lang="en" className="bg-pinkLighter">
+    <html lang="en" className="h-full bg-pinkLighter">
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="flex min-h-full flex-col">
         <Outlet />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
