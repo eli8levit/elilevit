@@ -75,7 +75,7 @@ export default function Index() {
         <img
           src={Cubes}
           width="180px"
-          className="mx-auto mb-48 2xl:w-[250px]"
+          className="mx-auto mb-36 2xl:w-[250px]"
         />
         <section className="mb-48 text-primaryText">
           <h3 className="mb-14 font-wremena text-7xl text-primaryText first-letter:text-9xl first-letter:font-bold first-letter:text-secondaryText 2xl:text-8xl">
