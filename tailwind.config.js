@@ -14,6 +14,9 @@ module.exports = {
       boxShadow: {
         bike: "0 0 0 4px #072c73",
       },
+      lineHeight: {
+        1.2: 1.2,
+      },
       colors: {
         casualBlue: "#072c73",
         primaryText: "#291719",
