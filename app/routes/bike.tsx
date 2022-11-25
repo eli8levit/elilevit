@@ -13,19 +13,23 @@ export default function Bike() {
       />
       <Nav />
       <div className="content-container min-h-[1000px]">
-        <h1 className="mt-12 mb-44 font-wremena text-9xl font-bold  text-primaryText">
+        <h1 className="mt-12 mb-32 font-wremena text-9xl font-bold  text-primaryText">
           Welcome, <br />
           <span>To my bike's blog - </span>
           <span className="bg-pinkLight p-4 font-sligoil text-6xl text-casualBlue">
             Cannondale Topstone 4
           </span>
         </h1>
-        <div className="grid min-h-[1000px] grid-cols-[45%_55%] gap-x-12">
-          <p className="font-wremena text-4xl font-light leading-relaxed leading-1.2 text-casualBlue">
+        <div className="grid min-h-[750px] grid-cols-[45%_55%] items-center gap-x-12">
+          <p className="font-wremena text-5xl font-light leading-relaxed leading-1.2 text-casualBlue">
             This page is about my first bike and all that related to cycling: my
             rides, photos and, most interesting my upgrading revolution of it
           </p>
-          <img src={BikeCanvas} height="500px" className="mx-auto h-[500px]" />
+          <img
+            src={BikeCanvas}
+            height="600px"
+            className="mx-auto h-[600px] object-contain"
+          />
         </div>
       </div>
     </div>
