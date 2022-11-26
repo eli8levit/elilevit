@@ -24,6 +24,7 @@ export default function Index() {
     <div>
       <img
         src={Sotim}
+        height="180px"
         className="max-h-[180px] w-full origin-bottom border-b-4 border-primaryText object-cover"
       />
       <Nav />
@@ -79,46 +80,47 @@ export default function Index() {
         />
         <section className="mb-48 text-primaryText">
           <h3 className="mb-14 font-wremena text-7xl text-primaryText first-letter:text-9xl first-letter:font-bold first-letter:text-secondaryText 2xl:text-8xl">
-            What can you do here ↴
+            What can you do here{" "}
+            <span className="font bold text-9xl text-secondaryText">↴</span>
           </h3>
           <ul className="mx-auto flex w-max list-decimal flex-col gap-y-4  font-sligoil text-3xl backdrop-blur-sm">
-            <li className="border-b-2 border-wine p-4">
+            <li className="bg-blueLight p-4 px-6">
               You must check out my{" "}
               <Link
                 href="#"
-                className="bg-bike group inline-flex items-center  gap-x-4 bg-contain bg-center bg-no-repeat font-sligoil text-secondaryText underline hover:text-casualBlue"
+                className="bg-bike group inline-flex items-center  gap-x-4 bg-contain bg-center bg-no-repeat font-sligoil text-secondaryText hover:text-casualBlue"
               >
                 bike blog
                 <img
                   src={Bike}
-                  width="150px"
+                  width="80px"
                   className="group-hover:shadow-bike"
                 />
               </Link>
             </li>
-            <li className="border-b-2 border-wine p-4">
+            <li className="bg-blueLight p-4">
               Read more{" "}
               <Link
                 href="#"
-                className="font-sligoil text-secondaryText underline hover:text-casualBlue"
+                className="font-sligoil text-secondaryText hover:text-casualBlue"
               >
                 about me
               </Link>
             </li>
-            <li className="border-b-2 border-wine p-4">
+            <li className="bg-blueLight p-4">
               Checkout my{" "}
               <Link
                 href="#"
-                className="font-sligoil text-secondaryText underline hover:text-casualBlue"
+                className="font-sligoil text-secondaryText hover:text-casualBlue"
               >
                 work
               </Link>
             </li>
-            <li className="border-b-2 border-wine p-6">
+            <li className="bg-blueLight p-4">
               But don't go{" "}
               <Link
                 href="#"
-                className="font-sligoil text-secondaryText underline hover:text-casualBlue"
+                className="font-sligoil text-secondaryText hover:text-casualBlue"
               >
                 here
               </Link>

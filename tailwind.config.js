@@ -25,7 +25,7 @@ module.exports = {
         pinkLight: "#ffd4d8",
         pinkTransp: "rgba(0,0,0,0.14)",
         pinkLighter: "#fff3f4",
-        wine: "#b91a1a",
+        wine: "#b9251a",
       },
       fontFamily: {
         butlerSt: ["Butler-Stencil", ...defaultTheme.fontFamily.serif],
