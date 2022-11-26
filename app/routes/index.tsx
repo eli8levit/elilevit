@@ -67,11 +67,11 @@ export default function Index() {
               </ul>
             </p>
           </div>
-          {/*<iframe*/}
-          {/*  src="https://my.spline.design/project-cca4dc6de45717fed5ca979536aa6a41/"*/}
-          {/*  width="100%"*/}
-          {/*  height="100%"*/}
-          {/*></iframe>*/}
+          <iframe
+            src="https://my.spline.design/project-cca4dc6de45717fed5ca979536aa6a41/"
+            width="100%"
+            height="100%"
+          ></iframe>
         </section>
         <img
           src={Cubes}
@@ -80,11 +80,10 @@ export default function Index() {
         />
         <section className="mb-48 text-primaryText">
           <h3 className="mb-14 font-wremena text-7xl text-primaryText first-letter:text-9xl first-letter:font-bold first-letter:text-secondaryText 2xl:text-8xl">
-            What can you do here{" "}
-            <span className="font bold text-9xl text-secondaryText">↴</span>
+            What can you do here:
           </h3>
-          <ul className="mx-auto flex w-max list-decimal flex-col gap-y-4  font-sligoil text-3xl backdrop-blur-sm">
-            <li className="bg-blueLight p-4 px-6">
+          <ul className="ml-[10%] flex w-max list-decimal flex-col gap-y-4 font-sligoil text-4xl backdrop-blur-sm">
+            <li className="bg-blueLight p-8">
               You must check out my{" "}
               <Link
                 href="#"
@@ -98,7 +97,7 @@ export default function Index() {
                 />
               </Link>
             </li>
-            <li className="bg-blueLight p-4">
+            <li className="bg-blueLight p-8">
               Read more{" "}
               <Link
                 href="#"
@@ -107,7 +106,7 @@ export default function Index() {
                 about me
               </Link>
             </li>
-            <li className="bg-blueLight p-4">
+            <li className="bg-blueLight p-8">
               Checkout my{" "}
               <Link
                 href="#"
@@ -116,7 +115,7 @@ export default function Index() {
                 work
               </Link>
             </li>
-            <li className="bg-blueLight p-4">
+            <li className="bg-blueLight p-8">
               But don't go{" "}
               <Link
                 href="#"

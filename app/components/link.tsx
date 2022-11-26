@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 export const Link = ({ children, href, ...props }: any) => {
   return (
@@ -6,7 +6,7 @@ export const Link = ({ children, href, ...props }: any) => {
       href={href}
       target="blank"
       rel="noopener noreferrer"
-      className="font-sligoil text-secondaryText hover:text-primaryText hover:underline"
+      className="font-sligoil text-secondaryText hover:text-primaryText"
       {...props}
     >
       {children}
