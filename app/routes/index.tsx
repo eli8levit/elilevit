@@ -54,7 +54,7 @@ export default function Index() {
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in
               Spline app to show how beautiful it is
             </h2>
-            <p className="border-2 border-primaryText bg-pinkLight px-6 py-4 font-sligoil text-base text-primaryText 2xl:text-lg ">
+            <p className="rounded-sm border-2 border-primaryText bg-pinkLight px-6 py-4 font-sligoil text-base text-primaryText 2xl:text-lg ">
               <strong className="mb-1 block underline">
                 Project Essential 3 User Manual:
               </strong>
@@ -78,55 +78,31 @@ export default function Index() {
           width="180px"
           className="mx-auto mb-36 2xl:w-[250px]"
         />
-        <section className="mb-48 text-primaryText">
-          <h3 className="mb-14 font-wremena text-7xl text-primaryText first-letter:text-9xl first-letter:font-bold first-letter:text-secondaryText 2xl:text-8xl">
-            What can you do here:
+        <section className="mx-auto mb-48 w-max text-primaryText">
+          <h3 className="mb-14 font-butler text-7xl font-semibold 2xl:text-8xl ">
+            What you can do here:
           </h3>
-          <ul className="ml-[10%] flex w-max list-decimal flex-col gap-y-4 font-sligoil text-4xl backdrop-blur-sm">
-            <li className="bg-blueLight p-8">
-              You must check out my{" "}
-              <Link
-                href="#"
-                className="bg-bike group inline-flex items-center  gap-x-4 bg-contain bg-center bg-no-repeat font-sligoil text-secondaryText hover:text-casualBlue"
-              >
-                bike blog
-                <img
-                  src={Bike}
-                  width="80px"
-                  className="group-hover:shadow-bike"
-                />
-              </Link>
+          <ul className=" mx-auto flex w-max list-inside list-decimal flex-col gap-y-4 font-sligoil text-2xl ">
+            <li>
+              You must check out my <Link href="#">bike blog</Link>
             </li>
-            <li className="bg-blueLight p-8">
-              Read more{" "}
-              <Link
-                href="#"
-                className="font-sligoil text-secondaryText hover:text-casualBlue"
-              >
-                about me
-              </Link>
+            <li>
+              Read more <Link href="#">about me</Link>
             </li>
-            <li className="bg-blueLight p-8">
-              Checkout my{" "}
-              <Link
-                href="#"
-                className="font-sligoil text-secondaryText hover:text-casualBlue"
-              >
-                work
-              </Link>
+            <li>
+              Checkout my <Link href="#">work</Link>
             </li>
-            <li className="bg-blueLight p-8">
-              But don't go{" "}
-              <Link
-                href="#"
-                className="font-sligoil text-secondaryText hover:text-casualBlue"
-              >
-                here
-              </Link>
+            <li>
+              But don't go <Link href="#">here</Link>
               !!
             </li>
           </ul>
         </section>
+        <img
+          src={Cubes}
+          width="180px"
+          className="mx-auto mb-36 2xl:w-[250px]"
+        />
       </div>
     </div>
   );

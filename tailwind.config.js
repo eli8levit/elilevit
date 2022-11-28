@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         poster: "url('/darker.jpg')",
+        cubes: "url('/sotim.jpg')",
       },
       borderWidth: {
         30: "30px",
