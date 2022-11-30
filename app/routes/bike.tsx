@@ -3,6 +3,7 @@ import BikePhoto from "~/sources/images/bike-photo.jpeg";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
 import FirstRide from "~/sources/images/first-ride.jpeg";
 import SecondRide from "~/sources/images/second-ride.jpeg";
+import Wheels from "~/sources/images/wheels.jpeg";
 import { Nav } from "~/components";
 
 export default function Bike() {
@@ -36,19 +37,19 @@ export default function Bike() {
         </div>
         <div className="mb-52 grid grid-cols-2 gap-x-12 font-sligoil text-xl text-primaryText">
           <section>
-            <h2 className="mb-4 font-sligoil text-5xl ">Rides</h2>
+            <h2 className="mb-4 font-sligoil text-5xl font-bold">Rides</h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="flex flex-row gap-x-4 rounded-sm bg-blueLight drop-shadow-xl hover:shadow-bike">
+              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium drop-shadow-sm hover:shadow-bike">
                 <img
-                  height="200px"
-                  width="200px"
+                  height="300px"
+                  width="300px"
                   src={FirstRide}
-                  className="h-[200px] w-[200px] shrink-0 object-cover"
+                  className="h-[300px] w-[300px] shrink-0 object-cover"
                 />
                 <div className="flex flex-col gap-y-4 p-6">
                   <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl font-bold text-casualBlue">
                     first one{" "}
-                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-base text-pinkLighter ">
+                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-base text-pinkLighterMedium ">
                       gravel + road
                     </span>
                   </h3>
@@ -57,17 +58,17 @@ export default function Bike() {
                   </p>
                 </div>
               </li>
-              <li className="flex flex-row gap-x-4 rounded-sm bg-blueLight drop-shadow-xl hover:shadow-bike">
+              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium drop-shadow-sm hover:shadow-bike">
                 <img
                   src={SecondRide}
-                  height="200px"
-                  width="200px"
-                  className="h-[200px] w-[200px] object-cover"
+                  height="300px"
+                  width="300px"
+                  className="h-[300px] w-[300px] object-cover"
                 />
                 <div className="flex flex-col gap-y-2 p-6">
                   <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl  font-bold text-casualBlue">
                     second one{" "}
-                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-base text-pinkLighter">
+                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-base text-pinkLighterMedium">
                       gravel
                     </span>
                   </h3>
@@ -90,21 +91,29 @@ export default function Bike() {
             </ul>
           </section>
           <section>
-            <h2 className="mb-4 font-sligoil text-5xl text-primaryText">
+            <h2 className="mb-4 font-sligoil text-5xl font-bold text-primaryText">
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="rounded-sm bg-pinkLight p-8 drop-shadow-xl">
-                <h3 className="mb-4 flex flex-row items-center gap-x-4 font-butler text-3xl font-bold text-casualBlue">
-                  DT Swiss CR1600
-                </h3>
-                <p className="font-butler text-2xl font-normal text-primaryText">
-                  Firstly I decided to tune my wheels. More precisely I broke my
-                  front wheel in some small accident. Exercitation eu veniam ad
-                  enim fugiat ut exercitation cupidatat amet ex nulla consequat
-                  quis dolor. Aliquip ex pariatur duis qui cillum eu magna duis
-                  ad. Cillum aliquip magna laborum minim.{" "}
-                </p>
+              <li className="flex flex-row gap-x-4 rounded-sm bg-blueLight drop-shadow-sm">
+                <div className="flex flex-col gap-y-2 p-6">
+                  <h3 className="font-butler text-3xl font-bold text-casualBlue">
+                    DT Swiss CR1600
+                  </h3>
+                  <p className="font-butler text-2xl font-normal text-primaryText">
+                    Firstly I decided to tune my wheels. More precisely I broke
+                    my front wheel in some small accident. Exercitation eu
+                    veniam ad enim fugiat ut exercitation cupidatat amet ex
+                    nulla consequat quis dolor. Aliquip ex pariatur duis qui
+                    cillum eu magna duis ad. Cillum aliquip magna laborum minim.{" "}
+                  </p>
+                </div>
+                <img
+                  src={Wheels}
+                  height="300px"
+                  width="300px"
+                  className="h-[300px] w-[300px] object-cover"
+                />
               </li>
             </ul>
           </section>

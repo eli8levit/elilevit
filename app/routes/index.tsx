@@ -55,7 +55,7 @@ export default function Index() {
               Spline app to show how beautiful it is
             </h2>
             <p className="rounded-sm border-2 border-primaryText bg-pinkLight px-6 py-4 font-sligoil text-base text-primaryText 2xl:text-lg ">
-              <strong className="mb-1 block underline">
+              <strong className="mb-1 block font-butler text-xl font-medium underline">
                 Project Essential 3 User Manual:
               </strong>
               <ul className="ml-6 list-disc">
@@ -82,7 +82,7 @@ export default function Index() {
           <h3 className="mb-14 font-butler text-7xl font-semibold 2xl:text-8xl ">
             What you can do here:
           </h3>
-          <ul className=" mx-auto flex w-max list-inside list-decimal flex-col gap-y-4 font-sligoil text-2xl ">
+          <ul className=" mx-auto flex w-max list-inside list-decimal flex-col gap-y-4 font-butler text-3xl ">
             <li>
               You must check out my <Link href="#">bike blog</Link>
             </li>

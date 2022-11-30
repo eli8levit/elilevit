@@ -26,6 +26,7 @@ module.exports = {
         pinkLight: "#ffd4d8",
         pinkTransp: "rgba(0,0,0,0.14)",
         pinkLighter: "#fff3f4",
+        pinkLighterMedium: "#fce3e7",
         wine: "#b9251a",
       },
       fontFamily: {
