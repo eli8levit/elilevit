@@ -3,31 +3,25 @@ import BikePhoto from "~/sources/images/bike-photo.jpeg";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
 import FirstRide from "~/sources/images/first-ride.jpeg";
 import SecondRide from "~/sources/images/second-ride.jpeg";
+import Bikes from "~/sources/images/bikes.jpg";
 import Wheels from "~/sources/images/wheels.jpeg";
 import { Nav } from "~/components";
+import BikePost from "~/routes/bike/$bikeId";
+import { Outlet } from "@remix-run/react";
 
 export default function Bike() {
   return (
     <div>
-      <img
-        src={BikePhoto}
-        height="600px"
-        className="h-[600px] w-full border-b-4 border-primaryText object-cover object-center "
-      />
+      <div className="h-[180px] w-full bg-bikes bg-contain bg-repeat"></div>
       <Nav />
-      <div className="content-container min-h-[1000px]">
-        <h1 className="mt-12 mb-52 font-wremena text-9xl font-bold  text-primaryText">
-          Welcome, <br />
-          <span>To my bike's blog - </span>
-          <span className="bg-pinkLight p-4 font-sligoil text-6xl text-casualBlue">
-            Cannondale Topstone 4
-          </span>
+      <div className="content-container">
+        <h1 className="mb-48 font-butlerSt text-8xl font-black text-primaryText">
+          Bike blog
         </h1>
-        <div className="mb-52 grid  grid-cols-[45%_55%] items-center gap-x-12">
-          <p className="font-wremena text-5xl font-light leading-relaxed leading-1.2 text-casualBlue">
-            This page is about my first bike and all that related to cycling: my
-            rides, photos and, most interesting,{" "}
-            <strong>the upgrading revolution</strong>
+        <div className="mb-24 grid grid-cols-[45%_55%] items-center justify-between gap-x-12">
+          <p className="font-butler text-5xl font-light leading-relaxed leading-1.2 text-primaryText">
+            Here is about my bike and stuff related to cycling: my rides, photos
+            and, most interesting, <strong>the upgrading revolution</strong>
           </p>
           <img
             src={BikeCanvas}
@@ -35,55 +29,54 @@ export default function Bike() {
             className="mx-auto h-[600px] object-contain"
           />
         </div>
+        <Outlet />
         <div className="mb-52 grid grid-cols-2 gap-x-12 font-sligoil text-xl text-primaryText">
           <section>
-            <h2 className="mb-4 font-sligoil text-5xl font-bold">Rides</h2>
+            <h2 className="mb-4 font-sligoil text-3xl font-bold" id="rides">
+              Rides
+            </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium drop-shadow-sm hover:shadow-bike">
-                <img
-                  height="300px"
-                  width="300px"
-                  src={FirstRide}
-                  className="h-[300px] w-[300px] shrink-0 object-cover"
-                />
-                <div className="flex flex-col gap-y-4 p-6">
-                  <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl font-bold text-casualBlue">
-                    first one{" "}
-                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-base text-pinkLighterMedium ">
-                      gravel + road
-                    </span>
-                  </h3>
-                  <p className="font-butler text-xl font-medium">
-                    Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431
-                  </p>
-                </div>
+              <li>
+                <a
+                  href="/bike/dd/#rides"
+                  className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium drop-shadow-sm hover:shadow-bike"
+                >
+                  <img
+                    height="200px"
+                    width="200px"
+                    src={FirstRide}
+                    className="h-[200px] w-[200px] shrink-0 object-cover"
+                  />
+                  <div className="flex flex-col gap-y-2 p-6">
+                    <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl font-bold text-primaryText">
+                      First one{" "}
+                      <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLighterMedium">
+                        gravel + road
+                      </span>
+                    </h3>
+                    <p className="font-butler text-xl font-medium">
+                      Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431
+                    </p>
+                  </div>
+                </a>
               </li>
               <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium drop-shadow-sm hover:shadow-bike">
                 <img
                   src={SecondRide}
-                  height="300px"
-                  width="300px"
-                  className="h-[300px] w-[300px] object-cover"
+                  height="200px"
+                  width="200px"
+                  className="h-[200px] w-[200px] object-cover"
                 />
                 <div className="flex flex-col gap-y-2 p-6">
-                  <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl  font-bold text-casualBlue">
-                    second one{" "}
-                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-base text-pinkLighterMedium">
+                  <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl  font-bold text-primaryText">
+                    Second one{" "}
+                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLighterMedium">
                       gravel
                     </span>
                   </h3>
                   <div>
                     <p className="font-butler text-xl font-medium">
-                      <span className="bg-gray-300 p-1 font-sligoil text-sm font-bold uppercase text-primaryText">
-                        Location
-                      </span>{" "}
                       Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431
-                    </p>
-                    <p className="font-butler text-xl font-medium">
-                      <span className="bg-gray-300 p-1 font-sligoil text-sm font-bold uppercase text-primaryText">
-                        Distance
-                      </span>{" "}
-                      13 km
                     </p>
                   </div>
                 </div>
@@ -91,28 +84,25 @@ export default function Bike() {
             </ul>
           </section>
           <section>
-            <h2 className="mb-4 font-sligoil text-5xl font-bold text-primaryText">
+            <h2 className="mb-4 font-sligoil text-3xl font-bold text-primaryText">
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
               <li className="flex flex-row gap-x-4 rounded-sm bg-blueLight drop-shadow-sm">
                 <div className="flex flex-col gap-y-2 p-6">
-                  <h3 className="font-butler text-3xl font-bold text-casualBlue">
+                  <h3 className="font-butler text-2xl font-bold text-primaryText">
                     DT Swiss CR1600
                   </h3>
-                  <p className="font-butler text-2xl font-normal text-primaryText">
+                  <p className="font-butler text-lg font-normal text-primaryText">
                     Firstly I decided to tune my wheels. More precisely I broke
                     my front wheel in some small accident. Exercitation eu
-                    veniam ad enim fugiat ut exercitation cupidatat amet ex
-                    nulla consequat quis dolor. Aliquip ex pariatur duis qui
-                    cillum eu magna duis ad. Cillum aliquip magna laborum minim.{" "}
                   </p>
                 </div>
                 <img
                   src={Wheels}
-                  height="300px"
-                  width="300px"
-                  className="h-[300px] w-[300px] object-cover"
+                  height="200px"
+                  width="200px"
+                  className="h-[200px] w-[200px] object-cover"
                 />
               </li>
             </ul>

@@ -8,6 +8,9 @@ module.exports = {
       backgroundImage: {
         poster: "url('/darker.jpg')",
         cubes: "url('/sotim.jpg')",
+        bikes: "url('/bikes.jpg')",
+        bike: "url(/bike.jpg)",
+        art: "url(/proj.jpg)",
       },
       borderWidth: {
         30: "30px",
@@ -20,14 +23,14 @@ module.exports = {
       },
       colors: {
         casualBlue: "#072c73",
-        primaryText: "#291719",
-        secondaryText: "#CB747D",
-        blueLight: "#DDEDEA",
+        primaryText: "#061229",
+        secondaryText: "#cb7492",
+        blueLight: "#DCE3FF",
         pinkLight: "#ffd4d8",
         pinkTransp: "rgba(0,0,0,0.14)",
         pinkLighter: "#fff3f4",
         pinkLighterMedium: "#fce3e7",
-        wine: "#b9251a",
+        wine: "#621010",
       },
       fontFamily: {
         butlerSt: ["Butler-Stencil", ...defaultTheme.fontFamily.serif],
