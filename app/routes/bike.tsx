@@ -12,16 +12,16 @@ import { Outlet } from "@remix-run/react";
 export default function Bike() {
   return (
     <div>
-      <div className="h-[180px] w-full bg-bikes bg-contain bg-repeat"></div>
       <Nav />
       <div className="content-container">
-        <h1 className="mb-32 font-butler text-8xl font-black text-primaryText">
+        <h1 className="mb-24 font-butler text-8xl font-black text-primaryText">
           Bike blog
         </h1>
-        <div className="mb-48 grid grid-cols-[45%_55%] items-center justify-between gap-x-12">
-          <p className="font-butler text-5xl font-light leading-relaxed leading-1.2 text-primaryText">
+        <div className="mb-48 grid grid-cols-2 items-center justify-between gap-x-12">
+          <p className="font-butler text-5xl font-light text-casualBlue 2xl:text-6xl">
             Here is about my bike and stuff related to cycling: my rides, photos
-            and, most interesting, <strong>the upgrading revolution</strong>
+            and, most interesting,{" "}
+            <strong className="font-bold">the upgrading revolution</strong>
           </p>
           <img
             src={BikeCanvas}

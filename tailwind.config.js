@@ -11,6 +11,12 @@ module.exports = {
         bikes: "url('/bikes.jpg')",
         bike: "url(/bike.jpg)",
         art: "url(/proj.jpg)",
+        blueNoise: "url(/blue-noise.png)",
+        river: "url(/river.jpg)",
+        david: "url(/david.jpg)",
+        hourse: "url(/hourse.jpg)",
+        wall: "url(/wall.jpg)",
+        nav: "url(/nav.png)",
       },
       borderWidth: {
         30: "30px",

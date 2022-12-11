@@ -2,7 +2,7 @@ import { Link } from "~/components/link";
 import React from "react";
 
 export const Footer = () => (
-  <section className="mt-auto flex h-[600px] bg-poster bg-cover bg-center text-white">
+  <section className="mt-auto flex h-40 bg-blueNoise bg-contain">
     <footer className="mt-auto flex h-40 w-full items-center justify-center gap-x-4 bg-pinkTransp p-6 font-sligoil text-base font-light text-pinkLight backdrop-blur-sm">
       <span>
         Created with ❤️ with{" "}
