@@ -8,7 +8,7 @@ export default function About() {
       <div className="h-[180px] w-full bg-art bg-cover bg-center"></div>
       <Nav />
       <main className="bt-48 content-container">
-        <h1 className="mb-48 font-butlerSt text-8xl font-black text-primaryText">
+        <h1 className="mb-32 font-butler text-8xl font-black text-primaryText">
           Little bit about this place
         </h1>
         <div className="mb-48 flex flex-row items-center justify-between gap-x-24">

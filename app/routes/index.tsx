@@ -1,6 +1,7 @@
 import React from "react";
 import Sotim from "~/sources/images/sotim.jpg";
 import Cubes from "~/sources/images/3cubes.png";
+import Player from "~/sources/images/player.png";
 
 import { Link, Nav } from "~/components";
 
@@ -14,7 +15,7 @@ export default function Index() {
       />
       <Nav />
       <div className="content-container">
-        <h1 className="font-ligh mb-48 font-butlerSt text-8xl font-bold text-primaryText">
+        <h1 className="font-ligh mb-32 font-butler text-8xl font-bold text-primaryText">
           Hey, good to see you!
         </h1>
         <section className="mb-48 grid min-h-[580px] grid-cols-[40%_60%] justify-between gap-x-6">
@@ -23,24 +24,25 @@ export default function Index() {
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in
               Spline app to show how beautiful it is
             </h2>
-            <p className="rounded-sm bg-primaryText px-8 py-6 font-sligoil text-base text-white shadow-sm 2xl:text-lg ">
-              <strong className="mb-1 block font-butler text-xl text-blueLight">
-                Project Essential 3 User Manual:
-              </strong>
-              <ul className="ml-6 list-disc text-sm">
-                <li>You can orbit model with mouse</li>
-                <li>Open cover by clicking on it</li>
-                <li>
-                  Start and stop record by clicking on switch button on the side
-                </li>
-              </ul>
-            </p>
+            {/*<p className="rounded-sm bg-primaryText px-8 py-6 font-sligoil text-base text-white shadow-sm 2xl:text-lg ">*/}
+            {/*  <strong className="mb-1 block font-butler text-xl text-blueLight">*/}
+            {/*    Project Essential 3 User Manual:*/}
+            {/*  </strong>*/}
+            {/*  <ul className="ml-6 list-disc text-sm">*/}
+            {/*    <li>You can orbit model with mouse</li>*/}
+            {/*    <li>Open cover by clicking on it</li>*/}
+            {/*    <li>*/}
+            {/*      Start and stop record by clicking on switch button on the side*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*</p>*/}
           </div>
-          <iframe
-            src="https://my.spline.design/project-cca4dc6de45717fed5ca979536aa6a41/"
-            width="100%"
-            height="100%"
-          ></iframe>
+          <img src={Player} />
+          {/*<iframe*/}
+          {/*  src="https://my.spline.design/project-cca4dc6de45717fed5ca979536aa6a41/"*/}
+          {/*  width="100%"*/}
+          {/*  height="100%"*/}
+          {/*></iframe>*/}
         </section>
         <img
           src={Cubes}

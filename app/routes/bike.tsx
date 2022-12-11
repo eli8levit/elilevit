@@ -15,10 +15,10 @@ export default function Bike() {
       <div className="h-[180px] w-full bg-bikes bg-contain bg-repeat"></div>
       <Nav />
       <div className="content-container">
-        <h1 className="mb-48 font-butlerSt text-8xl font-black text-primaryText">
+        <h1 className="mb-32 font-butler text-8xl font-black text-primaryText">
           Bike blog
         </h1>
-        <div className="mb-24 grid grid-cols-[45%_55%] items-center justify-between gap-x-12">
+        <div className="mb-48 grid grid-cols-[45%_55%] items-center justify-between gap-x-12">
           <p className="font-butler text-5xl font-light leading-relaxed leading-1.2 text-primaryText">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting, <strong>the upgrading revolution</strong>
@@ -39,7 +39,7 @@ export default function Bike() {
               <li>
                 <a
                   href="/bike/dd/#rides"
-                  className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium drop-shadow-sm hover:shadow-bike"
+                  className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium shadow-md hover:shadow-bike"
                 >
                   <img
                     height="200px"
@@ -60,7 +60,7 @@ export default function Bike() {
                   </div>
                 </a>
               </li>
-              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium drop-shadow-sm hover:shadow-bike">
+              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium shadow-md hover:shadow-bike">
                 <img
                   src={SecondRide}
                   height="200px"
@@ -88,7 +88,7 @@ export default function Bike() {
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="flex flex-row gap-x-4 rounded-sm bg-blueLight drop-shadow-sm">
+              <li className="flex flex-row gap-x-4 rounded-sm bg-blueLight shadow-md">
                 <div className="flex flex-col gap-y-2 p-6">
                   <h3 className="font-butler text-2xl font-bold text-primaryText">
                     DT Swiss CR1600
