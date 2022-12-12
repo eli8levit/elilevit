@@ -21,37 +21,37 @@ export const Nav = () => {
       <nav className="flex h-full flex-row items-center gap-x-2 text-base">
         <Link
           href="/"
-          className="flex h-full items-center rounded-md px-2.5 font-normal text-pinkLight transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
+          className="flex h-full items-center rounded-md px-2.5 font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
         >
           <span className="mr-1 inline-block text-base">🏠</span>Home
         </Link>
         <Link
           href="/bike"
-          className="flex h-full items-center rounded-md px-2.5  font-normal text-pinkLight transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
+          className="flex h-full items-center rounded-md px-2.5  font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
         >
           <span className="mr-1 inline-block text-base">🚲</span>Bike Blog
         </Link>
         <Link
           href="/about"
-          className="flex h-full items-center rounded-md px-2.5  font-normal text-pinkLight transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
+          className="flex h-full items-center rounded-md px-2.5  font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
         >
           <span className="mr-1 inline-block text-base">❓</span>What is it?
         </Link>
         <Link
           href="#"
-          className="flex h-full items-center rounded-md px-2.5  font-normal text-pinkLight transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
+          className="flex h-full items-center rounded-md px-2.5  font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
         >
           <span className="mr-1 inline-block text-base">🖼️</span>Some art
         </Link>
       </nav>
-      <div className="text-pinkLight">
+      <div className="text-white">
         <span className="font-wremena text-5xl font-bold">
           {time.toLocaleTimeString("en-IL", {
             hour: "2-digit",
             hourCycle: "h23",
             hour12: false,
           })}
-          <span className="animate-ping text-pinkLight">:</span>
+          <span className="animate-ping text-white">:</span>
           {formattedMinute}
         </span>
       </div>

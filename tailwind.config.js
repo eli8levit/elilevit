@@ -12,6 +12,7 @@ module.exports = {
         bike: "url(/bike.jpg)",
         art: "url(/proj.jpg)",
         blueNoise: "url(/blue-noise.png)",
+        pinkNoise: "url(/pink-noise.jpg)",
         river: "url(/river.jpg)",
         david: "url(/david.jpg)",
         hourse: "url(/hourse.jpg)",

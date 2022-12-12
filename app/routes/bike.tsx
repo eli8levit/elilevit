@@ -1,23 +1,21 @@
 import React from "react";
-import BikePhoto from "~/sources/images/bike-photo.jpeg";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
 import FirstRide from "~/sources/images/first-ride.jpeg";
 import SecondRide from "~/sources/images/second-ride.jpeg";
-import Bikes from "~/sources/images/bikes.jpg";
 import Wheels from "~/sources/images/wheels.jpeg";
 import { Nav } from "~/components";
-import BikePost from "~/routes/bike/$bikeId";
 import { Outlet } from "@remix-run/react";
+import Cubes from "~/sources/images/3cubes.png";
 
 export default function Bike() {
   return (
     <div>
       <Nav />
       <div className="content-container">
-        <h1 className="mb-24 font-butler text-8xl font-black text-primaryText">
+        <h1 className="mb-16 font-butler text-8xl font-black text-primaryText">
           Bike blog
         </h1>
-        <div className="mb-48 grid grid-cols-2 items-center justify-between gap-x-12">
+        <div className="mb-24 grid grid-cols-2 items-center justify-between gap-x-12">
           <p className="font-butler text-5xl font-light text-casualBlue 2xl:text-6xl">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
@@ -29,17 +27,22 @@ export default function Bike() {
             className="mx-auto h-[600px] object-contain"
           />
         </div>
-        <Outlet />
-        <div className="mb-52 grid grid-cols-2 gap-x-12 font-sligoil text-xl text-primaryText">
+      </div>
+      <Outlet />
+      <div className="mb-52 rounded-sm bg-blueNoise bg-blueNoise px-28 py-24 font-sligoil text-xl shadow-xl">
+        <div className="mx-auto grid max-w-[2000px] grid-cols-2 gap-x-12">
           <section>
-            <h2 className="mb-4 font-sligoil text-3xl font-bold" id="rides">
+            <h2
+              className="mb-4 font-sligoil text-3xl font-bold text-pinkLight"
+              id="rides"
+            >
               Rides
             </h2>
             <ul className="flex flex-col gap-y-4">
               <li>
                 <a
                   href="/bike/dd/#rides"
-                  className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium shadow-md hover:shadow-bike"
+                  className="flex flex-row gap-x-4 rounded-sm bg-pinkNoise shadow-md hover:shadow-bike"
                 >
                   <img
                     height="200px"
@@ -50,7 +53,7 @@ export default function Bike() {
                   <div className="flex flex-col gap-y-2 p-6">
                     <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl font-bold text-primaryText">
                       First one{" "}
-                      <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLighterMedium">
+                      <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLight">
                         gravel + road
                       </span>
                     </h3>
@@ -60,7 +63,7 @@ export default function Bike() {
                   </div>
                 </a>
               </li>
-              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLighterMedium shadow-md hover:shadow-bike">
+              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkNoise shadow-md hover:shadow-bike">
                 <img
                   src={SecondRide}
                   height="200px"
@@ -70,7 +73,7 @@ export default function Bike() {
                 <div className="flex flex-col gap-y-2 p-6">
                   <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl  font-bold text-primaryText">
                     Second one{" "}
-                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLighterMedium">
+                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLight">
                       gravel
                     </span>
                   </h3>
@@ -84,7 +87,7 @@ export default function Bike() {
             </ul>
           </section>
           <section>
-            <h2 className="mb-4 font-sligoil text-3xl font-bold text-primaryText">
+            <h2 className="mb-4 font-sligoil text-3xl font-bold text-pinkLight">
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
@@ -109,6 +112,7 @@ export default function Bike() {
           </section>
         </div>
       </div>
+      <img src={Cubes} width="180px" className="mx-auto mb-48 2xl:w-[250px]" />
     </div>
   );
 }
