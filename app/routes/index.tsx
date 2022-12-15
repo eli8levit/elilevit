@@ -15,7 +15,7 @@ export default function Index() {
         </h1>
         <section className="mb-24 grid grid-cols-2 justify-between gap-x-6">
           <div className="flex flex-col items-center justify-center gap-y-14">
-            <h2 className="font-butler text-5xl font-light text-casualBlue 2xl:text-6xl">
+            <h2 className="font-butler text-5xl font-light text-casualBlue">
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in
               Spline app to show how beautiful it is
             </h2>
@@ -41,7 +41,7 @@ export default function Index() {
         </section>
       </div>
       <section className="mb-48 w-full rounded-sm bg-blueNoise px-44 py-24 shadow-xl">
-        <h3 className="mb-14 w-max border-primaryText font-butler text-6xl font-semibold text-pinkLight 2xl:text-8xl ">
+        <h3 className="mb-14 w-max border-primaryText font-butler text-6xl font-semibold text-pinkLight">
           What to do here
         </h3>
         <ul className="grid grid-cols-2 items-end gap-10 text-xl">

@@ -16,21 +16,21 @@ export default function Bike() {
           Bike blog
         </h1>
         <div className="mb-24 grid grid-cols-2 items-center justify-between gap-x-12">
-          <p className="font-butler text-5xl font-light text-casualBlue 2xl:text-6xl">
+          <p className="font-butler text-5xl font-light text-casualBlue">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
           </p>
           <img
             src={BikeCanvas}
-            height="600px"
-            className="mx-auto h-[600px] object-contain"
+            height="500px"
+            className="mx-auto h-[500px] object-contain"
           />
         </div>
       </div>
       <Outlet />
       <div className="mb-52 rounded-sm bg-blueNoise bg-blueNoise px-28 py-24 font-sligoil text-xl shadow-xl">
-        <div className="mx-auto grid max-w-[2000px] grid-cols-2 gap-x-12">
+        <div className="mx-auto grid max-w-[1800px] grid-cols-2 justify-center gap-x-12">
           <section>
             <h2
               className="mb-4 font-sligoil text-3xl font-bold text-pinkLight"
@@ -42,13 +42,13 @@ export default function Bike() {
               <li>
                 <a
                   href="/bike/dd/#rides"
-                  className="flex flex-row gap-x-4 rounded-sm bg-pinkNoise shadow-md hover:shadow-bike"
+                  className="bg flex flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike"
                 >
                   <img
                     height="200px"
-                    width="200px"
+                    width="300px"
                     src={FirstRide}
-                    className="h-[200px] w-[200px] shrink-0 object-cover"
+                    className="h-[200px] w-[300px] shrink-0 object-cover"
                   />
                   <div className="flex flex-col gap-y-2 p-6">
                     <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl font-bold text-primaryText">
@@ -63,12 +63,12 @@ export default function Bike() {
                   </div>
                 </a>
               </li>
-              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkNoise shadow-md hover:shadow-bike">
+              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike">
                 <img
                   src={SecondRide}
                   height="200px"
-                  width="200px"
-                  className="h-[200px] w-[200px] object-cover"
+                  width="300px"
+                  className="h-[200px] w-[300px] object-cover"
                 />
                 <div className="flex flex-col gap-y-2 p-6">
                   <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl  font-bold text-primaryText">
@@ -91,7 +91,7 @@ export default function Bike() {
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="flex flex-row gap-x-4 rounded-sm bg-blueLight shadow-md">
+              <li className="flex flex-row rounded-sm bg-blueLight shadow-md">
                 <div className="flex flex-col gap-y-2 p-6">
                   <h3 className="font-butler text-2xl font-bold text-primaryText">
                     DT Swiss CR1600
@@ -104,8 +104,8 @@ export default function Bike() {
                 <img
                   src={Wheels}
                   height="200px"
-                  width="200px"
-                  className="h-[200px] w-[200px] object-cover"
+                  width="300px"
+                  className="h-[200px] w-[300px] shrink-0 object-cover"
                 />
               </li>
             </ul>

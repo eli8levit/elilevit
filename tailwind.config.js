@@ -12,7 +12,7 @@ module.exports = {
         bike: "url(/bike.jpg)",
         art: "url(/proj.jpg)",
         blueNoise: "url(/blue-noise.png)",
-        pinkNoise: "url(/pink-noise.jpg)",
+        pinkNoise: "url(/pink-noise.png)",
         river: "url(/river.jpg)",
         david: "url(/david.jpg)",
         hourse: "url(/hourse.jpg)",
@@ -23,7 +23,7 @@ module.exports = {
         30: "30px",
       },
       boxShadow: {
-        bike: "0 0 0 4px #072c73",
+        bike: "0 0 0 4px #ffffff",
       },
       lineHeight: {
         1.2: 1.2,
