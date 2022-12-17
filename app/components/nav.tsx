@@ -1,60 +1,42 @@
 import { Link } from "~/components/link";
 import React from "react";
+import { useMatches } from "@remix-run/react";
+import Clock from "~/components/clock";
 
 export const Nav = () => {
-  const [time, setTime] = React.useState<Date>(new Date());
+  const { pathname } = useMatches()?.[1] || { pathname: "" };
 
-  React.useEffect(() => {
-    setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-  }, []);
+  console.log(pathname, "pathname");
 
-  const minute = time.toLocaleTimeString([], {
-    minute: "2-digit",
-  });
+  const isActive = (id: string) => {
+    const splitted = pathname.split("/")?.[1] || "";
+    return id === splitted;
+  };
 
-  const formattedMinute = minute.length === 1 ? `0${minute}` : minute;
+  const genLinkClassName = (id: string) => {
+    const active = isActive(id);
+    return `flex h-full items-center rounded-md px-2.5 ${
+      active ? "text-pinkLight text-md" : "text-white text-sm"
+    }  transition hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl`;
+  };
 
   return (
-    <div className="mb-28 flex h-[70px] flex-row items-center justify-between bg-blueNoise bg-contain py-2 px-24 shadow-sm 2xl:px-44">
-      <nav className="flex h-full flex-row items-center gap-x-2 text-base">
-        <Link
-          href="/"
-          className="flex h-full items-center rounded-md px-2.5 font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
-        >
+    <div className="mb-24 flex h-[70px] flex-row items-center justify-between bg-blueNoise bg-contain py-2 px-24 shadow-sm 2xl:px-44">
+      <nav className="flex h-full flex-row items-center gap-x-2">
+        <Link href="/" className={genLinkClassName("")}>
           <span className="mr-1 inline-block text-base">🏠</span>Home
         </Link>
-        <Link
-          href="/bike"
-          className="flex h-full items-center rounded-md px-2.5  font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
-        >
+        <Link href="/bike" className={genLinkClassName("bike")}>
           <span className="mr-1 inline-block text-base">🚲</span>Bike Blog
         </Link>
-        <Link
-          href="/about"
-          className="flex h-full items-center rounded-md px-2.5  font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
-        >
+        <Link href="/about" className={genLinkClassName("about")}>
           <span className="mr-1 inline-block text-base">❓</span>What is it?
         </Link>
-        <Link
-          href="#"
-          className="flex h-full items-center rounded-md px-2.5  font-normal text-white transition  hover:bg-white hover:font-bold hover:text-black hover:shadow-lg hover:shadow-xl"
-        >
+        <Link href="/art" className={genLinkClassName("art")}>
           <span className="mr-1 inline-block text-base">🖼️</span>Some art
         </Link>
       </nav>
-      <div className="text-white">
-        <span className="font-wremena text-5xl font-bold">
-          {time.toLocaleTimeString("en-IL", {
-            hour: "2-digit",
-            hourCycle: "h23",
-            hour12: false,
-          })}
-          <span className="animate-ping text-white">:</span>
-          {formattedMinute}
-        </span>
-      </div>
+      <Clock />
     </div>
   );
 };

@@ -9,7 +9,7 @@ import {
 } from "@remix-run/react";
 import mainCssUrl from "./styles/main.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
-import { Footer } from "~/components";
+import { Footer, Nav } from "~/components";
 
 export const links: LinksFunction = () => {
   return [
@@ -32,6 +32,7 @@ export default function App() {
         <Links />
       </head>
       <body className="flex min-h-full flex-col">
+        <Nav />
         <Outlet />
         <Footer />
         <ScrollRestoration />

@@ -32,28 +32,6 @@
 
 
 @font-face {
-    font-family: "Wremena";
-    src: url("/fonts/wremena/WremenaBold.woff") format("woff");
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Wremena";
-    src: url("/fonts/wremena/WremenaLight.woff") format("woff");
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Wremena";
-    src: url("/fonts/wremena/WremenaRegular.woff") format("woff");
-    font-weight: 400;
-    font-display: swap;
-}
-
-
-@font-face {
     font-family: "Butler";
     src: url("/fonts/butler/Butler-Bold.woff2") format("woff2");
     font-weight: 600;

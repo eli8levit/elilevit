@@ -3,20 +3,18 @@ import BikeCanvas from "~/sources/images/bike-canvas.png";
 import FirstRide from "~/sources/images/first-ride.jpeg";
 import SecondRide from "~/sources/images/second-ride.jpeg";
 import Wheels from "~/sources/images/wheels.jpeg";
-import { Nav } from "~/components";
 import { Outlet } from "@remix-run/react";
 import Cubes from "~/sources/images/3cubes.png";
 
 export default function Bike() {
   return (
     <div>
-      <Nav />
       <div className="content-container">
-        <h1 className="mb-16 font-butler text-8xl font-black text-primaryText">
+        <h1 className="mb-24 font-butler text-8xl font-black text-primaryText">
           Bike blog
         </h1>
         <div className="mb-24 grid grid-cols-2 items-center justify-between gap-x-12">
-          <p className="font-butler text-5xl font-light text-casualBlue">
+          <p className="p-8 font-butler text-4xl font-light text-casualBlue">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
@@ -46,9 +44,8 @@ export default function Bike() {
                 >
                   <img
                     height="200px"
-                    width="300px"
                     src={FirstRide}
-                    className="h-[200px] w-[300px] shrink-0 object-cover"
+                    className="h-[200px] w-1/2 shrink-0 object-cover"
                   />
                   <div className="flex flex-col gap-y-2 p-6">
                     <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl font-bold text-primaryText">
@@ -67,8 +64,7 @@ export default function Bike() {
                 <img
                   src={SecondRide}
                   height="200px"
-                  width="300px"
-                  className="h-[200px] w-[300px] object-cover"
+                  className="h-[200px] w-1/2 shrink-0 object-cover"
                 />
                 <div className="flex flex-col gap-y-2 p-6">
                   <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl  font-bold text-primaryText">
@@ -104,8 +100,7 @@ export default function Bike() {
                 <img
                   src={Wheels}
                   height="200px"
-                  width="300px"
-                  className="h-[200px] w-[300px] shrink-0 object-cover"
+                  className="h-[200px] w-1/2 shrink-0 object-cover"
                 />
               </li>
             </ul>

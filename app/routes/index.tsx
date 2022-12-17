@@ -1,5 +1,4 @@
 import React from "react";
-import Sotim from "~/sources/images/sotim.jpg";
 import Cubes from "~/sources/images/3cubes.png";
 import Player from "~/sources/images/player.png";
 
@@ -8,14 +7,13 @@ import { Link, Nav } from "~/components";
 export default function Index() {
   return (
     <div>
-      <Nav />
       <div className="content-container">
         <h1 className="mb-32 font-butler text-8xl font-bold text-primaryText">
           Hey, good to see you!
         </h1>
         <section className="mb-24 grid grid-cols-2 justify-between gap-x-6">
           <div className="flex flex-col items-center justify-center gap-y-14">
-            <h2 className="font-butler text-5xl font-light text-casualBlue">
+            <h2 className="font-butler text-4xl font-light text-casualBlue">
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in
               Spline app to show how beautiful it is
             </h2>

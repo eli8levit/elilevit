@@ -16,6 +16,7 @@ module.exports = {
         river: "url(/river.jpg)",
         david: "url(/david.jpg)",
         hourse: "url(/hourse.jpg)",
+        art: "url(/art.png)",
         wall: "url(/wall.jpg)",
         nav: "url(/nav.png)",
       },
@@ -42,7 +43,6 @@ module.exports = {
       fontFamily: {
         butlerSt: ["Butler-Stencil", ...defaultTheme.fontFamily.serif],
         butler: ["Butler", ...defaultTheme.fontFamily.serif],
-        wremena: ["wremena", ...defaultTheme.fontFamily.serif],
         mazius: ["mazius", ...defaultTheme.fontFamily.serif],
         maziusExtra: ["mazius-extra-italic", ...defaultTheme.fontFamily.serif],
         sligoil: ["sligoil", ...defaultTheme.fontFamily.serif],
