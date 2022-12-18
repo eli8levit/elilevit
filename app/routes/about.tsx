@@ -8,7 +8,7 @@ export default function About() {
         <h1 className="mb-32 text-8xl font-black text-primaryText">
           Little bit about this place
         </h1>
-        <div className="mx-auto mb-24 flex max-w-[1600px] flex-row items-start justify-between gap-x-24">
+        <div className="mx-auto mb-24 flex max-w-[1800px] flex-row items-center justify-between gap-x-24">
           <img src={Tree} height="500px" className="h-[500px]" />
           <div>
             <p className="p-8 text-3xl text-primaryText">

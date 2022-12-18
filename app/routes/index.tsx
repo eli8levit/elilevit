@@ -2,7 +2,7 @@ import React from "react";
 import Cubes from "~/sources/images/3cubes.png";
 import Player from "~/sources/images/player.png";
 
-import { Link, Nav } from "~/components";
+import { Link } from "~/components";
 
 export default function Index() {
   return (
@@ -11,7 +11,7 @@ export default function Index() {
         <h1 className="mb-32 font-butler text-8xl font-bold text-primaryText">
           Hey, good to see you!
         </h1>
-        <section className="mb-24 grid grid-cols-2 justify-between gap-x-6">
+        <section className="mx-auto mb-24 grid max-w-[1800px] grid-cols-2 justify-between gap-x-6">
           <div className="flex flex-col items-center justify-center gap-y-14">
             <h2 className="font-butler text-4xl font-light text-casualBlue">
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in
@@ -42,7 +42,7 @@ export default function Index() {
         <h3 className="mb-14 w-max border-primaryText font-butler text-6xl font-semibold text-pinkLight">
           What to do here
         </h3>
-        <ul className="grid grid-cols-2 items-end gap-10 text-xl">
+        <ul className="mx-auto grid max-w-[1800px] grid-cols-2 items-end gap-10 text-xl">
           <li>
             <Link
               href="/bike"

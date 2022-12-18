@@ -13,7 +13,7 @@ export default function Bike() {
         <h1 className="mb-24 font-butler text-8xl font-black text-primaryText">
           Bike blog
         </h1>
-        <div className="mb-24 grid grid-cols-2 items-center justify-between gap-x-12">
+        <div className="mx-auto mb-24 grid max-w-[1800px] grid-cols-2 items-center justify-between gap-x-12">
           <p className="p-8 font-butler text-4xl font-light text-casualBlue">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
