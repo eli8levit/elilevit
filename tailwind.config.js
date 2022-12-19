@@ -19,6 +19,7 @@ module.exports = {
         art: "url(/art.png)",
         wall: "url(/wall.jpg)",
         nav: "url(/nav.png)",
+        oldSite: "url(/old-site.png)",
       },
       borderWidth: {
         30: "30px",
