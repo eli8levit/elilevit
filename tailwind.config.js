@@ -20,6 +20,7 @@ module.exports = {
         wall: "url(/wall.jpg)",
         nav: "url(/nav.png)",
         oldSite: "url(/old-site.png)",
+        wallpaper: "url(/wallpaper.jpg)",
       },
       borderWidth: {
         30: "30px",

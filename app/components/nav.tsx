@@ -21,7 +21,7 @@ export const Nav = () => {
   };
 
   return (
-    <div className="mb-32 flex h-[70px] flex-row items-center justify-between bg-blueNoise bg-contain py-2 px-24 shadow-sm 2xl:px-44">
+    <div className="mb-24 flex h-[70px] flex-row items-center justify-between bg-blueNoise bg-contain py-2 px-24 shadow-sm 2xl:mb-32 2xl:px-44">
       <nav className="flex h-full flex-row items-center gap-x-2">
         <a href="/" className={genLinkClassName("")}>
           <span className="mr-1 inline-block text-base">🏠</span>Home

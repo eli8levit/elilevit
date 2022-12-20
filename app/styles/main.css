@@ -6,6 +6,6 @@
 
 @layer components {
   .content-container {
-    @apply px-28 pb-28 2xl:px-44 mx-auto max-w-[2000px] mx-auto;
+    @apply px-20 2xl:px-28 pb-28 2xl:px-44 mx-auto max-w-[2000px] mx-auto;
   }
 }
