@@ -8,12 +8,12 @@ import Cubes from "~/sources/images/3cubes.png";
 
 export default function Bike() {
   return (
-    <div>
-      <div className="content-container">
+    <>
+      <div className="content-container mx-auto">
         <h1 className="mb-24 font-butler text-8xl font-black text-primaryText">
           Bike blog
         </h1>
-        <div className="mx-auto mb-24 grid max-w-[1800px] grid-cols-2 items-center justify-between gap-x-12">
+        <div className="mx-auto mb-24 grid max-w-[2000px] grid-cols-2 items-center justify-between gap-x-12">
           <p className="p-8 font-butler text-4xl font-light text-casualBlue">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
@@ -28,7 +28,7 @@ export default function Bike() {
       </div>
       <Outlet />
       <div className="mb-52 rounded-sm bg-blueNoise bg-blueNoise px-28 py-24 font-sligoil text-xl shadow-xl">
-        <div className="mx-auto grid max-w-[1800px] grid-cols-2 justify-center gap-x-12">
+        <div className="mx-auto grid max-w-[2000px] grid-cols-2 justify-center gap-x-12">
           <section>
             <h2
               className="mb-4 font-sligoil text-3xl font-bold text-pinkLight"
@@ -108,6 +108,6 @@ export default function Bike() {
         </div>
       </div>
       <img src={Cubes} width="180px" className="mx-auto mb-48 2xl:w-[250px]" />
-    </div>
+    </>
   );
 }

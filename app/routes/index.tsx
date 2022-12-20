@@ -6,12 +6,12 @@ import { Link } from "~/components";
 
 export default function Index() {
   return (
-    <div>
+    <>
       <div className="content-container">
         <h1 className="mb-32 font-butler text-8xl font-bold text-primaryText">
           Hey, good to see you!
         </h1>
-        <section className="mx-auto mb-24 grid max-w-[1800px] grid-cols-2 justify-between gap-x-6">
+        <section className="mb-24 grid grid-cols-2 justify-between gap-x-8">
           <div className="flex flex-col items-center justify-center gap-y-14">
             <h2 className="font-butler text-4xl font-light text-casualBlue">
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in
@@ -42,7 +42,7 @@ export default function Index() {
         <h3 className="mb-14 w-max border-primaryText font-butler text-6xl font-semibold text-pinkLight">
           What to do here
         </h3>
-        <ul className="mx-auto grid max-w-[1800px] grid-cols-2 items-end gap-10 text-xl">
+        <ul className="mx-auto grid max-w-[2000px] grid-cols-2 items-end gap-10 text-xl">
           <li>
             <Link
               href="/bike"
@@ -86,6 +86,6 @@ export default function Index() {
         </ul>
       </section>
       <img src={Cubes} width="180px" className="mx-auto mb-48 2xl:w-[250px]" />
-    </div>
+    </>
   );
 }
