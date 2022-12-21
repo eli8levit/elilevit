@@ -11,7 +11,7 @@ export default function Index() {
         <h1 className="mb-32 font-butler text-8xl font-bold text-primaryText">
           Hey, good to see you!
         </h1>
-        <section className="mb-24 grid grid-cols-2 justify-between gap-x-8">
+        <section className="mb-24 grid grid-cols-2 justify-between gap-x-24">
           <div className="flex flex-col items-center justify-center gap-y-14">
             <h2 className="font-butler text-4xl font-light text-casualBlue">
               👋🏻 I'm Eli and this is my vinyl player. I created 3d model in

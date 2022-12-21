@@ -12,12 +12,12 @@ export default function Art() {
           projects
         </h2>
         <div className="mx-auto grid grid-cols-5 items-center justify-center gap-8 p-12">
-          <div className="col-start-1 col-end-4 row-start-1 row-end-3 flex h-full rounded-sm bg-oldSite bg-cover shadow-xl">
+          <div className="col-start-1 col-end-4 row-start-1 row-end-3 flex h-full rounded-sm bg-oldSite bg-cover bg-center shadow-xl">
             <span className="grow-1 mt-auto ml-auto block h-full w-[30%] bg-primaryText p-4 font-butler text-xl font-light text-white shadow-md">
               My old site
             </span>
           </div>
-          <div className="col-start-4 col-end-6 row-start-1 row-end-2 flex h-[200px] rounded-sm bg-wallpaper bg-cover shadow-xl">
+          <div className="col-start-4 col-end-6 row-start-1 row-end-2 flex h-[200px] rounded-sm bg-wallpaper bg-cover bg-center shadow-xl">
             <span className="grow-1 rounded-sm bg-black p-4 text-center font-butler text-xl font-light text-white shadow-md">
               Wallpapers
             </span>
