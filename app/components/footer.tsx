@@ -3,11 +3,11 @@ import React from "react";
 
 export const Footer = () => (
   <section className="mt-auto flex bg-blueNoise bg-contain">
-    <footer className="mt-auto flex h-32 w-full items-center justify-center gap-x-4 bg-pinkTransp p-6 font-sligoil text-base font-light text-white backdrop-blur-sm">
+    <footer className="mt-auto flex h-28 w-full items-center justify-center gap-x-4 bg-pinkTransp p-6 font-sligoil text-base font-light text-white backdrop-blur-sm">
       <span>
         Created with ❤️ with{" "}
         <Link
-          className="text-base font-light  text-white underline hover:text-pinkLight"
+          className="text-base font-light text-white underline hover:text-pinkLight"
           href="https://remix.run/"
         >
           Remix

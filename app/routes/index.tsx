@@ -38,8 +38,8 @@ export default function Index() {
           {/*></iframe>*/}
         </section>
       </div>
-      <section className="mb-48 w-full rounded-sm bg-blueNoise px-44 py-24 shadow-xl">
-        <h3 className="mb-14 w-max border-primaryText font-butler text-6xl font-semibold text-pinkLight">
+      <section className="mb-48 w-full rounded-sm bg-blueNoise px-40 py-20 shadow-xl">
+        <h3 className="mb-14 w-max border-primaryText font-butler text-5xl font-semibold text-pinkLight">
           What to do here
         </h3>
         <ul className="mx-auto grid max-w-[2000px] grid-cols-2 items-end gap-10 text-xl">
@@ -48,9 +48,9 @@ export default function Index() {
               href="/bike"
               className="group flex h-[300px] rounded-sm bg-river bg-cover bg-center shadow-xl"
             >
-              <div className="mt-auto w-full rounded-sm bg-blueLight p-1 p-3 text-primaryText transition group-hover:bg-casualBlue group-hover:text-blueLight">
+              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight">
                 Checkout my bike blog
-              </div>
+              </span>
             </Link>
           </li>
           <li>
@@ -58,31 +58,31 @@ export default function Index() {
               href="/about"
               className="group flex h-[300px] rounded-sm bg-david bg-cover bg-center shadow-xl"
             >
-              <div className="mt-auto w-full rounded-sm bg-blueLight p-1 p-3 text-primaryText transition group-hover:bg-casualBlue group-hover:text-blueLight">
+              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight">
                 Know me better
-              </div>
+              </span>
             </Link>
           </li>
-          <li>
+          <li className="col-span-full">
             <Link
               href="/bike"
               className="group flex h-[300px] rounded-sm bg-wall bg-cover bg-center shadow-xl"
             >
-              <div className="mt-auto w-full rounded-sm bg-blueLight p-2 p-3 text-primaryText transition group-hover:bg-casualBlue group-hover:text-blueLight">
+              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight">
                 Look at my art & projects
-              </div>
+              </span>
             </Link>
           </li>
-          <li>
-            <Link
-              href="/bike"
-              className="group flex h-[300px] rounded-sm bg-hourse bg-cover bg-center shadow-xl"
-            >
-              <div className="mt-auto w-full rounded-sm bg-blueLight p-1 p-3 text-primaryText transition group-hover:bg-casualBlue group-hover:text-blueLight">
-                Don't go here
-              </div>
-            </Link>
-          </li>
+          {/*<li>*/}
+          {/*  <Link*/}
+          {/*    href="/bike"*/}
+          {/*    className="group flex h-[300px] rounded-sm bg-hourse bg-cover bg-center shadow-xl"*/}
+          {/*  >*/}
+          {/*    <div className="mt-auto w-full rounded-sm bg-blueLight p-1 p-3 text-primaryText transition group-hover:bg-casualBlue group-hover:text-blueLight">*/}
+          {/*      Don't go here*/}
+          {/*    </div>*/}
+          {/*  </Link>*/}
+          {/*</li>*/}
         </ul>
       </section>
       <img src={Cubes} width="180px" className="mx-auto mb-48 2xl:w-[250px]" />

@@ -10,20 +10,16 @@ export default function Bike() {
   return (
     <>
       <div className="content-container mx-auto">
-        <h1 className="mb-24 font-butler text-8xl font-black text-primaryText">
+        <h1 className="mb-16 font-butler text-8xl font-black text-primaryText">
           Bike blog
         </h1>
-        <div className="mx-auto mb-24 grid max-w-[2000px] grid-cols-2 items-center justify-between gap-x-12">
+        <div className="mx-auto mb-16 grid max-w-[2000px] grid-cols-2 items-center justify-between gap-x-12">
           <p className="p-8 font-butler text-4xl font-light text-casualBlue">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
           </p>
-          <img
-            src={BikeCanvas}
-            height="500px"
-            className="mx-auto h-[500px] object-contain"
-          />
+          <img src={BikeCanvas} className="mx-auto w-full object-contain" />
         </div>
       </div>
       <Outlet />
@@ -37,18 +33,17 @@ export default function Bike() {
               Rides
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li>
+              <li className="flex h-[250px] flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike">
                 <a
                   href="/bike/dd/#rides"
                   className="bg flex flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike"
                 >
                   <img
-                    height="200px"
                     src={FirstRide}
-                    className="h-[200px] w-1/2 shrink-0 object-cover"
+                    className="h-full w-1/2 shrink-0 object-cover"
                   />
-                  <div className="flex flex-col gap-y-2 p-6">
-                    <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl font-bold text-primaryText">
+                  <div className="flex flex-col gap-y-2 p-4">
+                    <h3 className="flex flex-row flex-wrap items-center gap-x-4 font-butler text-2xl font-bold text-primaryText">
                       First one{" "}
                       <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLight">
                         gravel + road
@@ -60,14 +55,13 @@ export default function Bike() {
                   </div>
                 </a>
               </li>
-              <li className="flex flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike">
+              <li className="flex h-[250px] flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike">
                 <img
                   src={SecondRide}
-                  height="200px"
-                  className="h-[200px] w-1/2 shrink-0 object-cover"
+                  className="h-full w-1/2 shrink-0 object-cover"
                 />
-                <div className="flex flex-col gap-y-2 p-6">
-                  <h3 className="flex flex-row items-center gap-x-4 font-butler text-2xl  font-bold text-primaryText">
+                <div className="flex flex-col gap-y-2 p-4">
+                  <h3 className="flex flex-row flex-wrap items-center gap-x-4 font-butler text-2xl  font-bold text-primaryText">
                     Second one{" "}
                     <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLight">
                       gravel
@@ -87,8 +81,8 @@ export default function Bike() {
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="flex flex-row rounded-sm bg-blueLight shadow-md">
-                <div className="flex flex-col gap-y-2 p-6">
+              <li className="flex h-[250px] flex-row rounded-sm bg-blueLight shadow-md">
+                <div className="flex flex-col gap-y-2 p-4">
                   <h3 className="font-butler text-2xl font-bold text-primaryText">
                     DT Swiss CR1600
                   </h3>
@@ -99,8 +93,7 @@ export default function Bike() {
                 </div>
                 <img
                   src={Wheels}
-                  height="200px"
-                  className="h-[200px] w-1/2 shrink-0 object-cover"
+                  className="h-full w-1/2 shrink-0 object-cover"
                 />
               </li>
             </ul>
