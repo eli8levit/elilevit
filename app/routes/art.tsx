@@ -7,15 +7,15 @@ export default function Art() {
         </h1>
       </div>
       <div className="content-container mb-48">
-        <h2 className="mx-auto mb-36 max-w-[800px] text-center font-butler text-5xl text-primaryText">
+        <h2 className="mx-auto mb-36 w-max max-w-[800px] bg-blueBg bg-[length:100%_200px] bg-center bg-no-repeat text-center font-butler text-5xl text-primaryText 2xl:text-6xl">
           Here you can see my art like photos, illustrations along with my
           projects
         </h2>
         <div className="mx-auto grid grid-cols-5 items-center justify-center gap-8 p-12">
           <div className="col-start-1 col-end-4 row-start-1 row-end-3 flex h-full rounded-md bg-oldSite bg-cover bg-center shadow-xl">
-            <div className="grow-1 ml-auto h-full w-[30%] rounded-md bg-primaryText p-4 font-butler text-lg font-bold text-white shadow-md">
+            <div className="grow-1 ml-auto h-full w-[30%] rounded-md bg-primaryText p-4 font-butler text-lg font-bold text-white shadow-md 2xl:text-xl">
               <span className="text-pinkLight">My old site</span>
-              <p className="mt-4 text-base font-light">
+              <p className="mt-4 text-base font-light 2xl:text-lg">
                 This is my previous web site, that I worked for 2 years on. It
                 doesn't seem so, cause it's very minimalistic but trust me, I
                 spent a lot of time building it.
@@ -23,9 +23,9 @@ export default function Art() {
             </div>
           </div>
           <div className="col-start-4 col-end-6 row-start-1 row-end-2 flex h-[300px] rounded-md bg-wallpaper bg-cover bg-center shadow-xl">
-            <div className="grow-1 mt-auto mt-auto w-full rounded-md bg-primaryText p-4 font-butler text-lg font-bold text-white shadow-md">
+            <div className="grow-1 mt-auto mt-auto w-full rounded-md bg-primaryText p-4 font-butler text-lg font-bold text-white shadow-md 2xl:text-xl">
               <span className="text-pinkLight">Wallpapers</span>
-              <p className="mt-2 text-sm font-light">
+              <p className="mt-2 text-sm font-light 2xl:text-lg">
                 I love design and art, I don't have a lot of experience in it,
                 but it's very fun so I play around with it in Affinity Designer
                 and sometime it looks not bad...So here are some stuff you can

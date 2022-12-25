@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <>
       <div className="content-container">
-        <h1 className="mb-32 font-butler text-8xl font-bold text-primaryText">
+        <h1 className="mb-32 h-[120px] w-max bg-blueBg bg-[length:100%_100px] bg-left-bottom bg-no-repeat font-butler text-8xl font-bold text-primaryText">
           Hey, good to see you!
         </h1>
         <section className="mb-24 grid grid-cols-2 justify-between gap-x-24">
@@ -48,7 +48,7 @@ export default function Index() {
               href="/bike"
               className="group flex h-[300px] rounded-sm bg-river bg-cover bg-center shadow-xl"
             >
-              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight">
+              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
                 Checkout my bike blog
               </span>
             </Link>
@@ -58,7 +58,7 @@ export default function Index() {
               href="/about"
               className="group flex h-[300px] rounded-sm bg-david bg-cover bg-center shadow-xl"
             >
-              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight">
+              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
                 Know me better
               </span>
             </Link>
@@ -68,7 +68,7 @@ export default function Index() {
               href="/bike"
               className="group flex h-[300px] rounded-sm bg-wall bg-cover bg-center shadow-xl"
             >
-              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight">
+              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-sligoil text-sm text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
                 Look at my art & projects
               </span>
             </Link>

@@ -4,7 +4,7 @@ import Tree from "~/sources/images/tree.png";
 export default function About() {
   return (
     <main className="content-container font-butler">
-      <h1 className="mb-32 w-full text-8xl font-black text-primaryText">
+      <h1 className="mb-32 h-[120px] w-full w-max bg-blueBg bg-[length:100%_100px] bg-left-bottom bg-no-repeat text-8xl font-black text-primaryText">
         Little bit about this place
       </h1>
       <div className="mx-auto mb-24 flex flex-row items-center gap-x-24">

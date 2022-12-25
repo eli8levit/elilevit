@@ -21,6 +21,7 @@ module.exports = {
         nav: "url(/nav.png)",
         oldSite: "url(/old-site.png)",
         wallpaper: "url(/wallpaper.jpg)",
+        blueBg: "url(/blue-background.png)",
       },
       borderWidth: {
         30: "30px",

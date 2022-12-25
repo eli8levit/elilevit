@@ -10,7 +10,7 @@ export default function Bike() {
   return (
     <>
       <div className="content-container mx-auto">
-        <h1 className="mb-16 font-butler text-8xl font-black text-primaryText">
+        <h1 className="mb-16 h-[130px] bg-blueBg bg-[length:400px_100px] bg-left-bottom bg-no-repeat font-butler text-8xl font-black text-primaryText ">
           Bike blog
         </h1>
         <div className="mx-auto mb-16 grid max-w-[2000px] grid-cols-2 items-center justify-between gap-x-12">
