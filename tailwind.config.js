@@ -22,6 +22,9 @@ module.exports = {
         oldSite: "url(/old-site.png)",
         wallpaper: "url(/wallpaper.jpg)",
         blueBg: "url(/blue-background.png)",
+        indexBg: "url(/index-background.png)",
+        labelBg: "url(/label-background.png)",
+        ask: "url(/what.png)",
       },
       borderWidth: {
         30: "30px",
