@@ -5,7 +5,10 @@ export const Footer = () => (
   <footer className="flex h-20 w-full items-center justify-center gap-x-4 p-6 font-ignazio text-base text-primaryText drop-shadow-sm">
     <span>
       Created with ❤️ with{" "}
-      <Link className="underline hover:text-blue-500" href="https://remix.run/">
+      <Link
+        className="underline hover:text-indigo-600"
+        href="https://remix.run/"
+      >
         Remix
       </Link>
     </span>
@@ -13,14 +16,14 @@ export const Footer = () => (
     <span>
       Fonts{" "}
       <Link
-        className="underline hover:text-blue-500"
+        className="underline hover:text-indigo-600"
         href="https://typefaces.temporarystate.net/preview/Wremena"
       >
         Wremena
       </Link>{" "}
       &{" "}
       <Link
-        className="underline hover:text-blue-500"
+        className="underline hover:text-indigo-600"
         href="https://velvetyne.fr/fonts/sligoil/"
       >
         Sligoil
@@ -28,7 +31,7 @@ export const Footer = () => (
     </span>
     <span className="font-ignazio text-blue-900">|</span>
     <Link
-      className="underline hover:text-blue-500"
+      className="underline hover:text-indigo-600"
       href="https://twitter.com/eli8levit"
     >
       My Twitter

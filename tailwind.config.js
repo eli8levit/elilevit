@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
@@ -26,11 +27,15 @@ module.exports = {
         labelBg: "url(/label-background.png)",
         ask: "url(/what.png)",
       },
+      dropShadow: {
+        menu: `0 0 20px ${colors.indigo["300"]}`,
+      },
       borderWidth: {
         30: "30px",
       },
       boxShadow: {
         bike: "0 0 0 4px #ffffff",
+        nav: `0 -20px 30px 0 ${colors.indigo["600"]}`,
       },
       lineHeight: {
         1.2: 1.2,

@@ -12,7 +12,7 @@ export default function Bike() {
     <>
       <Nav />
       <div className="content-container mx-auto">
-        <h1 className="mb-16 font-satisfy text-8xl text-indigo-600">
+        <h1 className="mb-16 font-satisfy text-8xl text-indigo-800">
           Bike blog
         </h1>
         <div className="mx-auto mb-16 grid max-w-[2000px] grid-cols-2 items-center justify-between gap-x-12">

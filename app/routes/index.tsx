@@ -10,8 +10,8 @@ export default function Index() {
       <div className="bg-indexBg bg-cover bg-center bg-no-repeat">
         <Nav />
         <div className="content-container">
-          <h1 className="mb-24 h-[120px] font-satisfy text-8xl text-indigo-800">
-            <span className="text-[#86b984]">Hey,</span> good to see you!
+          <h1 className="mb-24 h-[120px] bg-gradient-to-r from-indigo-800 to-red-600 bg-clip-text font-satisfy text-8xl text-transparent drop-shadow-sm ">
+            <span>Hey,</span> good to see you!
           </h1>
           <section className="mb-24 grid grid-cols-[40%_50%] justify-between gap-x-24">
             <div className="flex flex-col items-center justify-center gap-y-14">
@@ -24,7 +24,7 @@ export default function Index() {
           </section>
         </div>
       </div>
-      <section className="m-10 mb-48 rounded-lg bg-blueNoise py-16 px-16 shadow-2xl">
+      <section className="m-10 mb-48 rounded-lg bg-blueNoise  py-16 px-16 shadow-2xl shadow-indigo-400">
         <h3 className="mb-14 w-max border-primaryText font-satisfy text-6xl text-pinkLight">
           What to do here
         </h3>
