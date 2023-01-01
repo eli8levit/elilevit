@@ -36,7 +36,7 @@ export default function App() {
         <PrefetchPageLinks page="/bike" />
         <PrefetchPageLinks page="/art" />
         <PrefetchPageLinks page="/about" />
-        <Nav />
+        {/*<Nav />*/}
         <Outlet />
         <Footer />
         <ScrollRestoration />

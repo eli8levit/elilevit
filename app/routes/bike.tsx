@@ -4,17 +4,19 @@ import FirstRide from "~/sources/images/first-ride.jpeg";
 import SecondRide from "~/sources/images/second-ride.jpeg";
 import Wheels from "~/sources/images/wheels.jpeg";
 import { Outlet } from "@remix-run/react";
-import Cubes from "~/sources/images/3cubes.png";
+import { Nav } from "~/components";
+import End from "~/sources/images/end.png";
 
 export default function Bike() {
   return (
     <>
+      <Nav />
       <div className="content-container mx-auto">
-        <h1 className="mb-16 h-[130px] bg-blueBg bg-[length:400px_100px] bg-left-bottom bg-no-repeat font-butler text-8xl font-black text-primaryText ">
+        <h1 className="mb-16 font-satisfy text-8xl text-indigo-600">
           Bike blog
         </h1>
         <div className="mx-auto mb-16 grid max-w-[2000px] grid-cols-2 items-center justify-between gap-x-12">
-          <p className="p-8 font-butler text-4xl font-light text-casualBlue">
+          <p className="p-8 font-apfel text-3xl text-indigo-800">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
@@ -23,11 +25,11 @@ export default function Bike() {
         </div>
       </div>
       <Outlet />
-      <div className="mb-52 rounded-sm bg-blueNoise bg-blueNoise px-28 py-24 font-sligoil text-xl shadow-xl">
+      <div className="m-10 mb-48 rounded-lg bg-blueNoise py-16 px-16 shadow-2xl">
         <div className="mx-auto grid max-w-[2000px] grid-cols-2 justify-center gap-x-12">
           <section>
             <h2
-              className="mb-4 font-sligoil text-3xl font-bold text-pinkLight"
+              className="mb-4 font-satisfy text-4xl font-bold text-pinkLight"
               id="rides"
             >
               Rides
@@ -43,9 +45,9 @@ export default function Bike() {
                     className="h-full w-1/2 shrink-0 object-cover"
                   />
                   <div className="flex flex-col gap-y-2 p-4">
-                    <h3 className="flex flex-row flex-wrap items-center gap-x-4 font-butler text-2xl font-bold text-primaryText">
+                    <h3 className="font-butler flex flex-row flex-wrap items-center gap-x-4 text-2xl font-bold text-primaryText">
                       First one{" "}
-                      <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLight">
+                      <span className="bg-casualBlue p-0.5 px-1 font-ignazio text-xs text-pinkLight">
                         gravel + road
                       </span>
                     </h3>
@@ -61,9 +63,9 @@ export default function Bike() {
                   className="h-full w-1/2 shrink-0 object-cover"
                 />
                 <div className="flex flex-col gap-y-2 p-4">
-                  <h3 className="flex flex-row flex-wrap items-center gap-x-4 font-butler text-2xl  font-bold text-primaryText">
+                  <h3 className="font-butler flex flex-row flex-wrap items-center gap-x-4 text-2xl  font-bold text-primaryText">
                     Second one{" "}
-                    <span className="bg-casualBlue p-0.5 px-1 font-sligoil text-xs text-pinkLight">
+                    <span className="bg-casualBlue p-0.5 px-1 font-ignazio text-xs text-pinkLight">
                       gravel
                     </span>
                   </h3>
@@ -77,7 +79,7 @@ export default function Bike() {
             </ul>
           </section>
           <section>
-            <h2 className="mb-4 font-sligoil text-3xl font-bold text-pinkLight">
+            <h2 className="mb-4 font-satisfy text-4xl font-bold text-pinkLight">
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
@@ -100,7 +102,7 @@ export default function Bike() {
           </section>
         </div>
       </div>
-      <img src={Cubes} width="180px" className="mx-auto mb-48 2xl:w-[250px]" />
+      <img src={End} width="250px" className="mx-auto mb-48" />
     </>
   );
 }

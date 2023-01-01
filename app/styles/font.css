@@ -1,60 +1,37 @@
-
-
 @font-face {
-    font-family: "mazius";
-    src: url("/fonts/mazius/regular.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "mazius";
-    src: url("/fonts/mazius/italic.woff2") format("woff2");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "mazius-extra-italic";
-    src: url("/fonts/mazius/extra-italic.woff2") format("woff2");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "sligoil";
-    src: url("/fonts/sligoil/regular.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: "Butler";
-    src: url("/fonts/butler/Butler-Bold.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Butler-Stencil";
-    src: url("/fonts/butler/ButlerStencil-Bold.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Butler";
-    src: url("/fonts/butler/Butler-Light.woff2") format("woff2");
+    font-family: "Frank-Re";
+    src: url("/fonts/frank-re.woff") format("woff");
     font-weight: 300;
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Apfel";
+    src: url("/fonts/Apfel/ApfelGrotezk-Brukt.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: "Apfel";
+    src: url("/fonts/Apfel/ApfelGrotezk-Fett.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: "Apfel";
+    src: url("/fonts/Apfel/ApfelGrotezk-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: "Ignazio";
+    src: url("/fonts/Ignazio/IgnazioText-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
 
 
 

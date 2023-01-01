@@ -6,7 +6,7 @@ export const Link = ({ children, href, className = "", ...props }: any) => {
       href={href}
       target="blank"
       rel="noopener noreferrer"
-      className={`font-sligoil ${className}`}
+      className={className}
       {...props}
     >
       {children}

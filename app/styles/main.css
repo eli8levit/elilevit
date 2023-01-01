@@ -1,4 +1,6 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300;8..144,400&family=Satisfy&display=swap');*/
 @import "font.css";
+@import url('https://fonts.googleapis.com/css2?family=Mali&family=Roboto+Serif:opsz,wght@8..144,300;8..144,400;8..144,500&family=Satisfy&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +8,6 @@
 
 @layer components {
   .content-container {
-    @apply px-20 2xl:px-28 pb-28 2xl:pb-32 2xl:px-44 pt-24 2xl:pt-32 mx-auto max-w-[2000px] mx-auto;
+    @apply px-16 2xl:px-28 pb-28 2xl:pb-32 2xl:px-44 pt-24 2xl:pt-32 mx-auto max-w-[2000px] mx-auto;
   }
 }
