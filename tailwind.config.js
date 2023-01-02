@@ -7,11 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        poster: "url('/darker.jpg')",
-        cubes: "url('/sotim.jpg')",
-        bikes: "url('/bikes.jpg')",
         bike: "url(/bike.jpg)",
-        art: "url(/proj.jpg)",
         blueNoise: "url(/blue-noise.png)",
         pinkNoise: "url(/pink-noise.png)",
         river: "url(/river.jpg)",
@@ -25,10 +21,13 @@ module.exports = {
         blueBg: "url(/blue-background.png)",
         indexBg: "url(/index-background.png)",
         labelBg: "url(/label-background.png)",
-        ask: "url(/what.png)",
+        firstRide: "url(/first-ride.jpeg)",
+        secondRide: "url(/second-ride.jpeg)",
+        wheels: "url(/wheels.jpeg)",
       },
       dropShadow: {
         menu: `0 0 20px ${colors.indigo["300"]}`,
+        white: `0 0 20px ${colors.white}`,
       },
       borderWidth: {
         30: "30px",

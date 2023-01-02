@@ -24,43 +24,46 @@ export default function Index() {
           </section>
         </div>
       </div>
-      <section className="m-10 mb-48 rounded-lg bg-blueNoise  py-16 px-16 shadow-2xl shadow-indigo-400">
-        <h3 className="mb-14 w-max border-primaryText font-satisfy text-6xl text-pinkLight">
-          What to do here
-        </h3>
-        <ul className="mx-auto grid max-w-[2000px] grid-cols-2 items-end gap-10 text-xl">
-          <li>
-            <Link
-              href="/bike"
-              className="group flex h-[300px] rounded-sm bg-river bg-cover bg-center shadow-xl"
-            >
-              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
-                Checkout my bike blog
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about"
-              className="group flex h-[300px] rounded-sm bg-david bg-cover bg-center shadow-xl"
-            >
-              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-labelBg bg-cover bg-bottom bg-top bg-no-repeat p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
-                Know me better
-              </span>
-            </Link>
-          </li>
-          <li className="col-span-full">
-            <Link
-              href="/bike"
-              className="group flex h-[300px] rounded-sm bg-wall bg-cover bg-center shadow-xl"
-            >
-              <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
-                Look at my art & projects
-              </span>
-            </Link>
-          </li>
-        </ul>
-      </section>
+      <div className="content-container px-10">
+        <section className="mb-48 rounded-lg bg-blueNoise p-16 shadow-2xl shadow-indigo-400">
+          <h3 className="mb-14 border-primaryText font-satisfy text-6xl text-pinkLight">
+            What to do here
+          </h3>
+          <ul className="grid grid-cols-2 items-end gap-10 text-xl">
+            <li>
+              <Link
+                href="/bike"
+                className="group flex h-[350px] w-full rounded-sm bg-river bg-cover bg-center shadow-xl"
+              >
+                <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
+                  Checkout my bike blog
+                </span>
+              </Link>
+            </li>
+            <li>
+              `
+              <Link
+                href="/about"
+                className="group flex h-[350px] w-full rounded-sm bg-david bg-cover bg-center shadow-xl"
+              >
+                <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-labelBg bg-cover bg-bottom bg-top bg-no-repeat p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
+                  Know me better
+                </span>
+              </Link>
+            </li>
+            <li className="col-span-full">
+              <Link
+                href="/bike"
+                className="group flex h-[350px] rounded-sm bg-wall bg-cover bg-center shadow-xl"
+              >
+                <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
+                  Look at my art & projects
+                </span>
+              </Link>
+            </li>
+          </ul>
+        </section>
+      </div>
       <img src={End} width="250px" className="mx-auto mb-48" />
     </>
   );

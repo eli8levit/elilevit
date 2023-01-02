@@ -1,17 +1,45 @@
 import React from "react";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
-import FirstRide from "~/sources/images/first-ride.jpeg";
-import SecondRide from "~/sources/images/second-ride.jpeg";
 import Wheels from "~/sources/images/wheels.jpeg";
 import { Outlet } from "@remix-run/react";
 import { Nav } from "~/components";
 import End from "~/sources/images/end.png";
 
+type Card = {
+  background: string;
+  title: string;
+  type?: string;
+  description: string;
+};
+
+const BikeCard = ({ background, title, type = "", description }: Card) => {
+  return (
+    <a
+      href="/bike/dd/#rides"
+      className={`flex h-[350px] rounded-md ${background} bg-cover bg-center shadow-md hover:shadow-bike hover:shadow-bike`}
+    >
+      <div className="mt-auto h-[100px] w-full flex-col rounded-sm p-4 text-white shadow-md backdrop-blur-lg backdrop-brightness-50">
+        <h3 className="flex flex-row flex-wrap items-center gap-x-2 rounded-md font-ignazio text-2xl">
+          {title}{" "}
+          {type && (
+            <span className="rounded-md bg-indigo-600 p-1 font-ignazio text-xs">
+              {type}
+            </span>
+          )}
+        </h3>
+        <p className="font-roboto text-base font-light text-pink-200">
+          {description}
+        </p>
+      </div>
+    </a>
+  );
+};
+
 export default function Bike() {
   return (
     <>
       <Nav />
-      <div className="content-container mx-auto">
+      <div className="content-container">
         <h1 className="mb-16 font-satisfy text-8xl text-indigo-800">
           Bike blog
         </h1>
@@ -25,77 +53,44 @@ export default function Bike() {
         </div>
       </div>
       <Outlet />
-      <div className="m-10 mb-48 rounded-lg bg-blueNoise py-16 px-16 shadow-2xl">
-        <div className="mx-auto grid max-w-[2000px] grid-cols-2 justify-center gap-x-12">
+      <div className="content-container px-10">
+        <div className="mb-48 grid grid-cols-2 justify-center gap-x-12 rounded-lg bg-blueNoise py-16 px-16 shadow-2xl shadow-indigo-400">
           <section>
             <h2
-              className="mb-4 font-satisfy text-4xl font-bold text-pinkLight"
+              className="mb-4 font-satisfy text-4xl font-bold text-pink-200"
               id="rides"
             >
               Rides
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="flex h-[250px] flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike">
-                <a
-                  href="/bike/dd/#rides"
-                  className="bg flex flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike"
-                >
-                  <img
-                    src={FirstRide}
-                    className="h-full w-1/2 shrink-0 object-cover"
-                  />
-                  <div className="flex flex-col gap-y-2 p-4">
-                    <h3 className="font-butler flex flex-row flex-wrap items-center gap-x-4 text-2xl font-bold text-primaryText">
-                      First one{" "}
-                      <span className="bg-casualBlue p-0.5 px-1 font-ignazio text-xs text-pinkLight">
-                        gravel + road
-                      </span>
-                    </h3>
-                    <p className="font-butler text-xl font-medium">
-                      Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li className="flex h-[250px] flex-row gap-x-4 rounded-sm bg-pinkLight shadow-md hover:shadow-bike">
-                <img
-                  src={SecondRide}
-                  className="h-full w-1/2 shrink-0 object-cover"
+              <li>
+                <BikeCard
+                  type="gravel + road"
+                  background="bg-firstRide"
+                  description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
+                  title="First one"
                 />
-                <div className="flex flex-col gap-y-2 p-4">
-                  <h3 className="font-butler flex flex-row flex-wrap items-center gap-x-4 text-2xl  font-bold text-primaryText">
-                    Second one{" "}
-                    <span className="bg-casualBlue p-0.5 px-1 font-ignazio text-xs text-pinkLight">
-                      gravel
-                    </span>
-                  </h3>
-                  <div>
-                    <p className="font-butler text-xl font-medium">
-                      Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431
-                    </p>
-                  </div>
-                </div>
+              </li>
+              <li>
+                <BikeCard
+                  type="gravel"
+                  background="bg-secondRide"
+                  description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
+                  title="Second one"
+                />
               </li>
             </ul>
           </section>
           <section>
-            <h2 className="mb-4 font-satisfy text-4xl font-bold text-pinkLight">
+            <h2 className="mb-4 font-satisfy text-4xl font-bold text-pink-200">
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="flex h-[250px] flex-row rounded-sm bg-blueLight shadow-md">
-                <div className="flex flex-col gap-y-2 p-4">
-                  <h3 className="font-butler text-2xl font-bold text-primaryText">
-                    DT Swiss CR1600
-                  </h3>
-                  <p className="font-butler text-lg font-normal text-primaryText">
-                    Firstly I decided to tune my wheels. More precisely I broke
-                    my front wheel in some small accident. Exercitation eu
-                  </p>
-                </div>
-                <img
-                  src={Wheels}
-                  className="h-full w-1/2 shrink-0 object-cover"
+              <li>
+                <BikeCard
+                  background="bg-wheels"
+                  title="DT Swiss CR1600"
+                  description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident."
                 />
               </li>
             </ul>
