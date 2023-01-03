@@ -24,7 +24,7 @@ export default function Index() {
           </section>
         </div>
       </div>
-      <div className="content-container px-10">
+      <div className="content-container px-10 pt-0">
         <section className="mb-48 rounded-lg bg-blueNoise p-16 shadow-2xl shadow-indigo-400">
           <h3 className="mb-14 border-primaryText font-satisfy text-6xl text-pinkLight">
             What to do here

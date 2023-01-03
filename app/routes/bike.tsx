@@ -18,7 +18,7 @@ const BikeCard = ({ background, title, type = "", description }: Card) => {
       href="/bike/dd/#rides"
       className={`flex h-[350px] rounded-md ${background} bg-cover bg-center shadow-md hover:shadow-bike hover:shadow-bike`}
     >
-      <div className="mt-auto h-[100px] w-full flex-col rounded-sm p-4 text-white shadow-md backdrop-blur-lg backdrop-brightness-50">
+      <div className="mt-auto w-full flex-col rounded-sm p-4 text-white shadow-md backdrop-blur-lg backdrop-brightness-50">
         <h3 className="flex flex-row flex-wrap items-center gap-x-2 rounded-md font-ignazio text-2xl">
           {title}{" "}
           {type && (
@@ -27,7 +27,7 @@ const BikeCard = ({ background, title, type = "", description }: Card) => {
             </span>
           )}
         </h3>
-        <p className="font-roboto text-base font-light text-pink-200">
+        <p className="font-roboto text-base font-light text-indigo-100 2xl:text-lg">
           {description}
         </p>
       </div>
