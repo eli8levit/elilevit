@@ -26,7 +26,7 @@ export const BikeCard = ({
         <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 rounded-md font-ignazio text-xl group-hover:text-pink-200">
           {title}{" "}
           {type && (
-            <span className="rounded-md bg-indigo-600 p-1 font-ignazio text-xs">
+            <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
               {type}
             </span>
           )}

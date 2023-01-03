@@ -14,13 +14,13 @@ export const Nav = () => {
     const active = isActive(id);
     return `flex font-ignazio h-full drop-shadow-menu items-center rounded-md px-2.5 text-indigo-900 ${
       active
-        ? "bg-pinkBrush bg-center bg-contain bg-no-repeat"
+        ? "bg-cardBrush bg-[center_left_5px] bg-contain bg-no-repeat text-white drop-shadow-menuActive"
         : "hover:bg-indigo-700 hover:text-white hover:shadow-sm"
     }  transition`;
   };
 
   return (
-    <div className="text- flex h-[70px] flex-row items-center justify-between py-5 px-24 shadow-sm shadow-nav backdrop-blur-sm 2xl:px-44">
+    <div className="flex h-[70px] flex-row items-center justify-between py-5 px-24 shadow-sm shadow-nav backdrop-blur-sm 2xl:px-44">
       <nav className="flex h-full flex-row items-center gap-x-2">
         <a href="/" className={genLinkClassName("")}>
           Home

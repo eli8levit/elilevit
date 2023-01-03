@@ -29,7 +29,7 @@ export default function Index() {
       <div className="bg-indexBg bg-cover bg-center bg-no-repeat">
         <Nav />
         <div className="content-container">
-          <h1 className="mb-24 h-[120px] bg-gradient-to-r from-indigo-800 to-red-600 bg-clip-text font-satisfy text-8xl text-transparent drop-shadow-sm ">
+          <h1 className="mb-24 h-[120px] bg-gradient-to-r from-indigo-800 to-red-600 bg-clip-text font-satisfy text-8xl text-transparent drop-shadow-sm">
             <span>Hey,</span> good to see you!
           </h1>
           <section className="mb-24 grid grid-cols-[40%_50%] justify-between gap-x-24">

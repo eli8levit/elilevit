@@ -2,7 +2,7 @@ import { Link } from "~/components/link";
 import React from "react";
 
 export const Footer = () => (
-  <footer className="flex h-20 w-full items-center justify-center gap-x-4 p-6 font-ignazio text-base text-primaryText drop-shadow-sm">
+  <footer className="flex h-20 w-full items-center justify-center gap-x-4 p-6 font-ignazio text-base text-primaryText">
     <span>
       Created with ❤️ with{" "}
       <Link

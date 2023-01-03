@@ -13,7 +13,7 @@ export const ArtCard = ({ background, title, description }: Card) => {
       href="/bike/dd/#rides"
       className={`flex rounded-md ${background} group w-full bg-cover bg-center shadow-lg shadow-xl shadow-indigo-200`}
     >
-      <div className="mx-auto mt-auto mb-2 w-[85%] max-w-[600px] flex-col rounded-md p-4 text-white shadow-md backdrop-blur-md backdrop-brightness-50 group-hover:shadow-bike">
+      <div className="mx-auto mt-auto mb-2 w-[85%] max-w-[500px] flex-col rounded-lg p-4 text-white shadow-lg backdrop-blur-md backdrop-brightness-50 group-hover:shadow-bike">
         <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 rounded-lg font-ignazio text-xl group-hover:text-pink-200">
           {title}{" "}
         </h3>

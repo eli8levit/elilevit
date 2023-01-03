@@ -28,7 +28,8 @@ module.exports = {
         pinkBrush: "url(/pink-background.png)",
       },
       dropShadow: {
-        menu: `0 0 20px ${colors.indigo["300"]}`,
+        menu: `0 20px 15px ${colors.indigo["300"]}`,
+        menuActive: `20px 2px 10px ${colors.purple["800"]}`,
         white: `0 0 20px ${colors.white}`,
       },
       borderWidth: {
