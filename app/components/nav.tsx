@@ -13,7 +13,9 @@ export const Nav = () => {
   const genLinkClassName = (id: string) => {
     const active = isActive(id);
     return `flex font-ignazio h-full drop-shadow-menu items-center rounded-md px-2.5 text-indigo-900 ${
-      active ? "" : "hover:bg-indigo-700 hover:text-white hover:shadow-sm"
+      active
+        ? "bg-pinkBrush bg-center bg-contain bg-no-repeat"
+        : "hover:bg-indigo-700 hover:text-white hover:shadow-sm"
     }  transition`;
   };
 

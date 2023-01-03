@@ -4,6 +4,25 @@ import Player from "~/sources/images/player.png";
 
 import { Link, Nav } from "~/components";
 
+type Card = {
+  href: string;
+  background: string;
+  text: string;
+};
+
+const IndexCard = ({ href, background, text }: Card) => {
+  return (
+    <Link
+      href={href}
+      className={`group flex h-[350px] w-full rounded-md ${background} bg-cover bg-center shadow-xl`}
+    >
+      <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-md rounded-md py-2 px-3 font-ignazio text-base font-light text-white backdrop-blur-md backdrop-brightness-50 transition group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-lg">
+        {text}
+      </span>
+    </Link>
+  );
+};
+
 export default function Index() {
   return (
     <>
@@ -29,37 +48,27 @@ export default function Index() {
           <h3 className="mb-14 border-primaryText font-satisfy text-6xl text-pinkLight">
             What to do here
           </h3>
-          <ul className="grid grid-cols-2 items-end gap-10 text-xl">
+          <ul className="grid grid-cols-2 items-end gap-6 text-xl">
             <li>
-              <Link
+              <IndexCard
+                background="bg-river"
+                text="Checkout my bike blog"
                 href="/bike"
-                className="group flex h-[350px] w-full rounded-sm bg-river bg-cover bg-center shadow-xl"
-              >
-                <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
-                  Checkout my bike blog
-                </span>
-              </Link>
+              />
             </li>
             <li>
-              `
-              <Link
+              <IndexCard
+                background="bg-david"
+                text="Know me better"
                 href="/about"
-                className="group flex h-[350px] w-full rounded-sm bg-david bg-cover bg-center shadow-xl"
-              >
-                <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-labelBg bg-cover bg-bottom bg-top bg-no-repeat p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
-                  Know me better
-                </span>
-              </Link>
+              />
             </li>
             <li className="col-span-full">
-              <Link
+              <IndexCard
+                background="bg-wall"
+                text="Look at my art & projects"
                 href="/bike"
-                className="group flex h-[350px] rounded-sm bg-wall bg-cover bg-center shadow-xl"
-              >
-                <span className="mt-auto mr-2 mb-2 ml-2 rounded-md bg-primaryText p-1 font-ignazio text-base text-white transition group-hover:bg-casualBlue group-hover:text-blueLight 2xl:text-lg">
-                  Look at my art & projects
-                </span>
-              </Link>
+              />
             </li>
           </ul>
         </section>

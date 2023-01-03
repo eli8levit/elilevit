@@ -24,6 +24,8 @@ module.exports = {
         firstRide: "url(/first-ride.jpeg)",
         secondRide: "url(/second-ride.jpeg)",
         wheels: "url(/wheels.jpeg)",
+        cardBrush: "url(/purple.png)",
+        pinkBrush: "url(/pink-background.png)",
       },
       dropShadow: {
         menu: `0 0 20px ${colors.indigo["300"]}`,
@@ -33,7 +35,8 @@ module.exports = {
         30: "30px",
       },
       boxShadow: {
-        bike: "0 0 0 4px #ffffff",
+        bike: `0 0 25px -5px ${colors.pink["300"]}`,
+        indexCard: `0 0 25px -5px ${colors.indigo["400"]}`,
         nav: `0 -20px 30px 0 ${colors.indigo["600"]}`,
       },
       lineHeight: {
