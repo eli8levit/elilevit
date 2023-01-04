@@ -10,7 +10,7 @@ import {
 } from "@remix-run/react";
 import mainCssUrl from "./styles/main.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
-import { Footer, Nav } from "~/components";
+import { Footer } from "~/components";
 
 export const links: LinksFunction = () => {
   return [

@@ -41,9 +41,6 @@ module.exports = {
         indexCard: `0 0 25px -5px ${colors.indigo["400"]}`,
         nav: `0 -20px 30px 0 ${colors.indigo["600"]}`,
       },
-      lineHeight: {
-        1.2: 1.2,
-      },
       colors: {
         casualBlue: "#072c73",
         primaryText: "#0b224e",
@@ -56,7 +53,7 @@ module.exports = {
         wine: "#621010",
       },
       fontFamily: {
-        satisfy: ["Satisfy", ...defaultTheme.fontFamily.sans],
+        satisfy: ["Satisfy", ...defaultTheme.fontFamily.serif],
         roboto: ["Roboto Serif", ...defaultTheme.fontFamily.serif],
         apfel: ["Apfel", ...defaultTheme.fontFamily.serif],
         ignazio: ["Ignazio", ...defaultTheme.fontFamily.serif],

@@ -20,8 +20,8 @@ export const Nav = () => {
   };
 
   return (
-    <div className="flex h-[70px] flex-row items-center justify-between py-5 px-24 shadow-sm shadow-nav backdrop-blur-sm 2xl:px-44">
-      <nav className="flex h-full flex-row items-center gap-x-2">
+    <div className="flex h-[60px] flex-row items-center justify-between gap-x-2 px-2 pl-0 text-sm shadow-sm shadow-nav backdrop-blur-sm md:h-[70px] md:px-24 md:text-base 2xl:px-44">
+      <nav className="flex h-full flex-row items-center gap-x-2 overflow-auto whitespace-nowrap py-3 md:py-5">
         <a href="/" className={genLinkClassName("")}>
           Home
         </a>

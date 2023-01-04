@@ -17,7 +17,7 @@ export default function Clock() {
 
   return (
     <div className="text-indigo-900 drop-shadow-menu">
-      <span className="font-ignazio text-5xl">
+      <span className="font-ignazio text-xl md:text-5xl">
         {time.toLocaleTimeString("en-IL", {
           hour: "2-digit",
           hourCycle: "h23",

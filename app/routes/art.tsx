@@ -21,10 +21,10 @@ export const ArtCard = ({
   return (
     <a
       href="/bike/dd/#rides"
-      className={`flex rounded-md ${background} group w-full bg-cover bg-center shadow-lg shadow-xl shadow-indigo-200`}
+      className={`flex rounded-lg ${background} group w-full bg-cover bg-center shadow-lg shadow-xl shadow-indigo-200`}
     >
       <div
-        className={`mx-4 mt-auto mb-2 w-full flex-col rounded-lg p-5 shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-art ${containerClass}`}
+        className={`mx-4 mt-auto mb-3 w-full flex-col rounded-lg p-3 shadow-xl shadow-[rgba(0,0,0,0.4)] backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-art 2xl:p-5 ${containerClass}`}
       >
         <h3
           className={`mb-1 flex flex-row flex-wrap items-center gap-x-2 rounded-lg font-ignazio text-xl text-white group-hover:text-indigo-100 ${titleClass}`}
