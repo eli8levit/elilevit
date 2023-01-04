@@ -36,7 +36,8 @@ module.exports = {
         30: "30px",
       },
       boxShadow: {
-        bike: `0 0 25px -5px ${colors.pink["300"]}`,
+        bike: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 0 0.5px white, 0 0 40px 0 rgba(0,0,0,0.4)`,
+        art: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 0 0.5px white`,
         indexCard: `0 0 25px -5px ${colors.indigo["400"]}`,
         nav: `0 -20px 30px 0 ${colors.indigo["600"]}`,
       },

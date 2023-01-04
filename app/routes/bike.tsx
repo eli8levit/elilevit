@@ -22,8 +22,8 @@ export const BikeCard = ({
       href="/bike/dd/#rides"
       className={`flex h-[300px] rounded-md ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-auto mt-auto mb-2 w-[85%] max-w-[600px] flex-col rounded-md p-4 text-white shadow-md backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike">
-        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 rounded-md font-ignazio text-xl group-hover:text-pink-200">
+      <div className="mx-auto mt-auto mb-2 w-[85%] max-w-[600px] flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike">
+        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 rounded-md font-ignazio text-xl group-hover:text-indigo-100">
           {title}{" "}
           {type && (
             <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
