@@ -11,6 +11,7 @@ import {
 import mainCssUrl from "./styles/main.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { Footer } from "~/components";
+import config from "tailwind.config";
 
 export const links: LinksFunction = () => {
   return [
@@ -22,6 +23,7 @@ export const links: LinksFunction = () => {
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "New Remix App",
+  "theme-color": `${config.theme.extend.colors.pinkLighter}`,
   viewport: "width=device-width,initial-scale=1",
 });
 

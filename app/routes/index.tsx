@@ -26,15 +26,17 @@ const IndexCard = ({ href, background, text }: Card) => {
 export default function Index() {
   return (
     <>
-      <div className="bg-indexBg bg-[length:190%_36%] bg-[left_top_20px] bg-no-repeat md:bg-cover md:bg-center">
+      <div className="bg-cover bg-center bg-no-repeat md:bg-indexBg">
         <Nav />
         <div className="content-container">
-          <h1 className="mb-28 h-[160px] bg-gradient-to-r from-indigo-800 to-red-500 bg-clip-text text-center font-satisfy text-7xl text-transparent drop-shadow-sm md:mb-24 md:h-[120px] md:text-left md:text-8xl">
-            <span>Hey,</span> good to see you!
-          </h1>
+          <div className="mb-12 rounded-md bg-indexBg bg-cover bg-left bg-no-repeat p-5 shadow-lg shadow-indigo-100 md:mb-24 md:h-[120px] md:bg-none md:p-0 md:shadow-none">
+            <h1 className="bg-gradient-to-r from-indigo-800 to-pink-700 bg-clip-text py-8 text-center font-satisfy text-7xl text-transparent drop-shadow-sm md:to-red-500 md:text-left md:text-8xl">
+              <span>Hey,</span> good to see you!
+            </h1>
+          </div>
           <section className="mb-12 grid grid-cols-1 justify-between gap-x-24 gap-y-10  md:mb-24 md:grid-cols-[40%_50%]">
-            <div className="flex flex-col items-center justify-center gap-y-14">
-              <h2 className="text-center font-apfel text-2xl text-indigo-700 md:text-left md:text-4xl md:leading-snug">
+            <div className="flex flex-col items-center justify-center gap-y-14 p-8 md:p-0">
+              <h2 className="text-center font-apfel text-3xl text-indigo-700 md:text-left md:text-4xl md:leading-snug">
                 I'm Eli and this is my vinyl player. I created 3d model in
                 Spline app to show how beautiful it is
               </h2>
@@ -44,8 +46,8 @@ export default function Index() {
         </div>
       </div>
       <div className="content-container pt-0 md:px-10">
-        <section className="mb-10 rounded-lg bg-blueNoise px-5 py-6 shadow-2xl shadow-indigo-400 md:p-16">
-          <h3 className="mb-4 border-primaryText font-satisfy text-4xl text-pinkLight md:mb-14 md:text-6xl">
+        <section className="mb-10 rounded-lg bg-blueNoise px-5 py-8 shadow-2xl shadow-indigo-400 md:p-16">
+          <h3 className="mb-4 border-primaryText font-satisfy text-5xl text-pinkLight md:mb-14 md:text-6xl">
             What to do here
           </h3>
           <ul className="grid items-end gap-6 text-xl md:grid-cols-2">
