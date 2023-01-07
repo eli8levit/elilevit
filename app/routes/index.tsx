@@ -1,5 +1,4 @@
 import React from "react";
-import End from "~/sources/images/end.png";
 import Player from "~/sources/images/player.png";
 
 import { Link, Nav } from "~/components";
@@ -26,21 +25,17 @@ const IndexCard = ({ href, background, text }: Card) => {
 export default function Index() {
   return (
     <>
-      <div className="bg-cover bg-center bg-no-repeat md:bg-indexBg">
+      <div className="bg-indexBg bg-cover bg-top bg-no-repeat">
         <Nav />
         <div className="content-container">
-          <div className="mb-12 rounded-md bg-indexBg bg-cover bg-left bg-no-repeat p-5 shadow-lg shadow-indigo-100 md:mb-24 md:h-[120px] md:bg-none md:p-0 md:shadow-none">
-            <h1 className="bg-gradient-to-r from-indigo-800 to-pink-700 bg-clip-text py-8 text-center font-satisfy text-7xl text-transparent drop-shadow-sm md:to-red-500 md:text-left md:text-8xl">
-              <span>Hey,</span> good to see you!
-            </h1>
-          </div>
-          <section className="mb-12 grid grid-cols-1 justify-between gap-x-24 gap-y-10  md:mb-24 md:grid-cols-[40%_50%]">
-            <div className="flex flex-col items-center justify-center gap-y-14 p-8 md:p-0">
-              <h2 className="text-center font-apfel text-3xl text-indigo-700 md:text-left md:text-4xl md:leading-snug">
-                I'm Eli and this is my vinyl player. I created 3d model in
-                Spline app to show how beautiful it is
-              </h2>
-            </div>
+          <h1 className="mb-12 bg-gradient-to-r from-indigo-800 to-pink-700 bg-clip-text px-2 py-14 text-center font-satisfy text-8xl font-normal text-transparent md:mb-24 md:min-h-[150px] md:to-red-500 md:p-0 md:text-left md:text-9xl">
+            <span>Hey,</span> good to see you!
+          </h1>
+          <section className="mx-4 mb-8 flex grid grid-cols-1 items-center justify-between gap-x-4 gap-y-12 rounded-xl border-gray-300 p-2  py-12 shadow-sm backdrop-blur-2xl md:mx-0 md:mb-24 md:grid-cols-[40%_50%] md:border-none md:p-0 md:shadow-none md:backdrop-blur-none">
+            <h2 className="px-8 text-center font-roboto text-2xl font-normal text-indigo-800 md:p-0 md:text-left md:text-3xl md:leading-snug ">
+              I'm Eli and this is my vinyl player. I created 3d model in Spline
+              app to show how beautiful it is
+            </h2>
             <img src={Player} />
           </section>
         </div>
@@ -75,7 +70,6 @@ export default function Index() {
           </ul>
         </section>
       </div>
-      <img src={End} width="250px" className="mx-auto mb-16 md:mb-48" />
     </>
   );
 }

@@ -19,7 +19,7 @@ module.exports = {
         oldSite: "url(/old-site.png)",
         wallpaper: "url(/wallpaper.jpg)",
         blueBg: "url(/blue-background.png)",
-        indexBg: "url(/index-background.png)",
+        indexBg: "url(/newest.png)",
         labelBg: "url(/label-background.png)",
         firstRide: "url(/first-ride.jpeg)",
         secondRide: "url(/second-ride.jpeg)",
@@ -31,9 +31,11 @@ module.exports = {
         menu: `0 20px 15px ${colors.indigo["300"]}`,
         menuActive: `20px 2px 10px ${colors.purple["800"]}`,
         white: `0 0 20px ${colors.white}`,
+        text: `0 6px 10px ${colors.indigo["200"]}`,
       },
       borderWidth: {
         30: "30px",
+        0.5: "0.5px",
       },
       boxShadow: {
         bike: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 0 0.5px white, 0 0 40px 0 rgba(0,0,0,0.4)`,

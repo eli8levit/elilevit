@@ -16,12 +16,12 @@ export const Nav = () => {
       active
         ? "bg-cardBrush bg-[center_left_5px] md:bg-contain bg-[length:90%_80%] bg-no-repeat text-white md:drop-shadow-menuActive"
         : "md:hover:bg-indigo-700 md:hover:text-white md:hover:shadow-sm"
-    }  transition`;
+    } transition`;
   };
 
   return (
-    <div className="flex h-[60px] flex-row items-center justify-between gap-x-2 px-2 pl-0 text-sm shadow-sm backdrop-blur-sm md:h-[70px] md:px-24 md:text-base md:shadow-nav 2xl:px-44">
-      <nav className="flex h-full flex-row items-center gap-x-2 overflow-auto whitespace-nowrap py-3 md:py-5">
+    <div className="lg:px-22 2xl:px-42 flex h-[60px] w-full flex-row items-center justify-between gap-x-2 px-2 text-sm shadow-sm backdrop-blur-sm md:h-[70px] md:px-12 md:text-base md:shadow-nav">
+      <nav className="flex h-full flex-row items-center gap-x-2 overflow-auto whitespace-nowrap py-3 md:w-full md:px-6 md:py-5">
         <a href="/" className={genLinkClassName("")}>
           Home
         </a>
@@ -32,7 +32,7 @@ export const Nav = () => {
           What is it?
         </a>
         <a href="/art" className={genLinkClassName("art")}>
-          Some art
+          Some work
         </a>
       </nav>
       <Clock />

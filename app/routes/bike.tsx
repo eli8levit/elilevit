@@ -2,7 +2,6 @@ import React from "react";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
 import { Outlet } from "@remix-run/react";
 import { Nav } from "~/components";
-import End from "~/sources/images/end.png";
 
 type Card = {
   background: string;
@@ -20,10 +19,10 @@ export const BikeCard = ({
   return (
     <a
       href="/bike/dd/#rides"
-      className={`flex h-[300px] rounded-md ${background} group bg-cover bg-center shadow-lg`}
+      className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-auto mt-auto mb-2 w-[85%] max-w-[600px] flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike">
-        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 rounded-md font-ignazio text-xl group-hover:text-indigo-100">
+      <div className="mx-1 mt-auto mb-2 w-full max-w-[600px] flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike md:mx-auto md:w-[70%]">
+        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl group-hover:text-indigo-100">
           {title}{" "}
           {type && (
             <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
@@ -31,7 +30,7 @@ export const BikeCard = ({
             </span>
           )}
         </h3>
-        <p className="font-roboto text-xs font-normal text-indigo-200 2xl:text-lg">
+        <p className="font-roboto text-sm font-normal text-indigo-200 2xl:text-lg">
           {description}
         </p>
       </div>
@@ -44,11 +43,11 @@ export default function Bike() {
     <>
       <Nav />
       <div className="content-container">
-        <h1 className="mb-16 font-satisfy text-8xl text-indigo-800">
-          Bike blog
+        <h1 className="mb-12 bg-gradient-to-r px-2 py-8 text-center font-satisfy text-7xl font-normal text-indigo-800 md:mb-24 md:min-h-[150px] md:to-red-500 md:p-0 md:text-left md:text-9xl">
+          Bike Blog
         </h1>
-        <div className="mx-auto mb-16 grid max-w-[2000px] grid-cols-2 items-center justify-between gap-x-12">
-          <p className="p-8 font-apfel text-3xl text-indigo-800">
+        <div className="mx-auto mb-16 grid max-w-[2000px] items-center justify-between gap-x-12 md:grid-cols-2">
+          <p className="p-8 font-roboto text-3xl text-indigo-800">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
@@ -57,11 +56,11 @@ export default function Bike() {
         </div>
       </div>
       <Outlet />
-      <div className="content-container">
-        <div className="mb-48 grid grid-cols-2 justify-center gap-8 rounded-lg bg-blueNoise py-16 px-16 shadow-2xl shadow-indigo-400">
+      <div className="content-container pt-0">
+        <div className="mb-48 grid justify-center gap-8 rounded-lg bg-blueNoise py-8 px-4 shadow-2xl shadow-indigo-400 md:grid-cols-2 md:py-16 md:px-16">
           <section>
             <h2
-              className="mb-4 font-satisfy text-4xl font-bold text-pink-200"
+              className="mb-4 font-satisfy text-5xl font-bold text-pink-200"
               id="rides"
             >
               Rides
@@ -86,7 +85,7 @@ export default function Bike() {
             </ul>
           </section>
           <section>
-            <h2 className="mb-4 font-satisfy text-4xl font-bold text-pink-200">
+            <h2 className="mb-4 font-satisfy text-5xl font-bold text-pink-200">
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-4">
@@ -101,7 +100,6 @@ export default function Bike() {
           </section>
         </div>
       </div>
-      <img src={End} width="250px" className="mx-auto mb-48" />
     </>
   );
 }
