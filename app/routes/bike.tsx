@@ -21,7 +21,7 @@ export const BikeCard = ({
       href="/bike/dd/#rides"
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-1 mt-auto mb-2 w-full max-w-[600px] flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike md:mx-auto md:w-[70%]">
+      <div className="mx-2 mt-auto mb-2 w-full flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike">
         <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl group-hover:text-indigo-100">
           {title}{" "}
           {type && (
@@ -30,7 +30,7 @@ export const BikeCard = ({
             </span>
           )}
         </h3>
-        <p className="font-roboto text-sm font-normal text-indigo-200 2xl:text-lg">
+        <p className="font-apfel text-sm font-normal text-indigo-100 2xl:text-lg">
           {description}
         </p>
       </div>
@@ -42,30 +42,30 @@ export default function Bike() {
   return (
     <>
       <Nav />
-      <div className="content-container">
-        <h1 className="mb-12 bg-gradient-to-r px-2 py-8 text-center font-satisfy text-7xl font-normal text-indigo-800 md:mb-24 md:min-h-[150px] md:to-red-500 md:p-0 md:text-left md:text-9xl">
-          Bike Blog
-        </h1>
-        <div className="mx-auto mb-16 grid max-w-[2000px] items-center justify-between gap-x-12 md:grid-cols-2">
-          <p className="p-8 font-roboto text-3xl text-indigo-800">
+      <div className="content-container grid items-center md:grid-cols-2">
+        <div>
+          <h1 className="mb-2 bg-gradient-to-r px-2 py-8 text-center font-apfel text-6xl font-bold text-indigo-800 md:p-0 md:text-left">
+            Bike Blog
+          </h1>
+          <h2 className="mb-24 max-w-[500px] px-2 text-left font-apfel text-xl font-normal text-black md:mb-12 md:p-0 md:text-2xl">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
-          </p>
-          <img src={BikeCanvas} className="mx-auto w-full object-contain" />
+          </h2>
         </div>
+        <img src={BikeCanvas} className="ml-auto w-[600px]" />
       </div>
       <Outlet />
       <div className="content-container pt-0">
-        <div className="mb-48 grid justify-center gap-8 rounded-lg bg-blueNoise py-8 px-4 shadow-2xl shadow-indigo-400 md:grid-cols-2 md:py-16 md:px-16">
+        <div className="mb-48 grid justify-center gap-8 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-2 md:py-16 md:px-16">
           <section>
             <h2
-              className="mb-4 font-satisfy text-5xl font-bold text-pink-200"
+              className="mb-4 font-apfel text-4xl font-bold text-white"
               id="rides"
             >
               Rides
             </h2>
-            <ul className="flex flex-col gap-y-8">
+            <ul className="flex flex-col gap-y-6">
               <li>
                 <BikeCard
                   type="gravel + road"
@@ -85,10 +85,10 @@ export default function Bike() {
             </ul>
           </section>
           <section>
-            <h2 className="mb-4 font-satisfy text-5xl font-bold text-pink-200">
+            <h2 className="mb-4 font-apfel text-4xl font-bold text-white">
               Upgrades
             </h2>
-            <ul className="flex flex-col gap-y-4">
+            <ul className="flex flex-col gap-y-6">
               <li>
                 <BikeCard
                   background="bg-wheels"
