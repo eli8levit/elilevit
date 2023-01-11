@@ -7,6 +7,6 @@
 
 @layer components {
   .content-container {
-    @apply px-2 pb-16 pt-10 mx-auto max-w-[2000px] w-full md:px-12 lg:px-20 md:pb-28 md:pt-24 2xl:pb-32 2xl:px-44 2xl:pt-32;
+    @apply px-6 pt-10 mx-auto max-w-[2000px] w-full md:px-12 lg:px-20 md:pt-24 2xl:px-44 2xl:pt-32;
   }
 }

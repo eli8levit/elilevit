@@ -46,7 +46,7 @@ export default function Art() {
     <>
       <Nav />
       <div className="content-container">
-        <h1 className="mb-6 bg-gradient-to-r px-2 py-8 text-center font-satisfy text-7xl font-normal text-indigo-800 md:mb-24 md:min-h-[150px] md:to-red-500 md:p-0 md:text-left md:text-9xl">
+        <h1 className="mb-6 bg-gradient-to-r px-2 py-8 text-center font-satisfy text-7xl font-normal text-indigo-800 md:mb-24 md:min-h-[150px] md:to-red-500 md:text-left md:text-9xl">
           Art
         </h1>
         <div className="mx-2 mb-8 h-[250px] rounded-lg bg-art bg-cover p-8 shadow-md md:mx-0 md:mb-36 md:h-[500px] md:shadow-lg md:shadow-indigo-400"></div>

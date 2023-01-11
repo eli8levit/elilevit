@@ -21,7 +21,7 @@ export const BikeCard = ({
       href="/bike/dd/#rides"
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-2 mt-auto mb-2 w-full flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike">
+      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-lg p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike md:mx-2">
         <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl group-hover:text-indigo-100">
           {title}{" "}
           {type && (
@@ -42,12 +42,12 @@ export default function Bike() {
   return (
     <>
       <Nav />
-      <div className="content-container grid items-center md:grid-cols-2">
+      <div className="content-container grid items-center gap-16 md:grid-cols-2">
         <div>
-          <h1 className="mb-2 bg-gradient-to-r px-2 py-8 text-center font-apfel text-6xl font-bold text-indigo-800 md:p-0 md:text-left">
+          <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
             Bike Blog
           </h1>
-          <h2 className="mb-24 max-w-[500px] px-2 text-left font-apfel text-xl font-normal text-black md:mb-12 md:p-0 md:text-2xl">
+          <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
@@ -56,8 +56,8 @@ export default function Bike() {
         <img src={BikeCanvas} className="ml-auto w-[600px]" />
       </div>
       <Outlet />
-      <div className="content-container pt-0">
-        <div className="mb-48 grid justify-center gap-8 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-2 md:py-16 md:px-16">
+      <div className="content-container pt-16">
+        <div className="grid justify-center gap-8 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-2 md:px-16">
           <section>
             <h2
               className="mb-4 font-apfel text-4xl font-bold text-white"
