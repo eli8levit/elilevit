@@ -26,6 +26,8 @@ module.exports = {
         wheels: "url(/wheels.jpeg)",
         cardBrush: "url(/label-background.png)",
         pinkBrush: "url(/pink-background.png)",
+        haIsh: "url(/ha-ish.png)",
+        player: "url(/player.png)",
       },
       dropShadow: {
         menu: `0 20px 15px ${colors.indigo["300"]}`,
@@ -38,8 +40,8 @@ module.exports = {
         0.5: "0.5px",
       },
       boxShadow: {
-        bike: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 0 0.5px white, 0 0 40px 0 rgba(0,0,0,0.4)`,
-        art: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 0 0.5px white`,
+        bike: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 40px 0 rgba(0,0,0,0.4)`,
+        art: `0 5px 25px -3px ${colors.indigo["900"]}`,
         indexCard: `0 0 25px -5px ${colors.indigo["400"]}`,
         nav: `0 -20px 30px 0 ${colors.indigo["600"]}`,
       },

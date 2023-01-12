@@ -21,8 +21,8 @@ export const BikeCard = ({
       href="/bike/dd/#rides"
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-lg p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike md:mx-2">
-        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl group-hover:text-indigo-100">
+      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike md:mx-2">
+        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl group-hover:text-indigo-100">
           {title}{" "}
           {type && (
             <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
@@ -57,7 +57,7 @@ export default function Bike() {
       </div>
       <Outlet />
       <div className="content-container pt-16">
-        <div className="grid justify-center gap-8 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-2 md:px-16">
+        <div className="grid justify-center gap-6 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-2 md:px-16">
           <section>
             <h2
               className="mb-4 font-apfel text-4xl font-bold text-white"

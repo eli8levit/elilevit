@@ -1,18 +1,18 @@
 import React from "react";
-import Tree from "~/sources/images/tree.png";
+import Leaf from "~/sources/images/leaf.png";
 import { Nav } from "~/components";
 
 export default function About() {
   return (
     <>
       <Nav />
-      <main className="content-container grid items-center gap-16 md:grid-cols-2 md:grid-rows-[auto_100%]">
+      <main className="content-container mb-32 grid items-center gap-16 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
         <h1 className="text-left font-apfel text-6xl font-bold text-indigo-800 md:col-span-full md:mb-0 md:min-h-[80px]">
           Little bit about this place
         </h1>
         {/*<div className="mx-auto flex grow flex-col items-center gap-x-24 gap-y-16 md:flex-row">*/}
         <img
-          src={Tree}
+          src={Leaf}
           height="500px"
           className="mx-auto h-[250px] md:h-[500px]"
         />

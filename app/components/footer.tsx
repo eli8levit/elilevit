@@ -3,9 +3,8 @@ import React from "react";
 import End from "~/sources/images/end.png";
 
 export const Footer = () => (
-  <div className="mt-auto">
-    <img src={End} width="250px" className="my-16 mx-auto md:my-24" />
-    <footer className="flex w-full items-center gap-y-2 gap-x-2 overflow-auto whitespace-nowrap px-4 py-6 font-ignazio text-sm text-primaryText md:justify-center md:gap-x-4 md:p-6 md:text-base">
+  <div className="mt-auto pt-24 md:pt-44">
+    <footer className="flex w-full items-center gap-y-2 gap-x-2 overflow-auto whitespace-nowrap px-4 py-6 font-ignazio text-sm text-primaryText md:justify-center md:p-6">
       <span>
         Created with ❤️ with{" "}
         <Link
@@ -15,7 +14,7 @@ export const Footer = () => (
           Remix
         </Link>
       </span>
-      <span>|</span>
+      <img src={End} width="40px" />
       <span>
         Fonts{" "}
         <Link
@@ -32,7 +31,7 @@ export const Footer = () => (
           Sligoil
         </Link>
       </span>
-      <span className="font-ignazio text-blue-900">|</span>
+      <img src={End} width="40px" />
       <Link
         className="underline hover:text-indigo-600"
         href="https://twitter.com/eli8levit"
