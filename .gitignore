@@ -6,3 +6,6 @@ app/styles/tailwind.css
 /build
 /public/build
 .env
+
+# Local Netlify folder
+.netlify
