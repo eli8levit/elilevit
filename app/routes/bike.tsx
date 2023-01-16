@@ -8,21 +8,17 @@ type Card = {
   title: string;
   type?: string;
   description: string;
+  cardClass?: string;
 };
 
-export const BikeCard = ({
-  background,
-  title,
-  type = "",
-  description,
-}: Card) => {
+const BikeCard = ({ background, title, type = "", description }: Card) => {
   return (
     <a
       href="/bike/dd/#rides"
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike md:mx-2">
-        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl group-hover:text-indigo-100">
+      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-4 md:mb-2">
+        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl transition-all group-hover:text-indigo-100">
           {title}{" "}
           {type && (
             <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
@@ -35,6 +31,22 @@ export const BikeCard = ({
         </p>
       </div>
     </a>
+  );
+};
+
+const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
+  return (
+    <div className="flex w-full flex-row items-center rounded-lg">
+      <div className="mb-5 flex-col font-ignazio">
+        <h3 className="mb-1 text-lg text-indigo-400 md:text-xl">{title}</h3>
+        <p className="font-apfel text-sm font-normal text-gray-400 lg:text-lg">
+          {description}
+        </p>
+      </div>
+      <div
+        className={`flex rounded-md ${background} h-full h-[180px] w-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+      />
+    </div>
   );
 };
 
@@ -57,7 +69,7 @@ export default function Bike() {
       </div>
       <Outlet />
       <div className="content-container pt-16">
-        <div className="grid justify-center gap-6 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-2 md:px-8">
+        <div className="grid justify-center gap-y-6 gap-x-10 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2
               className="mb-4 font-apfel text-4xl font-bold text-white"
@@ -84,13 +96,14 @@ export default function Bike() {
               </li>
             </ul>
           </section>
+          <div className="mt-12 w-[2px] rounded-lg bg-zinc-500" />
           <section>
             <h2 className="mb-4 font-apfel text-4xl font-bold text-white">
               Upgrades
             </h2>
             <ul className="flex flex-col gap-y-6">
               <li>
-                <BikeCard
+                <UpgradeCard
                   background="bg-wheels"
                   title="DT Swiss CR1600"
                   description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident."

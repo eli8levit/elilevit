@@ -43,7 +43,7 @@ module.exports = {
         bike: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 40px 0 rgba(0,0,0,0.4)`,
         art: `0 5px 45px -10px ${colors.indigo["400"]}`,
         indexCard: `0 0 25px -5px ${colors.indigo["400"]}`,
-        nav: `0 -20px 30px 0 ${colors.indigo["600"]}`,
+        indexCardBg: `0 0 50px -2px ${colors.indigo["800"]}`,
       },
       colors: {
         casualBlue: "#072c73",

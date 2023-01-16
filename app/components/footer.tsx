@@ -6,7 +6,7 @@ export const Footer = () => (
   <div className="mt-auto pt-24 md:pt-44">
     <footer className="flex w-full items-center gap-y-2 gap-x-2 overflow-auto whitespace-nowrap px-4 py-6 font-ignazio text-sm text-primaryText md:justify-center md:p-6">
       <span>
-        Created with ❤️ with{" "}
+        Created with with{" "}
         <Link
           className="underline hover:text-indigo-600"
           href="https://remix.run/"

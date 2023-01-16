@@ -9,12 +9,7 @@ type Card = {
   cardClass?: string;
 };
 
-export const ArtCard = ({
-  background,
-  title,
-  description,
-  cardClass,
-}: Card) => {
+const ArtCard = ({ background, title, description, cardClass }: Card) => {
   return (
     <a
       href="/bike/dd/#rides"
@@ -53,7 +48,7 @@ export default function Art() {
             projects
           </h2>
         </div>
-        <div className="mx-auto grid grid-rows-[400px_auto_400px_auto_400px_auto_400px] gap-12 md:grid-cols-5 md:grid-rows-5 md:gap-8">
+        <div className="mx-auto grid grid-rows-[400px_auto_400px_auto_400px_auto_400px] gap-12 md:grid-cols-5 md:grid-rows-[400px_400px_400px_400px] md:grid-rows-5 md:gap-8">
           <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
             <ArtCard
               background="bg-haIsh"
