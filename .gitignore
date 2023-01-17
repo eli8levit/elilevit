@@ -1,11 +1,11 @@
 node_modules
 
-app/styles/tailwind.css
-
 /.cache
 /build
 /public/build
 .env
+app/tailwind.css
 
 # Local Netlify folder
 .netlify
+
