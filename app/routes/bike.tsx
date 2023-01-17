@@ -1,7 +1,6 @@
 import React from "react";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
 import { Outlet } from "@remix-run/react";
-import { Nav } from "~/components";
 
 type Card = {
   background: string;
@@ -53,7 +52,6 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
 export default function Bike() {
   return (
     <>
-      <Nav />
       <div className="content-container grid items-center gap-16 md:grid-cols-2">
         <div>
           <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
@@ -69,7 +67,7 @@ export default function Bike() {
       </div>
       <Outlet />
       <div className="content-container pt-16">
-        <div className="grid justify-center gap-y-6 gap-x-10 rounded-lg bg-blueNoise py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
+        <div className="grid justify-center gap-y-6 gap-x-10 rounded-lg bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2
               className="mb-4 font-apfel text-4xl font-bold text-white"
@@ -96,7 +94,7 @@ export default function Bike() {
               </li>
             </ul>
           </section>
-          <div className="mt-12 w-[2px] rounded-lg bg-zinc-500" />
+          <div className="my-24 w-[1px] rounded-lg bg-zinc-700" />
           <section>
             <h2 className="mb-4 font-apfel text-4xl font-bold text-white">
               Upgrades

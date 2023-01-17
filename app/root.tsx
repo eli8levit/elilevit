@@ -10,7 +10,7 @@ import {
 } from "@remix-run/react";
 import mainCssUrl from "./styles/main.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
-import { Footer } from "~/components";
+import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 
 export const links: LinksFunction = () => {
@@ -38,6 +38,7 @@ export default function App() {
         <PrefetchPageLinks page="/bike" />
         <PrefetchPageLinks page="/art" />
         <PrefetchPageLinks page="/about" />
+        <Nav />
         <Outlet />
         <Footer />
         <ScrollRestoration />
