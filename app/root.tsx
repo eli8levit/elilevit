@@ -9,7 +9,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import mainCssUrl from "./styles/main.css";
-import tailwindStylesheetUrl from "./styles/tailwind.css";
+import tailwindStylesheetUrl from "./tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 
