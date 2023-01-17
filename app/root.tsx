@@ -8,16 +8,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import mainCssUrl from "./styles/main.css";
 import tailwindStylesheetUrl from "./tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: "stylesheet", href: mainCssUrl },
-    { rel: "stylesheet", href: tailwindStylesheetUrl },
-  ];
+  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
 };
 
 export const meta: MetaFunction = () => ({

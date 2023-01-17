@@ -9,7 +9,7 @@
     "dev": "run-p \"dev:*\"",
     "dev:css": "npm run generate:css -- --watch",
     "dev:remix": "remix dev",
-    "generate:css": "npx tailwindcss -i ./app/styles/main.css -o ./app/tailwind.css"
+    "generate:css": "npx tailwindcss -i app/styles/tailwind.css -o ./app/tailwind.css"
   },
   "dependencies": {
     "@remix-run/node": "^1.10.1",
