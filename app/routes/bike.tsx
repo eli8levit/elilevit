@@ -66,7 +66,7 @@ export default function Bike() {
         <img src={BikeCanvas} className="ml-auto w-[600px]" />
       </div>
       <Outlet />
-      <div className="content-container pt-16">
+      <div className="content-container px-3 pt-16">
         <div className="grid justify-center gap-y-6 gap-x-10 rounded-lg bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2

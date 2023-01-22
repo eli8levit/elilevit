@@ -6,12 +6,31 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
     extend: {
+      keyframes: {
+        bounceInLeft: {
+          "0%": { transform: "translate3d(-55%, 0, 0)" },
+          "60%": { transform: "translate3d(3%, 0, 0)" },
+          "75%": { transform: "translate3d(-1%, 0, 0)" },
+          "90%": { transform: "translate3d(1%, 0, 0)" },
+          "100%": { transform: "none" },
+        },
+        bounceIn: {
+          "0%": { transform: "scale(0.4)" },
+          "60%": { transform: "scale(1.1)" },
+          "90%": { transform: "scale(0.9)" },
+          "100%": { transform: "scale(1)" },
+        },
+      },
+      animation: {
+        bounceInLeft: "bounceInLeft 0.8s ease-in-out",
+        bounceIn: "bounceIn 0.6s ease-in-out",
+      },
       backgroundImage: {
-        river: "url(/river.JPEG)",
-        david: "url(/david.JPEG)",
+        river: "url(/river.jpg)",
+        david: "url(/david.jpg)",
         hourse: "url(/hourse.jpg)",
         art: "url(/art.png)",
-        wall: "url(/wall.JPEG)",
+        wall: "url(/alarm.jpg)",
         oldSite: "url(/old-site.png)",
         wallpaper: "url(/wallpaper.jpg)",
         indexBg: "url(/index-bg.png)",

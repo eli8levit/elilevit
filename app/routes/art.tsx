@@ -18,7 +18,7 @@ const ArtCard = ({ background, title, description, cardClass }: Card) => {
         <h3 className="mb-1 text-lg text-black md:text-xl lg:text-2xl">
           {title}
         </h3>
-        <p className="max-w-[850px] text-sm font-normal text-zinc-500 lg:text-lg">
+        <p className="max-w-[850px] font-apfel text-base font-normal text-zinc-500 lg:text-lg">
           {description}
         </p>
       </div>
