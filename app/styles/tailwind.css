@@ -1094,6 +1094,11 @@ video {
   padding-bottom: 8rem;
 }
 
+.py-28 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
 .pt-24 {
   padding-top: 6rem;
 }
@@ -1482,6 +1487,11 @@ video {
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .md\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 
   .md\:pt-44 {

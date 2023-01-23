@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "~/components";
 
 type Card = {
   href: string;
@@ -9,23 +8,23 @@ type Card = {
 
 const IndexCard = ({ href, background, text }: Card) => {
   return (
-    <Link
+    <a
       href={href}
       className={`group flex h-[200px] w-full rounded-lg md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
     >
       <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-md py-2 px-3 font-ignazio text-base font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-lg">
         {text}
       </span>
-    </Link>
+    </a>
   );
 };
 
 export default function Index() {
   return (
     <>
-      <div className="content-container py-32 md:min-h-[500px]">
-        <div className="mb-6 animate-bounceInLeft  md:mb-0">
-          <h1 className=" bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:min-h-[80px]">
+      <div className="content-container py-28 md:min-h-[500px] md:py-32">
+        <div className="animate-bounceInLeft">
+          <h1 className="mb-6 bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:mb-0 md:min-h-[80px]">
             <span>Hey,</span> good to see you!
           </h1>
           <h2 className="mb-16 max-w-[600px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl lg:mb-0">
