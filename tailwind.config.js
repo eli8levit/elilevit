@@ -53,8 +53,8 @@ module.exports = {
         pinkLighter: "#fff3f4",
       },
       fontFamily: {
-        apfel: ["Apfel", ...defaultTheme.fontFamily.serif],
-        ignazio: ["Ignazio", ...defaultTheme.fontFamily.serif],
+        apfel: ["Apfel", ...defaultTheme.fontFamily.sans],
+        ignazio: ["Ignazio", ...defaultTheme.fontFamily.sans],
       },
     },
   },
