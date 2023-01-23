@@ -1,4 +1,4 @@
-@import "app/styles/font.css";
+/*@import "app/styles/font.css";*/
 
 @tailwind base;
 @tailwind components;
@@ -9,3 +9,29 @@
     @apply px-6 pt-10 mx-auto max-w-[2000px] w-full md:px-12 lg:px-28 md:pt-24 2xl:px-44 2xl:pt-32;
   }
 }
+
+
+@font-face {
+  font-family: "Apfel";
+  src: url("/fonts/Apfel/ApfelGrotezk-Fett.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apfel";
+  src: url("/fonts/Apfel/ApfelGrotezk-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ignazio";
+  src: url("/fonts/Ignazio/IgnazioText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+
+

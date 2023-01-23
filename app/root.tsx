@@ -4,7 +4,6 @@ import {
   LiveReload,
   Meta,
   Outlet,
-  PrefetchPageLinks,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
@@ -35,9 +34,6 @@ export default function App() {
         <Links />
       </head>
       <body className="flex min-h-full flex-col">
-        <PrefetchPageLinks page="/bike" />
-        <PrefetchPageLinks page="/art" />
-        <PrefetchPageLinks page="/about" />
         <Nav />
         <Outlet />
         <Footer />
