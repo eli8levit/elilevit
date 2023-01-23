@@ -11,6 +11,7 @@ import {
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
+import MetaCard from "../public/meta.jpg";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
@@ -18,9 +19,12 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Eli Levit",
   "theme-color": `${config.theme.extend.colors.pinkLighter}`,
   viewport: "width=device-width,initial-scale=1",
+  description:
+    "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
+  "og:image": MetaCard,
 });
 
 export default function App() {

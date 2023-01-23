@@ -1,24 +1,4 @@
 @font-face {
-  font-family: "Frank-Re";
-
-  src: url("/fonts/frank-re.woff") format("woff");
-
-  font-weight: 300;
-
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Apfel";
-
-  src: url("/fonts/Apfel/ApfelGrotezk-Brukt.woff2") format("woff2");
-
-  font-weight: 300;
-
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Apfel";
 
   src: url("/fonts/Apfel/ApfelGrotezk-Fett.woff2") format("woff2");
@@ -1087,11 +1067,6 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
 }
 
 .py-28 {

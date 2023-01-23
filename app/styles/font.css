@@ -1,18 +1,4 @@
 @font-face {
-    font-family: "Frank-Re";
-    src: url("/fonts/frank-re.woff") format("woff");
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Apfel";
-    src: url("/fonts/Apfel/ApfelGrotezk-Brukt.woff2") format("woff2");
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
     font-family: "Apfel";
     src: url("/fonts/Apfel/ApfelGrotezk-Fett.woff2") format("woff2");
     font-weight: 600;

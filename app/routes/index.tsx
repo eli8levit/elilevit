@@ -28,9 +28,9 @@ export default function Index() {
             <span>Hey,</span> good to see you!
           </h1>
           <h2 className="mb-16 max-w-[600px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl lg:mb-0">
-            I'm Eli, <strong>FullStack Developer</strong>. Welcome to my brand
-            new website <i>(still in progress)</i>. Hope I won't be lazy like
-            with previous one and will publish some nice things.
+            I'm Eli, <strong>FullStack Developer & Creator</strong>. Welcome to
+            my brand new website <i>(still in progress)</i>. Hope I won't be
+            lazy like with previous one and will publish some nice things.
           </h2>
         </div>
         <div className="ml-auto h-[150px] animate-bounceIn bg-indexBg bg-contain bg-center bg-no-repeat md:h-[350px]"></div>
