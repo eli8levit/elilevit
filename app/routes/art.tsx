@@ -1,5 +1,7 @@
 import React from "react";
 import Waves from "~/sources/images/art.png";
+import { FaidInMotionContainer } from "~/components/layout";
+import { motion } from "framer-motion";
 
 type Card = {
   background: string;
@@ -10,11 +12,14 @@ type Card = {
 
 const ArtCard = ({ background, title, description, cardClass }: Card) => {
   return (
-    <a
+    <motion.a
+      layout
+      whileHover={{ padding: "30px" }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       href="/bike/dd/#rides"
-      className="group flex w-full flex-col rounded-lg transition-all md:hover:shadow-art"
+      className="group flex w-full flex-col rounded-xl md:hover:shadow-art"
     >
-      <div className="mb-5 flex-col font-ignazio transition-all md:group-hover:px-4 md:group-hover:pt-4">
+      <div className="mb-5 flex-col font-ignazio">
         <h3 className="mb-1 text-lg text-black md:text-xl lg:text-2xl">
           {title}
         </h3>
@@ -25,17 +30,27 @@ const ArtCard = ({ background, title, description, cardClass }: Card) => {
       <div
         className={`flex rounded-md ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
       />
-    </a>
+    </motion.a>
   );
 };
 
 export default function Art() {
   return (
-    <div className="content-container grid items-center gap-20 pt-12 md:gap-36">
-      <img
-        src={Waves}
-        className="h-[300px] w-full rounded-xl object-cover md:h-full"
-      />
+    <FaidInMotionContainer className="content-container grid items-center gap-20 pt-12 md:gap-36">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.08,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <img
+          src={Waves}
+          className="h-[300px] w-full rounded-xl object-cover md:h-full"
+        />
+      </motion.div>
       <div>
         <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
           Work & Art
@@ -79,6 +94,6 @@ export default function Art() {
           />
         </div>
       </div>
-    </div>
+    </FaidInMotionContainer>
   );
 }

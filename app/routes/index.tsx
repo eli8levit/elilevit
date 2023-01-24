@@ -12,7 +12,7 @@ type Card = {
 const IndexCard = ({ href, background, text }: Card) => {
   return (
     <MotionNavLink
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
       to={href}
       className={`group flex h-[200px] w-full rounded-xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
@@ -42,7 +42,7 @@ export default function Index() {
           </h2>
         </FaidInMotionContainer>
         <motion.div
-          style={{ scale }}
+          style={{ scale, maxWidth: "100%" }}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -59,7 +59,7 @@ export default function Index() {
           <div className="ml-auto h-[150px]  bg-indexBg bg-contain bg-center bg-no-repeat md:h-[350px]"></div>
         </motion.div>
       </div>
-      <div className="content-container px-3 pt-0">
+      <FaidInMotionContainer className="content-container px-3 pt-0">
         <section className="rounded-xl bg-[#091223] px-4 py-8 shadow-xl shadow-indigo-300 md:p-16">
           <h3 className="mb-4 border-primaryText font-apfel text-4xl font-bold text-white md:mb-6 md:text-5xl">
             What to do here
@@ -88,7 +88,7 @@ export default function Index() {
             </li>
           </ul>
         </section>
-      </div>
+      </FaidInMotionContainer>
     </>
   );
 }

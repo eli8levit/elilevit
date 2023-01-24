@@ -2,6 +2,7 @@ import React from "react";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
 import { Outlet } from "@remix-run/react";
 import { FaidInMotionContainer } from "~/components/layout";
+import { motion } from "framer-motion";
 
 type Card = {
   background: string;
@@ -13,7 +14,9 @@ type Card = {
 
 const BikeCard = ({ background, title, type = "", description }: Card) => {
   return (
-    <a
+    <motion.a
+      whileHover={{ scale: 1.03 }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
       href="/bike/dd/#rides"
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
@@ -30,7 +33,7 @@ const BikeCard = ({ background, title, type = "", description }: Card) => {
           {description}
         </p>
       </div>
-    </a>
+    </motion.a>
   );
 };
 
@@ -39,7 +42,7 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
     <div className="flex w-full flex-row items-center rounded-lg">
       <div className="mb-5 flex-col font-ignazio">
         <h3 className="mb-1 text-lg text-indigo-400 md:text-xl">{title}</h3>
-        <p className="font-apfel text-sm font-normal text-gray-400 lg:text-lg">
+        <p className="font-apfel text-sm font-light text-gray-400 lg:text-lg">
           {description}
         </p>
       </div>
@@ -52,8 +55,8 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
 
 export default function Bike() {
   return (
-    <>
-      <FaidInMotionContainer className="content-container grid items-center gap-16 py-20 md:grid-cols-2 md:py-28">
+    <FaidInMotionContainer>
+      <div className="content-container grid items-center gap-16 py-20 md:grid-cols-2 md:py-28">
         <div>
           <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
             Bike Blog
@@ -64,8 +67,8 @@ export default function Bike() {
             <strong className="font-bold">the upgrading revolution</strong>
           </h2>
         </div>
-        <img src={BikeCanvas} className="ml-auto w-[600px]" />
-      </FaidInMotionContainer>
+        <img src={BikeCanvas} className="ml-auto h-[450px]" height="450px" />
+      </div>
       <Outlet />
       <div className="content-container px-3 pt-16">
         <div className="grid justify-center gap-y-6 gap-x-10 rounded-xl bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
@@ -112,6 +115,6 @@ export default function Bike() {
           </section>
         </div>
       </div>
-    </>
+    </FaidInMotionContainer>
   );
 }
