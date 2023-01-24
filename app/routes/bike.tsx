@@ -67,11 +67,15 @@ export default function Bike() {
             <strong className="font-bold">the upgrading revolution</strong>
           </h2>
         </div>
-        <img src={BikeCanvas} className="ml-auto h-[450px]" height="450px" />
+        <img
+          src={BikeCanvas}
+          className="ml-auto object-contain md:h-[450px]"
+          height="450px"
+        />
       </div>
       <Outlet />
-      <div className="content-container px-3 pt-16">
-        <div className="grid justify-center gap-y-6 gap-x-10 rounded-xl bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
+      <div className="content-container px-3 py-16">
+        <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2
               className="mb-4 font-apfel text-4xl font-bold text-white"
@@ -98,7 +102,7 @@ export default function Bike() {
               </li>
             </ul>
           </section>
-          <div className="my-24 w-[1px] rounded-lg bg-zinc-700" />
+          <div className="my-24 hidden w-[1px] rounded-lg bg-zinc-700 md:block" />
           <section>
             <h2 className="mb-4 font-apfel text-4xl font-bold text-white">
               Upgrades

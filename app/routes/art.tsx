@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import Waves from "~/sources/images/art.png";
 import { FaidInMotionContainer } from "~/components/layout";
-import { motion } from "framer-motion";
+import { motion, useInView, useWillChange } from "framer-motion";
 
 type Card = {
   background: string;
@@ -11,26 +11,41 @@ type Card = {
 };
 
 const ArtCard = ({ background, title, description, cardClass }: Card) => {
+  const willChange = useWillChange();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <motion.a
-      layout
-      whileHover={{ padding: "30px" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      href="/bike/dd/#rides"
-      className="group flex w-full flex-col rounded-xl md:hover:shadow-art"
+    <div
+      ref={ref}
+      style={{
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        display: "flex",
+        width: "100%",
+      }}
     >
-      <div className="mb-5 flex-col font-ignazio">
-        <h3 className="mb-1 text-lg text-black md:text-xl lg:text-2xl">
-          {title}
-        </h3>
-        <p className="max-w-[850px] font-apfel text-base font-normal text-zinc-500 lg:text-lg">
-          {description}
-        </p>
-      </div>
-      <div
-        className={`flex rounded-md ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
-      />
-    </motion.a>
+      <motion.a
+        layout
+        whileHover={{ padding: "30px" }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        href="/bike/dd/#rides"
+        className="flex w-full flex-col rounded-xl md:hover:shadow-art"
+        style={{ willChange }}
+      >
+        <div className="mb-5 flex-col font-ignazio">
+          <h3 className="mb-1 text-lg text-black md:text-xl lg:text-2xl">
+            {title}
+          </h3>
+          <p className="max-w-[850px] font-apfel text-base font-normal text-zinc-500 lg:text-lg">
+            {description}
+          </p>
+        </div>
+        <div
+          className={`flex rounded-md ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        />
+      </motion.a>
+    </div>
   );
 };
 
@@ -42,12 +57,13 @@ export default function Art() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           duration: 0.4,
-          delay: 0.08,
+          delay: 0.03,
           ease: [0, 0.71, 0.2, 1.01],
         }}
       >
         <img
           src={Waves}
+          height="300px"
           className="h-[300px] w-full rounded-xl object-cover md:h-full"
         />
       </motion.div>

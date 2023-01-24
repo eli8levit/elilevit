@@ -1,5 +1,10 @@
-import React from "react";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import React, { useRef } from "react";
+import {
+  motion,
+  useInView,
+  useTransform,
+  useViewportScroll,
+} from "framer-motion";
 import { MotionNavLink } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
 
@@ -10,23 +15,36 @@ type Card = {
 };
 
 const IndexCard = ({ href, background, text }: Card) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <MotionNavLink
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 200, damping: 10 }}
-      to={href}
-      className={`group flex h-[200px] w-full rounded-xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
+    <div
+      ref={ref}
+      style={{
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
     >
-      <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-md py-2 px-3 font-ignazio text-base font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-lg">
-        {text}
-      </span>
-    </MotionNavLink>
+      <MotionNavLink
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        to={href}
+        className={`group flex h-[200px] w-full rounded-xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
+      >
+        <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-md py-2 px-3 font-ignazio text-base font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-lg">
+          {text}
+        </span>
+      </MotionNavLink>
+    </div>
   );
 };
 
 export default function Index() {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   return (
     <>
@@ -35,14 +53,14 @@ export default function Index() {
           <h1 className="mb-6 bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:mb-0 md:min-h-[80px]">
             <span>Hey,</span> good to see you!
           </h1>
-          <h2 className="mb-10 max-w-[600px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl lg:mb-0">
+          <h2 className="mb-10 max-w-[600px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl">
             I'm Eli, <strong>FullStack Developer & Creator</strong>. Welcome to
             my brand new website <i>(still in progress)</i>. Hope I won't be
             lazy like with previous one and will publish some nice things.
           </h2>
         </FaidInMotionContainer>
         <motion.div
-          style={{ scale, maxWidth: "100%" }}
+          style={{ maxWidth: "100wv", ...(isInView && { scale }) }}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -56,7 +74,10 @@ export default function Index() {
               scaleY: scrollYProgress,
             }}
           />
-          <div className="ml-auto h-[150px]  bg-indexBg bg-contain bg-center bg-no-repeat md:h-[350px]"></div>
+          <div
+            ref={ref}
+            className="ml-auto h-[150px] bg-indexBg bg-contain bg-center bg-no-repeat md:h-[350px]"
+          ></div>
         </motion.div>
       </div>
       <FaidInMotionContainer className="content-container px-3 pt-0">

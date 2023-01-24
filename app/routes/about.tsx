@@ -7,7 +7,7 @@ export default function About() {
     <FaidInMotionContainer>
       <main className="content-container mb-32 grid items-center gap-16 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
         <h1 className="text-left font-apfel text-6xl font-bold text-indigo-800 md:col-span-full md:mb-0 md:min-h-[80px]">
-          Little bit about this place
+          A bit about me
         </h1>
         <img
           src={Leaf}
