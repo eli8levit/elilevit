@@ -11,19 +11,50 @@ import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 import MetaCard from "../public/meta.jpg";
+import Icon32 from "../public/favicon-32x32.png";
+import Icon16 from "../public/favicon-16x16.png";
+import Manifest from "../public/site.webmanifest";
+import AppleIcon from "../public/apple-touch-icon.png";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
+  return [
+    { rel: "stylesheet", href: tailwindStylesheetUrl },
+    {
+      rel: "icon",
+      sizes: "180x180",
+      href: AppleIcon,
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: Icon32,
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: Icon16,
+    },
+    { rel: "manifest", href: Manifest },
+  ];
 };
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Eli Levit",
   "theme-color": `${config.theme.extend.colors.pinkLighter}`,
-  viewport: "width=device-width,initial-scale=1",
+  title: "Eli Levit",
   description:
     "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
+  "og:title": "Eli Levit",
+  "og:description":
+    "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
   "og:image": MetaCard,
+  "twitter:card": "summary_large_image",
+  "twitter:title": "Eli Levit",
+  "twitter:description":
+    "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
+  "twitter:image": MetaCard,
+  viewport: "width=device-width,initial-scale=1",
 });
 
 export default function App() {
