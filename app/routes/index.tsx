@@ -23,7 +23,7 @@ const IndexCard = ({ href, background, text }: Card) => {
 export default function Index() {
   return (
     <>
-      <div className="content-container py-24 md:min-h-[500px] md:py-32">
+      <div className="content-container py-20 md:min-h-[500px] md:py-32">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -32,7 +32,7 @@ export default function Index() {
           <h1 className="mb-6 bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:mb-0 md:min-h-[80px]">
             <span>Hey,</span> good to see you!
           </h1>
-          <h2 className="mb-16 max-w-[600px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl lg:mb-0">
+          <h2 className="mb-10 max-w-[600px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl lg:mb-0">
             I'm Eli, <strong>FullStack Developer & Creator</strong>. Welcome to
             my brand new website <i>(still in progress)</i>. Hope I won't be
             lazy like with previous one and will publish some nice things.
