@@ -1435,6 +1435,11 @@ video {
     padding-bottom: 8rem;
   }
 
+  .md\:py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
   .md\:pt-44 {
     padding-top: 11rem;
   }

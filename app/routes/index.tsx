@@ -1,5 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { MotionNavLink } from "~/components";
+import { FaidInMotionContainer } from "~/components/layout";
 
 type Card = {
   href: string;
@@ -9,26 +11,27 @@ type Card = {
 
 const IndexCard = ({ href, background, text }: Card) => {
   return (
-    <a
-      href={href}
-      className={`group flex h-[200px] w-full rounded-lg md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
+    <MotionNavLink
+      whileHover={{ scale: 1.03 }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      to={href}
+      className={`group flex h-[200px] w-full rounded-xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
     >
       <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-md py-2 px-3 font-ignazio text-base font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-lg">
         {text}
       </span>
-    </a>
+    </MotionNavLink>
   );
 };
 
 export default function Index() {
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
+
   return (
     <>
       <div className="content-container py-20 md:min-h-[500px] md:py-32">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
+        <FaidInMotionContainer>
           <h1 className="mb-6 bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:mb-0 md:min-h-[80px]">
             <span>Hey,</span> good to see you!
           </h1>
@@ -37,8 +40,9 @@ export default function Index() {
             my brand new website <i>(still in progress)</i>. Hope I won't be
             lazy like with previous one and will publish some nice things.
           </h2>
-        </motion.div>
+        </FaidInMotionContainer>
         <motion.div
+          style={{ scale }}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -47,6 +51,11 @@ export default function Index() {
             ease: [0, 0.71, 0.2, 1.01],
           }}
         >
+          <motion.div
+            style={{
+              scaleY: scrollYProgress,
+            }}
+          />
           <div className="ml-auto h-[150px]  bg-indexBg bg-contain bg-center bg-no-repeat md:h-[350px]"></div>
         </motion.div>
       </div>

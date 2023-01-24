@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink, useMatches } from "@remix-run/react";
 import Clock from "~/components/clock";
 
@@ -9,10 +9,6 @@ export const Nav = () => {
     const splitted = pathname.split("/")?.[1] || "";
     return id === splitted;
   };
-
-  useEffect(() => {
-    console.log("inmount");
-  }, []);
 
   const genLinkClassName = (id: string) => {
     const active = isActive(id);

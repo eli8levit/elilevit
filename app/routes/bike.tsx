@@ -1,6 +1,7 @@
 import React from "react";
 import BikeCanvas from "~/sources/images/bike-canvas.png";
 import { Outlet } from "@remix-run/react";
+import { FaidInMotionContainer } from "~/components/layout";
 
 type Card = {
   background: string;
@@ -52,7 +53,7 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
 export default function Bike() {
   return (
     <>
-      <div className="content-container grid items-center gap-16 md:grid-cols-2">
+      <FaidInMotionContainer className="content-container grid items-center gap-16 py-20 md:grid-cols-2 md:py-28">
         <div>
           <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
             Bike Blog
@@ -64,7 +65,7 @@ export default function Bike() {
           </h2>
         </div>
         <img src={BikeCanvas} className="ml-auto w-[600px]" />
-      </div>
+      </FaidInMotionContainer>
       <Outlet />
       <div className="content-container px-3 pt-16">
         <div className="grid justify-center gap-y-6 gap-x-10 rounded-xl bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
