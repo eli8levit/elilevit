@@ -12,7 +12,7 @@ module.exports = {
         hourse: "url(/hourse.jpg)",
         art: "url(/art.png)",
         wall: "url(/alarm.jpg)",
-        oldSite: "url(/old-site.png)",
+        oldSite: "url(/old-site.jpg)",
         wallpaper: "url(/wallpaper.jpg)",
         indexBg: "url(/index-bg.png)",
         firstRide: "url(/first-ride.jpeg)",
