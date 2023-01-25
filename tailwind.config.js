@@ -17,9 +17,9 @@ module.exports = {
         indexBg: "url(/index-bg.png)",
         firstRide: "url(/first-ride.jpeg)",
         secondRide: "url(/second-ride.jpeg)",
-        wheels: "url(/wheels.jpeg)",
+        wheels: "url(/wheels.jpg)",
         cardBrush: "url(/label-background.png)",
-        haIsh: "url(/ha-ish.png)",
+        haIsh: "url(/ha-ish.jpg)",
         player: "url(/player.png)",
       },
       boxShadow: {

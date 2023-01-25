@@ -46,6 +46,8 @@ export default function Index() {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
+  console.log("scale", scale);
+
   return (
     <>
       <div className="content-container py-20 md:min-h-[500px] md:py-32">
@@ -59,25 +61,23 @@ export default function Index() {
             lazy like with previous one and will publish some nice things.
           </h2>
         </FaidInMotionContainer>
-        <motion.div
-          style={{ maxWidth: "100wv", ...(isInView && { scale }) }}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.1,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-        >
+        <motion.div style={{ ...(isInView && { scale }) }}>
           <motion.div
             style={{
               scaleY: scrollYProgress,
             }}
           />
-          <div
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
             ref={ref}
             className="ml-auto h-[150px] bg-indexBg bg-contain bg-center bg-no-repeat md:h-[350px]"
-          ></div>
+          />
         </motion.div>
       </div>
       <FaidInMotionContainer className="content-container px-3 pt-0">
