@@ -14,7 +14,7 @@ export const Nav = () => {
     const active = isActive(id);
     return `flex font-ignazio h-full items-center rounded-md px-2.5 ${
       active
-        ? "bg-cardBrush bg-[length:90%_100%] bg-no-repeat text-white"
+        ? "bg-blackBrush bg-[length:90%_100%] bg-no-repeat text-white"
         : "md:hover:bg-black text-black md:hover:text-white md:hover:shadow-sm"
     } transition`;
   };

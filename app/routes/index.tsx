@@ -76,7 +76,7 @@ export default function Index() {
               ease: [0, 0.71, 0.2, 1.01],
             }}
             ref={ref}
-            className="ml-auto h-[150px] bg-indexBg bg-contain bg-center bg-no-repeat md:h-[350px]"
+            className="ml-auto h-[150px] bg-blueBrushUp bg-contain bg-center bg-no-repeat md:h-[350px]"
           />
         </motion.div>
       </div>
@@ -95,7 +95,7 @@ export default function Index() {
             </li>
             <li>
               <IndexCard
-                background="bg-david"
+                background="bg-oldCity"
                 text="More about me"
                 href="/about"
               />
