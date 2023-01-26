@@ -39,7 +39,7 @@ const BikeCard = ({ background, title, type = "", description }: Card) => {
 
 const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   return (
-    <div className="flex w-full flex-row items-center rounded-lg">
+    <div className="flex w-full flex-col items-center rounded-lg md:flex-row">
       <div className="mb-5 flex-col font-ignazio">
         <h3 className="mb-1 text-lg text-indigo-400 md:text-xl">{title}</h3>
         <p className="font-apfel text-sm font-light text-gray-400 lg:text-lg">

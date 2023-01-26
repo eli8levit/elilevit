@@ -1390,6 +1390,10 @@ video {
     grid-template-rows: repeat(5, minmax(0, 1fr));
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:justify-center {
     justify-content: center;
   }
