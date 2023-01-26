@@ -1,5 +1,5 @@
 import React from "react";
-import Leaf from "~/sources/images/leaf.png";
+import Leaf from "~/sources/images/blue-leaf.png";
 import { FaidInMotionContainer } from "~/components/layout";
 
 export default function About() {

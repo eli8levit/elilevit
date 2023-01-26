@@ -1,5 +1,5 @@
 import React from "react";
-import BikeCanvas from "~/sources/images/bike-canvas.png";
+import BikeCanvas from "~/sources/images/bike-illustration.png";
 import { Outlet } from "@remix-run/react";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion } from "framer-motion";

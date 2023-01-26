@@ -4,7 +4,7 @@ node_modules
 /build
 /public/build
 .env
-app/tailwind.css
+app/styles/main.css
 
 # Local Netlify folder
 .netlify

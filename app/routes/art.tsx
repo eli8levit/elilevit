@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Waves from "~/sources/images/art.png";
+import Waves from "~/sources/images/art.jpg";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useInView, useWillChange } from "framer-motion";
 

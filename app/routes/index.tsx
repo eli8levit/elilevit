@@ -43,14 +43,10 @@ const IndexCard = ({ href, background, text }: Card) => {
 export default function Index() {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  console.log("scale", scale);
 
   return (
     <>
-      <div className="content-container py-20 md:min-h-[500px] md:py-32">
+      <div className="content-container overflow-x-hidden py-20 md:min-h-[500px] md:py-32">
         <FaidInMotionContainer>
           <h1 className="mb-6 bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:mb-0 md:min-h-[80px]">
             <span>Hey,</span> good to see you!
@@ -61,7 +57,7 @@ export default function Index() {
             lazy like with previous one and will publish some nice things.
           </h2>
         </FaidInMotionContainer>
-        <motion.div style={{ ...(isInView && { scale }) }}>
+        <motion.div style={{ scale }}>
           <motion.div
             style={{
               scaleY: scrollYProgress,
@@ -75,7 +71,6 @@ export default function Index() {
               delay: 0.1,
               ease: [0, 0.71, 0.2, 1.01],
             }}
-            ref={ref}
             className="ml-auto h-[150px] bg-blueBrushUp bg-contain bg-center bg-no-repeat md:h-[350px]"
           />
         </motion.div>
