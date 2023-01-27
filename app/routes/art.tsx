@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Waves from "~/sources/images/art.jpg";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useInView, useWillChange } from "framer-motion";
+import { useMobileDetect } from "~/use-device-detect-hook";
 
 type Card = {
   background: string;
@@ -14,6 +15,8 @@ const ArtCard = ({ background, title, description, cardClass }: Card) => {
   const willChange = useWillChange();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const mobileDetect = useMobileDetect();
+  const isMobile = mobileDetect.isMobile();
 
   return (
     <div
@@ -27,7 +30,7 @@ const ArtCard = ({ background, title, description, cardClass }: Card) => {
     >
       <motion.a
         layout
-        whileHover={{ padding: "30px" }}
+        whileHover={{ padding: isMobile ? 0 : "30px" }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         href="/bike/dd/#rides"
         className="flex w-full flex-col rounded-xl md:hover:shadow-art"
@@ -63,6 +66,7 @@ export default function Art() {
       >
         <img
           src={Waves}
+          alt="Illustrated colored lines in waves form on black background"
           height="300px"
           className="h-[300px] w-full rounded-xl object-cover md:h-full"
         />

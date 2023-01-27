@@ -5,12 +5,13 @@ import { FaidInMotionContainer } from "~/components/layout";
 export default function About() {
   return (
     <FaidInMotionContainer>
-      <main className="content-container mb-32 grid items-center gap-16 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
+      <main className="content-container mb-32 grid items-center gap-12 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%] md:gap-8">
         <h1 className="text-left font-apfel text-6xl font-bold text-indigo-800 md:col-span-full md:mb-0 md:min-h-[80px]">
           A bit about me
         </h1>
         <img
           src={Leaf}
+          alt="Blue illustrated leaf"
           height="500px"
           className="mx-auto h-[250px] md:h-[500px]"
         />
@@ -23,18 +24,6 @@ export default function About() {
           lifestyle blog with readers. Feel free to browse and explore my art
           and projects. If you have any questions or just want to connect, don't
           hesitate to reach out. Thanks for visiting!
-          <i>
-            Thanks for{" "}
-            <a
-              target="blank"
-              rel="noopener noreferrer"
-              className="text-casualBlue underline"
-              href="https://chat.openai.com/chat"
-            >
-              ChatGPD
-            </a>{" "}
-            that helped me to finetune this text 😁
-          </i>
         </p>
       </main>
     </FaidInMotionContainer>

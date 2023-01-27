@@ -14,7 +14,6 @@ module.exports = {
         wall: "url(/alarm.jpg)",
         oldSite: "url(/old-site.jpg)",
         wallpaper: "url(/wallpaper.jpg)",
-        blueBrushUp: "url(/blue-brush-up.png)",
         firstRide: "url(/first-ride.jpg)",
         secondRide: "url(/second-ride.jpg)",
         wheels: "url(/wheels.jpg)",

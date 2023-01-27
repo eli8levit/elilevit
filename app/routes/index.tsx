@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { MotionNavLink } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
+import BlueBrush from "~/sources/images/blue-brush-up.png";
 
 type Card = {
   href: string;
@@ -63,7 +64,7 @@ export default function Index() {
               scaleY: scrollYProgress,
             }}
           />
-          <motion.div
+          <motion.img
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -71,7 +72,10 @@ export default function Index() {
               delay: 0.1,
               ease: [0, 0.71, 0.2, 1.01],
             }}
-            className="ml-auto h-[150px] bg-blueBrushUp bg-contain bg-center bg-no-repeat md:h-[350px]"
+            alt="Blue illustrated line in wave form"
+            src={BlueBrush}
+            height="150px"
+            className="mx-auto h-[150px] object-contain md:h-[350px]"
           />
         </motion.div>
       </div>
