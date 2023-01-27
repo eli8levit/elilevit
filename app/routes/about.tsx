@@ -1,6 +1,7 @@
 import React from "react";
 import Leaf from "~/sources/images/blue-leaf.png";
 import { FaidInMotionContainer } from "~/components/layout";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default function About() {
   return (
@@ -12,7 +13,7 @@ export default function About() {
         <img
           src={Leaf}
           alt="Blue illustrated leaf"
-          height="500px"
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 250px, 350px`}
           className="mx-auto h-[250px] md:h-[500px]"
         />
         <p className="mb-4 font-apfel text-xl text-black md:mr-auto md:text-2xl">

@@ -68,7 +68,7 @@ export default function Bike() {
         <img
           src={BikeCanvas}
           alt="Illustrated blue bicycle on blue and green brush lines background"
-          className="ml-auto object-contain md:h-[450px]"
+          className="ml-auto h-[450px] object-contain"
           height="450px"
         />
       </div>

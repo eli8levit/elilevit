@@ -3,6 +3,7 @@ import Waves from "~/sources/images/art.jpg";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useInView, useWillChange } from "framer-motion";
 import { useMobileDetect } from "~/use-device-detect-hook";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 type Card = {
   background: string;
@@ -45,7 +46,7 @@ const ArtCard = ({ background, title, description, cardClass }: Card) => {
           </p>
         </div>
         <div
-          className={`flex rounded-md ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+          className={`flex rounded-xl ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
         />
       </motion.a>
     </div>
@@ -54,7 +55,7 @@ const ArtCard = ({ background, title, description, cardClass }: Card) => {
 
 export default function Art() {
   return (
-    <FaidInMotionContainer className="content-container grid items-center gap-20 pt-12 md:gap-36">
+    <FaidInMotionContainer className="content-container grid items-center gap-20 pt-8 md:gap-28">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -67,8 +68,8 @@ export default function Art() {
         <img
           src={Waves}
           alt="Illustrated colored lines in waves form on black background"
-          height="300px"
-          className="h-[300px] w-full rounded-xl object-cover md:h-full"
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 300px, 450px`}
+          className="h-[300px] w-full rounded-xl object-cover md:h-[450px]"
         />
       </motion.div>
       <div>
@@ -108,9 +109,9 @@ export default function Art() {
         <div className="flex md:col-span-full md:h-[500px]">
           <ArtCard
             background="bg-player"
-            title="Turnable 3d Model"
+            title="Turntable 3d Model"
             description="This is my previous web site, that I worked for 2 years on. It doesn't seem so, cause it's very minimalistic but trust me, I spent a lot of time building it."
-            cardClass="bg-contain bg-white"
+            cardClass="bg-[length:300px] md:bg-[length:400px] bg-white"
           />
         </div>
       </div>

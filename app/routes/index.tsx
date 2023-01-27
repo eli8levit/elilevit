@@ -8,6 +8,7 @@ import {
 import { MotionNavLink } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
 import BlueBrush from "~/sources/images/blue-brush-up.png";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 type Card = {
   href: string;
@@ -67,6 +68,7 @@ export default function Index() {
           <motion.img
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
+            sizes={`(max-width: ${defaultTheme.screens.sm}}) 150px, 350px`}
             transition={{
               duration: 0.6,
               delay: 0.1,
@@ -74,7 +76,6 @@ export default function Index() {
             }}
             alt="Blue illustrated line in wave form"
             src={BlueBrush}
-            height="150px"
             className="mx-auto h-[150px] object-contain md:h-[350px]"
           />
         </motion.div>
