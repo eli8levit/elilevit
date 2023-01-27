@@ -1,93 +1,119 @@
-import { Nav } from "~/components";
-import React from "react";
+import React, { useRef } from "react";
+import Waves from "~/sources/images/art.jpg";
+import { FaidInMotionContainer } from "~/components/layout";
+import { motion, useInView, useWillChange } from "framer-motion";
+import { useMobileDetect } from "~/use-device-detect-hook";
 
 type Card = {
   background: string;
   title: string;
   description: string;
-  containerClass?: string;
-  titleClass?: string;
-  textClass?: string;
+  cardClass?: string;
 };
 
-export const ArtCard = ({
-  background,
-  title,
-  description,
-  containerClass,
-  titleClass,
-  textClass,
-}: Card) => {
+const ArtCard = ({ background, title, description, cardClass }: Card) => {
+  const willChange = useWillChange();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mobileDetect = useMobileDetect();
+  const isMobile = mobileDetect.isMobile();
+
   return (
-    <a
-      href="/bike/dd/#rides"
-      className={`flex rounded-lg ${background} group h-[300px] w-full bg-cover bg-center shadow-lg shadow-indigo-200 md:h-full md:shadow-xl`}
+    <div
+      ref={ref}
+      style={{
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        display: "flex",
+        width: "100%",
+      }}
     >
-      <div
-        className={`mx-2 mt-auto mb-1 w-full flex-col rounded-lg p-3 shadow-xl shadow-[rgba(0,0,0,0.4)] backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-art md:mx-4 md:mb-3 md:p-6 2xl:p-5 ${containerClass}`}
+      <motion.a
+        layout
+        whileHover={{ padding: isMobile ? 0 : "30px" }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        href="/bike/dd/#rides"
+        className="flex w-full flex-col rounded-xl md:hover:shadow-art"
+        style={{ willChange }}
       >
-        <h3
-          className={`mb-1 flex flex-row flex-wrap items-center gap-x-2 rounded-lg font-ignazio text-lg text-white group-hover:text-indigo-100 md:text-xl ${titleClass}`}
-        >
-          {title}{" "}
-        </h3>
-        <p
-          className={`font-roboto text-sm font-normal text-gray-300 ${textClass}`}
-        >
-          {description}
-        </p>
-      </div>
-    </a>
+        <div className="mb-5 flex-col font-ignazio">
+          <h3 className="mb-1 text-lg text-black md:text-xl lg:text-2xl">
+            {title}
+          </h3>
+          <p className="max-w-[850px] font-apfel text-base font-normal text-zinc-500 lg:text-lg">
+            {description}
+          </p>
+        </div>
+        <div
+          className={`flex rounded-md ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        />
+      </motion.a>
+    </div>
   );
 };
 
 export default function Art() {
   return (
-    <>
-      <Nav />
-      <div className="content-container">
-        <h1 className="mb-6 bg-gradient-to-r px-2 py-8 text-center font-satisfy text-7xl font-normal text-indigo-800 md:mb-24 md:min-h-[150px] md:to-red-500 md:p-0 md:text-left md:text-9xl">
-          Art
+    <FaidInMotionContainer className="content-container grid items-center gap-20 pt-12 md:gap-36">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.03,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <img
+          src={Waves}
+          alt="Illustrated colored lines in waves form on black background"
+          height="300px"
+          className="h-[300px] w-full rounded-xl object-cover md:h-full"
+        />
+      </motion.div>
+      <div>
+        <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
+          Work & Art
         </h1>
-        <div className="mx-2 mb-8 h-[250px] rounded-lg bg-art bg-cover p-8 shadow-md md:mx-0 md:mb-36 md:h-[500px] md:shadow-lg md:shadow-indigo-400"></div>
-        <div className="mb-48">
-          <h2 className="mx-auto mb-16 mt-20 max-w-[800px]  p-8 text-center font-apfel text-3xl text-indigo-800 md:mb-36 md:text-5xl 2xl:text-5xl">
-            Here you can see my art like photos, illustrations along with my
-            projects
-          </h2>
-          <div className="mx-auto grid items-center justify-center gap-8 px-2 md:grid-cols-5 md:p-12">
-            <div className="flex h-full md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
-              <ArtCard
-                background="bg-oldSite"
-                title="My old site"
-                description="This is my previous web site, that I worked for 2 years on. It doesn't seem so, cause it's very minimalistic but trust me, I spent a lot of time building it."
-                containerClass="backdrop-brightness-100 bg-gradient-to-r from-indigo-900 to-indigo-500"
-              />
-            </div>
-            <div className="flex h-[300px] md:col-start-4 md:col-end-6 md:row-start-1 md:row-end-2">
-              <ArtCard
-                background="bg-wallpaper"
-                title="Wallpapers"
-                description="I love design and art, I don't have a lot of experience in it, but it's very fun so I play around with it in Affinity Designer and sometime it looks not bad...So here are some stuff you can use as a wallpapers."
-              />
-            </div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-            <div className="min-h-[200px] w-full bg-red-900"></div>
-          </div>
+        <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
+          Here you can see my art like photos, illustrations along with my
+          projects
+        </h2>
+      </div>
+      <div className="mx-auto grid grid-rows-[400px_auto_400px_auto_400px_auto_400px] gap-12 md:grid-cols-5 md:grid-rows-[400px_400px_400px_400px] md:grid-rows-5 md:gap-8">
+        <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
+          <ArtCard
+            background="bg-haIsh"
+            title="Ha Ish Project"
+            description="I love design and art, I don't have a lot of experience in it, but it's very fun so I play around with it in Affinity Designer and sometime it looks not bad...So here are some stuff you can use as a wallpapers."
+          />
+        </div>
+        <div className="mx-6 h-[1px] bg-zinc-300 md:hidden" />
+        <div className="flex md:col-start-4 md:col-end-6 md:row-start-1 md:row-end-2">
+          <ArtCard
+            background="bg-wallpaper"
+            title="Wallpapers"
+            description="I love design and art, I don't have a lot of experience in it, but it's very fun so I play around with it in Affinity Designer and sometime it looks not bad...So here are some stuff you can use as a wallpapers."
+          />
+        </div>
+        <div className="mx-6 h-[1px] bg-zinc-300 md:hidden" />
+        <div className="flex md:col-start-4 md:col-end-6">
+          <ArtCard
+            background="bg-oldSite"
+            title="My old site"
+            description="This is my previous web site, that I worked for 2 years on. It doesn't seem so, cause it's very minimalistic but trust me, I spent a lot of time building it."
+          />
+        </div>
+        <div className="mx-6 h-[1px] bg-zinc-300 md:hidden" />
+        <div className="flex md:col-span-full md:h-[500px]">
+          <ArtCard
+            background="bg-player"
+            title="Turnable 3d Model"
+            description="This is my previous web site, that I worked for 2 years on. It doesn't seem so, cause it's very minimalistic but trust me, I spent a lot of time building it."
+            cardClass="bg-contain bg-white"
+          />
         </div>
       </div>
-    </>
+    </FaidInMotionContainer>
   );
 }

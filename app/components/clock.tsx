@@ -16,7 +16,7 @@ export default function Clock() {
   const formattedMinute = minute.length === 1 ? `0${minute}` : minute;
 
   return (
-    <div className="mb-3 hidden text-indigo-900 drop-shadow-menu md:block">
+    <div className="black mb-3 hidden font-bold md:block">
       <span className="font-ignazio text-xl md:text-5xl">
         {time.toLocaleTimeString("en-IL", {
           hour: "2-digit",

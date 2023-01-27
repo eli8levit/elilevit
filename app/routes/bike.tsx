@@ -1,28 +1,25 @@
 import React from "react";
-import BikeCanvas from "~/sources/images/bike-canvas.png";
-import { Outlet } from "@remix-run/react";
-import { Nav } from "~/components";
+import BikeCanvas from "~/sources/images/bike-illustration.png";
+import { FaidInMotionContainer } from "~/components/layout";
+import { motion } from "framer-motion";
 
 type Card = {
   background: string;
   title: string;
   type?: string;
   description: string;
+  cardClass?: string;
 };
 
-export const BikeCard = ({
-  background,
-  title,
-  type = "",
-  description,
-}: Card) => {
+const BikeCard = ({ background, title, type = "", description }: Card) => {
   return (
-    <a
-      href="/bike/dd/#rides"
+    <motion.li
+      whileHover={{ scale: 1.03 }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-1 mt-auto mb-2 w-full max-w-[600px] flex-col rounded-md p-4 text-white shadow-lg backdrop-blur-lg backdrop-brightness-50 group-hover:shadow-bike md:mx-auto md:w-[70%]">
-        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl group-hover:text-indigo-100">
+      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-lg p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
+        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl transition-all group-hover:text-indigo-100">
           {title}{" "}
           {type && (
             <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
@@ -30,76 +27,90 @@ export const BikeCard = ({
             </span>
           )}
         </h3>
-        <p className="font-roboto text-sm font-normal text-indigo-200 2xl:text-lg">
+        <p className="font-apfel text-sm font-normal text-indigo-100 2xl:text-lg">
           {description}
         </p>
       </div>
-    </a>
+    </motion.li>
+  );
+};
+
+const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
+  return (
+    <li className="flex w-full flex-col items-center rounded-lg md:flex-row">
+      <div className="mb-5 flex-col font-ignazio">
+        <h3 className="mb-1 text-xl text-indigo-500 md:text-xl">{title}</h3>
+        <p className="font-apfel text-base font-light text-gray-400 lg:text-lg">
+          {description}
+        </p>
+      </div>
+      <div
+        className={`flex rounded-md ${background} h-full h-[180px] w-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+      />
+    </li>
   );
 };
 
 export default function Bike() {
   return (
-    <>
-      <Nav />
-      <div className="content-container">
-        <h1 className="mb-12 bg-gradient-to-r px-2 py-8 text-center font-satisfy text-7xl font-normal text-indigo-800 md:mb-24 md:min-h-[150px] md:to-red-500 md:p-0 md:text-left md:text-9xl">
-          Bike Blog
-        </h1>
-        <div className="mx-auto mb-16 grid max-w-[2000px] items-center justify-between gap-x-12 md:grid-cols-2">
-          <p className="p-8 font-roboto text-3xl text-indigo-800">
+    <FaidInMotionContainer>
+      <div className="content-container grid items-center gap-16 md:grid-cols-2 md:py-28">
+        <div>
+          <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
+            Bike Blog
+          </h1>
+          <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
             <strong className="font-bold">the upgrading revolution</strong>
-          </p>
-          <img src={BikeCanvas} className="mx-auto w-full object-contain" />
+          </h2>
         </div>
+        <img
+          src={BikeCanvas}
+          alt="Illustrated blue bicycle on blue and green brush lines background"
+          className="ml-auto object-contain md:h-[450px]"
+          height="450px"
+        />
       </div>
-      <Outlet />
-      <div className="content-container pt-0">
-        <div className="mb-48 grid justify-center gap-8 rounded-lg bg-blueNoise py-8 px-4 shadow-2xl shadow-indigo-400 md:grid-cols-2 md:py-16 md:px-16">
+      <div className="content-container px-3 py-16">
+        <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2
-              className="mb-4 font-satisfy text-5xl font-bold text-pink-200"
+              className="mb-4 font-apfel text-4xl font-bold text-white"
               id="rides"
             >
               Rides
             </h2>
-            <ul className="flex flex-col gap-y-8">
-              <li>
-                <BikeCard
-                  type="gravel + road"
-                  background="bg-firstRide"
-                  description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
-                  title="First one"
-                />
-              </li>
-              <li>
-                <BikeCard
-                  type="gravel"
-                  background="bg-secondRide"
-                  description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
-                  title="Second one"
-                />
-              </li>
+            <ul className="flex flex-col gap-y-6">
+              <BikeCard
+                type="gravel + road"
+                background="bg-firstRide"
+                description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
+                title="First one"
+              />
+              <BikeCard
+                type="gravel"
+                background="bg-secondRide"
+                description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
+                title="Second one"
+              />
             </ul>
           </section>
+          <div className="my-12 hidden w-[3px] rounded-lg bg-gradient-to-b from-indigo-500 to-indigo-900 md:block" />
           <section>
-            <h2 className="mb-4 font-satisfy text-5xl font-bold text-pink-200">
+            <h2 className="mb-6 font-apfel text-4xl font-bold text-white md:mb-4">
               Upgrades
             </h2>
-            <ul className="flex flex-col gap-y-4">
-              <li>
-                <BikeCard
-                  background="bg-wheels"
-                  title="DT Swiss CR1600"
-                  description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident."
-                />
-              </li>
+            <ul className="flex flex-col gap-y-6">
+              <UpgradeCard
+                background="bg-wheels"
+                title="DT Swiss CR1600"
+                description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident."
+              />
             </ul>
           </section>
         </div>
       </div>
-    </>
+    </FaidInMotionContainer>
   );
 }

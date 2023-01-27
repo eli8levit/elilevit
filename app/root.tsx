@@ -4,26 +4,57 @@ import {
   LiveReload,
   Meta,
   Outlet,
-  PrefetchPageLinks,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import mainCssUrl from "./styles/main.css";
-import tailwindStylesheetUrl from "./styles/tailwind.css";
-import { Footer } from "~/components";
+import mainCss from "./tailwind.css";
+import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
+import MetaCard from "../public/meta.jpg";
+import Icon32 from "../public/favicon-32x32.png";
+import Icon16 from "../public/favicon-16x16.png";
+import Manifest from "../public/site.webmanifest";
+import AppleIcon from "../public/apple-touch-icon.png";
+import { motion } from "framer-motion";
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: mainCssUrl },
-    { rel: "stylesheet", href: tailwindStylesheetUrl },
+    { rel: "stylesheet", href: mainCss },
+    {
+      rel: "icon",
+      sizes: "180x180",
+      href: AppleIcon,
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: Icon32,
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: Icon16,
+    },
+    { rel: "manifest", href: Manifest },
   ];
 };
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
   "theme-color": `${config.theme.extend.colors.pinkLighter}`,
+  title: "Eli Levit",
+  description:
+    "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
+  "og:title": "Eli Levit",
+  "og:description":
+    "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
+  "og:image": MetaCard,
+  "twitter:card": "summary_large_image",
+  "twitter:title": "Eli Levit",
+  "twitter:description":
+    "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
+  "twitter:image": MetaCard,
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -35,10 +66,17 @@ export default function App() {
         <Links />
       </head>
       <body className="flex min-h-full flex-col">
-        <PrefetchPageLinks page="/bike" />
-        <PrefetchPageLinks page="/art" />
-        <PrefetchPageLinks page="/about" />
-        {/*<Nav />*/}
+        <motion.div
+          initial={{ translateY: "-50%", opacity: 0 }}
+          animate={{ translateY: 0, opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
+          <Nav />
+        </motion.div>
         <Outlet />
         <Footer />
         <ScrollRestoration />
