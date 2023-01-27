@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import mainCss from "./styles/main.css";
+import mainCss from "./styles/tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 import MetaCard from "../public/meta.jpg";
