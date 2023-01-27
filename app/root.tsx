@@ -1,4 +1,3 @@
-import styles from "./tailwind.css";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
@@ -8,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import styles from "./tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 import MetaCard from "../public/meta.jpg";
