@@ -7,7 +7,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "./tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 import MetaCard from "../public/meta.jpg";
@@ -16,6 +15,7 @@ import Icon16 from "../public/favicon-16x16.png";
 import Manifest from "../public/site.webmanifest";
 import AppleIcon from "../public/apple-touch-icon.png";
 import { motion } from "framer-motion";
+import styles from "./tailwind.css";
 
 export const links: LinksFunction = () => {
   return [
