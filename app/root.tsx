@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import mainCss from "./tailwind.css";
+import styles from "./tailwind.css";
 import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 import MetaCard from "../public/meta.jpg";
@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: mainCss },
+    { rel: "stylesheet", href: styles },
     {
       rel: "icon",
       sizes: "180x180",
