@@ -38,10 +38,10 @@ const ArtCard = ({ background, title, description, cardClass }: Card) => {
         style={{ willChange }}
       >
         <div className="mb-5 flex-col font-ignazio">
-          <h3 className="mb-1 text-lg text-black md:text-xl lg:text-2xl">
+          <h3 className="mb-1 text-lg font-bold text-black md:text-xl lg:text-2xl">
             {title}
           </h3>
-          <p className="max-w-[850px] font-apfel text-base font-normal text-zinc-500 lg:text-lg">
+          <p className="max-w-[850px] font-apfel text-base font-normal text-black opacity-50 lg:text-lg">
             {description}
           </p>
         </div>
@@ -73,15 +73,13 @@ export default function Art() {
         />
       </motion.div>
       <div>
-        <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
-          Work & Art
-        </h1>
+        <h1 className="heading mb-4">Work & Art</h1>
         <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
           Here you can see my art like photos, illustrations along with my
           projects
         </h2>
       </div>
-      <div className="mx-auto grid grid-rows-[400px_auto_400px_auto_400px_auto_400px] gap-12 md:grid-cols-5 md:grid-rows-[400px_400px_400px_400px] md:grid-rows-5 md:gap-8">
+      <div className="mx-auto grid grid-rows-[400px_auto_400px_auto_400px_auto_400px] gap-12 md:grid-cols-5 md:grid-rows-[400px_400px_400px_400px] md:grid-rows-5 md:gap-12">
         <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
           <ArtCard
             background="bg-haIsh"

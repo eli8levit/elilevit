@@ -32,9 +32,9 @@ const IndexCard = ({ href, background, text }: Card) => {
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
         to={href}
-        className={`group flex h-[200px] w-full rounded-xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
+        className={`group flex h-[200px] w-full rounded-2xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
       >
-        <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-md py-2 px-3 font-ignazio text-base font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-lg">
+        <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-2xl py-2 px-3 font-ignazio text-lg font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-xl">
           {text}
         </span>
       </MotionNavLink>
@@ -50,13 +50,15 @@ export default function Index() {
     <>
       <div className="content-container overflow-x-hidden py-20 md:min-h-[500px] md:py-32">
         <FaidInMotionContainer>
-          <h1 className="mb-6 bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:mb-0 md:min-h-[80px]">
+          <h1 className="heading mb-6">
             <span>Hey,</span> good to see you!
           </h1>
-          <h2 className="mb-10 max-w-[600px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl">
-            I'm Eli, <strong>FullStack Developer & Creator</strong>. Welcome to
-            my brand new website <i>(still in progress)</i>. Hope I won't be
-            lazy like with previous one and will publish some nice things.
+          <h2 className="mb-10 max-w-[700px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl">
+            I'm Eli,{" "}
+            <strong className="highlight">FullStack Developer & Creator</strong>
+            . Welcome to my brand new website{" "}
+            <i className="text-zinc-600">(still in progress)</i>. Hope I won't
+            be lazy like with previous one and will publish some nice things.
           </h2>
         </FaidInMotionContainer>
         <motion.div style={{ scale }}>
@@ -68,7 +70,7 @@ export default function Index() {
           <motion.img
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            sizes={`(max-width: ${defaultTheme.screens.sm}}) 150px, 350px`}
+            sizes={`(max-width: ${defaultTheme.screens.sm}}) 150px, 300px`}
             transition={{
               duration: 0.6,
               delay: 0.1,
@@ -76,7 +78,7 @@ export default function Index() {
             }}
             alt="Blue illustrated line in wave form"
             src={BlueBrush}
-            className="mx-auto h-[150px] object-contain md:h-[350px]"
+            className="mx-auto h-[150px] object-contain md:h-[300px]"
           />
         </motion.div>
       </div>

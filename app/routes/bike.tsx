@@ -2,6 +2,7 @@ import React from "react";
 import BikeCanvas from "~/sources/images/bike-illustration.png";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion } from "framer-motion";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 type Card = {
   background: string;
@@ -18,7 +19,7 @@ const BikeCard = ({ background, title, type = "", description }: Card) => {
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-lg p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
+      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-xl p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
         <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl transition-all group-hover:text-indigo-100">
           {title}{" "}
           {type && (
@@ -56,20 +57,18 @@ export default function Bike() {
     <FaidInMotionContainer>
       <div className="content-container grid items-center gap-16 md:grid-cols-2 md:py-28">
         <div>
-          <h1 className="mb-4 text-left font-apfel text-6xl font-bold text-indigo-800 md:mb-0 md:min-h-[80px]">
-            Bike Blog
-          </h1>
+          <h1 className="heading mb-4">Bike Blog</h1>
           <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
-            <strong className="font-bold">the upgrading revolution</strong>
+            <strong className="highlight">the upgrading evolution</strong>
           </h2>
         </div>
         <img
           src={BikeCanvas}
           alt="Illustrated blue bicycle on blue and green brush lines background"
-          className="ml-auto h-[450px] object-contain"
-          height="450px"
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 100%, 500px`}
+          className="ml-auto w-full object-contain md:w-[500px]"
         />
       </div>
       <div className="content-container px-3 py-16">
