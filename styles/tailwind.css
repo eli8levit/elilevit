@@ -8,11 +8,11 @@
   }
 
   .heading {
-    @apply bg-gradient-to-r from-indigo-800 to-indigo-300 bg-clip-text text-left font-apfel text-6xl font-bold text-transparent md:mb-0 md:min-h-[80px]
+    @apply bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl min-h-[65px] font-bold text-transparent md:mb-0 md:min-h-[80px]
   }
 
   .highlight {
-    @apply bg-gradient-to-r from-indigo-800 to-blue-500 bg-clip-text text-transparent
+    @apply bg-gradient-to-r from-indigo-800 to-pink-500 bg-clip-text text-transparent
   }
 }
 

@@ -40,7 +40,9 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   return (
     <li className="flex w-full flex-col items-center rounded-lg md:flex-row">
       <div className="mb-5 flex-col font-ignazio">
-        <h3 className="mb-1 text-xl text-indigo-500 md:text-xl">{title}</h3>
+        <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-xl">
+          {title}
+        </h3>
         <p className="font-apfel text-base font-light text-gray-400 lg:text-lg">
           {description}
         </p>
@@ -55,7 +57,7 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
 export default function Bike() {
   return (
     <FaidInMotionContainer>
-      <div className="content-container grid items-center gap-16 md:grid-cols-2 md:py-28">
+      <div className="content-container mb-10 grid items-center gap-16 md:grid-cols-2 md:py-28">
         <div>
           <h1 className="heading mb-4">Bike Blog</h1>
           <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">

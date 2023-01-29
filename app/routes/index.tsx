@@ -48,17 +48,17 @@ export default function Index() {
 
   return (
     <>
-      <div className="content-container overflow-x-hidden py-20 md:min-h-[500px] md:py-32">
+      <div className="content-container mb-20 overflow-x-hidden md:min-h-[500px] md:py-32">
         <FaidInMotionContainer>
           <h1 className="heading mb-6">
             <span>Hey,</span> good to see you!
           </h1>
-          <h2 className="mb-10 max-w-[700px] text-left font-apfel text-xl font-normal text-black md:mb-12 md:text-2xl">
+          <h2 className="mb-8 max-w-[700px] text-left font-apfel text-xl font-normal text-black md:mb-20 md:text-2xl">
             I'm Eli,{" "}
             <strong className="highlight">FullStack Developer & Creator</strong>
-            . Welcome to my brand new website{" "}
-            <i className="text-zinc-600">(still in progress)</i>. Hope I won't
-            be lazy like with previous one and will publish some nice things.
+            . Welcome to my brand new website <i>(still in progress)</i>. Hope I
+            won't be lazy like with previous one and will publish some nice
+            things.
           </h2>
         </FaidInMotionContainer>
         <motion.div style={{ scale }}>
@@ -70,7 +70,7 @@ export default function Index() {
           <motion.img
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            sizes={`(max-width: ${defaultTheme.screens.sm}}) 150px, 300px`}
+            sizes={`(max-width: ${defaultTheme.screens.sm}}) 180px, 250px`}
             transition={{
               duration: 0.6,
               delay: 0.1,
@@ -78,7 +78,7 @@ export default function Index() {
             }}
             alt="Blue illustrated line in wave form"
             src={BlueBrush}
-            className="mx-auto h-[150px] object-contain md:h-[300px]"
+            className="mx-auto h-[180px] object-contain md:h-[250px]"
           />
         </motion.div>
       </div>
