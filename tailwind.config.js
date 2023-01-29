@@ -25,10 +25,10 @@ module.exports = {
         bike: `0 5px 25px -3px ${colors.indigo["900"]}, 0 0 40px 0 rgba(0,0,0,0.4)`,
         art: `0 5px 45px -10px ${colors.indigo["400"]}`,
         indexCard: `0 0 25px -5px ${colors.indigo["400"]}`,
+        footer: `0 0 45px -2px ${colors.indigo["300"]}`,
         indexCardBg: `0 0 50px -2px ${colors.indigo["800"]}`,
       },
       colors: {
-        casualBlue: "#072c73",
         primaryText: "#0b224e",
         pinkLighter: "#fff3f4",
       },

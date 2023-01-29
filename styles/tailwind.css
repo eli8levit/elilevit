@@ -8,7 +8,7 @@
   }
 
   .heading {
-    @apply bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl min-h-[65px] font-bold text-transparent md:mb-0 md:min-h-[80px]
+    @apply bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-left font-apfel text-6xl min-h-[65px] font-bold text-transparent md:mb-0 md:min-h-[70px]
   }
 
   .highlight {
