@@ -106,7 +106,7 @@ export default function Index() {
               <IndexCard
                 background="bg-wall"
                 text="Look at my art & projects"
-                href="/bike"
+                href="/art"
               />
             </li>
           </ul>
