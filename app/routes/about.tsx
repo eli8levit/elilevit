@@ -15,14 +15,19 @@ export default function About() {
           className="mx-auto h-[250px] md:h-[500px]"
         />
         <p className="mb-4 font-apfel text-xl text-black md:mr-auto md:text-2xl">
-          Hello and welcome to my personal blog! I'm from Israel 🇮🇱 and I love
-          sharing my hobbies, interests, and projects with others. On this blog,
-          you'll find a mix of art, design, coding, and more. Some of my
-          passions include biking, music, and photography (all of the photos you
-          see here are taken by me). I also enjoy sharing my personal biking and
-          lifestyle blog with readers. Feel free to browse and explore my art
-          and projects. If you have any questions or just want to connect, don't
-          hesitate to reach out. Thanks for visiting!
+          Shalom from Israel 🇮🇱. I'm Eli, currently I'm working in{" "}
+          <a
+            href="https://www.rapyd.net/"
+            className="highlight"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Rapyd
+          </a>{" "}
+          as a FullStack Developer. Apart from my work I enjoy cycling, music,
+          photographing and a lot of other creative things that I would like to
+          share here with you. Don't hesitate to reach out me and thanks for
+          visiting!
         </p>
       </main>
     </FaidInMotionContainer>

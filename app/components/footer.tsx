@@ -1,5 +1,5 @@
 import { Link } from "~/components/link";
-import React, { useState } from "react";
+import React from "react";
 import End from "~/sources/images/end.png";
 import { motion } from "framer-motion";
 const colors = require("tailwindcss/colors");
@@ -33,7 +33,7 @@ export const Footer = () => {
           </Link>
         </div>
         <Link
-          className="inline-flex h-full w-14 flex-shrink-0 items-center justify-center bg-gradient-to-b from-indigo-700 to-indigo-500 text-white shadow-md transition-all"
+          className="ml-auto inline-flex h-full w-14 flex-shrink-0 items-center justify-center bg-gradient-to-b from-indigo-700 to-indigo-500 text-white shadow-md transition-all"
           href="https://github.com/eli8levit"
         >
           <motion.div

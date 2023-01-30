@@ -20,7 +20,7 @@ const BikeCard = ({ background, title, type = "", description }: Card) => {
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
       <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-xl p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
-        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-xl transition-all group-hover:text-indigo-100">
+        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl transition-all group-hover:text-indigo-100">
           {title}{" "}
           {type && (
             <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
@@ -87,13 +87,13 @@ export default function Bike() {
                 type="gravel + road"
                 background="bg-firstRide"
                 description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
-                title="First one"
+                title="#1"
               />
               <BikeCard
                 type="gravel"
                 background="bg-secondRide"
-                description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
-                title="Second one"
+                description="National path in Ben Shemen Forest"
+                title="#2"
               />
             </ul>
           </section>
@@ -106,7 +106,7 @@ export default function Bike() {
               <UpgradeCard
                 background="bg-wheels"
                 title="DT Swiss CR1600"
-                description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident."
+                description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident and was forced to buy replacement. I thought why not to use opportunity to upgrade them. That's how I bought DT Swiss."
               />
             </ul>
           </section>
