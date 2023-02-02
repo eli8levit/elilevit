@@ -19,7 +19,7 @@ const BikeCard = ({ background, title, type = "", description }: Card) => {
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
-      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-xl p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
+      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-2xl p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
         <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl transition-all group-hover:text-indigo-100">
           {title}{" "}
           {type && (
@@ -57,7 +57,7 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
 export default function Bike() {
   return (
     <FaidInMotionContainer>
-      <div className="content-container mb-10 grid items-center gap-16 md:grid-cols-2 md:py-28">
+      <div className="content-container mb-4 grid items-center gap-12 md:grid-cols-2 md:py-28">
         <div>
           <h1 className="heading mb-4">Bike Blog</h1>
           <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
@@ -70,7 +70,7 @@ export default function Bike() {
           src={BikeCanvas}
           alt="Illustrated blue bicycle on blue and green brush lines background"
           sizes={`(max-width: ${defaultTheme.screens.sm}}) 100%, 500px`}
-          className="ml-auto w-full object-contain md:w-[500px]"
+          className="ml-auto w-full object-contain md:h-[375px] md:w-[500px]"
         />
       </div>
       <div className="content-container px-3 py-16">

@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink, useMatches } from "@remix-run/react";
-import Clock from "~/components/clock";
+import Me from "~/sources/images/me.png";
+import { motion } from "framer-motion";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export const Nav = () => {
   const { pathname } = useMatches()?.[1] || { pathname: "" };
@@ -20,22 +22,28 @@ export const Nav = () => {
   };
 
   return (
-    <div className="lg:px-22 2xl:px-42 flex h-[60px] w-full flex-row items-center justify-between gap-x-2 px-2 text-sm backdrop-blur-sm md:h-[70px] md:px-12 md:text-base ">
-      <nav className="flex h-full flex-row items-center gap-x-2 overflow-auto whitespace-nowrap py-3 md:w-full md:px-6 md:py-5">
+    <header className="lg:px-22 2xl:px-42 mt-2 flex h-[60px] w-full flex-row items-center justify-between px-2 text-sm backdrop-blur-sm md:mt-4 md:h-[70px] md:px-12 md:text-base">
+      <nav className="flex h-full flex-row items-center gap-x-0.5 overflow-auto whitespace-nowrap py-3 md:gap-x-2 md:py-5">
         <NavLink to="/" className={genLinkClassName("")}>
           Home
         </NavLink>
         <NavLink to="/bike" className={genLinkClassName("bike")}>
           Bike Blog
         </NavLink>
-        <NavLink to="/about" className={genLinkClassName("about")}>
-          What is it?
-        </NavLink>
         <NavLink to="/art" className={genLinkClassName("art")}>
           Some work
         </NavLink>
       </nav>
-      <Clock />
-    </div>
+      <NavLink to="/about">
+        <motion.img
+          transition={{ type: "spring", stiffness: 500, damping: 20 }}
+          whileHover={{ scale: 1.2, padding: 0 }}
+          initial={{ padding: "5px" }}
+          src={Me}
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 45px, 60px`}
+          className="transition-bg mr-2 w-[45px] rounded-full bg-white shadow-2xl hover:bg-primaryText md:w-[60px]"
+        />
+      </NavLink>
+    </header>
   );
 };

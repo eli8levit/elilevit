@@ -6,7 +6,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 export default function About() {
   return (
     <FaidInMotionContainer>
-      <main className="content-container mb-32 grid items-center gap-12 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%] md:gap-8">
+      <main className="content-container mb-22 grid items-center gap-12 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%] md:gap-8">
         <h1 className="heading md:col-span-full">A bit about me</h1>
         <img
           src={Leaf}
