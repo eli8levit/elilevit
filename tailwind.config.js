@@ -17,7 +17,8 @@ module.exports = {
         firstRide: "url(/first-ride.jpg)",
         secondRide: "url(/second-ride.jpg)",
         wheels: "url(/wheels.jpg)",
-        blackBrush: "url(/black-brush.png)",
+        blackBrush: "url(/nav-brush.svg)",
+        hoverNavBrush: "url(/hover-nav-brush.svg)",
         haIsh: "url(/ha-ish.jpg)",
         player: "url(/player.png)",
       },
@@ -29,8 +30,9 @@ module.exports = {
         indexCardBg: `0 0 50px -2px ${colors.indigo["800"]}`,
       },
       colors: {
-        primaryText: "#0b224e",
         pinkLighter: "#fff3f4",
+        // pinkLighter: "#c7a3ac",
+        secondaryBg: "#091223",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

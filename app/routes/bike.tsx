@@ -74,7 +74,7 @@ export default function Bike() {
         />
       </div>
       <div className="content-container px-3 py-16">
-        <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-[#091223] py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
+        <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-secondaryBg py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2
               className="mb-4 font-apfel text-4xl font-bold text-white"
