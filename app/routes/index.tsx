@@ -23,11 +23,12 @@ const IndexCard = ({ href, background, text }: Card) => {
       ref={ref}
       style={{
         opacity: isInView ? 1 : 0,
-        transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        transition: "all 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
       }}
     >
       <MotionNavLink
         whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
         to={href}
         className={`group flex h-[200px] w-full rounded-2xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
@@ -40,24 +41,24 @@ const IndexCard = ({ href, background, text }: Card) => {
   );
 };
 
+const draw = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i: any) => {
+    const delay = 1 + i * 0.5;
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
+        opacity: { delay, duration: 0.5 },
+      },
+    };
+  },
+};
+
 export default function Index() {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
-
-  const draw = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (i: any) => {
-      const delay = 1 + i * 0.5;
-      return {
-        pathLength: 1,
-        opacity: 1,
-        transition: {
-          pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
-          opacity: { delay, duration: 0.5 },
-        },
-      };
-    },
-  };
 
   return (
     <>

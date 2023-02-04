@@ -25,7 +25,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       ref={ref}
       style={{
         opacity: isInView ? 1 : 0,
-        transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        transition: "all 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         display: "flex",
         width: "100%",
       }}
@@ -72,7 +72,7 @@ export default function Art() {
           src={Waves}
           alt="Illustrated colored lines in waves form on black background"
           sizes={`(max-width: ${defaultTheme.screens.sm}}) 300px, 480px`}
-          className="h-[300px] w-full rounded-xl object-cover md:h-[480px]"
+          className="h-[300px] w-full rounded-2xl object-cover md:h-[480px]"
         />
       </motion.div>
       <div>
