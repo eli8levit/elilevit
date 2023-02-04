@@ -46,11 +46,11 @@ const Link = ({ id, children }: { id: string; children: any }) => {
       onMouseLeave={() => setHover(false)}
       onMouseOutCapture={() => setTap(false)}
       to={`/${id}`}
-      className={`transition-text relative flex h-full items-center rounded-md py-2 px-4 font-ignazio ${
+      className={`transition-text relative flex h-10 h-full w-28 items-center rounded-md py-2 px-4 font-ignazio ${
         active ? "text-white" : "text-black"
       }`}
     >
-      <span className="z-10">{children}</span>
+      <span className="z-10 mx-auto inline-block">{children}</span>
       {isActive(id) ? (
         <motion.svg
           initial="hidden"
