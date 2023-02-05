@@ -48,7 +48,7 @@ const Link = ({ id, children }: { id: string; children: any }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       to={`/${id}`}
-      className={`transition-text relative flex h-full w-28 items-center rounded-md font-ignazio md:w-32 ${
+      className={`transition-text relative flex h-full w-24 items-center rounded-md font-ignazio md:w-32 ${
         active ? "text-white" : "text-black active:text-indigo-800"
       }`}
     >
@@ -97,8 +97,8 @@ const Link = ({ id, children }: { id: string; children: any }) => {
 
 export const Nav = () => {
   return (
-    <header className="lg:px-22 2xl:px-42 mt-2 flex h-[60px] w-full flex-row items-center justify-between px-1 text-sm backdrop-blur-sm md:mt-4 md:h-[70px] md:px-12 md:text-base">
-      <nav className="flex h-full w-full flex-row items-center gap-x-0.5 overflow-auto whitespace-nowrap md:gap-x-2">
+    <header className="lg:px-22 2xl:px-42 mt-2 flex h-[60px] w-full flex-row items-center justify-between px-0.5 text-sm md:mt-4 md:h-[70px] md:px-12 md:text-base">
+      <nav className="flex h-full w-full flex-row items-center overflow-auto whitespace-nowrap md:gap-x-1">
         <Link id="">Home</Link>
         <Link id="bike">Bike Blog</Link>
         <Link id="art">Some work</Link>
