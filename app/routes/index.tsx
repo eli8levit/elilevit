@@ -107,8 +107,8 @@ export default function Index() {
           </motion.svg>
         </motion.div>
       </div>
-      <FaidInMotionContainer className="content-container px-3 pt-0">
-        <section className="rounded-2xl bg-secondaryBg px-4 py-8 shadow-xl shadow-indigo-300 md:p-16">
+      <FaidInMotionContainer className="content-container px-5 pt-0">
+        <section className="rounded-2xl bg-secondaryBg px-4 py-8 shadow-2xl md:p-16">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-white md:mb-6 md:text-5xl">
             What to do here
           </h3>

@@ -1,8 +1,9 @@
 import React from "react";
 import BikeCanvas from "~/sources/images/bike-illustration.png";
 import { FaidInMotionContainer } from "~/components/layout";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import defaultTheme from "tailwindcss/defaultTheme";
+import { Link, Outlet, useParams } from "@remix-run/react";
 
 type Card = {
   background: string;
@@ -10,13 +11,14 @@ type Card = {
   type?: string;
   description: string;
   cardClass?: string;
+  id?: string;
 };
 
-const BikeCard = ({ background, title, type = "", description }: Card) => {
+const BikeCard = ({ background, title, type = "", description, id }: Card) => {
   return (
     <motion.li
+      layoutId={id}
       whileHover={{ scale: 1.03 }}
-      transition={{ type: "spring", stiffness: 200, damping: 10 }}
       className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
     >
       <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-2xl p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
@@ -55,9 +57,13 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
 };
 
 export default function Bike() {
+  const params = useParams();
+
   return (
     <FaidInMotionContainer>
-      <div className="content-container mb-4 grid items-center gap-12 md:grid-cols-2 md:py-28">
+      <div
+        className={`content-container  relative mb-4 grid items-center gap-12 py-12 md:grid-cols-2`}
+      >
         <div>
           <h1 className="heading mb-4">Bike Blog</h1>
           <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
@@ -69,12 +75,12 @@ export default function Bike() {
         <img
           src={BikeCanvas}
           alt="Illustrated blue bicycle on blue and green brush lines background"
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 100%, 500px`}
-          className="ml-auto w-full object-contain md:h-[375px] md:w-[500px]"
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 100%, 650px`}
+          className="ml-auto w-full object-contain md:w-[650px]"
         />
       </div>
-      <div className="content-container px-3 py-16">
-        <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-secondaryBg py-8 px-4 shadow-xl shadow-indigo-300 md:grid-cols-[1fr_max-content_1fr] md:px-8">
+      <div className="content-container py-4 px-5 md:py-16">
+        <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-secondaryBg py-8 px-4 shadow-xl shadow-2xl md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2
               className="mb-4 font-apfel text-4xl font-bold text-white"
@@ -82,14 +88,59 @@ export default function Bike() {
             >
               Rides
             </h2>
+            <AnimatePresence>
+              {params?.bikeId && (
+                <motion.div
+                  className="content-container fixed left-0 right-0 top-[20%] z-10 mx-auto max-w-[80vw] rounded-2xl bg-green-200 shadow-2xl"
+                  layoutId={params?.bikeId}
+                >
+                  <motion.h5>{"sdfsdfsdfsd"}</motion.h5>
+                  <motion.h2>{"sdfsdfsdfsdfsdfsdfsdf"}</motion.h2>
+                  <motion.div>
+                    Laborum anim reprehenderit veniam reprehenderit mollit
+                    officia consectetur cupidatat. Esse cupidatat ad excepteur
+                    sint consequat. Lorem excepteur commodo enim consectetur
+                    anim adipisicing nostrud exercitation mollit cupidatat amet.
+                    Quis veniam excepteur id excepteur sit ea consequat quis
+                    proident ad mollit eu. Ea ex deserunt voluptate ut minim
+                    reprehenderit adipisicing ut. Ea commodo cillum consequat
+                    incididunt sint enim consectetur officia incididunt. Magna
+                    ad veniam ullamco irure non fugiat fugiat laboris enim
+                    cupidatat proident consequat proident labore cupidatat.
+                    Eiusmod est ullamco adipisicing fugiat id quis pariatur ad
+                    qui minim velit amet aliqua commodo. Culpa ullamco mollit
+                    laboris occaecat qui nulla velit in non sint laborum non.
+                    Qui ut et est. Excepteur tempor ad magna elit est ullamco
+                    eu. Ex enim deserunt est dolore ex. Excepteur ipsum tempor
+                    ut labore. Consequat dolor do ullamco tempor ut elit laborum
+                    duis ullamco. Eu incididunt non ad nisi nulla ipsum do elit.
+                    Consequat est id minim aute. Aliqua do ullamco amet ea ipsum
+                    sint Lorem nulla reprehenderit deserunt. Pariatur dolor
+                    dolore quis ea ipsum id adipisicing cillum incididunt.
+                    Aliquip laborum quis ullamco nostrud non est occaecat
+                    ullamco commodo exercitation incididunt laborum. Occaecat
+                    sint aliquip minim quis duis ullamco voluptate cupidatat
+                    elit adipisicing nulla ullamco.
+                    <Outlet />
+                  </motion.div>
+                  <Link to="/bike" preventScrollReset>
+                    back
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
             <ul className="flex flex-col gap-y-6">
+              {/*<Link to="/bike/first" preventScrollReset>*/}
               <BikeCard
                 type="gravel + road"
                 background="bg-firstRide"
                 description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
                 title="#1"
+                id="first"
               />
+              {/*</Link>*/}
               <BikeCard
+                id="second"
                 type="gravel"
                 background="bg-secondRide"
                 description="National path in Ben Shemen Forest"

@@ -31,7 +31,6 @@ module.exports = {
       },
       colors: {
         pinkLighter: "#fff3f4",
-        // pinkLighter: "#c7a3ac",
         secondaryBg: "#091223",
       },
       fontFamily: {

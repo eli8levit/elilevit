@@ -72,7 +72,7 @@ export default function Art() {
           src={Waves}
           alt="Illustrated colored lines in waves form on black background"
           sizes={`(max-width: ${defaultTheme.screens.sm}}) 300px, 480px`}
-          className="h-[300px] w-full rounded-2xl object-cover md:h-[480px]"
+          className="h-[300px] w-full rounded-2xl object-cover shadow-2xl md:h-[480px]"
         />
       </motion.div>
       <div>

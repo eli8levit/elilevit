@@ -50,6 +50,8 @@ export const meta: MetaFunction = () => ({
   "og:description":
     "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
   "og:image": MetaCard,
+  "og:url": "https://elilevit.co/",
+  "twitter:url": "https://elilevit.co/",
   "twitter:card": "summary_large_image",
   "twitter:title": "Eli Levit",
   "twitter:description":
