@@ -4,12 +4,14 @@ import Me from "~/sources/images/me.png";
 import { motion } from "framer-motion";
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
+import { useMobileDetect } from "~/use-device-detect-hook";
 
 const draw = {
   tap: {
-    pathLength: 0.1,
+    scale: 0.7,
+    pathLength: 1,
     transition: {
-      pathLength: { type: "spring", duration: 0.2, bounce: 0 },
+      scale: { type: "spring", duration: 0.6, bounce: 0 },
     },
   },
   hidden: { pathLength: 0 },
@@ -28,6 +30,8 @@ const Link = ({ id, children }: { id: string; children: any }) => {
   const { pathname } = useMatches()?.[1] || { pathname: "" };
   const [hover, setHover] = React.useState(false);
   const [tap, setTap] = React.useState(false);
+  const mobileDetect = useMobileDetect();
+  const isMobile = mobileDetect.isMobile();
 
   const isActive = (id: string) => {
     const splitted = pathname.split("/")?.[1] || "";
@@ -37,17 +41,16 @@ const Link = ({ id, children }: { id: string; children: any }) => {
 
   return (
     <NavLink
-      onMouseDown={() => {
-        console.log("down");
-        setTap(true);
-      }}
+      onMouseDown={() => setTap(true)}
       onMouseUp={() => setTap(false)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onMouseOutCapture={() => setTap(false)}
       to={`/${id}`}
       className={`transition-text relative flex h-10 h-full w-28 items-center rounded-md py-2 px-4 font-ignazio ${
-        active ? "text-white" : "text-black"
+        active
+          ? "text-white"
+          : "text-black active:text-sm active:text-indigo-800"
       }`}
     >
       <span className="z-10 mx-auto inline-block">{children}</span>
@@ -69,7 +72,7 @@ const Link = ({ id, children }: { id: string; children: any }) => {
           />
         </motion.svg>
       ) : null}
-      {hover && !active ? (
+      {hover && !active && !isMobile ? (
         <motion.svg
           width="100%"
           initial="hidden"

@@ -1,10 +1,5 @@
 import React, { useRef } from "react";
-import {
-  motion,
-  useInView,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import { motion, useInView, useTransform, useScroll } from "framer-motion";
 import { MotionNavLink } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
 
@@ -57,7 +52,7 @@ const draw = {
 };
 
 export default function Index() {
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
 
   return (
@@ -105,8 +100,8 @@ export default function Index() {
                 y2="163"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#6171FF" />
-                <stop offset="1" stop-color="#281CAE" />
+                <stop stopColor="#6171FF" />
+                <stop offset="1" stopColor="#281CAE" />
               </linearGradient>
             </defs>
           </motion.svg>
