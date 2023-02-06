@@ -50,8 +50,8 @@ const Link = ({ id, children }: { id: string; children: any }) => {
       to={`/${id}`}
       className={`transition-text relative flex h-full items-center rounded-md font-ignazio ${
         active
-          ? "w-28 text-white md:w-32"
-          : "w-28 text-black active:text-indigo-800"
+          ? "w-24 text-white md:w-32"
+          : "w-24 text-black active:text-indigo-800 md:w-28"
       }`}
     >
       <span className="z-10 mx-auto inline-block">{children}</span>
@@ -85,7 +85,7 @@ const Link = ({ id, children }: { id: string; children: any }) => {
           <motion.path
             d="M46 102.924C46 102.924 216.674 46.0001 372 46C596.5 45.9999 48.6414 206.161 213.5 275.986C387.5 349.684 513.5 46.0005 798.5 52.8616C1030.25 58.4407 434.588 245.928 628 311.056C824.161 377.11 1070 147.652 1070 147.652"
             variants={draw}
-            stroke="#281cae"
+            stroke={colors.emerald["500"]}
             strokeOpacity="0.14"
             strokeWidth="91"
             strokeLinecap="round"
@@ -99,7 +99,7 @@ const Link = ({ id, children }: { id: string; children: any }) => {
 
 export const Nav = () => {
   return (
-    <header className="lg:px-22 2xl:px-42 mt-1 flex h-[60px] w-full flex-row items-center justify-between px-2 text-sm md:mt-4 md:h-[70px] md:px-12 md:text-base">
+    <header className="lg:px-22 2xl:px-42 flex h-[60px] w-full flex-row items-center justify-between px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base">
       <nav className="flex h-full w-full flex-row items-center overflow-auto whitespace-nowrap md:gap-x-1">
         <Link id="">Home</Link>
         <Link id="bike">Bike Blog</Link>
@@ -109,10 +109,10 @@ export const Nav = () => {
         <motion.img
           transition={{ type: "spring", stiffness: 500, damping: 20 }}
           whileHover={{ scale: 1.2, padding: 0 }}
-          initial={{ padding: "5px" }}
+          initial={{ padding: "4px" }}
           src={Me}
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 45px, 60px`}
-          className="transition-bg mr-2 w-[45px] rounded-full bg-white shadow-2xl hover:bg-indigo-800 md:w-[60px]"
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 50px, 60px`}
+          className="transition-bg mr-2 w-[50px] rounded-full bg-white from-indigo-800 to-emerald-500 shadow-2xl hover:bg-green-800 hover:bg-gradient-to-b md:w-[60px]"
         />
       </NavLink>
     </header>

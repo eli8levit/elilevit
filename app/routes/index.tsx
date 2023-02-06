@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, useInView, useTransform, useScroll } from "framer-motion";
+import React from "react";
+import { motion, useTransform, useScroll } from "framer-motion";
 import { MotionNavLink } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
 
@@ -10,29 +10,18 @@ type Card = {
 };
 
 const IndexCard = ({ href, background, text }: Card) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
-    <div
-      ref={ref}
-      style={{
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      }}
+    <MotionNavLink
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      to={href}
+      className={`group flex h-[200px] w-full rounded-2xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
     >
-      <MotionNavLink
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 200, damping: 10 }}
-        to={href}
-        className={`group flex h-[200px] w-full rounded-2xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
-      >
-        <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-2xl py-2 px-3 font-ignazio text-lg font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-xl">
-          {text}
-        </span>
-      </MotionNavLink>
-    </div>
+      <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-2xl py-2 px-3 font-ignazio text-lg font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-indigo-300 group-hover:shadow-indexCard 2xl:text-xl">
+        {text}
+      </span>
+    </MotionNavLink>
   );
 };
 
@@ -62,7 +51,7 @@ export default function Index() {
           <h1 className="heading mb-2">
             <span>Hey,</span> good to see you!
           </h1>
-          <h2 className="mb-6 max-w-[700px] text-left font-apfel text-xl font-normal text-black md:mb-20 md:text-2xl">
+          <h2 className="max-w-[700px] text-left font-apfel text-xl font-normal text-black md:mb-20 md:text-2xl">
             I'm Eli,{" "}
             <strong className="highlight">FullStack Developer & Creator</strong>
             . Welcome to my brand new website <i>(still in progress)</i>. Hope I
@@ -107,7 +96,7 @@ export default function Index() {
           </motion.svg>
         </motion.div>
       </div>
-      <FaidInMotionContainer className="content-container px-5 pt-0">
+      <FaidInMotionContainer className="content-container px-2 pt-0 md:px-5">
         <section className="rounded-2xl bg-secondaryBg px-4 py-8 shadow-2xl md:p-16">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-white md:mb-6 md:text-5xl">
             What to do here

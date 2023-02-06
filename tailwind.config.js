@@ -19,7 +19,7 @@ module.exports = {
         wheels: "url(/wheels.jpg)",
         blackBrush: "url(/nav-brush.svg)",
         hoverNavBrush: "url(/hover-nav-brush.svg)",
-        haIsh: "url(/ha-ish.jpg)",
+        haIsh: "url(/ha-ish-studio.jpg)",
         player: "url(/player.png)",
       },
       boxShadow: {

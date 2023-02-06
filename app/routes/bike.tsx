@@ -62,7 +62,7 @@ export default function Bike() {
   return (
     <FaidInMotionContainer>
       <div
-        className={`content-container  relative mb-4 grid items-center gap-12 py-12 md:grid-cols-2`}
+        className={`content-container relative mb-4 grid items-center gap-6 py-10 md:grid-cols-2 md:gap-12`}
       >
         <div>
           <h1 className="heading mb-4">Bike Blog</h1>
@@ -79,7 +79,7 @@ export default function Bike() {
           className="ml-auto w-full object-contain md:w-[650px]"
         />
       </div>
-      <div className="content-container py-4 px-5 md:py-16">
+      <div className="content-container py-2 px-2 md:px-5 md:py-16">
         <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-secondaryBg py-8 px-4 shadow-xl shadow-2xl md:grid-cols-[1fr_max-content_1fr] md:px-8">
           <section>
             <h2

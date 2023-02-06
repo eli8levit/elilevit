@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import Waves from "~/sources/images/art.jpg";
 import { FaidInMotionContainer } from "~/components/layout";
-import { motion, useInView, useWillChange } from "framer-motion";
+import { motion, useWillChange } from "framer-motion";
 import { useMobileDetect } from "~/use-device-detect-hook";
 import defaultTheme from "tailwindcss/defaultTheme";
 
@@ -15,50 +15,38 @@ type Card = {
 
 const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
   const willChange = useWillChange();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const mobileDetect = useMobileDetect();
   const isMobile = mobileDetect.isMobile();
 
   return (
-    <div
-      ref={ref}
-      style={{
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        display: "flex",
-        width: "100%",
-      }}
+    <motion.a
+      layout
+      whileHover={{ padding: isMobile ? 0 : "20px" }}
+      transition={{ type: "spring", stiffness: 250, damping: 17 }}
+      href={href}
+      className="flex w-full flex-col rounded-xl md:hover:shadow-art"
+      style={{ willChange }}
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      <motion.a
-        layout
-        whileHover={{ padding: isMobile ? 0 : "30px" }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        href={href}
-        className="flex w-full flex-col rounded-xl md:hover:shadow-art"
-        style={{ willChange }}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="mb-5 flex-col font-ignazio">
-          <h3 className="mb-1 text-lg font-bold text-black md:text-xl lg:text-2xl">
-            {title}
-          </h3>
-          <p className="max-w-[850px] font-apfel text-base font-normal text-black opacity-50 lg:text-lg">
-            {description}
-          </p>
-        </div>
-        <div
-          className={`flex rounded-xl ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
-        />
-      </motion.a>
-    </div>
+      <div className="mb-5 flex-col font-apfel">
+        <h3 className="mb-1 text-lg font-bold text-black md:text-xl lg:text-2xl">
+          {title}
+        </h3>
+        <p className="max-w-[850px] text-base font-normal text-black opacity-50 lg:text-lg">
+          {description}
+        </p>
+      </div>
+      <div
+        className={`flex rounded-xl ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+      />
+    </motion.a>
   );
 };
 
 export default function Art() {
   return (
-    <FaidInMotionContainer className="content-container grid items-center gap-20 pt-8 md:gap-28">
+    <FaidInMotionContainer className="content-container grid items-center gap-14 pt-8 md:gap-28">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -82,7 +70,7 @@ export default function Art() {
           projects
         </h2>
       </div>
-      <div className="mx-auto grid grid-rows-[400px_auto_400px_auto_400px_auto_400px] gap-12 md:grid-cols-5 md:grid-rows-[400px_400px_400px_400px] md:grid-rows-5 md:gap-12">
+      <div className="mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-12 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px] md:gap-12">
         <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
           <ArtCard
             background="bg-haIsh"
