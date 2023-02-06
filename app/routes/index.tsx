@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
-import { MotionNavLink } from "~/components";
+import { AnimatedText, MotionNavLink } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
 
 type Card = {
@@ -48,8 +48,8 @@ export default function Index() {
     <>
       <div className="content-container mb-20 overflow-x-hidden md:min-h-[500px] md:py-32">
         <FaidInMotionContainer>
-          <h1 className="heading mb-2">
-            <span>Hey,</span> good to see you!
+          <h1 className="mb-2">
+            <AnimatedText>Hey, good to see you!</AnimatedText>
           </h1>
           <h2 className="max-w-[700px] text-left font-apfel text-xl font-normal text-black md:mb-20 md:text-2xl">
             I'm Eli,{" "}

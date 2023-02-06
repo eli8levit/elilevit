@@ -4,6 +4,7 @@ import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useWillChange } from "framer-motion";
 import { useMobileDetect } from "~/use-device-detect-hook";
 import defaultTheme from "tailwindcss/defaultTheme";
+import { AnimatedText } from "~/components";
 
 type Card = {
   background: string;
@@ -64,7 +65,9 @@ export default function Art() {
         />
       </motion.div>
       <div>
-        <h1 className="heading mb-4">Work & Art</h1>
+        <h1 className="mb-4">
+          <AnimatedText>Work & Art</AnimatedText>
+        </h1>
         <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
           Here you can see my art like photos, illustrations along with my
           projects

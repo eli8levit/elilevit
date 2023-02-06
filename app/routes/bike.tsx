@@ -4,6 +4,7 @@ import { FaidInMotionContainer } from "~/components/layout";
 import { AnimatePresence, motion } from "framer-motion";
 import defaultTheme from "tailwindcss/defaultTheme";
 import { Link, Outlet, useParams } from "@remix-run/react";
+import { AnimatedText } from "~/components";
 
 type Card = {
   background: string;
@@ -56,16 +57,76 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   );
 };
 
-export default function Bike() {
+function ModalContent() {
   const params = useParams();
 
+  React.useEffect(() => {
+    if (params.bikeId) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [params.bikeId]);
+
+  return (
+    <AnimatePresence>
+      {params?.bikeId && (
+        <>
+          <motion.div
+            className="content-container fixed left-0 right-0 top-[20%] z-20 mx-auto h-[60vh] max-w-[1200px] max-w-[80vw] rounded-2xl bg-white shadow-2xl"
+            layoutId={params?.bikeId}
+          >
+            <motion.h5>{"sdfsdfsdfsd"}</motion.h5>
+            <motion.h2>{"sdfsdfsdfsdfsdfsdfsdf"}</motion.h2>
+            <motion.div>
+              Laborum anim reprehenderit veniam reprehenderit mollit officia
+              consectetur cupidatat. Esse cupidatat ad excepteur sint consequat.
+              Lorem excepteur commodo enim consectetur anim adipisicing nostrud
+              exercitation mollit cupidatat amet. Quis veniam excepteur id
+              excepteur sit ea consequat quis proident ad mollit eu. Ea ex
+              deserunt voluptate ut minim reprehenderit adipisicing ut. Ea
+              commodo cillum consequat incididunt sint enim consectetur officia
+              incididunt. Magna ad veniam ullamco irure non fugiat fugiat
+              laboris enim cupidatat proident consequat proident labore
+              cupidatat. Eiusmod est ullamco adipisicing fugiat id quis pariatur
+              ad qui minim velit amet aliqua commodo. Culpa ullamco mollit
+              laboris occaecat qui nulla velit in non sint laborum non. Qui ut
+              et est. Excepteur tempor ad magna elit est ullamco eu. Ex enim
+              deserunt est dolore ex. Excepteur ipsum tempor ut labore.
+              Consequat dolor do ullamco tempor ut elit laborum duis ullamco. Eu
+              incididunt non ad nisi nulla ipsum do elit. Consequat est id minim
+              aute. Aliqua do ullamco amet ea ipsum sint Lorem nulla
+              reprehenderit deserunt. Pariatur dolor dolore quis ea ipsum id
+              adipisicing cillum incididunt. Aliquip laborum quis ullamco
+              nostrud non est occaecat ullamco commodo exercitation incididunt
+              laborum. Occaecat sint aliquip minim quis duis ullamco voluptate
+              cupidatat elit adipisicing nulla ullamco.
+              <Outlet />
+            </motion.div>
+            <Link to="/bike" preventScrollReset>
+              back
+            </Link>
+          </motion.div>
+          <Link
+            to="/bike"
+            className="fixed top-0 bottom-0 left-0 right-0 z-10"
+          />
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
+
+export default function Bike() {
   return (
     <FaidInMotionContainer>
       <div
         className={`content-container relative mb-4 grid items-center gap-6 py-10 md:grid-cols-2 md:gap-12`}
       >
         <div>
-          <h1 className="heading mb-4">Bike Blog</h1>
+          <h1 className="heading mb-4">
+            <AnimatedText>Bike Blog</AnimatedText>
+          </h1>
           <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
             Here is about my bike and stuff related to cycling: my rides, photos
             and, most interesting,{" "}
@@ -88,47 +149,7 @@ export default function Bike() {
             >
               Rides
             </h2>
-            <AnimatePresence>
-              {params?.bikeId && (
-                <motion.div
-                  className="content-container fixed left-0 right-0 top-[20%] z-10 mx-auto max-w-[80vw] rounded-2xl bg-green-200 shadow-2xl"
-                  layoutId={params?.bikeId}
-                >
-                  <motion.h5>{"sdfsdfsdfsd"}</motion.h5>
-                  <motion.h2>{"sdfsdfsdfsdfsdfsdfsdf"}</motion.h2>
-                  <motion.div>
-                    Laborum anim reprehenderit veniam reprehenderit mollit
-                    officia consectetur cupidatat. Esse cupidatat ad excepteur
-                    sint consequat. Lorem excepteur commodo enim consectetur
-                    anim adipisicing nostrud exercitation mollit cupidatat amet.
-                    Quis veniam excepteur id excepteur sit ea consequat quis
-                    proident ad mollit eu. Ea ex deserunt voluptate ut minim
-                    reprehenderit adipisicing ut. Ea commodo cillum consequat
-                    incididunt sint enim consectetur officia incididunt. Magna
-                    ad veniam ullamco irure non fugiat fugiat laboris enim
-                    cupidatat proident consequat proident labore cupidatat.
-                    Eiusmod est ullamco adipisicing fugiat id quis pariatur ad
-                    qui minim velit amet aliqua commodo. Culpa ullamco mollit
-                    laboris occaecat qui nulla velit in non sint laborum non.
-                    Qui ut et est. Excepteur tempor ad magna elit est ullamco
-                    eu. Ex enim deserunt est dolore ex. Excepteur ipsum tempor
-                    ut labore. Consequat dolor do ullamco tempor ut elit laborum
-                    duis ullamco. Eu incididunt non ad nisi nulla ipsum do elit.
-                    Consequat est id minim aute. Aliqua do ullamco amet ea ipsum
-                    sint Lorem nulla reprehenderit deserunt. Pariatur dolor
-                    dolore quis ea ipsum id adipisicing cillum incididunt.
-                    Aliquip laborum quis ullamco nostrud non est occaecat
-                    ullamco commodo exercitation incididunt laborum. Occaecat
-                    sint aliquip minim quis duis ullamco voluptate cupidatat
-                    elit adipisicing nulla ullamco.
-                    <Outlet />
-                  </motion.div>
-                  <Link to="/bike" preventScrollReset>
-                    back
-                  </Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <ModalContent />
             <ul className="flex flex-col gap-y-6">
               {/*<Link to="/bike/first" preventScrollReset>*/}
               <BikeCard

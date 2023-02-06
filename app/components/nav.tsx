@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink, useMatches } from "@remix-run/react";
-import Me from "~/sources/images/me.png";
+import Me from "~/sources/images/me-memoji.png";
 import { motion } from "framer-motion";
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 import { useMobileDetect } from "~/use-device-detect-hook";
+import AboutMe from "~/sources/images/aboutme.svg";
+import { MotionNavLink } from "~/components/motion-nav-link";
 
 const draw = {
   tap: {
@@ -26,9 +28,6 @@ const draw = {
   },
 };
 
-// @ts-ignore
-const LotionLink = motion(NavLink);
-
 const Link = ({ id, children }: { id: string; children: any }) => {
   const { pathname } = useMatches()?.[1] || { pathname: "" };
   const [hover, setHover] = React.useState(false);
@@ -42,7 +41,7 @@ const Link = ({ id, children }: { id: string; children: any }) => {
   const active = isActive(id);
 
   return (
-    <LotionLink
+    <MotionNavLink
       whileTap={{ scale: 0.8 }}
       transition={{ type: "spring", duration: 0.2, bounce: 0 }}
       onMouseEnter={() => setHover(true)}
@@ -93,13 +92,21 @@ const Link = ({ id, children }: { id: string; children: any }) => {
           />
         </motion.svg>
       ) : null}
-    </LotionLink>
+    </MotionNavLink>
   );
 };
 
 export const Nav = () => {
   return (
     <header className="lg:px-22 2xl:px-42 flex h-[60px] w-full flex-row items-center justify-between px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base">
+      <label>
+        <img
+          src={AboutMe}
+          className="md-[200px] absolute top-6 right-16 w-[120px] md:right-32 md:top-12 md:w-[150px] 2xl:w-[200px]"
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 120px, 200px`}
+        />
+        <span className="hidden">About me</span>
+      </label>
       <nav className="flex h-full w-full flex-row items-center overflow-auto whitespace-nowrap md:gap-x-1">
         <Link id="">Home</Link>
         <Link id="bike">Bike Blog</Link>
@@ -107,12 +114,13 @@ export const Nav = () => {
       </nav>
       <NavLink to="/about">
         <motion.img
+          alt="Memoji - embarrassing face width black cycling helmet"
           transition={{ type: "spring", stiffness: 500, damping: 20 }}
-          whileHover={{ scale: 1.2, padding: 0 }}
-          initial={{ padding: "4px" }}
+          whileHover={{ scale: 1.2, padding: "4px" }}
+          initial={{ padding: "12px" }}
           src={Me}
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 50px, 60px`}
-          className="transition-bg mr-2 w-[50px] rounded-full bg-white from-indigo-800 to-pink-600 shadow-2xl hover:bg-green-800 hover:bg-gradient-to-b md:w-[60px]"
+          sizes={`(max-width: ${defaultTheme.screens.sm}}) 50px, 70px`}
+          className="transition-bg mr-2 h-[50px] w-[50px] rounded-full bg-white from-indigo-800 to-pink-600 object-contain shadow-2xl hover:bg-green-800 hover:bg-gradient-to-b md:h-[70px] md:w-[70px]"
         />
       </NavLink>
     </header>
