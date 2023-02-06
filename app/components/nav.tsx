@@ -85,9 +85,9 @@ const Link = ({ id, children }: { id: string; children: any }) => {
           <motion.path
             d="M46 102.924C46 102.924 216.674 46.0001 372 46C596.5 45.9999 48.6414 206.161 213.5 275.986C387.5 349.684 513.5 46.0005 798.5 52.8616C1030.25 58.4407 434.588 245.928 628 311.056C824.161 377.11 1070 147.652 1070 147.652"
             variants={draw}
-            stroke={colors.emerald["400"]}
-            strokeOpacity="0.4"
-            strokeWidth="91"
+            stroke="#281cae"
+            strokeWidth="90"
+            strokeOpacity="0.14"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -112,7 +112,7 @@ export const Nav = () => {
           initial={{ padding: "4px" }}
           src={Me}
           sizes={`(max-width: ${defaultTheme.screens.sm}}) 50px, 60px`}
-          className="transition-bg mr-2 w-[50px] rounded-full bg-white from-emerald-400 to-emerald-600 shadow-2xl hover:bg-green-800 hover:bg-gradient-to-b md:w-[60px]"
+          className="transition-bg mr-2 w-[50px] rounded-full bg-white from-indigo-800 to-pink-600 shadow-2xl hover:bg-green-800 hover:bg-gradient-to-b md:w-[60px]"
         />
       </NavLink>
     </header>
