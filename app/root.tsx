@@ -56,6 +56,7 @@ export const meta: MetaFunction = () => ({
   "twitter:description":
     "FullStack Developer & Creator. Take a look of my brand new website, will be glad to meet you :)",
   "twitter:image": "https://elilevit.co/meta.jpg",
+  "twitter:card": "summary_large_image",
   viewport: "width=device-width,initial-scale=1",
 });
 
