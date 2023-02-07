@@ -101,8 +101,9 @@ export const Nav = () => {
     <header className="lg:px-22 2xl:px-42 flex h-[60px] w-full flex-row items-center justify-between px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base">
       <label>
         <img
+          alt="'About me' handwriting text + arrow pointing to memoji avatar"
           src={AboutMe}
-          className="md-[200px] absolute top-6 right-16 w-[120px] md:right-32 md:top-12 md:w-[150px] 2xl:w-[200px]"
+          className="md-[200px] absolute top-12 right-14 w-[120px] md:right-32 md:top-12 md:w-[150px] 2xl:w-[200px]"
           sizes={`(max-width: ${defaultTheme.screens.sm}}) 120px, 200px`}
         />
         <span className="hidden">About me</span>
