@@ -62,70 +62,14 @@ const Link = ({ id, children }: { id: string; children: any }) => {
           fill="none"
           className="absolute left-0 w-full object-contain"
         >
-          <g filter="url(#a)">
-            <motion.path
-              d="M64.5 168C90.669 86.409 827.831 19.739 854 101.33c42.5 132.509-677.504 0-677.504 112.978C176.496 279.5 820 294 906.5 168"
-              stroke-width="128"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              variants={draw}
-              stroke={colors.indigo["700"]}
-              strokeWidth="128"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </g>
-          <defs>
-            <filter
-              id="a"
-              x=".483"
-              y="-19.821"
-              width="970.023"
-              height="349.175"
-              filterUnits="userSpaceOnUse"
-              colorInterpolationFilters="sRGB"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
-              <feColorMatrix
-                in="SourceAlpha"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="-20" />
-              <feGaussianBlur stdDeviation="35" />
-              <feComposite
-                in2="hardAlpha"
-                operator="arithmetic"
-                k2="-1"
-                k3="1"
-              />
-              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0" />
-              <feBlend in2="shape" result="effect1_innerShadow_28_4" />
-              <feColorMatrix
-                in="SourceAlpha"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="2" />
-              <feGaussianBlur stdDeviation="15" />
-              <feComposite
-                in2="hardAlpha"
-                operator="arithmetic"
-                k2="-1"
-                k3="1"
-              />
-              <feColorMatrix values="0 0 0 0 0.772549 0 0 0 0 0.792157 0 0 0 0 1 0 0 0 0.9 0" />
-              <feBlend
-                in2="effect1_innerShadow_28_4"
-                result="effect2_innerShadow_28_4"
-              />
-            </filter>
-          </defs>
+          <motion.path
+            d="M64.5 168C90.669 86.4088 827.831 19.7389 854 101.33C896.5 233.839 176.496 101.33 176.496 214.308C176.496 279.5 820 294 906.5 168"
+            variants={draw}
+            stroke={colors.indigo["700"]}
+            strokeWidth="128"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </motion.svg>
       ) : null}
       {hover && !active && !isMobile ? (

@@ -47,7 +47,7 @@ export default function Index() {
   return (
     <>
       <div className="content-container mb-20 overflow-x-hidden md:min-h-[500px] md:py-32">
-        <h1 className="mb-2">
+        <h1 className="mb-4">
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>
         <FaidInMotionContainer>
@@ -86,10 +86,10 @@ export default function Index() {
             <defs>
               <linearGradient
                 id="b"
-                x1="469.5"
-                y1="153"
-                x2="466.5"
-                y2="317.5"
+                x1="467.5"
+                y1="104"
+                x2="465.5"
+                y2="353"
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#6171FF" />
@@ -98,9 +98,9 @@ export default function Index() {
               <filter
                 id="a"
                 x=".499"
-                y="-9.009"
+                y="-3.009"
                 width="883.441"
-                height="335.285"
+                height="329.285"
                 filterUnits="userSpaceOnUse"
                 colorInterpolationFilters="sRGB"
               >
@@ -115,15 +115,15 @@ export default function Index() {
                   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
                   result="hardAlpha"
                 />
-                <feOffset dy="-10" />
-                <feGaussianBlur stdDeviation="6" />
+                <feOffset dy="-4" />
+                <feGaussianBlur stdDeviation="17.5" />
                 <feComposite
                   in2="hardAlpha"
                   operator="arithmetic"
                   k2="-1"
                   k3="1"
                 />
-                <feColorMatrix values="0 0 0 0 0.039375 0 0 0 0 0.0711653 0 0 0 0 0.45 0 0 0 0.55 0" />
+                <feColorMatrix values="0 0 0 0 0.016059 0 0 0 0 0.0267512 0 0 0 0 0.154167 0 0 0 0.5 0" />
                 <feBlend in2="shape" result="effect1_innerShadow_2_3" />
                 <feColorMatrix
                   in="SourceAlpha"
@@ -138,7 +138,7 @@ export default function Index() {
                   k2="-1"
                   k3="1"
                 />
-                <feColorMatrix values="0 0 0 0 0.770833 0 0 0 0 0.791269 0 0 0 0 1 0 0 0 1 0" />
+                <feColorMatrix values="0 0 0 0 0.770833 0 0 0 0 0.791269 0 0 0 0 1 0 0 0 0.5 0" />
                 <feBlend
                   in2="effect1_innerShadow_2_3"
                   result="effect2_innerShadow_2_3"
