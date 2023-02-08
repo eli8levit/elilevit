@@ -1,9 +1,10 @@
 import React from "react";
-import BikeCanvas from "~/sources/images/bike-illustration.png";
+import BikeCanvas from "~/sources/images/only-bike.png";
 import { FaidInMotionContainer } from "~/components/layout";
-import { AnimatePresence, motion } from "framer-motion";
-import { Link, Outlet, useParams } from "@remix-run/react";
-import { AnimatedText } from "~/components";
+import { motion } from "framer-motion";
+import { AnimatedText, draw } from "~/components";
+import { ModalContent } from "~/components/modal-content";
+import { useMobileDetect } from "~/use-device-detect-hook";
 
 type Card = {
   background: string;
@@ -15,25 +16,31 @@ type Card = {
 };
 
 const BikeCard = ({ background, title, type = "", description, id }: Card) => {
+  const mobileDetect = useMobileDetect();
+  const isMobile = mobileDetect.isMobile();
+
   return (
     <motion.li
       layoutId={id}
-      whileHover={{ scale: 1.03 }}
-      className={`flex h-[300px] rounded-lg ${background} group bg-cover bg-center shadow-lg`}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      whileHover={isMobile ? {} : { scale: 1.03 }}
+      className={`group flex h-[430px] w-[300px] shrink-0 flex-col rounded-2xl backdrop-brightness-75 md:w-[350px]`}
     >
-      <div className="mx-1 mt-auto mb-1 w-full flex-col rounded-2xl p-3 text-white shadow-lg backdrop-blur-xl backdrop-brightness-50 transition-all group-hover:shadow-bike md:mx-2 md:mb-2 md:p-4">
-        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl transition-all group-hover:text-indigo-100">
+      <div
+        className={`${background} h-[300px] w-full shrink-0 rounded-2xl rounded-b-none bg-cover bg-center`}
+      ></div>
+      <div className="h-full rounded-2xl rounded-t-none border-4 border-t-0 border-blue-900 p-3 text-white group-hover:text-pink-600 md:p-4">
+        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl transition-all">
           {title}{" "}
           {type && (
-            <span className="rounded-md bg-indigo-600 p-0.5 font-ignazio text-xs">
+            <span className="rounded-md bg-blue-800 px-0.5 font-ignazio text-xs text-white backdrop-blur-md">
               {type}
             </span>
           )}
         </h3>
-        <p className="font-apfel text-sm font-normal text-indigo-100 2xl:text-lg">
-          {description}
-        </p>
+        <p className="mb-2 font-apfel text-base 2xl:text-lg">{description}</p>
       </div>
+      {/*<div className="mt-auto h-2 rounded-lg bg-white  group-hover:bg-pink-600" />*/}
     </motion.li>
   );
 };
@@ -56,130 +63,82 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   );
 };
 
-function ModalContent() {
-  const params = useParams();
-
-  React.useEffect(() => {
-    if (params.bikeId) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [params.bikeId]);
-
-  return (
-    <AnimatePresence>
-      {params?.bikeId && (
-        <>
-          <motion.div
-            className="content-container fixed left-0 right-0 top-[20%] z-20 mx-auto h-[60vh] max-w-[1200px] max-w-[80vw] rounded-2xl bg-white shadow-2xl"
-            layoutId={params?.bikeId}
-          >
-            <motion.h5>{"sdfsdfsdfsd"}</motion.h5>
-            <motion.h2>{"sdfsdfsdfsdfsdfsdfsdf"}</motion.h2>
-            <motion.div>
-              Laborum anim reprehenderit veniam reprehenderit mollit officia
-              consectetur cupidatat. Esse cupidatat ad excepteur sint consequat.
-              Lorem excepteur commodo enim consectetur anim adipisicing nostrud
-              exercitation mollit cupidatat amet. Quis veniam excepteur id
-              excepteur sit ea consequat quis proident ad mollit eu. Ea ex
-              deserunt voluptate ut minim reprehenderit adipisicing ut. Ea
-              commodo cillum consequat incididunt sint enim consectetur officia
-              incididunt. Magna ad veniam ullamco irure non fugiat fugiat
-              laboris enim cupidatat proident consequat proident labore
-              cupidatat. Eiusmod est ullamco adipisicing fugiat id quis pariatur
-              ad qui minim velit amet aliqua commodo. Culpa ullamco mollit
-              laboris occaecat qui nulla velit in non sint laborum non. Qui ut
-              et est. Excepteur tempor ad magna elit est ullamco eu. Ex enim
-              deserunt est dolore ex. Excepteur ipsum tempor ut labore.
-              Consequat dolor do ullamco tempor ut elit laborum duis ullamco. Eu
-              incididunt non ad nisi nulla ipsum do elit. Consequat est id minim
-              aute. Aliqua do ullamco amet ea ipsum sint Lorem nulla
-              reprehenderit deserunt. Pariatur dolor dolore quis ea ipsum id
-              adipisicing cillum incididunt. Aliquip laborum quis ullamco
-              nostrud non est occaecat ullamco commodo exercitation incididunt
-              laborum. Occaecat sint aliquip minim quis duis ullamco voluptate
-              cupidatat elit adipisicing nulla ullamco.
-              <Outlet />
-            </motion.div>
-            <Link to="/bike" preventScrollReset>
-              back
-            </Link>
-          </motion.div>
-          <Link to="/bike" className="fixed top-0 bottom-0 left-0 right-0 z-10">
-            <span className="hidden">Close and go back</span>
-          </Link>
-        </>
-      )}
-    </AnimatePresence>
-  );
-}
-
 export default function Bike() {
   return (
-    <FaidInMotionContainer>
-      <div
-        className={`content-container relative mb-12 grid items-center justify-center gap-6 md:grid-cols-2 md:gap-12`}
-      >
-        <div className="md:mx-auto">
-          <h1 className="heading mb-4">
-            <AnimatedText>Bike Blog</AnimatedText>
-          </h1>
-          <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
-            Here is about my bike and stuff related to cycling: my rides, photos
-            and, most interesting,{" "}
-            <strong className="highlight">the upgrading evolution</strong>
-          </h2>
+    <FaidInMotionContainer className="overflow-hidden">
+      <div className="content-container relative">
+        <h1 className="heading mb-4">
+          <AnimatedText>Bike Blog</AnimatedText>
+        </h1>
+        <h2 className="mb-12 max-w-[600px] font-apfel text-xl text-black md:text-2xl">
+          Here is about my bike and stuff related to cycling: my rides, photos
+          and, most interesting,{" "}
+          <strong className="highlight">the upgrading evolution</strong>
+        </h2>
+        <div className="relative">
+          <motion.svg
+            viewBox="0 0 3394 2160"
+            fill="none"
+            className="absolute -z-10"
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.path
+              d="M163.5 1179S22 127.72 545.5 146.5c687.83 24.675 474.5 1867 474.5 1867s75.95-1867 841-1867c848.5 0 848.5 1867 848.5 1867S2773 825.5 3247 401"
+              stroke="#00F"
+              strokeWidth="292"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              variants={draw}
+            />
+          </motion.svg>
+          <img
+            src={BikeCanvas}
+            alt="Illustrated blue bicycle on blue and green brush lines background"
+            className="mx-auto h-[250px] object-contain md:h-[650px]"
+          />
         </div>
-        <img
-          src={BikeCanvas}
-          alt="Illustrated blue bicycle on blue and green brush lines background"
-          className="h-[250px] w-full object-contain text-center md:h-[550px]"
-        />
       </div>
-      <div className="content-container py-2 px-2 md:px-5 md:py-16">
-        <div className="grid justify-center gap-y-20 gap-x-10 rounded-xl bg-secondaryBg py-8 px-4 shadow-xl shadow-2xl md:grid-cols-[1fr_max-content_1fr] md:px-8">
-          <section>
-            <h2
-              className="mb-4 font-apfel text-4xl font-bold text-white"
-              id="rides"
-            >
-              Rides
-            </h2>
-            <ModalContent />
-            <ul className="flex flex-col gap-y-6">
-              {/*<Link to="/bike/first" preventScrollReset>*/}
-              <BikeCard
-                type="gravel + road"
-                background="bg-firstRide"
-                description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
-                title="#1"
-                id="first"
-              />
-              {/*</Link>*/}
-              <BikeCard
-                id="second"
-                type="gravel"
-                background="bg-secondRide"
-                description="National path in Ben Shemen Forest"
-                title="#2"
-              />
-            </ul>
-          </section>
-          <div className="my-12 hidden w-[3px] rounded-lg bg-gradient-to-b from-indigo-500 to-indigo-900 md:block" />
-          <section>
-            <h2 className="mb-6 font-apfel text-4xl font-bold text-white md:mb-4">
-              Upgrades
-            </h2>
-            <ul className="flex flex-col gap-y-6">
-              <UpgradeCard
-                background="bg-wheels"
-                title="DT Swiss CR1600"
-                description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident and was forced to buy replacement. I thought why not to use opportunity to upgrade them. That's how I bought DT Swiss."
-              />
-            </ul>
-          </section>
-        </div>
+      <div className="content-container px-0 md:px-5">
+        <section className="flex flex-col bg-gradient-to-b from-secondaryBg2  to-secondaryBg py-4 shadow-2xl md:rounded-t-2xl">
+          <h2
+            className="p-4 pb-0 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
+            id="rides"
+          >
+            Rides
+          </h2>
+          <ModalContent />
+          <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
+            {/*<Link to="/bike/first" preventScrollReset>*/}
+            <BikeCard
+              type="gravel + road"
+              background="bg-firstRide"
+              description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
+              title="#1"
+              id="first"
+            />
+            {/*</Link>*/}
+            <BikeCard
+              id="second"
+              type="gravel"
+              background="bg-secondRide"
+              description="National path in Ben Shemen Forest"
+              title="#2"
+            />
+          </ul>
+        </section>
+        <section className="flex flex-col bg-secondaryBg p-4 py-20 shadow-2xl md:rounded-b-2xl md:px-8">
+          <h2 className="mb-4 font-apfel text-4xl font-bold text-white">
+            Upgrades
+          </h2>
+          <ul className="flex flex-col gap-y-6">
+            <UpgradeCard
+              background="bg-wheels"
+              title="DT Swiss CR1600"
+              description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident and was forced to buy replacement. I thought why not to use opportunity to upgrade them. That's how I bought DT Swiss."
+            />
+          </ul>
+        </section>
       </div>
     </FaidInMotionContainer>
   );

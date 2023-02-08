@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="flex flex-row flex-wrap items-center gap-1 px-6 md:flex-nowrap md:px-12">
           Created with{" "}
           <Link
-            className="text-blue-600 hover:text-indigo-500"
+            className="text-blue-600 hover:text-[#0000ff]"
             href="https://remix.run/"
           >
             Remix
@@ -19,21 +19,21 @@ export const Footer = () => {
           <img src={End} width="40px" alt="Blue line in shape of wave" />
           Fonts{" "}
           <Link
-            className="text-blue-600 hover:text-indigo-500"
+            className="text-blue-600 hover:text-[#0000ff]"
             href="https://www.collletttivo.it/"
           >
             Apfel
           </Link>{" "}
           &{" "}
           <Link
-            className="text-blue-600 hover:text-indigo-500"
+            className="text-blue-600 hover:text-[#0000ff]"
             href="https://www.collletttivo.it/"
           >
             Ignazio
           </Link>
         </div>
         <Link
-          className="ml-auto inline-flex h-full w-14 flex-shrink-0 items-center justify-center bg-gradient-to-b from-indigo-700 to-indigo-500 text-white shadow-md transition-all"
+          className="ml-auto inline-flex h-full w-14 flex-shrink-0 items-center justify-center bg-gradient-to-b from-blue-500 to-[#0000ff] text-white shadow-md transition-all"
           href="https://github.com/eli8levit"
         >
           <motion.div
@@ -56,7 +56,7 @@ export const Footer = () => {
           </motion.div>
         </Link>
         <Link
-          className="inline-flex h-full w-14 flex-shrink-0 items-center justify-center bg-gradient-to-b from-indigo-900 to-indigo-700 text-white shadow-md transition-all"
+          className="inline-flex h-full w-14 flex-shrink-0 items-center justify-center bg-gradient-to-b from-blue-500 to-[#0000ff] text-white shadow-md transition-all"
           href="https://twitter.com/eli8levit"
         >
           <motion.div

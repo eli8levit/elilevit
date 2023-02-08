@@ -1,9 +1,10 @@
 import React from "react";
-import Waves from "~/sources/images/art.jpg";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useWillChange } from "framer-motion";
 import { useMobileDetect } from "~/use-device-detect-hook";
-import { AnimatedText } from "~/components";
+import { AnimatedText, draw } from "~/components";
+import defaultTheme from "tailwindcss/defaultTheme";
+import { draw2 } from "~/components/utils";
 
 type Card = {
   background: string;
@@ -21,10 +22,13 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
   return (
     <motion.a
       layout
-      whileHover={{ padding: isMobile ? 0 : "20px" }}
-      transition={{ type: "spring", stiffness: 250, damping: 17 }}
+      whileHover={{
+        padding: isMobile ? 0 : "28px",
+        boxShadow: defaultTheme.boxShadow["2xl"],
+      }}
+      transition={{ type: "ease-in", duration: 0.2 }}
       href={href}
-      className="flex w-full flex-col rounded-xl md:hover:shadow-art"
+      className="flex w-full flex-col rounded-xl"
       style={{ willChange }}
       target="_blank"
       rel="noopener noreferrer"
@@ -46,22 +50,31 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 
 export default function Art() {
   return (
-    <FaidInMotionContainer className="content-container grid items-center pt-16">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.4,
-          delay: 0.1,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
+    <FaidInMotionContainer className="content-container grid items-center pt-8">
+      <motion.svg
+        viewBox="0 0 3341 1557"
+        className="mb-12 md:mb-0"
+        fill="none"
+        initial="hidden"
+        animate="visible"
       >
-        <img
-          src={Waves}
-          alt="Illustrated colored lines in waves form on black background"
-          className="mb-8 h-[300px] w-full rounded-2xl object-cover shadow-2xl md:h-[480px]"
+        <motion.path
+          variants={draw}
+          d="M282 809.5s357.5 306 452 278C881.27 1043.86 412.459 432 546 432c160.5 0 640.2 745 706 608.5 80.07-166.1-167.88-589.793 52-448.5 131.5 84.5 376.5 495.5 565 495.5 278.55 0-407.65-810.34-42.5-622.5 329.5 169.5 498.9 996.61 744 622.5 180.81-275.99-534.66-781.639-297-762.5 565 45.5 871.5 780 932.5 563.5 58.15-206.375-183.5-640 0-762.5"
+          stroke="#DB2877"
+          strokeWidth="230"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-      </motion.div>
+        <motion.path
+          variants={draw2}
+          d="M126 1063s357.5 306 452 278c147.27-43.64-227.541-433-94-433 160.5 0 546.2 522.5 612 386 80.07-166.1-339-546-99-442.5 99 42.694 527.5 489.5 716 489.5 278.55 0-467.05-536.5-188.5-536.5 489.5 0 644.9 910.61 890 536.5 180.81-275.99-593.91-762.5-297-762.5 461.5 0 725.5 786 786.5 569.5 58.15-206.375 99-569.5 282.5-692"
+          stroke="#00F"
+          strokeWidth="200"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </motion.svg>
       <h1 className="mb-4">
         <AnimatedText>Work & Art</AnimatedText>
       </h1>

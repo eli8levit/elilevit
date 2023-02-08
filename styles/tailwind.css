@@ -8,11 +8,11 @@
   }
 
   .heading {
-    @apply bg-gradient-to-r from-indigo-700 to-indigo-500 bg-clip-text text-left font-apfel text-6xl md:text-7xl 2xl:text-8xl 2xl:min-h-[110px] min-h-[65px] font-bold text-transparent md:mb-0 md:min-h-[80px];
+    @apply bg-gradient-to-r text-[#1313ff] text-left font-apfel text-6xl md:text-8xl 2xl:min-h-[110px] min-h-[65px] font-bold md:mb-0 md:min-h-[80px];
   }
 
   .highlight {
-    @apply bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent
+    @apply bg-gradient-to-r from-[#0000ff] to-pink-600 bg-clip-text text-transparent
   }
 }
 
