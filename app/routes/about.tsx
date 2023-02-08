@@ -1,18 +1,16 @@
 import React from "react";
 import Leaf from "~/sources/images/leaf.png";
 import { FaidInMotionContainer } from "~/components/layout";
-import defaultTheme from "tailwindcss/defaultTheme";
 
 export default function About() {
   return (
     <FaidInMotionContainer>
-      <main className="content-container mb-22 grid items-center gap-12 md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%] md:gap-8">
+      <main className="content-container mb-22 grid items-center md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
         <h1 className="heading md:col-span-full">A bit about me</h1>
         <img
           src={Leaf}
           alt="Blue illustrated leaf"
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 250px, 350px`}
-          className="mx-auto h-[250px] md:h-[500px]"
+          className="mx-auto mb-12 h-[250px] md:h-[500px]"
         />
         <p className="mb-4 font-apfel text-xl text-black md:mr-auto md:text-2xl">
           Shalom from Israel 🇮🇱. I'm Eli, currently I'm working in{" "}
