@@ -3,7 +3,6 @@ import Waves from "~/sources/images/art.jpg";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useWillChange } from "framer-motion";
 import { useMobileDetect } from "~/use-device-detect-hook";
-import defaultTheme from "tailwindcss/defaultTheme";
 import { AnimatedText } from "~/components";
 
 type Card = {
@@ -47,7 +46,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 
 export default function Art() {
   return (
-    <FaidInMotionContainer className="content-container grid items-center gap-14 pt-8 md:gap-28">
+    <FaidInMotionContainer className="content-container grid items-center pt-16">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -60,19 +59,16 @@ export default function Art() {
         <img
           src={Waves}
           alt="Illustrated colored lines in waves form on black background"
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 300px, 480px`}
-          className="h-[300px] w-full rounded-2xl object-cover shadow-2xl md:h-[480px]"
+          className="mb-8 h-[300px] w-full rounded-2xl object-cover shadow-2xl md:h-[480px]"
         />
       </motion.div>
-      <div>
-        <h1 className="mb-4">
-          <AnimatedText>Work & Art</AnimatedText>
-        </h1>
-        <h2 className="max-w-[500px] text-left font-apfel text-xl text-black md:text-2xl">
-          Here you can see my art like photos, illustrations along with my
-          projects
-        </h2>
-      </div>
+      <h1 className="mb-4">
+        <AnimatedText>Work & Art</AnimatedText>
+      </h1>
+      <h2 className="mb-16 max-w-[500px] text-left font-apfel text-xl text-black md:mb-32 md:text-2xl">
+        Here you can see my art like photos, illustrations along with my
+        projects
+      </h2>
       <div className="mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-12 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px] md:gap-12">
         <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
           <ArtCard

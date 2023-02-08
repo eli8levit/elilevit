@@ -2,7 +2,6 @@ import React from "react";
 import BikeCanvas from "~/sources/images/bike-illustration.png";
 import { FaidInMotionContainer } from "~/components/layout";
 import { AnimatePresence, motion } from "framer-motion";
-import defaultTheme from "tailwindcss/defaultTheme";
 import { Link, Outlet, useParams } from "@remix-run/react";
 import { AnimatedText } from "~/components";
 
@@ -107,10 +106,9 @@ function ModalContent() {
               back
             </Link>
           </motion.div>
-          <Link
-            to="/bike"
-            className="fixed top-0 bottom-0 left-0 right-0 z-10"
-          />
+          <Link to="/bike" className="fixed top-0 bottom-0 left-0 right-0 z-10">
+            <span className="hidden">Close and go back</span>
+          </Link>
         </>
       )}
     </AnimatePresence>
@@ -121,9 +119,9 @@ export default function Bike() {
   return (
     <FaidInMotionContainer>
       <div
-        className={`content-container relative mb-4 grid items-center gap-6 py-10 md:grid-cols-2 md:gap-12`}
+        className={`content-container relative mb-12 grid items-center justify-center gap-6 md:grid-cols-2 md:gap-12`}
       >
-        <div>
+        <div className="md:mx-auto">
           <h1 className="heading mb-4">
             <AnimatedText>Bike Blog</AnimatedText>
           </h1>
@@ -136,8 +134,7 @@ export default function Bike() {
         <img
           src={BikeCanvas}
           alt="Illustrated blue bicycle on blue and green brush lines background"
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 100%, 650px`}
-          className="ml-auto w-full object-contain md:w-[650px]"
+          className="h-[250px] w-full object-contain text-center md:h-[550px]"
         />
       </div>
       <div className="content-container py-2 px-2 md:px-5 md:py-16">

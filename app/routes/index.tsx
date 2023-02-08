@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { AnimatedText, MotionNavLink } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
+import { useMobileDetect } from "~/use-device-detect-hook";
 
 type Card = {
   href: string;
@@ -25,24 +26,26 @@ const IndexCard = ({ href, background, text }: Card) => {
   );
 };
 
-const draw = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: (i: any) => {
-    const delay = 1 + i * 0.5;
-    return {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
-        opacity: { delay, duration: 0.5 },
-      },
-    };
-  },
-};
-
 export default function Index() {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
+  const mobileDetect = useMobileDetect();
+  const isMobile = mobileDetect.isMobile();
+
+  const draw = {
+    hidden: { pathLength: 0, opacity: isMobile ? 1 : 0 },
+    visible: (i: any) => {
+      const delay = 1 + i * 0.5;
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
+          opacity: { delay, duration: 0.5 },
+        },
+      };
+    },
+  };
 
   return (
     <>

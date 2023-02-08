@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useMobileDetect } from "~/use-device-detect-hook";
 
 export function AnimatedText({
   children,
@@ -8,9 +7,7 @@ export function AnimatedText({
   children: string;
   className?: string;
 }) {
-  const mobileDetect = useMobileDetect();
-  const isMobile = mobileDetect.isMobile();
-  const words = isMobile ? [children] : children.split(" ");
+  const words = children.split(" ");
 
   const container = {
     hidden: { opacity: 0 },
