@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 import { useMobileDetect } from "~/use-device-detect-hook";
-import AboutMe from "~/sources/images/aboutme.svg";
 import { MotionNavLink } from "~/components/motion-nav-link";
 
 const draw = {
@@ -28,17 +27,18 @@ const draw = {
   },
 };
 
-const Link = ({ id, children }: { id: string; children: any }) => {
-  const { pathname } = useMatches()?.[1] || { pathname: "" };
+const Link = ({
+  id,
+  children,
+  active,
+}: {
+  id: string;
+  children: any;
+  active: boolean;
+}) => {
   const [hover, setHover] = React.useState(false);
   const mobileDetect = useMobileDetect();
   const isMobile = mobileDetect.isMobile();
-
-  const isActive = (id: string) => {
-    const splitted = pathname.split("/")?.[1] || "";
-    return id === splitted;
-  };
-  const active = isActive(id);
 
   return (
     <MotionNavLink
@@ -54,7 +54,7 @@ const Link = ({ id, children }: { id: string; children: any }) => {
       }`}
     >
       <span className="z-10 mx-auto inline-block">{children}</span>
-      {isActive(id) ? (
+      {active ? (
         <motion.svg
           initial="hidden"
           animate="visible"
@@ -95,33 +95,44 @@ const Link = ({ id, children }: { id: string; children: any }) => {
 };
 
 export const Nav = () => {
+  const { pathname } = useMatches()?.[1] || { pathname: "" };
+  const isActive = (id: string) => {
+    const splitted = pathname.split("/")?.[1] || "";
+    return id === splitted;
+  };
+
   return (
-    <header className="lg:px-22 2xl:px-42 flex h-[60px] w-full flex-row items-center justify-between px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base">
-      <label>
-        <img
-          alt="'About me' handwriting text + arrow pointing to memoji avatar"
-          src={AboutMe}
-          className="md-[200px] absolute top-12 right-14 w-[120px] md:right-32 md:top-12 md:w-[150px] 2xl:w-[200px]"
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 120px, 200px`}
-        />
-        <span className="hidden">About me</span>
-      </label>
-      <nav className="flex h-full w-full flex-row items-center overflow-auto whitespace-nowrap md:gap-x-1">
-        <Link id="">Home</Link>
-        <Link id="bike">Bike Blog</Link>
-        <Link id="art">Some work</Link>
+    <header className="lg:px-22 2xl:px-42  h-[60px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base">
+      <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
+        <Link id="" active={isActive("")}>
+          Home
+        </Link>
+        <Link id="bike" active={isActive("bike")}>
+          Bike Blog
+        </Link>
+        <Link id="art" active={isActive("art")}>
+          Some work
+        </Link>
+
+        <NavLink to="/about" className="ml-auto">
+          <motion.img
+            alt="Memoji - embarrassing face width black cycling helmet"
+            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            whileTap={{ scale: 0.9 }}
+            whileHover={
+              isActive("about")
+                ? {}
+                : { scale: 1.2, padding: "6px", backgroundColor: "#0000ff" }
+            }
+            style={isActive("about") ? { boxShadow: "0 0 0 3px #0000ff" } : {}}
+            initial={{ padding: "12px" }}
+            src={Me}
+            sizes={`(max-width: ${defaultTheme.screens.sm}}) 50px, 70px`}
+            className="transition-bg mr-2 h-[50px] w-[50px] rounded-full bg-white object-contain shadow-2xl md:h-[70px] md:w-[70px]"
+          ></motion.img>
+          <span className="hidden">About me</span>
+        </NavLink>
       </nav>
-      <NavLink to="/about">
-        <motion.img
-          alt="Memoji - embarrassing face width black cycling helmet"
-          transition={{ type: "spring", stiffness: 500, damping: 20 }}
-          whileHover={{ scale: 1.2, padding: "6px" }}
-          initial={{ padding: "12px" }}
-          src={Me}
-          sizes={`(max-width: ${defaultTheme.screens.sm}}) 50px, 70px`}
-          className="transition-bg mr-2 h-[50px] w-[50px] rounded-full bg-white object-contain shadow-2xl hover:bg-[#1313ff] md:h-[70px] md:w-[70px]"
-        />
-      </NavLink>
     </header>
   );
 };

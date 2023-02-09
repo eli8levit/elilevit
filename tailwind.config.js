@@ -28,6 +28,7 @@ module.exports = {
       colors: {
         pinkLighter: "#fff3f4",
         secondaryBg: "#00001a",
+        blueDark: "#000084",
         secondaryBg2: "#0000d8",
       },
       fontFamily: {

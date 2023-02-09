@@ -1,5 +1,5 @@
 import React from "react";
-import BikeCanvas from "~/sources/images/only-bike.png";
+import BikeCanvas from "~/sources/images/my-bike.png";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion } from "framer-motion";
 import { AnimatedText, draw } from "~/components";
@@ -27,9 +27,9 @@ const BikeCard = ({ background, title, type = "", description, id }: Card) => {
       className={`group flex h-[430px] w-[300px] shrink-0 flex-col rounded-2xl backdrop-brightness-75 md:w-[350px]`}
     >
       <div
-        className={`${background} h-[300px] w-full shrink-0 rounded-2xl rounded-b-none bg-cover bg-center`}
+        className={`${background} h-[280px] w-full shrink-0 rounded-2xl rounded-b-none bg-cover bg-center`}
       ></div>
-      <div className="h-full rounded-2xl rounded-t-none border-4 border-t-0 border-blue-900 p-3 text-white group-hover:text-pink-600 md:p-4">
+      <div className="h-full rounded-2xl rounded-t-none border-4 border-t-0 border-dotted border-blue-900 p-3 text-white group-hover:text-pink-600 md:p-4">
         <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl transition-all">
           {title}{" "}
           {type && (
@@ -40,24 +40,23 @@ const BikeCard = ({ background, title, type = "", description, id }: Card) => {
         </h3>
         <p className="mb-2 font-apfel text-base 2xl:text-lg">{description}</p>
       </div>
-      {/*<div className="mt-auto h-2 rounded-lg bg-white  group-hover:bg-pink-600" />*/}
     </motion.li>
   );
 };
 
 const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   return (
-    <li className="flex w-full flex-col items-center rounded-lg md:flex-row">
-      <div className="mb-5 flex-col font-ignazio">
-        <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-xl">
+    <li className="flex h-[300px] w-[1000px] w-full flex-col items-center md:flex-row">
+      <div className="h-full w-[60%] shrink-0 flex-col rounded-2xl rounded-r-none border-4 border-r-0 border-dotted border-blue-900 p-8 font-ignazio">
+        <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-2xl">
           {title}
         </h3>
-        <p className="font-apfel text-base font-light text-gray-400 lg:text-lg">
+        <p className="max-w-[500px] font-apfel text-base font-light text-gray-400 shadow-inner lg:text-lg">
           {description}
         </p>
       </div>
       <div
-        className={`flex rounded-md ${background} h-full h-[180px] w-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        className={`flex rounded-2xl ${background} h-full w-full rounded-l-none bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
       />
     </li>
   );
@@ -99,8 +98,8 @@ export default function Bike() {
           />
         </div>
       </div>
-      <div className="content-container px-0 md:px-5">
-        <section className="flex flex-col bg-gradient-to-b from-secondaryBg2  to-secondaryBg py-4 shadow-2xl md:rounded-t-2xl">
+      <div className="content-container px-0 pt-0 md:px-5">
+        <section className="flex flex-col bg-gradient-to-b from-secondaryBg2 to-secondaryBg py-4 shadow-2xl md:rounded-t-2xl">
           <h2
             className="p-4 pb-0 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
             id="rides"

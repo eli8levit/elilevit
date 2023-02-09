@@ -68,7 +68,7 @@ export default function Index() {
         </motion.div>
       </div>
       <div className="content-container px-2 pt-0 md:px-5">
-        <section className="rounded-2xl bg-secondaryBg px-4 py-8 shadow-2xl md:p-16">
+        <section className="rounded-2xl bg-gradient-to-tl from-secondaryBg2 to-secondaryBg px-4 py-8 shadow-2xl md:p-16">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-white md:mb-6 md:text-6xl">
             What to do here
           </h3>
