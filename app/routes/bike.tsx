@@ -23,12 +23,19 @@ const BikeCard = ({ background, title, type = "", description, id }: Card) => {
     <motion.li
       layoutId={id}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
-      whileHover={isMobile ? {} : { scale: 1.03 }}
+      whileHover={
+        isMobile
+          ? {}
+          : {
+              scale: 1.03,
+              boxShadow: "0 2px 25px 0 rgba(0,0,0,0.6)",
+            }
+      }
       className={`group flex h-[430px] w-[300px] shrink-0 flex-col rounded-2xl backdrop-brightness-75 md:w-[350px]`}
     >
       <div
         className={`${background} h-[280px] w-full shrink-0 rounded-2xl rounded-b-none bg-cover bg-center`}
-      ></div>
+      />
       <div className="h-full rounded-2xl rounded-t-none border-4 border-t-0 border-dotted border-blue-900 p-3 text-white group-hover:text-pink-600 md:p-4">
         <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl transition-all">
           {title}{" "}
