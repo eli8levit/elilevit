@@ -30,6 +30,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Ignazio";
+  src: url("/fonts/Ignazio/IgnazioText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "Mona";
@@ -47,28 +53,11 @@
 }
 
 @font-face {
-  font-family: "Mona Narrow";
-  src: url("/fonts/Mona/Mona-Sans-RegularNarrow.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Mona Narrow";
-  src: url("/fonts/Mona/Mona-Sans-RegularNarrowItalic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-
-
-@font-face {
   font-family: "Mona Wide";
   src: url("/fonts/Mona/Mona-Sans-RegularWide.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
-
 
 @font-face {
   font-family: "Mona Wide";

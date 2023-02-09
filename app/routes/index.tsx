@@ -18,7 +18,7 @@ const IndexCard = ({ href, background, text }: Card) => {
       to={href}
       className={`group flex h-[200px] w-full rounded-2xl md:h-[350px] ${background} bg-cover bg-center shadow-xl hover:shadow-indexCardBg`}
     >
-      <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-2xl py-2 px-3 font-ignazio text-lg font-light text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-blue-100 group-hover:shadow-indexCard 2xl:text-xl">
+      <span className="font-bolds mt-auto mr-2 mb-2 ml-2 rounded-2xl py-2 px-3 font-ignazio text-lg text-white backdrop-blur-md backdrop-brightness-50 transition transition-transform group-hover:text-blue-100 group-hover:shadow-indexCard 2xl:text-xl">
         {text}
       </span>
     </MotionNavLink>

@@ -33,11 +33,11 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="mb-5 flex-col font-apfel">
-        <h3 className="mb-1 text-lg font-bold text-black md:text-xl lg:text-2xl">
+      <div className="mb-5 flex-col">
+        <h3 className="mb-1 font-apfel text-lg font-bold text-black md:text-xl lg:text-2xl">
           {title}
         </h3>
-        <p className="max-w-[850px] text-base font-normal text-black opacity-50 lg:text-lg">
+        <p className="max-w-[850px] font-mona text-base font-normal text-black opacity-50 lg:text-lg">
           {description}
         </p>
       </div>
@@ -114,7 +114,7 @@ export default function Art() {
             href="https://my.spline.design/project-cca4dc6de45717fed5ca979536aa6a41/"
             background="bg-player"
             title="Turntable 3d Model"
-            description="I'm in love with music and have turntable at home. When I heard about Spline I wanted to challenge myself to try it and build something beautiful to me. It was not fast but I think I succeed, it doesn't look bad."
+            description="I'm in love with music and have turntable at home. When I heard about Spline I wanted to challenge myself to try it and build something beautiful. It was not fast but I think I succeed, it doesn't look bad."
             cardClass="bg-[length:300px] md:bg-[length:400px] bg-white"
           />
         </div>

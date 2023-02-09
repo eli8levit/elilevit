@@ -59,7 +59,7 @@ export function ModalContent({ route }: Props) {
             >
               <CloseLink
                 to={`/${route}`}
-                className="sticky top-0  ml-auto flex flex h-[70px] w-[90px] w-max items-center justify-center rounded-tr-2xl rounded-bl-2xl shadow-md backdrop-blur-md"
+                className="sticky top-0  ml-auto flex flex h-[70px] w-[90px] items-center justify-center rounded-tr-2xl rounded-bl-2xl shadow-md backdrop-blur-md"
               />
               <motion.img
                 src={BikePhoto}

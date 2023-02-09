@@ -10,13 +10,12 @@ import { Link } from "@remix-run/react";
 type Card = {
   background: string;
   title: string;
-  type?: string;
   description: string;
   cardClass?: string;
   id?: string;
 };
 
-const BikeCard = ({ background, title, type = "", description, id }: Card) => {
+const BikeCard = ({ background, title, description, id }: Card) => {
   const mobileDetect = useMobileDetect();
   const isMobile = mobileDetect.isMobile();
 
@@ -53,8 +52,8 @@ const BikeCard = ({ background, title, type = "", description, id }: Card) => {
 
 const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   return (
-    <li className="flex h-[300px] w-[1000px] flex-col items-center md:flex-row">
-      <div className="h-full w-[60%] shrink-0 flex-col rounded-2xl rounded-r-none border-4 border-r-0 border-dotted border-blue-900 p-8 font-ignazio">
+    <li className="flex h-[300px] w-[500px] shrink-0 flex-row items-center md:w-[800px] md:flex-row lg:w-[1000px]">
+      <div className="h-full w-[60%] shrink-0 flex-col rounded-2xl rounded-r-none border-4 border-r-0 border-dotted border-blue-900 p-4 font-ignazio md:p-8">
         <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-2xl">
           {title}
         </h3>
@@ -117,7 +116,6 @@ export default function Bike() {
           <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
             <Link to="/bike/first" preventScrollReset>
               <BikeCard
-                type="gravel + road"
                 background="bg-firstRide"
                 description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
                 title="#1"
@@ -126,15 +124,17 @@ export default function Bike() {
             </Link>
             <BikeCard
               id="second"
-              type="gravel"
               background="bg-secondRide"
               description="National path in Ben Shemen Forest"
               title="#2"
             />
           </ul>
         </section>
-        <section className="flex flex-col bg-secondaryBg p-4 py-20 shadow-2xl md:rounded-b-2xl md:px-8">
-          <h2 className="mb-4 font-apfel text-4xl font-bold text-white">
+        <section className="flex flex-col bg-secondaryBg py-4 py-20 shadow-2xl md:rounded-b-2xl md:px-8">
+          <h2
+            className="p-4 pb-0 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
+            id="upgrades"
+          >
             Upgrades
           </h2>
           <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
