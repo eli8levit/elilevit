@@ -35,6 +35,9 @@ module.exports = {
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],
         ignazio: ["Ignazio", ...defaultTheme.fontFamily.sans],
+        mona: ["Mona", ...defaultTheme.fontFamily.sans],
+        monaNarrow: ["Mona Narrow", ...defaultTheme.fontFamily.sans],
+        monaWide: ["Mona Wide", ...defaultTheme.fontFamily.sans],
       },
     },
   },

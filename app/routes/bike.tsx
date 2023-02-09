@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { AnimatedText, draw } from "~/components";
 import { ModalContent } from "~/components/modal-content";
 import { useMobileDetect } from "~/use-device-detect-hook";
+import { Link } from "@remix-run/react";
 
 type Card = {
   background: string;
@@ -22,7 +23,7 @@ const BikeCard = ({ background, title, type = "", description, id }: Card) => {
   return (
     <motion.li
       layoutId={id}
-      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
       whileHover={
         isMobile
           ? {}
@@ -31,29 +32,28 @@ const BikeCard = ({ background, title, type = "", description, id }: Card) => {
               boxShadow: "0 2px 25px 0 rgba(0,0,0,0.6)",
             }
       }
-      className={`group flex h-[430px] w-[300px] shrink-0 flex-col rounded-2xl backdrop-brightness-75 md:w-[350px]`}
+      className={`group flex h-[430px] w-[300px] shrink-0 flex-col rounded-2xl md:w-[350px]`}
     >
       <div
-        className={`${background} h-[280px] w-full shrink-0 rounded-2xl rounded-b-none bg-cover bg-center`}
+        className={`${background} h-[250px] w-full shrink-0 rounded-2xl rounded-b-none bg-cover bg-center`}
       />
-      <div className="h-full rounded-2xl rounded-t-none border-4 border-t-0 border-dotted border-blue-900 p-3 text-white group-hover:text-pink-600 md:p-4">
-        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl transition-all">
-          {title}{" "}
-          {type && (
-            <span className="rounded-md bg-blue-800 px-0.5 font-ignazio text-xs text-white backdrop-blur-md">
-              {type}
-            </span>
-          )}
+      <div className="flex h-full flex-col rounded-b-2xl from-white to-pinkLighter p-3 text-white group-hover:bg-gradient-to-b group-hover:text-pink-600 md:p-4">
+        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl font-bold transition-all">
+          {title}
         </h3>
-        <p className="mb-2 font-apfel text-base 2xl:text-lg">{description}</p>
+        <p className="mb-2 font-apfel text-lg 2xl:text-lg">{description}</p>
+        <span className="ml-auto mt-auto text-sm text-gray-400">
+          20.01.2023
+        </span>
       </div>
+      <div className="mt-auto h-2 rounded-lg bg-pinkLighter group-hover:hidden" />
     </motion.li>
   );
 };
 
 const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   return (
-    <li className="flex h-[300px] w-[1000px] w-full flex-col items-center md:flex-row">
+    <li className="flex h-[300px] w-[1000px] flex-col items-center md:flex-row">
       <div className="h-full w-[60%] shrink-0 flex-col rounded-2xl rounded-r-none border-4 border-r-0 border-dotted border-blue-900 p-8 font-ignazio">
         <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-2xl">
           {title}
@@ -63,7 +63,7 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
         </p>
       </div>
       <div
-        className={`flex rounded-2xl ${background} h-full w-full rounded-l-none bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        className={`flex w-[40%] rounded-2xl ${background} h-full rounded-l-none bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
       />
     </li>
   );
@@ -113,17 +113,17 @@ export default function Bike() {
           >
             Rides
           </h2>
-          <ModalContent />
+          <ModalContent route="bike" />
           <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
-            {/*<Link to="/bike/first" preventScrollReset>*/}
-            <BikeCard
-              type="gravel + road"
-              background="bg-firstRide"
-              description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
-              title="#1"
-              id="first"
-            />
-            {/*</Link>*/}
+            <Link to="/bike/first" preventScrollReset>
+              <BikeCard
+                type="gravel + road"
+                background="bg-firstRide"
+                description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
+                title="#1"
+                id="first"
+              />
+            </Link>
             <BikeCard
               id="second"
               type="gravel"
@@ -137,7 +137,7 @@ export default function Bike() {
           <h2 className="mb-4 font-apfel text-4xl font-bold text-white">
             Upgrades
           </h2>
-          <ul className="flex flex-col gap-y-6">
+          <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
             <UpgradeCard
               background="bg-wheels"
               title="DT Swiss CR1600"
