@@ -22,47 +22,44 @@ const BikeCard = ({ background, title, description, id }: Card) => {
   return (
     <motion.li
       layoutId={id}
-      transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
-      whileHover={
-        isMobile
-          ? {}
-          : {
-              scale: 1.03,
-              boxShadow: "0 2px 25px 0 rgba(0,0,0,0.6)",
-            }
-      }
-      className={`group flex h-[430px] w-[300px] shrink-0 flex-col rounded-2xl md:w-[350px]`}
+      className="group flex w-[250px] shrink-0 flex-col rounded-2xl md:w-[300px]"
     >
-      <div
-        className={`${background} h-[250px] w-full shrink-0 rounded-2xl rounded-b-none bg-cover bg-center`}
+      <motion.div
+        transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
+        whileTap={{ scale: 0.9 }}
+        whileHover={
+          isMobile
+            ? {}
+            : {
+                scale: 1.03,
+                boxShadow: "0 2px 25px 0 rgba(0,0,0,0.6)",
+              }
+        }
+        className={`${background} mb-2 h-[250px] w-full shrink-0 rounded-2xl bg-cover bg-center md:h-[300px]`}
       />
-      <div className="flex h-full flex-col rounded-b-2xl from-white to-pinkLighter p-3 text-white group-hover:bg-gradient-to-b group-hover:text-pink-600 md:p-4">
-        <h3 className="mb-2 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl font-bold transition-all">
+      <div className="flex h-full flex-col rounded-b-2xl px-1 text-white group-hover:text-pink-600">
+        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl font-bold transition-all">
           {title}
         </h3>
         <p className="mb-2 font-apfel text-lg 2xl:text-lg">{description}</p>
-        <span className="ml-auto mt-auto text-sm text-gray-400">
-          20.01.2023
-        </span>
       </div>
-      <div className="mt-auto h-2 rounded-lg bg-pinkLighter group-hover:hidden" />
     </motion.li>
   );
 };
 
 const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
   return (
-    <li className="flex h-[300px] w-[500px] shrink-0 flex-row items-center md:w-[800px] md:flex-row lg:w-[1000px]">
-      <div className="h-full w-[60%] shrink-0 flex-col rounded-2xl rounded-r-none border-4 border-r-0 border-dotted border-blue-900 p-4 font-ignazio md:p-8">
+    <li className="flex h-[200px] shrink-0 flex-row items-end gap-x-4 md:h-[300px]">
+      <div className="w-[250px] shrink-0 flex-col font-ignazio md:w-[500px]">
         <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-2xl">
           {title}
         </h3>
-        <p className="max-w-[500px] font-apfel text-base font-light text-gray-400 shadow-inner lg:text-lg">
+        <p className="font-apfel text-base font-light text-gray-400 shadow-inner lg:text-lg">
           {description}
         </p>
       </div>
       <div
-        className={`flex w-[40%] rounded-2xl ${background} h-full rounded-l-none bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        className={`flex w-[200px] rounded-2xl md:w-[300px] ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
       />
     </li>
   );
@@ -132,7 +129,7 @@ export default function Bike() {
         </section>
         <section className="flex flex-col bg-secondaryBg py-4 py-20 shadow-2xl md:rounded-b-2xl md:px-8">
           <h2
-            className="p-4 pb-0 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
+            className="p-4 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
             id="upgrades"
           >
             Upgrades

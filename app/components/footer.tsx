@@ -7,11 +7,11 @@ const colors = require("tailwindcss/colors");
 export const Footer = () => {
   return (
     <div className="mt-auto pt-24 md:mb-10 md:pt-44">
-      <footer className="mx-auto flex h-20 flex-row items-center gap-y-2 overflow-auto rounded-t-3xl bg-white font-apfel text-base text-gray-400 shadow-2xl md:h-14 md:w-max md:rounded-3xl">
+      <footer className="mx-auto flex h-20 flex-row items-center gap-y-2 overflow-auto rounded-t-3xl bg-white font-mona text-base text-gray-400 shadow-2xl md:h-14 md:w-max md:rounded-3xl">
         <div className="flex flex-row flex-wrap items-center gap-1 px-6 md:flex-nowrap md:px-12">
           Created with{" "}
           <Link
-            className="text-blue-600 hover:text-[#0000ff]"
+            className="italic text-blue-600 hover:text-[#0000ff]"
             href="https://remix.run/"
           >
             Remix
@@ -19,14 +19,14 @@ export const Footer = () => {
           <img src={End} width="40px" alt="Blue line in shape of wave" />
           Fonts{" "}
           <Link
-            className="text-blue-600 hover:text-[#0000ff]"
+            className="italic text-blue-600 hover:text-[#0000ff]"
             href="https://www.collletttivo.it/"
           >
             Apfel
           </Link>{" "}
           &{" "}
           <Link
-            className="text-blue-600 hover:text-[#0000ff]"
+            className="italic text-blue-600 hover:text-[#0000ff]"
             href="https://www.collletttivo.it/"
           >
             Ignazio
