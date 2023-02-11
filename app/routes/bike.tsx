@@ -127,7 +127,7 @@ export default function Bike() {
             />
           </ul>
         </section>
-        <section className="flex flex-col bg-secondaryBg py-4 py-20 shadow-2xl md:rounded-b-2xl md:px-8">
+        <section className="flex flex-col bg-secondaryBg py-16 shadow-2xl md:rounded-b-2xl md:px-8">
           <h2
             className="p-4 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
             id="upgrades"

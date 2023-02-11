@@ -15,6 +15,7 @@ import Icon16 from "../public/favicon-16x16.png";
 import Manifest from "../public/site.webmanifest";
 import AppleIcon from "../public/apple-touch-icon.png";
 import { motion } from "framer-motion";
+import { Fathom } from "~/components/fanthom";
 
 export const links: LinksFunction = () => {
   return [
@@ -67,6 +68,7 @@ export default function App() {
         <Links />
       </head>
       <body className="flex min-h-full flex-col">
+        <Fathom />
         <motion.div
           initial={{ translateY: "-50%", opacity: 0 }}
           animate={{ translateY: 0, opacity: 1 }}
