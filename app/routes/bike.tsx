@@ -1,21 +1,23 @@
 import React from "react";
-import BikeCanvas from "~/sources/images/my-bike.png";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion } from "framer-motion";
 import { AnimatedText, draw } from "~/components";
 import { ModalContent } from "~/components/modal-content";
 import { useMobileDetect } from "~/use-device-detect-hook";
-import { Link } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
+import { getBikePosts } from "~/models/posts";
+import type { LoaderFunction } from "@remix-run/node";
+import type { Post } from "~/types";
 
 type Card = {
-  background: string;
+  image: string;
   title: string;
   description: string;
   cardClass?: string;
   id?: string;
 };
 
-const BikeCard = ({ background, title, description, id }: Card) => {
+const BikeCard = ({ image, title, description, id }: Card) => {
   const mobileDetect = useMobileDetect();
   const isMobile = mobileDetect.isMobile();
 
@@ -24,7 +26,8 @@ const BikeCard = ({ background, title, description, id }: Card) => {
       layoutId={id}
       className="group flex w-[250px] shrink-0 flex-col rounded-2xl md:w-[300px]"
     >
-      <motion.div
+      <motion.img
+        src="https://ucarecdn.com/6314d60d-c721-4710-b2c7-abe35f32d5de/-/preview/600x600/-/quality/smart_retina/-/format/auto/"
         transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
         whileTap={{ scale: 0.9 }}
         whileHover={
@@ -35,7 +38,7 @@ const BikeCard = ({ background, title, description, id }: Card) => {
                 boxShadow: "0 2px 25px 0 rgba(0,0,0,0.6)",
               }
         }
-        className={`${background} mb-2 h-[250px] w-full shrink-0 rounded-2xl bg-cover bg-center md:h-[300px]`}
+        className={`mb-2 h-[250px] w-full shrink-0 rounded-2xl object-cover md:h-[300px]`}
       />
       <div className="flex h-full flex-col rounded-b-2xl px-1 text-white group-hover:text-pink-600">
         <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl font-bold transition-all">
@@ -47,7 +50,7 @@ const BikeCard = ({ background, title, description, id }: Card) => {
   );
 };
 
-const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
+const UpgradeCard = ({ title, description, image, cardClass }: Card) => {
   return (
     <li className="flex h-[200px] shrink-0 flex-row items-end gap-x-4 md:h-[300px]">
       <div className="w-[250px] shrink-0 flex-col font-ignazio md:w-[500px]">
@@ -59,13 +62,22 @@ const UpgradeCard = ({ title, description, background, cardClass }: Card) => {
         </p>
       </div>
       <div
-        className={`flex w-[200px] rounded-2xl md:w-[300px] ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        className={`flex w-[200px] rounded-2xl md:w-[300px] ${image} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
       />
     </li>
   );
 };
 
+export const loader: LoaderFunction = async (): Promise<{ posts: Post[] }> => {
+  return {
+    posts: await getBikePosts({ isDetailed: false }),
+  };
+};
+
 export default function Bike() {
+  const { posts } = useLoaderData();
+  console.log("posts", posts[0]);
+
   return (
     <FaidInMotionContainer className="overflow-hidden">
       <div className="content-container relative">
@@ -95,7 +107,7 @@ export default function Bike() {
             />
           </motion.svg>
           <img
-            src={BikeCanvas}
+            src="https://ucarecdn.com/7488269d-1ed6-493d-941f-c7d49acc05b6/-/preview/-/quality/smart_retina/-/format/png/"
             alt="Illustrated blue bicycle on blue and green brush lines background"
             className="mx-auto h-[250px] object-contain md:h-[650px]"
           />
@@ -113,7 +125,7 @@ export default function Bike() {
           <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
             <Link to="/bike/first" preventScrollReset>
               <BikeCard
-                background="bg-firstRide"
+                image="bg-firstRide"
                 description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
                 title="#1"
                 id="first"
@@ -121,7 +133,7 @@ export default function Bike() {
             </Link>
             <BikeCard
               id="second"
-              background="bg-secondRide"
+              image="bg-secondRide"
               description="National path in Ben Shemen Forest"
               title="#2"
             />
@@ -136,7 +148,7 @@ export default function Bike() {
           </h2>
           <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
             <UpgradeCard
-              background="bg-wheels"
+              image="bg-wheels"
               title="DT Swiss CR1600"
               description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident and was forced to buy replacement. I thought why not to use opportunity to upgrade them. That's how I bought DT Swiss."
             />
