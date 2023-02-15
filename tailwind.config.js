@@ -28,9 +28,9 @@ module.exports = {
       colors: {
         pinkLighter: "#fff3f4",
         secondaryBg: "#00001a",
-        bla: "#000069",
-        blueDark: "#000084",
         secondaryBg2: "#0000d8",
+        mainBlue: "#0000ff",
+        blueLight: "#5c5cff",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

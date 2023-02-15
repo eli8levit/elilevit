@@ -1,11 +1,10 @@
 import React from "react";
 import { NavLink, useMatches } from "@remix-run/react";
-import Me from "~/sources/images/me-memoji.png";
 import { motion } from "framer-motion";
-import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 import { useMobileDetect } from "~/use-device-detect-hook";
 import { MotionNavLink } from "~/components/motion-nav-link";
+import { getRandomMemojiId } from "~/components/utils";
 
 const draw = {
   tap: {
@@ -94,6 +93,8 @@ const Link = ({
   );
 };
 
+const memojiId = getRandomMemojiId();
+
 export const Nav = () => {
   const { pathname } = useMatches()?.[1] || { pathname: "" };
   const isActive = (id: string) => {
@@ -102,7 +103,7 @@ export const Nav = () => {
   };
 
   return (
-    <header className="lg:px-22 2xl:px-42  h-[60px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base">
+    <header className="lg:px-22 2xl:px-42  h-[60px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:h-[80px]">
       <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
         <Link id="" active={isActive("")}>
           Home
@@ -115,21 +116,28 @@ export const Nav = () => {
         </Link>
 
         <NavLink to="/about" className="ml-auto">
-          <motion.img
-            alt="Memoji - embarrassing face width black cycling helmet"
-            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+          <motion.video
+            src={`https://ucarecdn.com/${memojiId}/`}
+            autoPlay
+            width="300px"
+            height="300px"
+            muted
+            transition={{
+              scale: { type: "spring", stiffness: 500, damping: 20 },
+            }}
             whileTap={{ scale: 0.9 }}
             whileHover={
               isActive("about")
                 ? {}
-                : { scale: 1.2, padding: "6px", backgroundColor: "#0000ff" }
+                : {
+                    scale: 1.3,
+                    padding: 0,
+                    border: "3px solid #5c5cff",
+                  }
             }
             style={isActive("about") ? { boxShadow: "0 0 0 3px #0000ff" } : {}}
-            initial={{ padding: "12px" }}
-            src={Me}
-            sizes={`(max-width: ${defaultTheme.screens.sm}}) 50px, 70px`}
-            className="transition-bg mr-2 h-[50px] w-[50px] rounded-full bg-white object-contain shadow-2xl md:h-[70px] md:w-[70px]"
-          ></motion.img>
+            className="transition-bg mr-2 h-[50px] w-[50px] rounded-full bg-white shadow-2xl md:h-[70px] md:w-[70px] 2xl:h-[80px] 2xl:w-[80px]"
+          ></motion.video>
           <span className="hidden">About me</span>
         </NavLink>
       </nav>
