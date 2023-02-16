@@ -11,7 +11,7 @@ const CloseLink = ({ className, to }: { className?: string; to: string }) => {
         viewBox="0 0 1015 887"
         width="45px"
         fill="none"
-        className="transition-fill group rounded-full shadow-lg hover:fill-[#0000ff]"
+        className="transition-fill group rounded-full hover:fill-[#0000ff]"
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.8 }}
         transition={{ type: "spring", stiffness: 500, damping: 20 }}

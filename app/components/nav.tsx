@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import colors from "tailwindcss/colors";
 import { useMobileDetect } from "~/use-device-detect-hook";
 import { MotionNavLink } from "~/components/motion-nav-link";
-import { getRandomMemojiId } from "~/components/utils";
 
 const draw = {
   tap: {
@@ -93,9 +92,7 @@ const Link = ({
   );
 };
 
-const memojiId = getRandomMemojiId();
-
-export const Nav = () => {
+export const Nav = ({ memojiId }: { memojiId: string }) => {
   const { pathname } = useMatches()?.[1] || { pathname: "" };
   const isActive = (id: string) => {
     const splitted = pathname.split("/")?.[1] || "";
