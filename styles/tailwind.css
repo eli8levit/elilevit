@@ -8,7 +8,7 @@
   }
 
   .heading {
-    @apply bg-gradient-to-r text-[#1313ff] text-left font-apfel text-6xl md:text-8xl 2xl:min-h-[110px] min-h-[65px] font-bold md:mb-0 md:min-h-[80px];
+    @apply bg-gradient-to-r text-[#1313ff] text-left font-apfel text-6xl md:text-7.5xl 2xl:min-h-[110px] min-h-[65px] font-bold md:mb-0 md:min-h-[80px];
   }
 
   .highlight {
