@@ -1,3 +1,6 @@
-export const genUploadCareUrl = (url: string, size?: string): string => {
-  return `${url}preview/${size && size}-/quality/smart_retina/-/format/auto/`;
+export const genUploadCareUrl = (url: string | null, size?: string): string => {
+  if (!url) return "";
+  return `${url}preview/${
+    size ? size + "/" : ""
+  }-/quality/smart_retina/-/format/auto/`;
 };

@@ -8,13 +8,14 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
+import { genUploadCareUrl } from "~/utilities";
 
 type Card = {
   image: string;
   title: string;
   description: string;
   cardClass?: string;
-  id?: string;
+  id: number;
 };
 
 const BikeCard = ({ image, title, description, id }: Card) => {
@@ -23,11 +24,11 @@ const BikeCard = ({ image, title, description, id }: Card) => {
 
   return (
     <motion.li
-      layoutId={id}
+      layoutId={id.toString()}
       className="group flex w-[250px] shrink-0 flex-col rounded-2xl md:w-[300px]"
     >
       <motion.img
-        src="https://ucarecdn.com/6314d60d-c721-4710-b2c7-abe35f32d5de/-/preview/600x600/-/quality/smart_retina/-/format/auto/"
+        src={image}
         transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
         whileTap={{ scale: 0.9 }}
         whileHover={
@@ -40,20 +41,25 @@ const BikeCard = ({ image, title, description, id }: Card) => {
         }
         className={`mb-2 h-[250px] w-full shrink-0 rounded-2xl object-cover md:h-[300px]`}
       />
-      <div className="flex h-full flex-col rounded-b-2xl px-1 text-white group-hover:text-pink-600">
-        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl font-bold transition-all">
+      <div className="flex h-full flex-col rounded-b-2xl px-1 text-white transition-all group-hover:text-pink-600">
+        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl font-bold">
           {title}
         </h3>
-        <p className="mb-2 font-apfel text-lg 2xl:text-lg">{description}</p>
+        <p className="text-md mb-2 font-apfel">{description}</p>
       </div>
     </motion.li>
   );
 };
 
-const UpgradeCard = ({ title, description, image, cardClass }: Card) => {
+const UpgradeCard = ({
+  title,
+  description,
+  image,
+  cardClass,
+}: Partial<Card>) => {
   return (
-    <li className="flex h-[200px] shrink-0 flex-row items-end gap-x-4 md:h-[300px]">
-      <div className="w-[250px] shrink-0 flex-col font-ignazio md:w-[500px]">
+    <li className="flex h-[200px] shrink-0 flex-row items-end gap-x-4 rounded-xl bg-gray-800 md:h-[300px]">
+      <div className="w-[250px] shrink-0 flex-col p-8 font-ignazio md:w-[500px]">
         <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-2xl">
           {title}
         </h3>
@@ -62,7 +68,7 @@ const UpgradeCard = ({ title, description, image, cardClass }: Card) => {
         </p>
       </div>
       <div
-        className={`flex w-[200px] rounded-2xl md:w-[300px] ${image} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        className={`flex w-[200px] rounded-r-2xl md:w-[300px] ${image} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
       />
     </li>
   );
@@ -76,7 +82,6 @@ export const loader: LoaderFunction = async (): Promise<{ posts: Post[] }> => {
 
 export default function Bike() {
   const { posts } = useLoaderData();
-  console.log("posts", posts[0]);
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
@@ -84,7 +89,7 @@ export default function Bike() {
         <h1 className="heading mb-4">
           <AnimatedText>Bike Blog</AnimatedText>
         </h1>
-        <h2 className="mb-12 max-w-[600px] font-apfel text-xl text-black md:text-2xl">
+        <h2 className="mb-20 max-w-[600px] font-apfel text-xl text-black md:text-2xl">
           Here is about my bike and stuff related to cycling: my rides, photos
           and, most interesting,{" "}
           <strong className="highlight">the upgrading evolution</strong>
@@ -123,20 +128,18 @@ export default function Bike() {
           </h2>
           <ModalContent route="bike" />
           <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
-            <Link to="/bike/first" preventScrollReset>
-              <BikeCard
-                image="bg-firstRide"
-                description="Start at Ishpro Zone, 1 road. Emek Ayalon, 3 road; 431"
-                title="#1"
-                id="first"
-              />
-            </Link>
-            <BikeCard
-              id="second"
-              image="bg-secondRide"
-              description="National path in Ben Shemen Forest"
-              title="#2"
-            />
+            {posts.map((post: Post) => {
+              return (
+                <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
+                  <BikeCard
+                    image={genUploadCareUrl(post.image, "600x600")}
+                    description={post.subtitle || ""}
+                    title={post.title}
+                    id={post.id}
+                  />
+                </Link>
+              );
+            })}
           </ul>
         </section>
         <section className="flex flex-col bg-secondaryBg py-16 shadow-2xl md:rounded-b-2xl md:px-8">

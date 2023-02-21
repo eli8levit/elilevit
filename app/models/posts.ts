@@ -1,5 +1,10 @@
 import { prisma } from "~/db.server";
 
+const normalizePost = (post: any) => ({
+  ...post,
+  createdAt: new Date(post.createdAt).toLocaleDateString(),
+});
+
 export const getBikePosts = ({ isDetailed }: { isDetailed: boolean }) => {
   return prisma.posts
     .findMany({
@@ -13,10 +18,13 @@ export const getBikePosts = ({ isDetailed }: { isDetailed: boolean }) => {
       },
       where: { published: false, type: "BIKE" },
     })
-    .then((posts) =>
-      posts.map((post) => ({
-        ...post,
-        createdAt: new Date(post.createdAt).toLocaleDateString(),
-      }))
-    );
+    .then((posts) => posts.map(normalizePost));
+};
+
+export const getPost = (id: number) => {
+  return prisma.posts
+    .findFirst({
+      where: { id },
+    })
+    .then(normalizePost);
 };

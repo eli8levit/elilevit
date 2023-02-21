@@ -6,7 +6,7 @@ const colors = require("tailwindcss/colors");
 export const Footer = () => {
   return (
     <div className="mt-auto pt-24 md:mb-10 md:pt-44">
-      <footer className="mx-auto flex h-16 flex-row items-center gap-y-1 overflow-auto bg-white font-mona text-sm text-gray-400 md:h-14 md:w-max md:gap-y-2 md:rounded-3xl md:text-base md:shadow-2xl">
+      <footer className="mx-auto flex h-16 flex-row items-center gap-y-1 overflow-auto bg-white font-mona text-sm text-gray-400 md:h-14 md:w-max md:gap-y-2 md:rounded-xl md:text-base md:shadow-2xl">
         <div className="flex flex-row flex-wrap items-center gap-1 px-4 md:flex-nowrap md:px-12">
           Created with{" "}
           <Link
