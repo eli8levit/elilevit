@@ -18,9 +18,10 @@ module.exports = {
         wheels: "url(/wheels.jpg)",
         haIsh: "url(/ha-ish-studio.jpg)",
         player: "url(/player.png)",
+        spline: "url(/3d.png)",
       },
       fontSize: {
-        "7.5xl": "5.5rem",
+        "7.5xl": "5rem",
       },
       boxShadow: {
         bike: `0 5px 25px -3px #000097, 0 0 40px 0 rgba(0,0,0,0.4)`,

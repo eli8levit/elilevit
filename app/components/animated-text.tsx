@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function AnimatedText({
   children,
-  className = "heading",
+  className = "",
 }: {
   children: string;
   className?: string;
