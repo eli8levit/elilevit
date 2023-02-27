@@ -62,7 +62,7 @@ export default function Index() {
           height="200px"
           className="my-24 mx-auto h-[200px] md:my-48 md:my-56"
         />
-        <h4 className="mb-10 border-b-4 border-black pb-2 font-apfel text-5xl text-black md:text-6xl">
+        <h4 className="mb-10 border-b-[6px] border-black pb-2 font-apfel text-5xl text-black md:text-6xl">
           So far I don't have much content, but still can can checkout some
           things:
         </h4>

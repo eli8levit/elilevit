@@ -21,13 +21,13 @@ const BikeCard = ({ image, title, description, id }: Card) => {
   return (
     <motion.li
       layoutId={id.toString()}
-      className="group flex w-[250px] shrink-0 flex-col rounded-2xl bg-[rgba(192,9,100,0.8)] p-6 shadow-sm backdrop-blur-sm hover:backdrop-blur-xl md:w-[300px] md:shadow-lg"
+      className="group flex h-[280px] w-[280px] shrink-0 flex-col rounded-2xl bg-[rgba(192,9,100,0.8)] p-6 shadow-sm backdrop-blur-sm hover:backdrop-blur-xl  md:shadow-lg"
       whileHover={{ backgroundColor: "rgba(192,9,100,0.5)" }}
     >
       <motion.img
         src={image}
         transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
-        className={`mb-2 h-[80px] w-[80px] shrink-0 rounded-lg object-cover`}
+        className={`mb-2 h-[100px] w-[100px] shrink-0 rounded-lg object-cover`}
       />
       <div className="flex h-full flex-col rounded-b-2xl text-white transition-all group-hover:text-black">
         <h3 className="mb-1 font-apfel text-xl font-bold">{title}</h3>
@@ -62,7 +62,7 @@ export default function Bike() {
           </span>
         </h2>
       </div>
-      <div className="content-container relative py-0">
+      <div className="content-container relative py-0 pr-0">
         <motion.svg
           viewBox="0 0 3394 2160"
           fill="none"
@@ -87,12 +87,16 @@ export default function Bike() {
             Ride History
           </h2>
           <ModalContent route="bike" />
-          <ul className="ml-6 mb-10 flex  flex-row gap-6 overflow-x-auto p-2 pt-2 md:ml-12 md:mb-0 md:p-8 md:pt-2">
+          <ul className="ml-8 mb-10 flex flex-row gap-6 overflow-x-auto pl-2 pt-2 pr-0 md:ml-12 md:mb-0 md:p-8 md:pt-2">
             {posts.map((post: Post) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
                   <BikeCard
-                    image={genUploadCareUrl(post.image, "600x600")}
+                    image={
+                      post?.image?.includes("ucarecdn.com")
+                        ? genUploadCareUrl(post.image, "600x600")
+                        : post.image || ""
+                    }
                     description={post.subtitle || ""}
                     title={post.title}
                     id={post.id}
@@ -109,15 +113,19 @@ export default function Bike() {
           >
             Upgrades
           </h2>
-          <ul className="ml-6 flex flex-row gap-6 overflow-x-auto p-2 pt-2 md:ml-12 md:p-8">
+          <ul className="ml-8 flex flex-row gap-6 overflow-x-auto pl-2 pt-2 pr-0 md:ml-12 md:mb-0 md:p-8 md:pt-2">
             {posts.map((post: Post) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
                   <BikeCard
-                    image={genUploadCareUrl(post.image, "600x600")}
+                    image={
+                      post?.image?.includes("ucarecdn.com")
+                        ? genUploadCareUrl(post.image, "600x600")
+                        : post.image || ""
+                    }
                     description={post.subtitle || ""}
                     title={post.title}
-                    id={post.id + 2}
+                    id={post.id}
                   />
                 </Link>
               );

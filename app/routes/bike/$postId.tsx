@@ -6,6 +6,7 @@ import type { Post } from "~/types";
 import { getPost } from "~/models/posts";
 import { useLoaderData } from "@remix-run/react";
 import { genUploadCareUrl } from "~/utilities";
+import { FaidInMotionContainer } from "~/components/layout";
 
 export const loader: LoaderFunction = async ({
   params,
@@ -25,16 +26,16 @@ export default function BikePost() {
         height="20%"
         className="-mt-[70px] h-[50%] w-full rounded-t-2xl object-cover"
       />
-      <motion.div className="p-6 md:p-16">
-        <motion.div className="flex flex-col-reverse justify-between gap-y-4 md:flex-row md:items-end">
-          <motion.h1 className="font-apfel text-5xl font-bold text-[#0000ff]">
+      <FaidInMotionContainer className="p-6 md:p-16">
+        <motion.div className="flex flex-col-reverse items-center justify-between gap-y-4 md:flex-row">
+          <motion.h1 className="font-monaWide text-6xl font-bold text-[#0000ff]">
             {post.title}
           </motion.h1>
           <motion.div className="flex flex-col">
-            <motion.span className="highlight font-monaWide text-xs italic md:text-sm">
-              {post.tag}
+            <motion.span className="font-apfel text-xs font-semibold text-[#DB2877] md:text-lg">
+              #{post.tag}
             </motion.span>
-            <motion.span className="font-monaWide text-sm text-zinc-400 md:text-xl">
+            <motion.span className="font-mona text-sm font-bold text-[#0000ff] md:text-3xl">
               {post.createdAt}
             </motion.span>
           </motion.div>
@@ -59,7 +60,7 @@ export default function BikePost() {
         <motion.p className="text-md font-mona md:text-lg">
           {post.content}
         </motion.p>
-      </motion.div>
+      </FaidInMotionContainer>
     </>
   );
 }

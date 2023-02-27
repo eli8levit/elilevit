@@ -17,7 +17,7 @@ const CloseLink = ({ className, to }: { className?: string; to: string }) => {
         <motion.path
           d="M980.5 443.5c0 221.663-207.254 409-473 409s-473-187.337-473-409 207.254-409 473-409 473 187.337 473 409Z"
           strokeWidth="60"
-          className="fill-pinkLighter stroke-[#0000ff] group-hover:fill-[#0000ff]"
+          className="fill-white stroke-[#0000ff] group-hover:fill-[#0000ff]"
         />
         <motion.path
           d="M374 273c152.568 91.011 221.491 156.355 313 300m0-319.5s-122.804 75.281-188 139.308C416.961 473.376 328 632.5 328 632.5"
@@ -52,7 +52,7 @@ export function ModalContent({ route }: Props) {
         <>
           <motion.div className="overflow-hidden">
             <motion.div
-              className="shadow-modal fixed left-0 right-0 top-0 z-20 mx-auto h-full w-full overflow-auto rounded-t-2xl bg-pinkLighter pb-6 md:top-[4vh] md:h-[94vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0 md:shadow-2xl"
+              className="fixed left-0 right-0 top-0 z-20 mx-auto h-full w-full overflow-auto rounded-t-2xl bg-pinkLighter pb-6 shadow-2xl md:top-[4vh] md:h-[94vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0 md:shadow-2xl"
               layoutId={params?.postId}
             >
               <CloseLink
@@ -65,7 +65,7 @@ export function ModalContent({ route }: Props) {
           <Link
             to={`/${route}`}
             preventScrollReset
-            className="fixed top-0 bottom-0 left-0 right-0 z-10"
+            className="fixed top-0 bottom-0 left-0 right-0 z-10 backdrop-blur-sm backdrop-brightness-90"
           >
             <span className="hidden">Close and go back</span>
           </Link>

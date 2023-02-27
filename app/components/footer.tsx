@@ -4,7 +4,7 @@ import React from "react";
 export const Footer = () => {
   return (
     <div className="mt-auto pt-24 md:pt-48">
-      <footer className="mx-auto grid grid-cols-1 grid-cols-[3fr_1fr] grid-rows-2 items-center gap-y-2 bg-[#0000FF] p-8 font-mona text-xl font-semibold text-white md:grid-cols-[max-content_auto] md:p-12 md:px-0 md:text-2xl">
+      <footer className="mx-auto grid grid-cols-1 grid-cols-[3fr_1fr] grid-rows-2 items-center gap-y-2 bg-[#0000FF] p-6 font-mona text-xl font-semibold text-white md:grid-cols-[max-content_auto] md:p-12 md:px-0 md:text-2xl">
         <p className="md:ml-12">
           Created with{" "}
           <Link
