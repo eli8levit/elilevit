@@ -4,7 +4,7 @@
 
 @layer components {
   .content-container {
-    @apply px-4 pt-12 md:pt-16 mx-auto max-w-[2000px] w-full md:px-12 lg:px-28 2xl:px-44 2xl:pt-32;
+    @apply px-4 pt-12 md:pt-24 mx-auto max-w-[2000px] w-full md:px-12 lg:px-28 2xl:px-44 2xl:pt-32;
   }
 
   .heading {
@@ -39,6 +39,13 @@
 
 @font-face {
   font-family: "Mona";
+  src: url("/fonts/Mona/Mona-Sans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona";
   src: url("/fonts/Mona/Mona-Sans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
@@ -67,3 +74,24 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Mona";
+  src: url("/fonts/Mona/Mona-Sans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Mona";
+  src: url("/fonts/Mona/Mona-Sans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Wide";
+  src: url("/fonts/Mona/Mona-Sans-SemiBoldWide.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}

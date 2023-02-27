@@ -18,7 +18,6 @@ module.exports = {
         wheels: "url(/wheels.jpg)",
         haIsh: "url(/ha-ish-studio.jpg)",
         player: "url(/player.png)",
-        spline: "url(/3d.png)",
       },
       fontSize: {
         "7.5xl": "5rem",
@@ -31,10 +30,6 @@ module.exports = {
       },
       colors: {
         pinkLighter: "#fff3f4",
-        secondaryBg: "#00001a",
-        bla: "#000069",
-        blueDark: "#000084",
-        secondaryBg2: "#0000d8",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

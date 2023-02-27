@@ -1,7 +1,6 @@
 import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useWillChange } from "framer-motion";
-import { useMobileDetect } from "~/use-device-detect-hook";
 import { AnimatedText, draw } from "~/components";
 import defaultTheme from "tailwindcss/defaultTheme";
 import { draw2 } from "~/components/utils";
@@ -16,14 +15,12 @@ type Card = {
 
 const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
   const willChange = useWillChange();
-  const mobileDetect = useMobileDetect();
-  const isMobile = mobileDetect.isMobile();
 
   return (
     <motion.a
       layout
       whileHover={{
-        padding: isMobile ? 0 : "28px",
+        padding: "28px",
         boxShadow: defaultTheme.boxShadow["2xl"],
       }}
       transition={{ type: "ease-in", duration: 0.2 }}
@@ -34,10 +31,10 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="mb-1 font-apfel text-lg font-bold text-black md:text-xl lg:text-2xl">
+        <h3 className="mb-1 font-apfel text-lg font-bold text-black md:text-xl lg:text-4xl">
           {title}
         </h3>
-        <p className="max-w-[850px] font-mona text-base font-normal text-black opacity-50 lg:text-lg">
+        <p className="max-w-[650px] font-mona text-base font-normal text-black opacity-50 lg:text-xl">
           {description}
         </p>
       </div>
@@ -53,7 +50,7 @@ export default function Art() {
     <FaidInMotionContainer className="content-container grid items-center pt-8">
       <motion.svg
         viewBox="0 0 3341 1557"
-        className="mb-12 md:mb-0"
+        className="mb-[10vh]"
         fill="none"
         initial="hidden"
         animate="visible"
@@ -75,14 +72,14 @@ export default function Art() {
           strokeLinejoin="round"
         />
       </motion.svg>
-      <h1 className="mb-4">
-        <AnimatedText>Work & Art</AnimatedText>
+      <h1 className="heading mb-4">
+        <AnimatedText className="text-9xl">Work & Art</AnimatedText>
       </h1>
-      <h2 className="mb-16 max-w-[500px] text-left font-apfel text-xl text-black md:mb-32 md:text-2xl">
+      <h2 className="mb-[15vh] max-w-[1000px] font-mona text-2xl font-medium font-normal text-black md:text-5xl">
         Here you can see my art like photos, illustrations along with my
         projects
       </h2>
-      <div className="mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-12 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px] md:gap-12">
+      <div className="mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-12 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px] md:gap-14">
         <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
           <ArtCard
             background="bg-haIsh"

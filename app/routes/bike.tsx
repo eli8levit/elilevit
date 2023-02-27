@@ -3,7 +3,6 @@ import { FaidInMotionContainer } from "~/components/layout";
 import { motion } from "framer-motion";
 import { AnimatedText, draw } from "~/components";
 import { ModalContent } from "~/components/modal-content";
-import { useMobileDetect } from "~/use-device-detect-hook";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
@@ -19,58 +18,22 @@ type Card = {
 };
 
 const BikeCard = ({ image, title, description, id }: Card) => {
-  const mobileDetect = useMobileDetect();
-  const isMobile = mobileDetect.isMobile();
-
   return (
     <motion.li
       layoutId={id.toString()}
-      className="group flex w-[250px] shrink-0 flex-col rounded-2xl md:w-[300px]"
+      className="group flex w-[250px] shrink-0 flex-col rounded-2xl bg-[rgba(192,9,100,0.8)] p-6 shadow-sm backdrop-blur-sm hover:backdrop-blur-xl md:w-[300px] md:shadow-lg"
+      whileHover={{ backgroundColor: "rgba(192,9,100,0.5)" }}
     >
       <motion.img
         src={image}
         transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
-        whileTap={{ scale: 0.9 }}
-        whileHover={
-          isMobile
-            ? {}
-            : {
-                scale: 1.03,
-                boxShadow: "0 2px 25px 0 rgba(0,0,0,0.6)",
-              }
-        }
-        className={`mb-2 h-[250px] w-full shrink-0 rounded-2xl object-cover md:h-[300px]`}
+        className={`mb-2 h-[80px] w-[80px] shrink-0 rounded-lg object-cover`}
       />
-      <div className="flex h-full flex-col rounded-b-2xl px-1 text-white transition-all group-hover:text-pink-600">
-        <h3 className="mb-1 flex flex-row flex-wrap items-center gap-x-2 font-ignazio text-2xl font-bold">
-          {title}
-        </h3>
-        <p className="text-md mb-2 font-apfel">{description}</p>
+      <div className="flex h-full flex-col rounded-b-2xl text-white transition-all group-hover:text-black">
+        <h3 className="mb-1 font-apfel text-xl font-bold">{title}</h3>
+        <p className="mb-2 font-mona text-xl font-semibold">{description}</p>
       </div>
     </motion.li>
-  );
-};
-
-const UpgradeCard = ({
-  title,
-  description,
-  image,
-  cardClass,
-}: Partial<Card>) => {
-  return (
-    <li className="flex h-[200px] shrink-0 flex-row items-end gap-x-4 rounded-xl bg-gray-800 md:h-[300px]">
-      <div className="w-[250px] shrink-0 flex-col p-8 font-ignazio md:w-[500px]">
-        <h3 className="mb-1 text-xl font-bold text-indigo-400 md:text-2xl">
-          {title}
-        </h3>
-        <p className="font-apfel text-base font-light text-gray-400 shadow-inner lg:text-lg">
-          {description}
-        </p>
-      </div>
-      <div
-        className={`flex w-[200px] rounded-r-2xl md:w-[300px] ${image} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
-      />
-    </li>
   );
 };
 
@@ -85,49 +48,46 @@ export default function Bike() {
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container relative">
-        <h1 className="heading mb-4">
-          <AnimatedText>Bike Blog</AnimatedText>
+      <div className="content-container mb-32">
+        <h1 className="heading mb-4 shrink-0">
+          <AnimatedText className="text-8xl 2xl:text-9xl">
+            Bike Blog
+          </AnimatedText>
         </h1>
-        <h2 className="mb-20 max-w-[600px] font-apfel text-xl text-black md:text-2xl">
+        <h2 className="mb-8 max-w-[800px] border-b-8 border-black pb-6 font-mona text-3xl font-medium font-normal text-black md:text-5xl 2xl:max-w-[1000px] 2xl:text-5xl">
           Here is about my bike and stuff related to cycling: my rides, photos
-          and, most interesting,{" "}
-          <strong className="highlight">the upgrading evolution</strong>
+          and{" "}
+          <span className="font-monaWide font-semibold">
+            the upgrading evolution
+          </span>
         </h2>
-        <div className="relative">
-          <motion.svg
-            viewBox="0 0 3394 2160"
-            fill="none"
-            className="absolute -z-10"
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.path
-              d="M163.5 1179S22 127.72 545.5 146.5c687.83 24.675 474.5 1867 474.5 1867s75.95-1867 841-1867c848.5 0 848.5 1867 848.5 1867S2773 825.5 3247 401"
-              stroke="#00F"
-              strokeWidth="292"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              variants={draw}
-            />
-          </motion.svg>
-          <img
-            src="https://ucarecdn.com/7488269d-1ed6-493d-941f-c7d49acc05b6/-/preview/-/quality/smart_retina/-/format/png/"
-            alt="Illustrated blue bicycle on blue and green brush lines background"
-            className="mx-auto h-[250px] object-contain md:h-[650px]"
-          />
-        </div>
       </div>
-      <div className="content-container px-0 pt-0 md:px-5">
-        <section className="flex flex-col bg-gradient-to-b from-secondaryBg2 to-secondaryBg py-4 shadow-2xl md:rounded-t-2xl">
+      <div className="content-container relative py-0">
+        <motion.svg
+          viewBox="0 0 3394 2160"
+          fill="none"
+          className="absolute left-[50%] top-[50%] -z-10 h-[400px] -translate-y-[50%] -translate-x-[50%] pl-32 md:h-[60vh]"
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.path
+            d="M163.5 1179S22 127.72 545.5 146.5c687.83 24.675 474.5 1867 474.5 1867s75.95-1867 841-1867c848.5 0 848.5 1867 848.5 1867S2773 825.5 3247 401"
+            stroke="#00F"
+            strokeWidth="292"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            variants={draw}
+          />
+        </motion.svg>
+        <section className="relative flex flex-col">
           <h2
-            className="p-4 pb-0 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
+            className="absolute bottom-[20px] left-0 h-max w-max origin-left -rotate-90 font-apfel text-5xl font-bold text-black md:bottom-0 md:text-6xl"
             id="rides"
           >
-            Rides
+            Ride History
           </h2>
           <ModalContent route="bike" />
-          <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
+          <ul className="ml-6 mb-10 flex  flex-row gap-6 overflow-x-auto p-2 pt-2 md:ml-12 md:mb-0 md:p-8 md:pt-2">
             {posts.map((post: Post) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
@@ -142,19 +102,26 @@ export default function Bike() {
             })}
           </ul>
         </section>
-        <section className="flex flex-col bg-secondaryBg py-16 shadow-2xl md:rounded-b-2xl md:px-8">
+        <section className="relative flex flex-row">
           <h2
-            className="p-4 font-apfel text-4xl font-bold text-white md:p-8 md:pb-0"
+            className="absolute bottom-0 left-0 h-max w-max origin-left -rotate-90 font-apfel text-5xl font-bold text-black md:text-6xl"
             id="upgrades"
           >
             Upgrades
           </h2>
-          <ul className="flex flex-row gap-6 overflow-x-auto p-4 md:p-8">
-            <UpgradeCard
-              image="bg-wheels"
-              title="DT Swiss CR1600"
-              description="Firstly I decided to tune my wheels. More precisely I broke my front wheel in some small accident and was forced to buy replacement. I thought why not to use opportunity to upgrade them. That's how I bought DT Swiss."
-            />
+          <ul className="ml-6 flex flex-row gap-6 overflow-x-auto p-2 pt-2 md:ml-12 md:p-8">
+            {posts.map((post: Post) => {
+              return (
+                <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
+                  <BikeCard
+                    image={genUploadCareUrl(post.image, "600x600")}
+                    description={post.subtitle || ""}
+                    title={post.title}
+                    id={post.id + 2}
+                  />
+                </Link>
+              );
+            })}
           </ul>
         </section>
       </div>

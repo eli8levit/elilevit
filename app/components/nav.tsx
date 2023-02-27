@@ -4,7 +4,6 @@ import Me from "~/sources/images/me-memoji.png";
 import { motion } from "framer-motion";
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
-import { useMobileDetect } from "~/use-device-detect-hook";
 import { MotionNavLink } from "~/components/motion-nav-link";
 
 const draw = {
@@ -37,8 +36,6 @@ const Link = ({
   active: boolean;
 }) => {
   const [hover, setHover] = React.useState(false);
-  const mobileDetect = useMobileDetect();
-  const isMobile = mobileDetect.isMobile();
 
   return (
     <MotionNavLink
@@ -47,7 +44,7 @@ const Link = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       to={`/${id}`}
-      className={`transition-text relative flex items-center rounded-md font-mona ${
+      className={`transition-text relative flex items-center rounded-md font-mona font-medium ${
         active
           ? "w-24 text-white md:w-32"
           : "w-24 text-black hover:text-pink-600 md:w-28"
@@ -72,7 +69,7 @@ const Link = ({
           />
         </motion.svg>
       ) : null}
-      {hover && !active && !isMobile ? (
+      {hover && !active ? (
         <motion.svg
           fill="none"
           initial="hidden"
@@ -102,7 +99,7 @@ export const Nav = () => {
   };
 
   return (
-    <header className="lg:px-22 2xl:px-42  h-[60px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base">
+    <header className="lg:px-22 2xl:px-42 h-[60px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:text-lg">
       <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
         <Link id="" active={isActive("")}>
           Home
