@@ -1,4 +1,8 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+} from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -6,6 +10,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import styles from "./tailwind.css";
 import { Footer, Nav } from "~/components";
@@ -16,6 +21,7 @@ import Manifest from "../public/site.webmanifest";
 import AppleIcon from "../public/apple-touch-icon.png";
 import { motion } from "framer-motion";
 import { Fathom } from "~/components/fanthom";
+import { getRandomMemojiId } from "~/components/utils";
 
 export const links: LinksFunction = () => {
   return [
@@ -60,7 +66,13 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
+export const loader: LoaderFunction = () => {
+  return { memojiId: getRandomMemojiId() };
+};
+
 export default function App() {
+  const { memojiId } = useLoaderData();
+
   return (
     <html lang="en" className="h-full bg-pinkLighter">
       <head>
@@ -78,7 +90,7 @@ export default function App() {
             ease: [0, 0.71, 0.2, 1.01],
           }}
         >
-          <Nav />
+          <Nav memojiId={memojiId} />
         </motion.div>
         <Outlet />
         <Footer />
