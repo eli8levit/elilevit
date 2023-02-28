@@ -8,31 +8,55 @@ import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
 import { genUploadCareUrl } from "~/utilities";
+import config from "tailwind.config";
 
 type Card = {
   image: string;
   title: string;
   description: string;
   cardClass?: string;
+  tag?: string | null;
   id: number;
 };
 
-const BikeCard = ({ image, title, description, id }: Card) => {
+const BikeCard = ({ image, title, description, id, tag }: Card) => {
+  const isRide = tag === "rides";
+  const { blackTransparentLighter, pinkTransparentLighter } =
+    config.theme.extend.colors;
+
   return (
     <motion.li
       layoutId={id.toString()}
-      className="group flex h-[280px] w-[280px] shrink-0 flex-col rounded-2xl bg-[rgba(192,9,100,0.8)] p-6 shadow-sm backdrop-blur-sm hover:backdrop-blur-xl  md:shadow-lg"
-      whileHover={{ backgroundColor: "rgba(192,9,100,0.5)" }}
+      className={`flex h-[240px] w-[240px] flex-col rounded-2xl border-mini border-gray-500 md:h-[280px] md:w-[280px]  ${
+        isRide ? "bg-pinkTransparent" : "bg-blackTransparent"
+      } ${isRide ? "text-pinkText" : "text-grayText"} ${
+        isRide ? "hover:text-white" : "hover:text-black"
+      } shadow-sm backdrop-blur-md hover:backdrop-blur-xl active:backdrop-blur-sm md:shadow-xl`}
+      whileHover={{
+        backgroundColor: isRide
+          ? pinkTransparentLighter
+          : blackTransparentLighter,
+      }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "easeInOut" }}
     >
-      <motion.img
-        src={image}
-        transition={{ scale: { type: "spring", stiffness: 200, damping: 10 } }}
-        className={`mb-2 h-[100px] w-[100px] shrink-0 rounded-lg object-cover`}
-      />
-      <div className="flex h-full flex-col rounded-b-2xl text-white transition-all group-hover:text-black">
-        <h3 className="mb-1 font-apfel text-xl font-bold">{title}</h3>
-        <p className="mb-2 font-mona text-xl font-semibold">{description}</p>
+      <div className="row-flex flex items-center gap-x-2 pr-2">
+        <motion.img
+          src={image}
+          transition={{
+            scale: { type: "spring", stiffness: 200, damping: 10 },
+          }}
+          className="-mt-2 -ml-1 h-[80px] w-[80px] shrink-0 rounded-lg object-cover shadow-xl md:h-[120px] md:w-[120px]"
+        />
+        <h3
+          className={`mx-auto border-b-2 font-monaWide ${
+            isRide ? "border-pinkText" : "border-grayText"
+          } text-xl font-bold md:text-2xl`}
+        >
+          {title + " Hi from"}
+        </h3>
       </div>
+      <p className="mb-2 p-6  font-mona text-lg font-normal">{description}</p>
     </motion.li>
   );
 };
@@ -48,7 +72,7 @@ export default function Bike() {
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container mb-32">
+      <div className="content-container md:mb-32">
         <h1 className="heading mb-4 shrink-0">
           <AnimatedText className="text-8xl 2xl:text-9xl">
             Bike Blog
@@ -62,11 +86,11 @@ export default function Bike() {
           </span>
         </h2>
       </div>
-      <div className="content-container relative py-0 pr-0">
+      <div className="content-container relative pr-0">
         <motion.svg
           viewBox="0 0 3394 2160"
           fill="none"
-          className="absolute left-[50%] top-[50%] -z-10 h-[400px] -translate-y-[50%] -translate-x-[50%] pl-32 md:h-[60vh]"
+          className="absolute left-[50%] top-[50%] -z-10 h-[400px] -translate-y-[50%] -translate-x-[50%] pl-32 md:h-[70vh]"
           initial="hidden"
           animate="visible"
         >
@@ -81,13 +105,13 @@ export default function Bike() {
         </motion.svg>
         <section className="relative flex flex-col">
           <h2
-            className="absolute bottom-[20px] left-0 h-max w-max origin-left -rotate-90 font-apfel text-5xl font-bold text-black md:bottom-0 md:text-6xl"
+            className="absolute left-2 bottom-4 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:bottom-0 md:left-0 md:text-6xl"
             id="rides"
           >
             Ride History
           </h2>
           <ModalContent route="bike" />
-          <ul className="ml-8 mb-10 flex flex-row gap-6 overflow-x-auto pl-2 pt-2 pr-0 md:ml-12 md:mb-0 md:p-8 md:pt-2">
+          <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-6 md:p-12 md:pt-2">
             {posts.map((post: Post) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
@@ -100,6 +124,7 @@ export default function Bike() {
                     description={post.subtitle || ""}
                     title={post.title}
                     id={post.id}
+                    tag={post.tag}
                   />
                 </Link>
               );
@@ -108,12 +133,12 @@ export default function Bike() {
         </section>
         <section className="relative flex flex-row">
           <h2
-            className="absolute bottom-0 left-0 h-max w-max origin-left -rotate-90 font-apfel text-5xl font-bold text-black md:text-6xl"
+            className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:bottom-0 md:left-0 md:text-6xl"
             id="upgrades"
           >
             Upgrades
           </h2>
-          <ul className="ml-8 flex flex-row gap-6 overflow-x-auto pl-2 pt-2 pr-0 md:ml-12 md:mb-0 md:p-8 md:pt-2">
+          <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-6 md:p-12">
             {posts.map((post: Post) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>

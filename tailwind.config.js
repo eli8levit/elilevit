@@ -17,8 +17,17 @@ module.exports = {
       fontSize: {
         "7.5xl": "5rem",
       },
+      borderWidth: {
+        mini: "0.5px",
+      },
       colors: {
         pinkLighter: "#fff3f4",
+        pinkTransparent: "rgba(192,10,100,0.8)",
+        pinkText: "#ffd3e5",
+        grayText: "#e3e3e3",
+        pinkTransparentLighter: "rgba(192,9,100,0.5)",
+        blackTransparent: "rgba(0, 0, 0, 0.6)",
+        blackTransparentLighter: "rgba(0, 0, 0, 0.3)",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

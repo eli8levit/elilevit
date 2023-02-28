@@ -15,6 +15,7 @@ export const getBikePosts = ({ isDetailed }: { isDetailed: boolean }) => {
         content: isDetailed,
         image: true,
         subtitle: true,
+        tag: true,
       },
       where: { published: false, type: "BIKE" },
     })
