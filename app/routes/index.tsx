@@ -3,15 +3,8 @@ import { AnimatedText, Link } from "~/components";
 import { FaidInMotionContainer } from "~/components/layout";
 import Heart from "~/sources/images/heart.png";
 import { useLoaderData } from "@remix-run/react";
-import type { LoaderFunction } from "@remix-run/node";
 import Hands from "~/sources/images/hands.png";
-import { getMobileDetect } from "~/utilities";
-
-export const loader: LoaderFunction = (params: any): { isMobile: boolean } => {
-  const userAgent = params.request.headers.get("user-agent");
-  const detect = getMobileDetect(userAgent);
-  return { isMobile: detect.isMobile() };
-};
+export { loader } from "../use-mobile-loader";
 
 export default function Index() {
   const { isMobile } = useLoaderData();

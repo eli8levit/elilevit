@@ -52,7 +52,7 @@ export function ModalContent({ route }: Props) {
         <>
           <motion.div className="overflow-hidden">
             <motion.div
-              className="fixed left-0 right-0 top-0 z-20 mx-auto h-full w-full overflow-auto rounded-t-2xl bg-pinkLighter pb-6 shadow-2xl md:top-[4vh] md:h-[94vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0 md:shadow-2xl"
+              className="fixed left-0 right-0 top-0 z-20 mx-auto h-full w-full overflow-auto rounded-t-2xl border-mini border-gray-300 bg-[#fff3f4cf] pb-6 shadow-2xl backdrop-blur-md md:top-[4vh] md:h-[94vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0 md:shadow-2xl"
               layoutId={params?.postId}
             >
               <CloseLink

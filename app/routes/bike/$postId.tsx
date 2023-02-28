@@ -27,18 +27,18 @@ export default function BikePost() {
         className="-mt-[70px] h-[50%] w-full rounded-t-2xl object-cover"
       />
       <FaidInMotionContainer className="p-6 md:p-16">
-        <motion.div className="flex flex-col-reverse items-center justify-between gap-y-4 md:flex-row">
-          <motion.h1 className="font-monaWide text-6xl font-bold text-[#0000ff]">
-            {post.title}
-          </motion.h1>
+        <motion.div className="flex flex-col gap-y-6">
           <motion.div className="flex flex-col">
-            <motion.span className="font-apfel text-xs font-semibold text-[#DB2877] md:text-lg">
+            <motion.span className="font-monaWide text-lg font-semibold text-[#DB2877]">
               #{post.tag}
             </motion.span>
-            <motion.span className="font-mona text-sm font-bold text-[#0000ff] md:text-3xl">
+            <motion.span className="font-mona text-lg font-normal text-[#0000ff] md:text-xl">
               {post.createdAt}
             </motion.span>
           </motion.div>
+          <motion.h1 className="font-monaWide text-6xl font-bold text-[#0000ff]">
+            {post.title}
+          </motion.h1>
         </motion.div>
         <motion.svg
           fill="none"

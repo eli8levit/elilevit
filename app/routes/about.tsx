@@ -1,14 +1,16 @@
 import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion } from "framer-motion";
-import { AnimatedText, draw } from "~/components";
+import { AnimatedText, draw, Link } from "~/components";
 
 export default function About() {
   return (
     <FaidInMotionContainer>
       <main className="content-container mb-22 grid items-center md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
-        <h1 className="md:col-span-full">
-          <AnimatedText>A bit about me</AnimatedText>
+        <h1 className="heading md:col-span-full">
+          <AnimatedText className="text-7xl md:text-8xl 2xl:text-9xl">
+            A bit about me
+          </AnimatedText>
         </h1>
         <motion.svg
           viewBox="0 0 980 2239"
@@ -35,20 +37,12 @@ export default function About() {
           />
         </motion.svg>
 
-        <p className="mb-4 font-apfel text-xl text-black md:mr-auto md:text-2xl">
+        <p className="mb-4 font-mona text-xl font-normal text-black md:mr-auto md:text-2xl">
           Shalom from Israel 🇮🇱. I'm Eli, currently I'm working in{" "}
-          <a
-            href="https://www.rapyd.net/"
-            className="highlight"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Rapyd
-          </a>{" "}
-          as a FullStack Developer. Apart from my work I enjoy cycling, music,
-          photographing and a lot of other creative things that I would like to
-          share here with you. Don't hesitate to reach out me and thanks for
-          visiting!
+          <Link>Rapyd</Link> as a FullStack Developer. Apart from my work I
+          enjoy cycling, music, photographing and a lot of other creative things
+          that I would like to share here with you. Don't hesitate to reach out
+          me and thanks for visiting!
         </p>
       </main>
     </FaidInMotionContainer>

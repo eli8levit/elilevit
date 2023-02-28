@@ -10,10 +10,6 @@
   .heading {
     @apply text-[#1313ff] text-left font-apfel text-6xl md:text-7.5xl font-bold;
   }
-
-  .highlight {
-    @apply bg-gradient-to-r from-[#0000ff] to-pink-600 bg-clip-text text-transparent
-  }
 }
 
 @font-face {

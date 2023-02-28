@@ -1,8 +1,9 @@
 import React from "react";
-import { NavLink, useMatches } from "@remix-run/react";
+import { NavLink, useLoaderData, useMatches } from "@remix-run/react";
 import { motion } from "framer-motion";
 import colors from "tailwindcss/colors";
 import { MotionNavLink } from "~/components/motion-nav-link";
+export { loader } from "../use-mobile-loader";
 
 const draw = {
   tap: {
@@ -34,6 +35,7 @@ const Link = ({
   active: boolean;
 }) => {
   const [hover, setHover] = React.useState(false);
+  const { isMobile } = useLoaderData();
 
   return (
     <MotionNavLink
@@ -67,7 +69,7 @@ const Link = ({
           />
         </motion.svg>
       ) : null}
-      {hover && !active ? (
+      {hover && !active && !isMobile ? (
         <motion.svg
           fill="none"
           initial="hidden"

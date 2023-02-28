@@ -22,11 +22,11 @@ module.exports = {
       },
       colors: {
         pinkLighter: "#fff3f4",
-        pinkTransparent: "rgba(192,10,100,0.8)",
-        pinkText: "#ffd3e5",
+        pinkTransparent: "rgba(192,10,100,0.7)",
+        pinkText: "#ffdcea",
         grayText: "#e3e3e3",
         pinkTransparentLighter: "rgba(192,9,100,0.5)",
-        blackTransparent: "rgba(0, 0, 0, 0.6)",
+        blackTransparent: "rgba(0, 0, 0, 0.5)",
         blackTransparentLighter: "rgba(0, 0, 0, 0.3)",
       },
       fontFamily: {

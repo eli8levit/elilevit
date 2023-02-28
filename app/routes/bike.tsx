@@ -7,7 +7,7 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
-import { genUploadCareUrl } from "~/utilities";
+import { genUploadCareUrl, getMobileDetect } from "~/utilities";
 import config from "tailwind.config";
 
 type Card = {
@@ -17,9 +17,10 @@ type Card = {
   cardClass?: string;
   tag?: string | null;
   id: number;
+  isMobile: boolean;
 };
 
-const BikeCard = ({ image, title, description, id, tag }: Card) => {
+const BikeCard = ({ image, title, description, id, tag, isMobile }: Card) => {
   const isRide = tag === "rides";
   const { blackTransparentLighter, pinkTransparentLighter } =
     config.theme.extend.colors;
@@ -27,16 +28,20 @@ const BikeCard = ({ image, title, description, id, tag }: Card) => {
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`flex h-[240px] w-[240px] flex-col rounded-2xl border-mini border-gray-500 md:h-[280px] md:w-[280px]  ${
+      className={`flex h-[240px] w-[240px] flex-col rounded-2xl border-mini border-gray-400 md:h-[280px] md:w-[280px]  ${
         isRide ? "bg-pinkTransparent" : "bg-blackTransparent"
       } ${isRide ? "text-pinkText" : "text-grayText"} ${
-        isRide ? "hover:text-white" : "hover:text-black"
-      } shadow-sm backdrop-blur-md hover:backdrop-blur-xl active:backdrop-blur-sm md:shadow-xl`}
-      whileHover={{
-        backgroundColor: isRide
-          ? pinkTransparentLighter
-          : blackTransparentLighter,
-      }}
+        isRide ? "md:hover:text-white" : "md:hover:text-black"
+      } shadow-sm backdrop-blur-md active:backdrop-blur-sm md:shadow-xl md:hover:backdrop-blur-xl`}
+      whileHover={
+        !isMobile
+          ? {
+              backgroundColor: isRide
+                ? pinkTransparentLighter
+                : blackTransparentLighter,
+            }
+          : {}
+      }
       whileTap={{ scale: 0.9 }}
       transition={{ type: "easeInOut" }}
     >
@@ -46,7 +51,7 @@ const BikeCard = ({ image, title, description, id, tag }: Card) => {
           transition={{
             scale: { type: "spring", stiffness: 200, damping: 10 },
           }}
-          className="-mt-2 -ml-1 h-[80px] w-[80px] shrink-0 rounded-lg object-cover shadow-xl md:h-[120px] md:w-[120px]"
+          className="-mt-2 -ml-1 h-[80px] w-[80px] shrink-0 rounded-lg object-cover shadow-lg  md:h-[120px] md:w-[120px]"
         />
         <h3
           className={`mx-auto border-b-2 font-monaWide ${
@@ -61,28 +66,34 @@ const BikeCard = ({ image, title, description, id, tag }: Card) => {
   );
 };
 
-export const loader: LoaderFunction = async (): Promise<{ posts: Post[] }> => {
+export const loader: LoaderFunction = async (
+  params: any
+): Promise<{ posts: Post[]; isMobile: boolean }> => {
+  const userAgent = params.request.headers.get("user-agent");
+  const detect = getMobileDetect(userAgent);
+
   return {
     posts: await getBikePosts({ isDetailed: false }),
+    isMobile: detect.isMobile(),
   };
 };
 
 export default function Bike() {
-  const { posts } = useLoaderData();
+  const { posts, isMobile } = useLoaderData();
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
       <div className="content-container md:mb-32">
         <h1 className="heading mb-4 shrink-0">
-          <AnimatedText className="text-8xl 2xl:text-9xl">
+          <AnimatedText className="text-7xl md:text-8xl 2xl:text-9xl">
             Bike Blog
           </AnimatedText>
         </h1>
-        <h2 className="mb-8 max-w-[800px] border-b-8 border-black pb-6 font-mona text-3xl font-medium font-normal text-black md:text-5xl 2xl:max-w-[1000px] 2xl:text-5xl">
+        <h2 className="mb-8 max-w-[900px] border-b-[6px] border-black pb-3 font-apfel text-3xl font-normal text-black md:text-5xl 2xl:max-w-[1000px] 2xl:text-5xl">
           Here is about my bike and stuff related to cycling: my rides, photos
           and{" "}
-          <span className="font-monaWide font-semibold">
-            the upgrading evolution
+          <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">
+            upgrading evolution
           </span>
         </h2>
       </div>
@@ -108,7 +119,7 @@ export default function Bike() {
             className="absolute left-2 bottom-4 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:bottom-0 md:left-0 md:text-6xl"
             id="rides"
           >
-            Ride History
+            <span className="font-normal text-[#DB2877]">#</span>Ride History
           </h2>
           <ModalContent route="bike" />
           <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-6 md:p-12 md:pt-2">
@@ -116,6 +127,7 @@ export default function Bike() {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
                   <BikeCard
+                    isMobile={isMobile}
                     image={
                       post?.image?.includes("ucarecdn.com")
                         ? genUploadCareUrl(post.image, "600x600")
@@ -136,13 +148,14 @@ export default function Bike() {
             className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:bottom-0 md:left-0 md:text-6xl"
             id="upgrades"
           >
-            Upgrades
+            <span className="font-normal text-[#DB2877]">#</span>Upgrades
           </h2>
           <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-6 md:p-12">
             {posts.map((post: Post) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
                   <BikeCard
+                    isMobile={isMobile}
                     image={
                       post?.image?.includes("ucarecdn.com")
                         ? genUploadCareUrl(post.image, "600x600")

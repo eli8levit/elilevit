@@ -4,6 +4,8 @@ import { motion, useWillChange } from "framer-motion";
 import { AnimatedText, draw } from "~/components";
 import defaultTheme from "tailwindcss/defaultTheme";
 import { draw2 } from "~/components/utils";
+import { useLoaderData } from "@remix-run/react";
+export { loader } from "../use-mobile-loader";
 
 type Card = {
   background: string;
@@ -15,14 +17,19 @@ type Card = {
 
 const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
   const willChange = useWillChange();
+  const { isMobile } = useLoaderData();
 
   return (
     <motion.a
       layout
-      whileHover={{
-        padding: "28px",
-        boxShadow: defaultTheme.boxShadow["2xl"],
-      }}
+      whileHover={
+        isMobile
+          ? {
+              padding: "28px",
+              boxShadow: defaultTheme.boxShadow["2xl"],
+            }
+          : {}
+      }
       transition={{ type: "ease-in", duration: 0.2 }}
       href={href}
       className="flex w-full flex-col rounded-xl"
@@ -34,7 +41,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
         <h3 className="mb-1 font-apfel text-lg font-bold text-black md:text-xl lg:text-4xl">
           {title}
         </h3>
-        <p className="max-w-[650px] font-mona text-base font-normal text-black opacity-50 lg:text-xl">
+        <p className="max-w-[650px] font-mona text-base font-light text-black opacity-60 lg:text-lg">
           {description}
         </p>
       </div>
@@ -47,10 +54,10 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 
 export default function Art() {
   return (
-    <FaidInMotionContainer className="content-container grid items-center pt-8">
+    <FaidInMotionContainer className="content-container grid items-center pt-0">
       <motion.svg
         viewBox="0 0 3341 1557"
-        className="mb-[10vh]"
+        className="mb-12"
         fill="none"
         initial="hidden"
         animate="visible"
@@ -73,9 +80,11 @@ export default function Art() {
         />
       </motion.svg>
       <h1 className="heading mb-4">
-        <AnimatedText className="text-9xl">Work & Art</AnimatedText>
+        <AnimatedText className="text-7xl md:text-8xl 2xl:text-9xl">
+          Work & Art
+        </AnimatedText>
       </h1>
-      <h2 className="mb-[15vh] max-w-[1000px] font-mona text-2xl font-medium font-normal text-black md:text-5xl">
+      <h2 className="mb-[15vh] max-w-[1000px] font-apfel text-2xl font-normal text-black md:text-5xl">
         Here you can see my art like photos, illustrations along with my
         projects
       </h2>
