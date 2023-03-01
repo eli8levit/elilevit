@@ -21,6 +21,7 @@
     "fathom-client": "^3.5.0",
     "framer-motion": "^9.0.2",
     "isbot": "^3.6.5",
+    "marked": "^4.2.12",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@remix-run/dev": "^1.12.0",
     "@remix-run/eslint-config": "^1.12.0",
+    "@types/marked": "^4.0.8",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
@@ -44,5 +46,8 @@
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
+  },
+  "volta": {
+    "node": "18.14.0"
   }
 }

@@ -23,7 +23,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
     <motion.a
       layout
       whileHover={
-        isMobile
+        !isMobile
           ? {
               padding: "28px",
               boxShadow: defaultTheme.boxShadow["2xl"],
@@ -38,10 +38,10 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="mb-1 font-apfel text-lg font-bold text-black md:text-xl lg:text-4xl">
+        <h3 className="mb-1 font-apfel text-lg font-bold text-secondary md:text-xl lg:text-4xl">
           {title}
         </h3>
-        <p className="max-w-[650px] font-mona text-base font-light text-black opacity-60 lg:text-lg">
+        <p className="max-w-[650px] font-mona text-base font-normal text-black lg:text-lg">
           {description}
         </p>
       </div>

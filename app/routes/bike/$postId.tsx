@@ -1,32 +1,35 @@
 import { motion } from "framer-motion";
+import type { LoaderFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { marked } from "marked";
 import { draw } from "~/components";
 import React from "react";
-import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
 import { getPost } from "~/models/posts";
-import { useLoaderData } from "@remix-run/react";
 import { genUploadCareUrl } from "~/utilities";
 import { FaidInMotionContainer } from "~/components/layout";
 
 export const loader: LoaderFunction = async ({
   params,
-}): Promise<{ post: Post }> => {
+}): Promise<{ post: Post; html: string }> => {
+  const { content, ...post } = await getPost(Number(params.postId));
+  const html = marked.parse(content || "");
   return {
-    post: await getPost(Number(params.postId)),
+    post,
+    html,
   };
 };
 
 export default function BikePost() {
-  const { post }: { post: Post } = useLoaderData();
+  const { post, html }: { post: Post; html: string } = useLoaderData();
 
   return (
     <>
       <motion.img
         src={genUploadCareUrl(post.image)}
-        height="20%"
-        className="-mt-[70px] h-[50%] w-full rounded-t-2xl object-cover"
+        className="-mt-[70px] h-[40%] max-h-[400px] min-h-[200px] w-full rounded-t-2xl object-cover"
       />
-      <FaidInMotionContainer className="p-6 md:p-16">
+      <FaidInMotionContainer className="p-6 md:p-16 md:pt-8">
         <motion.div className="flex flex-col gap-y-6">
           <motion.div className="flex flex-col">
             <motion.span className="font-monaWide text-lg font-semibold text-[#DB2877]">
@@ -36,7 +39,7 @@ export default function BikePost() {
               {post.createdAt}
             </motion.span>
           </motion.div>
-          <motion.h1 className="font-monaWide text-6xl font-bold text-[#0000ff]">
+          <motion.h1 className="font-apfel text-6xl font-bold text-[#0000ff]">
             {post.title}
           </motion.h1>
         </motion.div>
@@ -57,9 +60,10 @@ export default function BikePost() {
             strokeLinejoin="round"
           />
         </motion.svg>
-        <motion.p className="text-md font-mona md:text-lg">
-          {post.content}
-        </motion.p>
+        <motion.div
+          className="text-md content font-mona md:text-xl"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </FaidInMotionContainer>
     </>
   );
