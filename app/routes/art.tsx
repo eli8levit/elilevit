@@ -41,7 +41,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
         <h3 className="mb-1 font-apfel text-lg font-bold text-secondary md:text-xl lg:text-4xl">
           {title}
         </h3>
-        <p className="max-w-[650px] font-mona text-base font-normal text-black lg:text-lg">
+        <p className="max-w-[650px] font-mona text-base font-normal text-black lg:text-lg 2xl:text-xl">
           {description}
         </p>
       </div>

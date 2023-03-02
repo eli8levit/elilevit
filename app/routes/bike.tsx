@@ -117,13 +117,13 @@ export default function Bike() {
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container mx-0 w-max md:mb-32">
+      <div className="content-container md:mb-32">
         <h1 className="heading mb-4 shrink-0">
           <AnimatedText className="text-7xl md:text-8xl 2xl:text-9xl">
             Bike Blog
           </AnimatedText>
         </h1>
-        <h2 className="mb-2 max-w-[900px] font-apfel text-3xl font-normal text-black md:text-5xl 2xl:max-w-[1000px] 2xl:text-5xl">
+        <h2 className="mb-12 max-w-[900px] font-apfel text-4xl font-normal text-black md:mb-2 md:text-5xl 2xl:max-w-[1000px] 2xl:text-5xl">
           Here is about my bike and stuff related to cycling: my rides, photos
           and{" "}
           <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">

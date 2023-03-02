@@ -8,7 +8,27 @@
   }
 
   .content p {
-      @apply leading-8;
+      @apply leading-8 text-xl mb-2;
+  }
+
+   .content h1 {
+      @apply font-bold font-mona text-3xl mb-6;
+    }
+
+  .content h2 {
+    @apply font-bold font-mona text-2xl mb-4;
+  }
+
+  .content hr {
+    @apply border-[rgba(1,1,1,0.2)] mb-6;
+  }
+
+  .content ul {
+    @apply list-disc;
+  }
+
+  .content li {
+    @apply mb-3 text-xl;
   }
 
   .heading {
