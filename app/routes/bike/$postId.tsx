@@ -6,8 +6,7 @@ import { draw } from "~/components";
 import React from "react";
 import type { Post } from "~/types";
 import { getPost } from "~/models/posts";
-import { genUploadCareUrl } from "~/utilities";
-import { FaidInMotionContainer } from "~/components/layout";
+import { genImageUrl } from "~/utilities";
 
 export const loader: LoaderFunction = async ({
   params,
@@ -26,10 +25,10 @@ export default function BikePost() {
   return (
     <>
       <motion.img
-        src={genUploadCareUrl(post.image)}
+        src={genImageUrl(post.image)}
         className="-mt-[70px] h-[40%] max-h-[400px] min-h-[200px] w-full rounded-t-2xl object-cover"
       />
-      <FaidInMotionContainer className="p-6 md:p-12 md:pt-8">
+      <div className="p-6 md:p-12 md:pt-8">
         <motion.div className="flex flex-col gap-y-6">
           <motion.div className="flex flex-col">
             <motion.span className="font-monaWide text-lg font-semibold text-[#DB2877]">
@@ -39,32 +38,32 @@ export default function BikePost() {
               {post.createdAt}
             </motion.span>
           </motion.div>
-          <motion.h1 className="text-bold mb-3 font-apfel text-5xl font-bold md:text-6xl">
+          <motion.h1 className="text-bold mb-3 w-max font-apfel text-5xl font-bold md:text-6xl">
             {post.title}
+            <motion.svg
+              fill="none"
+              initial="hidden"
+              width="100%"
+              viewBox="0 0 866 100"
+              animate="visible"
+              className="mb-8 rotate-180"
+            >
+              <motion.path
+                d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
+                stroke="#0000ff"
+                strokeWidth="12"
+                strokeLinecap="round"
+                variants={draw}
+                strokeLinejoin="round"
+              />
+            </motion.svg>
           </motion.h1>
         </motion.div>
-        <motion.svg
-          fill="none"
-          initial="hidden"
-          width="100%"
-          viewBox="0 0 866 92"
-          animate="visible"
-          className="mb-8 rotate-180"
-        >
-          <motion.path
-            d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
-            stroke="#0000ff"
-            strokeWidth="10"
-            strokeLinecap="round"
-            variants={draw}
-            strokeLinejoin="round"
-          />
-        </motion.svg>
         <motion.div
           className="content font-mona"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-      </FaidInMotionContainer>
+      </div>
     </>
   );
 }

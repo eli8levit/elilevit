@@ -7,7 +7,7 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
-import { genUploadCareUrl, getMobileDetect } from "~/utilities";
+import { genImageUrl, getMobileDetect } from "~/utilities";
 import config from "tailwind.config";
 
 type Card = {
@@ -59,11 +59,7 @@ const BikeCard = ({ image, title, description, id, tag, isMobile }: Card) => {
           transition={{
             scale: { type: "spring", stiffness: 200, damping: 15 },
           }}
-          className={`-mt-4 -ml-4 h-[80px] w-[80px] shrink-0 rounded-2xl border-4 ${
-            isRide
-              ? "border-[rgba(255,243,244,0.4)]"
-              : "border-[rgba(227,227,227,0.4)]"
-          } object-cover shadow-xl md:h-[150px] md:w-[150px]`}
+          className={`-mt-4 -ml-4 h-[80px] w-[80px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[150px] md:w-[150px]`}
         />
         <div className="flex flex-col justify-start">
           <h3 className={`font-monaWide text-xl font-bold md:text-2xl`}>
@@ -135,7 +131,7 @@ export default function Bike() {
         <motion.svg
           viewBox="0 0 3394 2200"
           fill="none"
-          className="absolute left-[50%] top-[50%] -z-10 h-[400px] -translate-y-[50%] -translate-x-[50%] pl-32 md:h-[70vh]"
+          className="absolute left-[50%] top-[50%] -z-10 h-[400px] max-h-[800px] -translate-y-[50%] -translate-x-[50%] pl-32 md:h-[70vh]"
           initial="hidden"
           animate="visible"
         >
@@ -162,7 +158,7 @@ export default function Bike() {
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
                   <BikeCard
                     isMobile={isMobile}
-                    image={genUploadCareUrl(post.image, "600x600")}
+                    image={genImageUrl(post.image, "600x600")}
                     description={post.subtitle || ""}
                     title={post.title}
                     id={post.id}
@@ -188,7 +184,7 @@ export default function Bike() {
                     isMobile={isMobile}
                     image={
                       post?.image?.includes("ucarecdn.com")
-                        ? genUploadCareUrl(post.image, "600x600")
+                        ? genImageUrl(post.image, "600x600")
                         : post.image || ""
                     }
                     description={post.subtitle || ""}

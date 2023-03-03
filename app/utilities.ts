@@ -1,7 +1,16 @@
-export const genUploadCareUrl = (url: string | null, size?: string): string => {
+export const genImageUrl = (url: string | null, size?: string): string => {
   if (!url) return "";
   if (!url.includes("ucarecdn.com")) return url;
-  return `${url}preview/${
+
+  console.log("url", url);
+  console.log(
+    "after",
+    `${url}-/preview/${
+      size ? size + "/" : ""
+    }-/quality/smart_retina/-/format/auto/`
+  );
+
+  return `${url}-/preview/${
     size ? size + "/" : ""
   }-/quality/smart_retina/-/format/auto/`;
 };

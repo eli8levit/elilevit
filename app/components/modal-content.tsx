@@ -38,7 +38,7 @@ interface Props {
 export function ModalContent({ route }: Props) {
   const params = useParams();
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (params.postId) {
       document.body.style.overflow = "hidden";
     } else {
@@ -52,7 +52,7 @@ export function ModalContent({ route }: Props) {
         <>
           <motion.div className="overflow-hidden">
             <motion.div
-              className="fixed left-0 right-0 top-0 z-20 mx-auto h-full w-full overflow-auto rounded-t-2xl border-mini border-gray-400 bg-[rgba(255,243,244,0.85)] pb-6 shadow-2xl backdrop-blur-lg md:top-[2vh] md:h-[94vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0"
+              className="fixed left-0 right-0 top-0 z-20 mx-auto h-full w-full overflow-auto rounded-t-2xl bg-[rgba(255,243,244,0.85)] pb-6 shadow-2xl backdrop-blur-lg md:top-[2vh] md:h-[94vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0"
               layoutId={params?.postId}
             >
               <CloseLink
