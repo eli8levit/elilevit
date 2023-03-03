@@ -5,6 +5,7 @@ import Heart from "~/sources/images/heart.png";
 import { motion } from "framer-motion";
 import config from "../../tailwind.config";
 import { Link } from "@remix-run/react";
+
 export { loader } from "../use-mobile-loader";
 
 export default function Index() {

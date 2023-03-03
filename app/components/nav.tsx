@@ -3,6 +3,8 @@ import { NavLink, useLoaderData, useMatches } from "@remix-run/react";
 import { motion } from "framer-motion";
 import colors from "tailwindcss/colors";
 import { MotionNavLink } from "~/components/motion-nav-link";
+import config from "tailwind.config";
+
 export { loader } from "../use-mobile-loader";
 
 const draw = {
@@ -128,7 +130,7 @@ export const Nav = ({ memojiId }: { memojiId: string }) => {
                 ? {}
                 : {
                     scale: 1.3,
-                    border: "3px solid #5c5cff",
+                    border: `3px solid ${config.theme.extend.colors.primary}`,
                   }
             }
             style={isActive("about") ? { boxShadow: "0 0 0 3px #0000ff" } : {}}

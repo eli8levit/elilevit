@@ -1,36 +1,63 @@
 import { Link } from "~/components/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { draw } from "~/components/utils";
 
 export const Footer = () => {
   return (
     <div className="mt-auto pt-24 md:pt-48">
-      <footer className="mx-auto grid grid-cols-1 grid-cols-[3fr_1fr] grid-rows-2 items-center gap-y-2 bg-[#0000FF] p-6 font-mona text-xl font-semibold text-white md:grid-cols-[max-content_auto] md:p-12 md:px-0 md:text-2xl">
-        <p className="md:ml-12">
-          Created with{" "}
-          <Link
-            className="text-blue-200 hover:text-blue-400"
-            href="https://remix.run/"
-          >
-            Remix
-          </Link>
-        </p>
-        <p className="md:ml-12">
-          Fonts{" "}
-          <Link
-            className="text-blue-200 hover:text-blue-400"
-            href="https://www.collletttivo.it/"
-          >
-            Apfel
-          </Link>{" "}
-          §{" "}
-          <Link
-            className="text-blue-200 hover:text-blue-400"
-            href="https://www.collletttivo.it/"
-          >
-            Ignazio
-          </Link>
-        </p>
-        <div className="col-start-2 row-span-full mx-auto flex items-center md:mr-[50vw] md:translate-x-[50%] md:gap-x-2">
+      <footer className="grid grid-cols-2 grid-rows-2 items-center gap-y-4 gap-x-1 bg-primary p-6 font-mona text-xl font-semibold text-white md:grid-cols-3 md:grid-rows-1 md:p-12 md:text-2xl">
+        <div className="flex shrink-0 flex-col gap-2">
+          <p>
+            Created with{" "}
+            <Link
+              className="text-blue-200 hover:text-blue-400"
+              href="https://remix.run/"
+            >
+              Remix
+            </Link>
+          </p>
+          <p>
+            Fonts{" "}
+            <Link
+              className="text-blue-200 hover:text-blue-400"
+              href="https://www.collletttivo.it/"
+            >
+              Apfel
+            </Link>{" "}
+            §{" "}
+            <Link
+              className="text-blue-200 hover:text-blue-400"
+              href="https://www.collletttivo.it/"
+            >
+              Ignazio
+            </Link>
+          </p>
+        </div>
+        <motion.svg
+          className="col-start-2 row-span-full mx-auto h-[100px] max-w-[100%] md:col-start-3 md:mx-0 md:ml-auto"
+          viewBox="0 0 1381 815"
+          fill="none"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.path
+            d="M102 109c0 4.4 82 507 110 533.5s14-259.921 33.5-263C265 376.421 330 747 330 747M360 592l-1-2"
+            stroke="white"
+            strokeWidth="14"
+            variants={draw}
+            strokeLinecap="round"
+          />
+          <motion.path
+            d="M463.211 808C423.402 518.447 361.273 241.541 361.273 66.553c0-174.987 120.128 594.4 138.288 515.406 18.161-78.994 37.931-222.049 0-208.485-37.93 13.564 59.267 280.537 73.491 227.541C587.276 548.019 654.444.558 554.086 7.057c-100.357 6.5 53.291 846.412 137.498 760.946 37.931-38.497 16.595-379.031 0-386.53-23.706 0-28.447 90.051 0 74.995 28.448-15.056 57.686-81.494 74.281-65.995 16.595 15.498-16.615 54.519 0 35.497 16.595-18.999 35.765-33.237 78.232-79.937 33.189-36.497-15.805 178.988 0 189.987C875.205 557.67 946.051 167.6 1188.5 139c73.5-8.67 168.5 32.5 183 84.5C1445.17 487.686 7 425.97 7 425.97"
+            stroke="white"
+            strokeWidth="14"
+            strokeLinecap="round"
+            variants={draw}
+          />
+        </motion.svg>
+        <div className="flex items-center md:mx-auto md:gap-x-2">
           <Link
             href="https://github.com/eli8levit"
             className="rounded-lg bg-transparent p-3 hover:bg-blue-700 hover:shadow-lg"

@@ -5,6 +5,7 @@ import { AnimatedText, draw } from "~/components";
 import defaultTheme from "tailwindcss/defaultTheme";
 import { draw2 } from "~/components/utils";
 import { useLoaderData } from "@remix-run/react";
+
 export { loader } from "../use-mobile-loader";
 
 type Card = {
