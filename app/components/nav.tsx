@@ -49,7 +49,7 @@ const Link = ({
       className={`transition-text relative flex items-center rounded-md font-mona font-medium ${
         active
           ? "w-24 text-white md:w-32"
-          : "w-24 text-black hover:text-pink-600 md:w-28"
+          : "w-24 text-gray-700 hover:text-pink-600 md:w-28"
       }`}
     >
       <span className="z-10 mx-auto inline-block">{children}</span>

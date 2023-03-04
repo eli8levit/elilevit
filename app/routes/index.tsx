@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
       <div className="content-container overflow-x-hidden">
-        <h1 className="heading mb-2">
+        <h1 className="heading text-primary md:text-8xl 2xl:text-9xl">
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>
         <FaidInMotionContainer>
@@ -43,9 +43,14 @@ export default function Index() {
       <div className="content-container max-w-[1200px] text-center md:mt-20 md:text-left 2xl:max-w-[1600px]">
         <h3 className="mb-4 font-apfel text-5xl font-bold text-black md:text-6xl">
           Here you can feel save, no cookie popup will destruct you{" "}
-          <img src={Heart} className="inline-block" width="60px" />
+          <img
+            src={Heart}
+            alt="Heart blue ed emoji"
+            className="inline-block"
+            width="60px"
+          />
         </h3>
-        <h3 className="font-apfel text-4xl font-light text-black md:text-5xl">
+        <h3 className="font-apfel text-4xl font-light text-gray-600 md:text-5xl">
           Also I care about privacy and use{" "}
           <OutsideLink
             className="font-bold text-secondary underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:text-primary hover:decoration-primary"
@@ -71,7 +76,7 @@ export default function Index() {
             variants={draw}
           />
         </motion.svg>
-        <h4 className="pb-2 font-apfel text-5xl font-bold text-black md:text-6xl">
+        <h4 className="pb-2 font-apfel text-5xl font-bold text-gray-900 md:text-6xl">
           So far I don't have much content, but still you can checkout some
           things:
         </h4>

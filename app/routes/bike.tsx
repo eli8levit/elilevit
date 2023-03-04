@@ -28,7 +28,7 @@ const BikeCard = ({ image, title, description, id, tag, isMobile }: Card) => {
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`flex h-[240px] w-[240px] flex-col rounded-[25px] border-4 md:h-[350px] md:w-[350px] ${
+      className={`flex h-[240px] w-[240px] flex-col rounded-[25px] border-4 md:h-[320px] md:w-[320px] 2xl:h-[350px] 2xl:w-[350px] ${
         isRide
           ? "border-[rgba(255,243,244,0.4)]"
           : "border-[rgba(227,227,227,0.4)]"
@@ -59,10 +59,10 @@ const BikeCard = ({ image, title, description, id, tag, isMobile }: Card) => {
           transition={{
             scale: { type: "spring", stiffness: 200, damping: 15 },
           }}
-          className={`-mt-4 -ml-4 h-[80px] w-[80px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[150px] md:w-[150px]`}
+          className="-mt-4 -ml-4 h-[80px] w-[80px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[130px] md:w-[130px] 2xl:h-[150px] 2xl:w-[150px]"
         />
         <div className="flex flex-col justify-start">
-          <h3 className={`font-monaWide text-xl font-bold md:text-2xl`}>
+          <h3 className="font-monaWide text-xl font-bold md:text-xl 2xl:text-2xl">
             {title}
           </h3>
           <motion.svg
@@ -74,7 +74,7 @@ const BikeCard = ({ image, title, description, id, tag, isMobile }: Card) => {
           >
             <motion.path
               d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
-              strokeWidth="24"
+              strokeWidth="20"
               strokeLinecap="round"
               variants={draw}
               strokeLinejoin="round"
@@ -114,12 +114,10 @@ export default function Bike() {
   return (
     <FaidInMotionContainer className="overflow-hidden">
       <div className="content-container md:mb-32">
-        <h1 className="heading mb-4 shrink-0">
-          <AnimatedText className="text-7xl md:text-8xl 2xl:text-9xl">
-            Bike Blog
-          </AnimatedText>
+        <h1 className="heading shrink-0">
+          <AnimatedText>Bike Blog</AnimatedText>
         </h1>
-        <h2 className="mb-12 max-w-[900px] font-apfel text-4xl font-normal text-black md:mb-2 md:text-5xl 2xl:max-w-[1000px] 2xl:text-5xl">
+        <h2 className="subheading mb-12">
           Here is about my bike and stuff related to cycling: my rides, photos
           and{" "}
           <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">
@@ -146,7 +144,7 @@ export default function Bike() {
         </motion.svg>
         <section className="relative flex flex-col">
           <h2
-            className="absolute left-2 bottom-4 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:bottom-0 md:left-0 md:text-6xl"
+            className="absolute left-2 bottom-4 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-gray-700 md:left-0 md:text-5xl"
             id="rides"
           >
             # ride history
@@ -171,7 +169,7 @@ export default function Bike() {
         </section>
         <section className="relative flex flex-row">
           <h2
-            className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:bottom-0 md:left-0 md:text-6xl"
+            className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-gray-700 md:left-0 md:text-5xl"
             id="upgrades"
           >
             # upgrades

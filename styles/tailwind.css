@@ -8,7 +8,7 @@
   }
 
   .content p {
-      @apply leading-8 text-xl mb-2;
+      @apply leading-8 text-xl mb-2 text-justify;
   }
 
    .content h1 {
@@ -31,8 +31,24 @@
     @apply mb-3 text-xl;
   }
 
+  .content img {
+    @apply my-6 rounded-xl object-contain;
+  }
+
+  .content em {
+    @apply -mt-4 text-sm font-monaWide font-normal text-center italic text-gray-700 block mb-8;
+  }
+
+  .content a {
+    @apply font-medium text-secondary underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:text-primary hover:decoration-primary;
+  }
+
   .heading {
-    @apply text-[#1313ff] text-left font-apfel text-6xl md:text-7.5xl font-bold;
+    @apply text-black mb-2 text-left font-apfel text-6xl md:text-8xl 2xl:text-9xl font-bold;
+  }
+
+  .subheading {
+    @apply max-w-[900px] font-apfel text-4xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1000px] 2xl:text-5xl;
   }
 }
 

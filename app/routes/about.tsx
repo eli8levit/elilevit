@@ -8,9 +8,7 @@ export default function About() {
     <FaidInMotionContainer>
       <main className="content-container mb-22 grid items-center md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
         <h1 className="heading md:col-span-full">
-          <AnimatedText className="text-7xl md:text-8xl 2xl:text-9xl">
-            A bit about me
-          </AnimatedText>
+          <AnimatedText>A bit about me</AnimatedText>
         </h1>
         <motion.svg
           viewBox="0 0 980 2239"

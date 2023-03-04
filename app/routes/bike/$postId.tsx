@@ -28,7 +28,7 @@ export default function BikePost() {
         src={genImageUrl(post.image)}
         className="-mt-[70px] h-[40%] max-h-[400px] min-h-[200px] w-full rounded-t-2xl object-cover"
       />
-      <div className="p-6 md:p-12 md:pt-8">
+      <div className="mx-auto max-w-[1200px] p-6 md:p-12 md:px-12 md:pt-8">
         <motion.div className="flex flex-col gap-y-6">
           <motion.div className="flex flex-col">
             <motion.span className="font-monaWide text-lg font-semibold text-[#DB2877]">

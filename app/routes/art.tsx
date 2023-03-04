@@ -39,10 +39,26 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="mb-1 font-apfel text-lg font-bold text-secondary md:text-xl lg:text-4xl">
+        <h3 className="relative mb-2 w-max font-apfel text-lg font-bold text-primary md:text-xl lg:text-4xl">
           {title}
+          <motion.svg
+            viewBox="0 0 1506 391"
+            width="140%"
+            className="absolute -left-[15%] -bottom-2 stroke-primary"
+            fill="none"
+            whileInView="visible"
+            initial="hidden"
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            <motion.path
+              d="M782.436 86.132S1296.48 5.737 1466.49 197.317C1574.55 319.089 1302.48 375 806.438 375c-496.04 0-931.985-48.859-747.06-164.854C346.403 30.112 1275.48 16 1275.48 16"
+              strokeWidth="25"
+              strokeLinecap="round"
+              variants={draw}
+            />
+          </motion.svg>
         </h3>
-        <p className="max-w-[650px] font-mona text-base font-normal text-black lg:text-lg 2xl:text-xl">
+        <p className="mb-2 max-w-[700px] font-mona text-base font-normal text-gray-500 lg:text-2xl">
           {description}
         </p>
       </div>
@@ -80,12 +96,10 @@ export default function Art() {
           strokeLinejoin="round"
         />
       </motion.svg>
-      <h1 className="heading mb-4">
-        <AnimatedText className="text-7xl md:text-8xl 2xl:text-9xl">
-          Work & Art
-        </AnimatedText>
+      <h1 className="heading">
+        <AnimatedText>Work & Art</AnimatedText>
       </h1>
-      <h2 className="mb-[15vh] max-w-[1000px] font-apfel text-2xl font-normal text-black md:text-5xl">
+      <h2 className="subheading mb-[15vh]">
         Here you can see my art like photos, illustrations along with my
         projects
       </h2>
@@ -120,7 +134,7 @@ export default function Art() {
           <ArtCard
             href="https://my.spline.design/project-cca4dc6de45717fed5ca979536aa6a41/"
             background="bg-player"
-            title="Turntable 3d Model"
+            title="Turntable 3d"
             description="I'm in love with music and have turntable at home. When I heard about Spline I wanted to challenge myself to try it and build something beautiful. It was not fast but I think I succeed, it doesn't look bad."
             cardClass="bg-[length:300px] md:bg-[length:400px] bg-white"
           />
