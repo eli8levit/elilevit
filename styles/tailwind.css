@@ -12,7 +12,7 @@
   }
 
    .content h1 {
-      @apply font-bold font-mona text-3xl mb-6;
+      @apply font-bold font-mona text-3xl mb-4;
     }
 
   .content h2 {
@@ -48,7 +48,7 @@
   }
 
   .subheading {
-    @apply max-w-[900px] font-apfel text-4xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1000px] 2xl:text-5xl;
+    @apply max-w-[900px] font-apfel text-4xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
   }
 }
 

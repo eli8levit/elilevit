@@ -113,11 +113,11 @@ export default function Bike() {
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container md:mb-32">
+      <div className="content-container mb-[150px] md:mb-[300px]">
         <h1 className="heading shrink-0">
           <AnimatedText>Bike Blog</AnimatedText>
         </h1>
-        <h2 className="subheading mb-12">
+        <h2 className="subheading">
           Here is about my bike and stuff related to cycling: my rides, photos
           and{" "}
           <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">
@@ -129,7 +129,7 @@ export default function Bike() {
         <motion.svg
           viewBox="0 0 3394 2200"
           fill="none"
-          className="absolute left-[50%] top-[50%] -z-10 h-[400px] max-h-[800px] -translate-y-[50%] -translate-x-[50%] pl-32 md:h-[70vh]"
+          className="absolute top-[50%] left-[60px] -z-10 h-[400px] max-h-[700px] -translate-y-[50%] md:left-[200px] md:h-[70vh] 2xl:left-[50%] 2xl:-translate-x-[50%]"
           initial="hidden"
           animate="visible"
         >
@@ -167,33 +167,40 @@ export default function Bike() {
             })}
           </ul>
         </section>
-        <section className="relative flex flex-row">
-          <h2
-            className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-gray-700 md:left-0 md:text-5xl"
-            id="upgrades"
-          >
-            # upgrades
-          </h2>
-          <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-8 md:p-12">
-            {upgradePosts.map((post: Post) => {
-              return (
-                <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
-                  <BikeCard
-                    isMobile={isMobile}
-                    image={
-                      post?.image?.includes("ucarecdn.com")
-                        ? genImageUrl(post.image, "600x600")
-                        : post.image || ""
-                    }
-                    description={post.subtitle || ""}
-                    title={post.title}
-                    id={post.id}
-                  />
-                </Link>
-              );
-            })}
-          </ul>
-        </section>
+        {upgradePosts.length ? (
+          <section className="relative flex flex-row">
+            <h2
+              className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-gray-700 md:left-0 md:text-5xl"
+              id="upgrades"
+            >
+              # upgrades
+            </h2>
+
+            <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-8 md:p-12">
+              {upgradePosts.map((post: Post) => {
+                return (
+                  <Link
+                    key={post.id}
+                    to={`/bike/${post.id}`}
+                    preventScrollReset
+                  >
+                    <BikeCard
+                      isMobile={isMobile}
+                      image={
+                        post?.image?.includes("ucarecdn.com")
+                          ? genImageUrl(post.image, "600x600")
+                          : post.image || ""
+                      }
+                      description={post.subtitle || ""}
+                      title={post.title}
+                      id={post.id}
+                    />
+                  </Link>
+                );
+              })}
+            </ul>
+          </section>
+        ) : null}
       </div>
     </FaidInMotionContainer>
   );

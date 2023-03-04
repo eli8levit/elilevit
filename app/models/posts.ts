@@ -17,7 +17,7 @@ export const getBikePosts = ({ isDetailed }: { isDetailed: boolean }) => {
         subtitle: true,
         tag: true,
       },
-      where: { published: false, type: "BIKE" },
+      where: { published: true, type: "BIKE" },
     })
     .then((posts) => posts.map(normalizePost));
 };

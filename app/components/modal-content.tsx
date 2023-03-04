@@ -38,7 +38,7 @@ interface Props {
 export function ModalContent({ route }: Props) {
   const params = useParams();
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (params.postId) {
       document.body.style.overflow = "hidden";
     } else {

@@ -51,7 +51,7 @@ export default function BikePost() {
               <motion.path
                 d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
                 stroke="#0000ff"
-                strokeWidth="12"
+                strokeWidth="14"
                 strokeLinecap="round"
                 variants={draw}
                 strokeLinejoin="round"

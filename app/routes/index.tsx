@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
       <div className="content-container overflow-x-hidden">
-        <h1 className="heading text-primary md:text-8xl 2xl:text-9xl">
+        <h1 className="heading text-6xl text-primary md:text-7.5xl">
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>
         <FaidInMotionContainer>
