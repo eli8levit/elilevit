@@ -51,7 +51,7 @@ const BikeCard = ({
         backgroundColor: { type: "easeInOut" },
       }}
     >
-      <div className="row-flex flex items-center gap-x-4 pr-2">
+      <div className="row-flex flex gap-x-4 pr-2">
         <motion.img
           src={image}
           transition={{
@@ -60,7 +60,7 @@ const BikeCard = ({
           className="-mt-4 -ml-4 h-[80px] w-[80px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[130px] md:w-[130px] 2xl:h-[150px] 2xl:w-[150px]"
         />
         <div className="flex flex-col justify-start">
-          <h3 className="font-monaWide text-xl font-medium md:text-xl 2xl:text-2xl">
+          <h3 className="pt-4 font-monaWide text-lg font-medium md:text-xl md:text-xl 2xl:text-2xl">
             {title}
           </h3>
           <motion.svg
@@ -81,8 +81,8 @@ const BikeCard = ({
           </motion.svg>
         </div>
       </div>
-      <div className="flex h-full flex-col p-8">
-        <p className="font-mona text-lg font-normal 2xl:text-xl">
+      <div className="flex h-full flex-col p-6 md:p-8">
+        <p className="font-mona text-base font-normal md:text-lg 2xl:text-xl">
           {description}
         </p>
         <div className="mt-auto flex flex-row items-center justify-between">
@@ -133,7 +133,7 @@ export default function Bike() {
           </span>
         </h2>
       </div>
-      <div className="content-container relative mr-0 rounded-xl bg-gradient-to-r from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] py-24 pr-0 2xl:ml-[10vw]">
+      <div className="content-container relative mr-0 bg-gradient-to-r from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] py-12 pr-0 md:rounded-xl md:py-24 2xl:ml-[10vw]">
         <motion.svg
           viewBox="0 0 3394 2200"
           fill="none"
