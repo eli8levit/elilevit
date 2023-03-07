@@ -39,7 +39,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="relative mb-2 w-max font-apfel text-lg font-bold text-primary md:text-xl lg:text-4xl">
+        <h3 className="relative mb-4 w-max font-apfel text-lg font-bold text-primary md:text-xl lg:text-4xl">
           {title}
           <motion.svg
             viewBox="0 0 1506 391"
@@ -58,7 +58,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
             />
           </motion.svg>
         </h3>
-        <p className="mb-2 max-w-[700px] font-mona text-base font-normal text-gray-600 md:text-xl 2xl:text-2xl">
+        <p className="mb-2 max-w-[700px] font-mona text-base font-light text-gray-600 md:text-xl 2xl:text-2xl">
           {description}
         </p>
       </div>
@@ -72,7 +72,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 export default function Art() {
   return (
     <>
-      <FaidInMotionContainer className="content-container grid items-center pt-0">
+      <FaidInMotionContainer className="content-container flex flex-col pt-0 2xl:h-[100vh]">
         <motion.svg
           viewBox="0 0 3341 1557"
           className="mb-12"
@@ -105,7 +105,7 @@ export default function Art() {
           projects
         </h2>
       </FaidInMotionContainer>
-      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.1)] py-24">
+      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-[rgba(255,255,255,0.1)] py-24">
         <div className="content-container mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-12 pt-0 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px] md:gap-14">
           <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
             <ArtCard

@@ -28,7 +28,6 @@ const BikeCard = ({
   title,
   description,
   id,
-  tag,
   isMobile,
   date,
 }: Card) => {
@@ -134,7 +133,7 @@ export default function Bike() {
           </span>
         </h2>
       </div>
-      <div className="content-container relative mr-0 rounded-xl bg-gradient-to-r from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] pt-0 pr-0">
+      <div className="content-container relative mr-0 rounded-xl bg-gradient-to-r from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] py-24 pr-0 2xl:ml-[10vw]">
         <motion.svg
           viewBox="0 0 3394 2200"
           fill="none"
