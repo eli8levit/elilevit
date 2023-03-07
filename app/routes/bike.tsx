@@ -111,7 +111,7 @@ export const loader: LoaderFunction = async (
 };
 
 export default function Bike() {
-  const { posts, isMobile } = useLoaderData<{
+  const { posts = [], isMobile } = useLoaderData<{
     posts: Post[];
     isMobile: boolean;
   }>();
