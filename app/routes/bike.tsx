@@ -116,6 +116,8 @@ export default function Bike() {
     isMobile: boolean;
   }>();
 
+  console.log("bike posts", posts);
+
   const bikePosts = posts.filter((post) => post.tag === "rides");
   const upgradePosts = posts.filter((post) => post.tag === "upgrades");
 
