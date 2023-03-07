@@ -105,7 +105,7 @@ export const loader: LoaderFunction = async (
   const detect = getMobileDetect(userAgent);
 
   return {
-    posts: await getBikePosts({ isDetailed: false }),
+    posts: (await getBikePosts({ isDetailed: false })) || [],
     isMobile: detect.isMobile(),
   };
 };
