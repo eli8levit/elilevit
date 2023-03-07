@@ -6,11 +6,6 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        river: "url(/river.jpg)",
-        oldCity: "url(/old-city.jpg)",
-        hourse: "url(/hourse.jpg)",
-        art: "url(/art.png)",
-        wall: "url(/alarm.jpg)",
         oldSite: "url(/old-site.jpg)",
         wallpaper: "url(/wallpaper.jpg)",
         firstRide: "url(/first-ride.jpg)",
@@ -19,18 +14,22 @@ module.exports = {
         haIsh: "url(/ha-ish-studio.jpg)",
         player: "url(/player.png)",
       },
-      boxShadow: {
-        bike: `0 5px 25px -3px #000097, 0 0 40px 0 rgba(0,0,0,0.4)`,
-        art: `0 5px 45px -10px #000097`,
-        indexCard: `0 0 25px -5px #000097`,
-        indexCardBg: `0 0 50px -2px #000097`,
+      fontSize: {
+        "7.5xl": "5rem",
+      },
+      borderWidth: {
+        mini: "0.5px",
       },
       colors: {
+        primary: "#0000ff",
+        secondary: "#db2877",
         pinkLighter: "#fff3f4",
-        secondaryBg: "#00001a",
-        secondaryBg2: "#0000d8",
-        mainBlue: "#0000ff",
-        blueLight: "#5c5cff",
+        pinkTransparent: "rgba(192,10,100,0.75)",
+        pinkText: "#fff3f7",
+        grayText: "#e3e3e3",
+        pinkTransparentLighter: "rgba(192,9,100,0.4)",
+        blackTransparent: "rgba(0, 0, 0, 0.75)",
+        blackTransparentLighter: "rgba(32,32,32,0.3)",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

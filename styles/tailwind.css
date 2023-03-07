@@ -4,15 +4,55 @@
 
 @layer components {
   .content-container {
-    @apply px-6 pt-20 mx-auto max-w-[2000px] w-full md:px-12 lg:px-28 md:pt-24 2xl:px-44 2xl:pt-32;
+    @apply px-4 pt-12 md:pt-24 mx-auto max-w-[1400px] 2xl:max-w-[2000px] w-full md:px-12 lg:px-28 2xl:px-44 2xl:pt-32;
+  }
+
+  .content p {
+      @apply text-xl mb-2 text-justify;
+  }
+
+   .content h1 {
+      @apply font-bold font-mona text-3xl mb-4;
+    }
+
+  .content h2 {
+    @apply font-bold font-mona text-2xl mb-4;
+  }
+
+  .content hr {
+    @apply border-[rgba(1,1,1,0.2)] mb-6;
+  }
+
+  .content ul {
+    @apply list-disc;
+  }
+
+  .content li {
+    @apply mb-3 text-xl;
+  }
+
+  .content img {
+    @apply my-6 rounded-xl object-contain;
+  }
+
+  .content em {
+    @apply -mt-4 text-sm font-monaWide font-normal text-center italic text-gray-700 block mb-8;
+  }
+
+  .content a {
+    @apply font-medium text-secondary underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:text-primary hover:decoration-primary;
+  }
+
+  .content video {
+    @apply my-6 rounded-xl object-contain max-h-[500px] mx-auto;
   }
 
   .heading {
-    @apply bg-gradient-to-r text-[#1313ff] text-left font-apfel text-6xl md:text-8xl 2xl:min-h-[110px] min-h-[65px] font-bold md:mb-0 md:min-h-[80px];
+    @apply text-black mb-2 text-left font-apfel text-6xl md:text-8xl 2xl:text-9xl font-bold;
   }
 
-  .highlight {
-    @apply bg-gradient-to-r from-[#0000ff] to-pink-600 bg-clip-text text-transparent
+  .subheading {
+    @apply max-w-[900px] font-apfel text-4xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
   }
 }
 
@@ -39,7 +79,36 @@
 
 @font-face {
   font-family: "Mona";
+  src: url("/fonts/Mona/Mona-Sans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Wide";
+  src: url("/fonts/Mona/Mona-Sans-LightWide.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Wide";
+  src: url("/fonts/Mona/Mona-Sans-LightWide.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona";
   src: url("/fonts/Mona/Mona-Sans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Narrow";
+  src: url("/fonts/Mona/Mona-Sans-RegularNarrow.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
@@ -67,3 +136,37 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Mona";
+  src: url("/fonts/Mona/Mona-Sans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Wide";
+  src: url("/fonts/Mona/Mona-Sans-MediumWide.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona";
+  src: url("/fonts/Mona/Mona-Sans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Wide";
+  src: url("/fonts/Mona/Mona-Sans-SemiBoldWide.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Narrow";
+  src: url("/fonts/Mona/Mona-Sans-BoldNarrow.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}

@@ -1,9 +1,11 @@
 import React from "react";
-import { NavLink, useMatches } from "@remix-run/react";
+import { NavLink, useLoaderData, useMatches } from "@remix-run/react";
 import { motion } from "framer-motion";
 import colors from "tailwindcss/colors";
-import { useMobileDetect } from "~/use-device-detect-hook";
 import { MotionNavLink } from "~/components/motion-nav-link";
+import config from "tailwind.config";
+
+export { loader } from "../use-mobile-loader";
 
 const draw = {
   tap: {
@@ -35,8 +37,7 @@ const Link = ({
   active: boolean;
 }) => {
   const [hover, setHover] = React.useState(false);
-  const mobileDetect = useMobileDetect();
-  const isMobile = mobileDetect.isMobile();
+  const { isMobile } = useLoaderData();
 
   return (
     <MotionNavLink
@@ -45,10 +46,10 @@ const Link = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       to={`/${id}`}
-      className={`transition-text relative flex items-center rounded-md font-mona ${
+      className={`transition-text relative flex items-center rounded-md font-mona font-medium ${
         active
           ? "w-24 text-white md:w-32"
-          : "w-24 text-black hover:text-pink-600 md:w-28"
+          : "w-24 text-gray-700 hover:text-pink-600 md:w-28"
       }`}
     >
       <span className="z-10 mx-auto inline-block">{children}</span>
@@ -100,7 +101,7 @@ export const Nav = ({ memojiId }: { memojiId: string }) => {
   };
 
   return (
-    <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:h-[80px]">
+    <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:h-[80px] 2xl:text-lg">
       <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
         <Link id="" active={isActive("")}>
           Home
@@ -129,7 +130,7 @@ export const Nav = ({ memojiId }: { memojiId: string }) => {
                 ? {}
                 : {
                     scale: 1.3,
-                    border: "3px solid #5c5cff",
+                    border: `3px solid ${config.theme.extend.colors.primary}`,
                   }
             }
             style={isActive("about") ? { boxShadow: "0 0 0 3px #0000ff" } : {}}
