@@ -9,7 +9,7 @@ const CloseLink = ({ className, to }: { className?: string; to: string }) => {
         viewBox="0 0 1015 887"
         width="45px"
         fill="none"
-        className="transition-fill group rounded-full "
+        className="transition-fill group rounded-full"
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.8 }}
         transition={{ type: "spring", stiffness: 500, damping: 20 }}
@@ -24,7 +24,7 @@ const CloseLink = ({ className, to }: { className?: string; to: string }) => {
           strokeWidth="70"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="transition-stroke absolute z-30 stroke-primary"
+          className="transition-stroke absolute z-30 stroke-[rgba(18,18,18,0.8)]"
         />
       </motion.svg>
     </Link>
@@ -52,7 +52,7 @@ export function ModalContent({ route }: Props) {
         <>
           <motion.div className="overflow-hidden">
             <motion.div
-              className="fixed left-0 right-0 top-0 z-20 mx-auto h-full max-h-[1500px] w-full overflow-auto rounded-t-2xl bg-[rgba(255,243,244,0.85)] pb-6 shadow-2xl backdrop-blur-lg md:top-[2vh] md:h-[96vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0"
+              className="fixed left-0 right-0 top-0 z-20 mx-auto h-full max-h-[1500px] w-full overflow-auto rounded-t-2xl bg-[rgba(255,243,244,0.9)] pb-6 shadow-2xl backdrop-blur-xl md:top-[2vh] md:h-[96vh] md:w-[50vw] md:min-w-[650px] md:max-w-[1100px] md:rounded-2xl md:pb-0"
               layoutId={params?.postId}
             >
               <CloseLink

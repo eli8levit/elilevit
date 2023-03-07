@@ -18,38 +18,37 @@ type Card = {
   tag?: string | null;
   id: number;
   isMobile: boolean;
+  date: string;
+  index: number;
 };
 
-const BikeCard = ({ image, title, description, id, tag, isMobile }: Card) => {
-  const isRide = tag === "rides";
-  const { blackTransparentLighter, pinkTransparentLighter } =
-    config.theme.extend.colors;
+const BikeCard = ({
+  index,
+  image,
+  title,
+  description,
+  id,
+  tag,
+  isMobile,
+  date,
+}: Card) => {
+  const { blackTransparentLighter } = config.theme.extend.colors;
 
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`flex h-[240px] w-[240px] flex-col rounded-[25px] border-4 md:h-[320px] md:w-[320px] 2xl:h-[350px] 2xl:w-[350px] ${
-        isRide
-          ? "border-[rgba(255,243,244,0.4)]"
-          : "border-[rgba(227,227,227,0.4)]"
-      } ${isRide ? "bg-pinkTransparent" : "bg-blackTransparent"} ${
-        isRide ? "text-pinkText" : "text-grayText"
-      } ${
-        isRide ? "md:hover:text-white" : "md:hover:text-black"
-      } shadow-md backdrop-blur-md hover:shadow-xl active:backdrop-blur-sm md:hover:backdrop-blur-xl`}
+      className={`flex h-[240px] w-[240px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
       whileHover={
         !isMobile
           ? {
-              backgroundColor: isRide
-                ? pinkTransparentLighter
-                : blackTransparentLighter,
+              backgroundColor: blackTransparentLighter,
               scale: 1.03,
             }
           : {}
       }
       whileTap={{ scale: 0.9 }}
       transition={{
-        scale: { type: "spring", stiffness: 200, damping: 10 },
+        scale: { type: "spring", stiffness: 100, damping: 10 },
         backgroundColor: { type: "easeInOut" },
       }}
     >
@@ -62,30 +61,40 @@ const BikeCard = ({ image, title, description, id, tag, isMobile }: Card) => {
           className="-mt-4 -ml-4 h-[80px] w-[80px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[130px] md:w-[130px] 2xl:h-[150px] 2xl:w-[150px]"
         />
         <div className="flex flex-col justify-start">
-          <h3 className="font-monaWide text-xl font-bold md:text-xl 2xl:text-2xl">
+          <h3 className="font-monaWide text-xl font-medium md:text-xl 2xl:text-2xl">
             {title}
           </h3>
           <motion.svg
             fill="none"
             initial="hidden"
-            width="100%"
+            width="95%"
             viewBox="0 0 866 120"
             animate="visible"
           >
             <motion.path
               d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
-              strokeWidth="20"
+              strokeWidth="40"
               strokeLinecap="round"
               variants={draw}
               strokeLinejoin="round"
-              stroke={
-                isRide ? "rgba(255,243,244,0.4)" : "rgba(227,227,227,0.4)"
-              }
+              stroke="rgba(255,243,244,0.4)"
             />
           </motion.svg>
         </div>
       </div>
-      <p className="mb-2 p-6 font-mona text-xl font-normal">{description}</p>
+      <div className="flex h-full flex-col p-8">
+        <p className="font-mona text-lg font-normal 2xl:text-xl">
+          {description}
+        </p>
+        <div className="mt-auto flex flex-row items-center justify-between">
+          <span className="w-max rounded-lg bg-[rgba(255,243,244,0.1)] p-2 font-monaWide text-sm font-medium">
+            {date}
+          </span>
+          <span className="ml-auto w-max rounded-lg bg-[rgba(255,243,244,0.1)] p-2 font-monaWide text-sm font-bold">
+            # {index}
+          </span>
+        </div>
+      </div>
     </motion.li>
   );
 };
@@ -113,7 +122,7 @@ export default function Bike() {
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container mb-[150px] md:mb-[300px]">
+      <div className="content-container mb-24 2xl:mb-[250px]">
         <h1 className="heading shrink-0">
           <AnimatedText>Bike Blog</AnimatedText>
         </h1>
@@ -125,11 +134,11 @@ export default function Bike() {
           </span>
         </h2>
       </div>
-      <div className="content-container relative pt-0 pr-0">
+      <div className="content-container relative mr-0 rounded-xl bg-gradient-to-r from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] pt-0 pr-0">
         <motion.svg
           viewBox="0 0 3394 2200"
           fill="none"
-          className="absolute top-[50%] left-[60px] -z-10 h-[400px] max-h-[700px] -translate-y-[50%] md:left-[200px] md:h-[70vh] 2xl:left-[50%] 2xl:-translate-x-[50%]"
+          className="absolute top-[50%] left-[60px] -z-10 h-[400px] max-h-[700px] -translate-y-[50%] md:left-[200px] md:h-[80vh] 2xl:left-[50%] 2xl:-translate-x-[50%]"
           initial="hidden"
           animate="visible"
         >
@@ -144,14 +153,14 @@ export default function Bike() {
         </motion.svg>
         <section className="relative flex flex-col">
           <h2
-            className="absolute left-2 bottom-4 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-gray-700 md:left-0 md:text-5xl"
+            className="absolute left-2 bottom-4 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:left-0 md:text-5xl"
             id="rides"
           >
             # ride history
           </h2>
           <ModalContent route="bike" />
           <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-8 md:p-12">
-            {bikePosts.map((post: Post) => {
+            {bikePosts.map((post: Post, index) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
                   <BikeCard
@@ -161,6 +170,8 @@ export default function Bike() {
                     title={post.title}
                     id={post.id}
                     tag={post.tag}
+                    date={post.createdAt}
+                    index={index + 1}
                   />
                 </Link>
               );
@@ -170,14 +181,14 @@ export default function Bike() {
         {upgradePosts.length ? (
           <section className="relative flex flex-row">
             <h2
-              className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-gray-700 md:left-0 md:text-5xl"
+              className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:left-0 md:text-5xl"
               id="upgrades"
             >
               # upgrades
             </h2>
 
             <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-8 md:p-12">
-              {upgradePosts.map((post: Post) => {
+              {upgradePosts.map((post: Post, index) => {
                 return (
                   <Link
                     key={post.id}
@@ -194,6 +205,8 @@ export default function Bike() {
                       description={post.subtitle || ""}
                       title={post.title}
                       id={post.id}
+                      date={post.createdAt}
+                      index={index + 1}
                     />
                   </Link>
                 );

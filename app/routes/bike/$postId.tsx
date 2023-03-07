@@ -46,12 +46,11 @@ export default function BikePost() {
               width="100%"
               viewBox="0 0 866 100"
               animate="visible"
-              className="mb-8 rotate-180"
+              className="mb-8 rotate-180 stroke-secondary"
             >
               <motion.path
                 d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
-                stroke="#0000ff"
-                strokeWidth="14"
+                strokeWidth="15"
                 strokeLinecap="round"
                 variants={draw}
                 strokeLinejoin="round"

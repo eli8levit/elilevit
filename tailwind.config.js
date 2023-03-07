@@ -29,7 +29,7 @@ module.exports = {
         grayText: "#e3e3e3",
         pinkTransparentLighter: "rgba(192,9,100,0.4)",
         blackTransparent: "rgba(0, 0, 0, 0.75)",
-        blackTransparentLighter: "rgba(0, 0, 0, 0.3)",
+        blackTransparentLighter: "rgba(32,32,32,0.3)",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],
