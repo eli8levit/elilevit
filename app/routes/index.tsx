@@ -11,12 +11,12 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <div className="content-container overflow-x-hidden 2xl:h-[100vh] 2xl:pt-[15vh]">
+      <div className="content-container overflow-x-hidden xl:h-[calc(100vh-86px)] 2xl:pt-[15vh]">
         <h1 className="heading text-6xl text-primary md:text-7.5xl">
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>
         <FaidInMotionContainer>
-          <h2 className="mb-4 text-left font-apfel text-6xl text-2xl font-bold text-black md:mb-6 md:text-8xl md:text-4xl">
+          <h2 className="mb-4 text-left font-apfel text-6xl text-2xl font-bold text-black md:mb-2 md:text-8xl md:text-4xl xl:mb-6">
             <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
           </h2>
           <p className="max-w-[600px] font-mona text-2xl font-normal text-gray-700 md:mt-2 md:text-3xl">
@@ -25,7 +25,7 @@ export default function Index() {
           </p>
         </FaidInMotionContainer>
         <motion.svg
-          className="mx-auto my-8 h-[180px] w-full md:my-24 md:h-[250px]"
+          className="mx-auto mb-8 h-[180px] w-full md:mb-28 md:h-[250px]"
           fill="none"
           initial="hidden"
           animate="visible"
