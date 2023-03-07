@@ -19,7 +19,10 @@ export const getBikePosts = ({ isDetailed }: { isDetailed: boolean }) => {
       },
       where: { published: true, type: "BIKE" },
     })
-    .then((posts) => posts.map(normalizePost));
+    .then((posts) => {
+      console.log("posts", posts);
+      return posts.map(normalizePost);
+    });
 };
 
 export const getPost = (id: number) => {
