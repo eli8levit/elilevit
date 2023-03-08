@@ -60,7 +60,7 @@ const BikeCard = ({
           className="-mt-4 -ml-4 h-[110px] w-[110px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[130px] md:w-[130px] 2xl:h-[150px] 2xl:w-[150px]"
         />
         <div className="flex flex-col justify-start">
-          <h3 className="pt-4 pr-6 font-monaWide text-lg font-medium md:pr-8 md:text-xl 2xl:text-2xl">
+          <h3 className="pt-4 pr-6 font-monaWide text-lg font-bold md:pr-8 md:text-xl 2xl:text-2xl">
             {title}
           </h3>
           <motion.svg
@@ -72,7 +72,7 @@ const BikeCard = ({
           >
             <motion.path
               d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
-              strokeWidth="40"
+              strokeWidth="30"
               strokeLinecap="round"
               variants={draw}
               strokeLinejoin="round"

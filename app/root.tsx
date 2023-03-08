@@ -22,6 +22,7 @@ import AppleIcon from "../public/apple-touch-icon.png";
 import { motion } from "framer-motion";
 import { Fathom } from "~/components/fanthom";
 import { getRandomMemojiId } from "~/components/utils";
+import { getMobileDetect } from "~/utilities";
 
 export const links: LinksFunction = () => {
   return [
@@ -66,12 +67,14 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
-export const loader: LoaderFunction = () => {
-  return { memojiId: getRandomMemojiId() };
+export const loader: LoaderFunction = (params: any) => {
+  const userAgent = params.request.headers.get("user-agent");
+  const detect = getMobileDetect(userAgent);
+  return { memojiId: getRandomMemojiId(), isMobile: detect.isMobile() };
 };
 
 export default function App() {
-  const { memojiId } = useLoaderData();
+  const { memojiId, isMobile } = useLoaderData();
 
   return (
     <html lang="en" className="h-full bg-pinkLighter">
@@ -90,7 +93,7 @@ export default function App() {
             ease: [0, 0.71, 0.2, 1.01],
           }}
         >
-          <Nav memojiId={memojiId} />
+          <Nav memojiId={memojiId} isMobile={isMobile} />
         </motion.div>
         <Outlet />
         <Footer />

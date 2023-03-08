@@ -5,8 +5,6 @@ import colors from "tailwindcss/colors";
 import { MotionNavLink } from "~/components/motion-nav-link";
 import config from "tailwind.config";
 
-export { loader } from "../use-mobile-loader";
-
 const draw = {
   tap: {
     scale: 0.7,
@@ -31,13 +29,14 @@ const Link = ({
   id,
   children,
   active,
+  isMobile,
 }: {
   id: string;
   children: any;
   active: boolean;
+  isMobile: boolean;
 }) => {
   const [hover, setHover] = React.useState(false);
-  const { isMobile } = useLoaderData();
 
   return (
     <MotionNavLink
@@ -93,7 +92,13 @@ const Link = ({
   );
 };
 
-export const Nav = ({ memojiId }: { memojiId: string }) => {
+export const Nav = ({
+  memojiId,
+  isMobile,
+}: {
+  memojiId: string;
+  isMobile: boolean;
+}) => {
   const { pathname } = useMatches()?.[1] || { pathname: "" };
   const isActive = (id: string) => {
     const splitted = pathname.split("/")?.[1] || "";
@@ -103,13 +108,13 @@ export const Nav = ({ memojiId }: { memojiId: string }) => {
   return (
     <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:h-[80px] 2xl:text-lg">
       <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
-        <Link id="" active={isActive("")}>
+        <Link isMobile={isMobile} id="" active={isActive("")}>
           Home
         </Link>
-        <Link id="bike" active={isActive("bike")}>
+        <Link isMobile={isMobile} id="bike" active={isActive("bike")}>
           Bike Blog
         </Link>
-        <Link id="art" active={isActive("art")}>
+        <Link isMobile={isMobile} id="art" active={isActive("art")}>
           Some work
         </Link>
 
