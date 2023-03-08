@@ -52,7 +52,7 @@
   }
 
   .subheading {
-    @apply max-w-[900px] font-apfel text-3xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
+    @apply max-w-[900px] font-apfel text-2xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
   }
 }
 

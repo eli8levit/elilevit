@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`flex h-[250px] w-[250px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
+      className={`flex h-[290px] w-[290px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-sm backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:shadow-md md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
       whileHover={
         !isMobile
           ? {
@@ -57,10 +57,10 @@ const BikeCard = ({
           transition={{
             scale: { type: "spring", stiffness: 200, damping: 15 },
           }}
-          className="-mt-4 -ml-4 h-[80px] w-[80px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[130px] md:w-[130px] 2xl:h-[150px] 2xl:w-[150px]"
+          className="-mt-4 -ml-4 h-[110px] w-[110px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[130px] md:w-[130px] 2xl:h-[150px] 2xl:w-[150px]"
         />
         <div className="flex flex-col justify-start">
-          <h3 className="pt-4 font-monaWide text-lg font-medium md:text-xl md:text-xl 2xl:text-2xl">
+          <h3 className="pt-4 pr-6 font-monaWide text-lg font-medium md:pr-8 md:text-xl 2xl:text-2xl">
             {title}
           </h3>
           <motion.svg
@@ -82,7 +82,7 @@ const BikeCard = ({
         </div>
       </div>
       <div className="flex h-full flex-col p-6 md:p-8">
-        <p className="font-mona text-base font-normal md:text-lg 2xl:text-xl">
+        <p className="font-mona text-lg font-normal 2xl:text-xl">
           {description}
         </p>
         <div className="mt-auto flex flex-row items-center justify-between">
@@ -133,7 +133,7 @@ export default function Bike() {
           </span>
         </h2>
       </div>
-      <div className="content-container relative mr-0 bg-gradient-to-r from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] py-12 pr-0 md:rounded-xl md:py-24 2xl:ml-[10vw]">
+      <div className="content-container relative mr-0 bg-gradient-to-b from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] py-12 pr-0 md:rounded-xl md:py-24 2xl:ml-[10vw]">
         <motion.svg
           viewBox="0 0 3394 2200"
           fill="none"
@@ -152,13 +152,13 @@ export default function Bike() {
         </motion.svg>
         <section className="relative flex flex-col">
           <h2
-            className="absolute left-2 bottom-4 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:left-0 md:text-5xl"
+            className="mb-2 h-max w-max origin-left font-apfel text-4xl font-bold text-black md:absolute md:left-2 md:bottom-4 md:left-0 md:mb-0 md:-rotate-90 md:text-5xl"
             id="rides"
           >
             # ride history
           </h2>
           <ModalContent route="bike" />
-          <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-8 md:p-12">
+          <ul className="flex flex-row gap-4 overflow-x-auto p-6 md:ml-8 md:gap-8 md:p-12">
             {bikePosts.map((post: Post, index) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
@@ -178,15 +178,15 @@ export default function Bike() {
           </ul>
         </section>
         {upgradePosts.length ? (
-          <section className="relative flex flex-row">
+          <section className="relative flex flex-col">
             <h2
-              className="absolute bottom-4 left-2 h-max w-max origin-left -rotate-90 font-apfel text-3xl font-bold text-black md:left-0 md:text-5xl"
+              className="mb-2 h-max w-max origin-left font-apfel text-4xl font-bold text-black md:absolute md:bottom-4 md:left-2 md:left-0 md:mb-0 md:-rotate-90 md:text-5xl"
               id="upgrades"
             >
               # upgrades
             </h2>
 
-            <ul className="ml-2 flex flex-row gap-4 overflow-x-auto p-8 md:ml-8 md:gap-8 md:p-12">
+            <ul className="flex flex-row gap-4 overflow-x-auto p-6 md:ml-8 md:gap-8 md:p-12">
               {upgradePosts.map((post: Post, index) => {
                 return (
                   <Link
