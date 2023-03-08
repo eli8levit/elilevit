@@ -59,7 +59,7 @@ export default function BikePost() {
           </motion.h1>
         </motion.div>
         <motion.div
-          className="content font-mona"
+          className="content mx-auto max-w-[800px] font-mona"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

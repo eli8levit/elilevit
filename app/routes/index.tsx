@@ -40,7 +40,7 @@ export default function Index() {
         </motion.svg>
       </div>
       <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-[rgba(255,255,255,0.1)] md:rounded-lg md:px-12">
-        <div className="content-container max-w-[1200px] px-4 text-center md:mt-20 md:px-12 md:text-left 2xl:max-w-[1600px]">
+        <div className="content-container max-w-[1200px] px-4 text-center md:mt-20 md:px-12 md:text-left 2xl:max-w-[1300px]">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you{" "}
             <img

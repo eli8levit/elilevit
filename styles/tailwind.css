@@ -4,23 +4,23 @@
 
 @layer components {
   .content-container {
-    @apply px-4 pt-12 md:pt-24 mx-auto max-w-[1400px] 2xl:max-w-[2000px] w-full md:px-12 lg:px-28 2xl:px-44 2xl:pt-32;
+    @apply mx-auto w-full max-w-[1400px] px-4 pt-12 md:px-12 md:pt-24 lg:px-28 2xl:max-w-[2000px] 2xl:px-44 2xl:pt-32;
   }
 
   .content p {
-      @apply text-lg md:text-xl mb-2 text-justify;
+    @apply mx-auto mb-2 text-justify text-lg md:text-xl 2xl:text-2xl;
   }
 
-   .content h1 {
-      @apply font-bold font-mona text-3xl mb-4;
-    }
+  .content h1 {
+    @apply mb-4 font-mona text-3xl font-bold;
+  }
 
   .content h2 {
-    @apply font-bold font-mona text-2xl mb-4;
+    @apply mb-4 font-mona text-2xl font-bold;
   }
 
   .content hr {
-    @apply border-[rgba(1,1,1,0.2)] mb-6;
+    @apply mb-6 border-[rgba(1,1,1,0.2)];
   }
 
   .content ul {
@@ -36,7 +36,7 @@
   }
 
   .content em {
-    @apply -mt-4 text-sm font-monaWide font-normal text-center italic text-gray-700 block mb-8;
+    @apply -mt-4 mb-8 block text-center font-monaWide text-sm font-normal italic text-gray-700;
   }
 
   .content a {
@@ -44,11 +44,11 @@
   }
 
   .content video {
-    @apply my-6 rounded-xl object-contain max-h-[500px] mx-auto;
+    @apply my-6 mx-auto max-h-[500px] rounded-xl object-contain;
   }
 
   .heading {
-    @apply text-black mb-2 text-left font-apfel text-7xl md:text-8xl 2xl:text-9xl font-bold;
+    @apply mb-2 text-left font-apfel text-7xl font-bold text-black md:text-8xl 2xl:text-9xl;
   }
 
   .subheading {
