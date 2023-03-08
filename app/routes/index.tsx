@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
       <div className="content-container overflow-x-hidden 2xl:h-[calc(100vh-96px)] 2xl:pt-[15vh]">
-        <h1 className="heading text-4xl text-primary md:text-5xl lg:mb-4 lg:text-7.5xl">
+        <h1 className="heading text-4xl text-primary md:text-5xl lg:mb-4 lg:text-7.5xl 2xl:mb-2">
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>
         <FaidInMotionContainer>
@@ -25,7 +25,7 @@ export default function Index() {
           </p>
         </FaidInMotionContainer>
         <motion.svg
-          className="mx-auto mb-20 h-[130px] w-full stroke-primary md:mb-32 lg:h-[250px]"
+          className="mx-auto mb-20 h-[130px] w-full stroke-primary md:mb-32 lg:h-[250px] 2xl:h-[300px]"
           fill="none"
           initial="hidden"
           animate="visible"
