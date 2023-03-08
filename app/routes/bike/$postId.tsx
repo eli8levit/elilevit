@@ -38,7 +38,7 @@ export default function BikePost() {
               {post.createdAt}
             </motion.span>
           </motion.div>
-          <motion.h1 className="text-bold mb-3 w-max font-apfel text-5xl font-bold md:text-6xl">
+          <motion.h1 className="text-bold mb-3 whitespace-normal font-apfel text-5xl font-bold md:w-max md:text-6xl">
             {post.title}
             <motion.svg
               fill="none"

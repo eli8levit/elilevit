@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`flex h-[240px] w-[240px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
+      className={`flex h-[250px] w-[250px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
       whileHover={
         !isMobile
           ? {
@@ -116,14 +116,12 @@ export default function Bike() {
     isMobile: boolean;
   }>();
 
-  console.log("bike posts", posts);
-
   const bikePosts = posts.filter((post) => post.tag === "rides");
   const upgradePosts = posts.filter((post) => post.tag === "upgrades");
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container mb-24 2xl:mb-[250px]">
+      <div className="content-container mb-12 md:mb-24 2xl:mb-[250px]">
         <h1 className="heading shrink-0">
           <AnimatedText>Bike Blog</AnimatedText>
         </h1>

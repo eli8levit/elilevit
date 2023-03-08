@@ -11,28 +11,27 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <div className="content-container overflow-x-hidden xl:h-[calc(100vh-86px)] 2xl:pt-[15vh]">
-        <h1 className="heading text-6xl text-primary md:text-7.5xl">
+      <div className="content-container overflow-x-hidden 2xl:h-[calc(100vh-96px)] 2xl:pt-[15vh]">
+        <h1 className="heading text-4xl text-primary md:text-5xl lg:mb-4 lg:text-7.5xl">
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>
         <FaidInMotionContainer>
-          <h2 className="mb-4 text-left font-apfel text-6xl text-2xl font-bold text-black md:mb-2 md:text-8xl md:text-4xl xl:mb-6">
+          <h2 className="mb-4 text-left font-apfel text-5xl font-bold text-black md:mb-2 md:text-6xl lg:text-8xl xl:mb-6">
             <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
           </h2>
-          <p className="max-w-[600px] font-mona text-2xl font-normal text-gray-700 md:mt-2 md:text-3xl">
+          <p className="mb-10 max-w-[600px] font-mona text-2xl font-normal text-gray-700 lg:mb-4 lg:text-3xl 2xl:mb-32">
             Hope I won't be lazy like with previous one and will publish some
             nice things.
           </p>
         </FaidInMotionContainer>
         <motion.svg
-          className="mx-auto mb-8 h-[180px] w-full md:mb-28 md:h-[250px]"
+          className="mx-auto mb-20 h-[130px] w-full stroke-primary md:mb-32 lg:h-[250px]"
           fill="none"
           initial="hidden"
           animate="visible"
           viewBox="0 0 884 325"
         >
           <motion.path
-            stroke="#0000ff"
             d="M34.5 260s22.5 18 71.5 4.5c40.92-11.274 51.5-30.826 74.5-33.5 19.877-2.311-8.645 27.628 17.017 52.538.311.302.673.586 1.042.815 26.366 16.366 56.437-3.546 82.941-30.853 15.77-16.248 31.034-58.996 44.625-60.991 1.221-.18 2.486-.342 3.7-.566C348.26 188.54 294.833 281 340 281c74 0 88-95 115-95 26.575 0-29.679 85.735-7.619 98.447.7.404 1.545.577 2.353.61C555.042 289.395 624.368 148.074 590.5 167c-34 19-44 86.5 20.5 98 58 6 144-156 113-143s-50 147.022 6 152.5c27.5 2.69 48.038-11.5 90.5-99.5S847 35 847 35"
             strokeWidth="68"
             strokeLinecap="round"
@@ -40,9 +39,9 @@ export default function Index() {
           />
         </motion.svg>
       </div>
-      <div className="rounded-lg bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-[rgba(255,255,255,0.1)] px-12">
-        <div className="content-container max-w-[1200px] text-center md:mt-20 md:text-left 2xl:max-w-[1600px]">
-          <h3 className="mb-4 font-apfel text-5xl font-bold text-black md:text-6xl">
+      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-[rgba(255,255,255,0.1)] md:rounded-lg md:px-12">
+        <div className="content-container max-w-[1200px] px-4 text-center md:mt-20 md:px-12 md:text-left 2xl:max-w-[1600px]">
+          <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you{" "}
             <img
               src={Heart}
@@ -51,7 +50,7 @@ export default function Index() {
               width="60px"
             />
           </h3>
-          <h3 className="font-apfel text-4xl font-light text-gray-600 md:text-5xl">
+          <h3 className="font-apfel text-3xl font-light text-gray-600 lg:text-5xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:text-primary hover:decoration-primary"
@@ -65,7 +64,7 @@ export default function Index() {
             viewBox="0 0 569 629"
             height="400px"
             fill="none"
-            className="mx-auto mt-8 mb-4 block  max-w-[90%] stroke-primary md:mt-32 md:mb-28"
+            className="mx-auto mt-20 mb-12 block max-w-[90%] stroke-primary md:mt-32 md:mb-28"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
@@ -77,7 +76,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="pb-2 font-apfel text-5xl font-bold text-gray-900 md:text-6xl">
+          <h4 className="pb-2 font-apfel text-4xl font-bold text-gray-900 md:text-6xl">
             So far I don't have much content, but still you can checkout some
             things:
           </h4>

@@ -8,7 +8,7 @@
   }
 
   .content p {
-      @apply text-xl mb-2 text-justify;
+      @apply text-lg md:text-xl mb-2 text-justify;
   }
 
    .content h1 {
@@ -48,11 +48,11 @@
   }
 
   .heading {
-    @apply text-black mb-2 text-left font-apfel text-6xl md:text-8xl 2xl:text-9xl font-bold;
+    @apply text-black mb-2 text-left font-apfel text-7xl md:text-8xl 2xl:text-9xl font-bold;
   }
 
   .subheading {
-    @apply max-w-[900px] font-apfel text-4xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
+    @apply max-w-[900px] font-apfel text-3xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
   }
 }
 
