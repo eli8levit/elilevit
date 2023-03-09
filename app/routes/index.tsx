@@ -19,7 +19,7 @@ export default function Index() {
           <h2 className="mb-4 text-left font-apfel text-5xl font-bold text-black md:mb-2 md:text-6xl lg:text-7xl xl:mb-6 xl:text-8xl">
             <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
           </h2>
-          <p className="mb-2 max-w-[600px] font-mona text-2xl font-normal text-gray-700 lg:text-3xl 2xl:mb-32">
+          <p className="mb-2 max-w-[600px] font-mona text-2xl font-normal text-[rgb(34,34,34)] lg:text-3xl 2xl:mb-32">
             Hope I won't be lazy like with previous site and will publish some
             nice things.
           </p>
@@ -50,7 +50,7 @@ export default function Index() {
               width="60px"
             />
           </h3>
-          <h3 className="font-apfel text-3xl font-light text-gray-600 lg:text-5xl">
+          <h3 className="font-apfel text-3xl font-light text-[rgb(34,34,34)] lg:text-4xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:text-primary hover:decoration-primary"
@@ -76,7 +76,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="pb-2 font-apfel text-4xl font-bold text-gray-900 md:text-6xl">
+          <h4 className="pb-2 font-apfel text-4xl font-bold text-[rgb(34,34,34)] md:text-6xl">
             So far I don't have much content, but still you can checkout some
             things:
           </h4>

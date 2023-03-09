@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`flex h-[270px] w-[270px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
+      className={`flex h-[270px] w-[270px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.9)] text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
       whileHover={
         !isMobile
           ? {
@@ -57,7 +57,7 @@ const BikeCard = ({
           transition={{
             scale: { type: "spring", stiffness: 200, damping: 15 },
           }}
-          className="-mt-4 -ml-4 h-[110px] w-[110px] shrink-0 rounded-[20px] object-cover shadow-xl md:h-[130px] md:w-[130px] 2xl:h-[150px] 2xl:w-[150px]"
+          className="-mt-4 -ml-4 h-[110px] w-[110px] shrink-0 rounded-[15px] object-cover shadow-xl md:h-[130px] md:w-[150px] 2xl:h-[150px] 2xl:w-[150px]"
         />
         <div className="flex flex-col justify-start">
           <h3 className="pt-4 pr-6 font-monaWide text-lg font-bold md:pr-8 md:text-xl 2xl:text-2xl">
