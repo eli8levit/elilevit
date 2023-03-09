@@ -72,7 +72,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 export default function Art() {
   return (
     <>
-      <FaidInMotionContainer className="content-container flex flex-col pt-0 2xl:h-[100vh]">
+      <FaidInMotionContainer className="content-container flex flex-col md:pt-0 2xl:h-[100vh]">
         <motion.svg
           viewBox="0 0 3341 1557"
           className="mb-12"
@@ -105,8 +105,8 @@ export default function Art() {
           projects
         </h2>
       </FaidInMotionContainer>
-      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-[rgba(255,255,255,0.1)] py-12 md:py-24">
-        <div className="content-container mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-12 pt-0 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px] md:gap-14">
+      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-transparent py-12 md:py-24">
+        <div className="content-container mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-8 pt-0 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px]">
           <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
             <ArtCard
               background="bg-haIsh"

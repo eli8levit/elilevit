@@ -48,11 +48,11 @@
   }
 
   .heading {
-    @apply mb-2 text-left font-apfel text-7xl font-bold text-black md:text-8xl 2xl:text-9xl;
+    @apply mb-2 text-left font-apfel text-6xl font-bold text-black md:text-8xl 2xl:text-9xl;
   }
 
   .subheading {
-    @apply max-w-[900px] font-apfel text-2xl font-normal text-gray-700 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
+    @apply max-w-[900px] font-normal text-2xl font-mona text-gray-600 md:text-4xl 2xl:max-w-[1200px] 2xl:text-5xl;
   }
 }
 

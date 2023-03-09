@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`flex h-[290px] w-[290px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-sm backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:shadow-md md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
+      className={`flex h-[270px] w-[270px] flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[320px] md:w-[320px] md:hover:backdrop-blur-xl 2xl:h-[350px] 2xl:w-[350px]`}
       whileHover={
         !isMobile
           ? {
@@ -45,7 +45,7 @@ const BikeCard = ({
             }
           : {}
       }
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.95 }}
       transition={{
         scale: { type: "spring", stiffness: 100, damping: 10 },
         backgroundColor: { type: "easeInOut" },
@@ -82,7 +82,7 @@ const BikeCard = ({
         </div>
       </div>
       <div className="flex h-full flex-col p-6 md:p-8">
-        <p className="font-mona text-lg font-normal 2xl:text-xl">
+        <p className="font-mona text-base font-normal md:text-lg 2xl:text-xl">
           {description}
         </p>
         <div className="mt-auto flex flex-row items-center justify-between">
@@ -126,18 +126,18 @@ export default function Bike() {
           <AnimatedText>Bike Blog</AnimatedText>
         </h1>
         <h2 className="subheading">
-          Here is about my bike and stuff related to cycling: my rides, photos
-          and{" "}
+          This page is about my bike and stuff related to cycling: my rides,
+          photos and{" "}
           <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">
             upgrading evolution
           </span>
         </h2>
       </div>
-      <div className="content-container relative mr-0 bg-gradient-to-b from-[rgba(192,10,100,0.2)] to-[rgba(255,255,255,0.2)] py-12 pr-0 md:rounded-xl md:py-24 2xl:ml-[10vw]">
+      <div className="content-container relative mr-0 bg-gradient-to-b from-[rgba(192,10,100,0.2)] to-transparent py-12 pr-0 md:rounded-xl md:py-16 2xl:ml-[10vw]">
         <motion.svg
           viewBox="0 0 3394 2200"
           fill="none"
-          className="absolute top-[50%] left-[60px] -z-10 h-[400px] max-h-[700px] -translate-y-[50%] md:left-[200px] md:h-[80vh] 2xl:left-[50%] 2xl:-translate-x-[50%]"
+          className="absolute top-[50%] -z-10 h-[400px] max-h-[700px] -translate-y-[50%]  md:h-[80vh] 2xl:left-[50%] 2xl:-translate-x-[50%]"
           initial="hidden"
           animate="visible"
         >
@@ -152,7 +152,8 @@ export default function Bike() {
         </motion.svg>
         <section className="relative flex flex-col">
           <h2
-            className="mb-2 h-max w-max origin-left font-apfel text-4xl font-bold text-black md:absolute md:left-2 md:bottom-4 md:left-0 md:mb-0 md:-rotate-90 md:text-5xl"
+            className="mb-2 h-max w-max origin-left
+             rounded-lg bg-[rgba(255,255,255,0.7)] p-2 font-apfel text-2xl font-bold text-black backdrop-blur-md md:absolute md:left-2 md:bottom-4 md:left-0 md:mb-0 md:-rotate-90 md:p-3 md:text-4xl"
             id="rides"
           >
             # ride history
@@ -180,7 +181,8 @@ export default function Bike() {
         {upgradePosts.length ? (
           <section className="relative flex flex-col">
             <h2
-              className="mb-2 h-max w-max origin-left font-apfel text-4xl font-bold text-black md:absolute md:bottom-4 md:left-2 md:left-0 md:mb-0 md:-rotate-90 md:text-5xl"
+              className="mb-2 h-max w-max origin-left
+             rounded-lg bg-[rgba(255,255,255,0.7)] p-2 font-apfel text-2xl font-bold text-black backdrop-blur-md md:absolute md:left-2 md:bottom-4 md:left-0 md:mb-0 md:-rotate-90 md:p-3 md:text-4xl"
               id="upgrades"
             >
               # upgrades

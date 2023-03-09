@@ -20,7 +20,7 @@ export default function Index() {
             <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
           </h2>
           <p className="mb-2 max-w-[600px] font-mona text-2xl font-normal text-gray-700 lg:text-3xl 2xl:mb-32">
-            Hope I won't be lazy like with previous one and will publish some
+            Hope I won't be lazy like with previous site and will publish some
             nice things.
           </p>
         </FaidInMotionContainer>
@@ -39,7 +39,7 @@ export default function Index() {
           />
         </motion.svg>
       </div>
-      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-[rgba(255,255,255,0.1)] md:rounded-lg md:px-12">
+      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-transparent md:rounded-lg md:px-12">
         <div className="content-container max-w-[1200px] px-4 text-center md:mt-20 md:px-12 md:text-left 2xl:max-w-[1300px]">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you{" "}
