@@ -16,7 +16,7 @@ export default function Index() {
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>
         <FaidInMotionContainer>
-          <h2 className="mb-4 text-left font-apfel text-5xl font-bold text-black md:mb-2 md:text-6xl lg:text-7xl xl:mb-6 xl:text-8xl">
+          <h2 className="mb-4 text-left font-apfel text-5xl font-bold text-black md:mb-2 md:text-6xl lg:text-7xl xl:text-8xl">
             <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
           </h2>
           <p className="mb-2 max-w-[600px] font-mona text-2xl font-normal text-[rgb(34,34,34)] lg:text-3xl 2xl:mb-32">
