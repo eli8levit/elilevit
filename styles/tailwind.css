@@ -6,6 +6,10 @@ body {
   cursor: url('../public/cursor.svg') 15 15,auto;
 }
 
+*::selection {
+  @apply bg-blue-100
+}
+
 button, a {
 cursor: url('../public/cursor-pointer.svg') 15 15,pointer;
 }
