@@ -11,7 +11,7 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <div className="content-container overflow-x-hidden xl:min-h-[calc(100vh-86px)] 2xl:min-h-[calc(100vh-96px)] 2xl:pt-[15vh]">
+      <div className="content-container overflow-x-hidden lg:min-h-[calc(100vh-86px)] 2xl:min-h-[calc(100vh-96px)] 2xl:pt-[15vh]">
         <h1 className="heading text-5xl text-primary md:text-6xl lg:mb-4 lg:text-7xl xl:text-7.5xl 2xl:mb-2">
           <AnimatedText>Hey, good to see you!</AnimatedText>
         </h1>

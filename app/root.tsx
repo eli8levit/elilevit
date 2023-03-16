@@ -17,6 +17,8 @@ import { Footer, Nav } from "~/components";
 import config from "tailwind.config";
 import Icon32 from "../public/favicon-32x32.png";
 import Icon16 from "../public/favicon-16x16.png";
+import CursorPointer from "../public/cursor-pointer.svg";
+import CursorPressed from "../public/cursor-pressed.svg";
 import Manifest from "../public/site.webmanifest";
 import AppleIcon from "../public/apple-touch-icon.png";
 import { motion } from "framer-motion";
@@ -45,6 +47,8 @@ export const links: LinksFunction = () => {
       href: Icon16,
     },
     { rel: "manifest", href: Manifest },
+    { rel: "preload", href: CursorPointer },
+    { rel: "preload", href: CursorPressed },
   ];
 };
 

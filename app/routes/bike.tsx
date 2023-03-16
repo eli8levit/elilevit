@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[320px] w-[260px] flex-col flex-col rounded-[25px] bg-[rgba(18,18,18,0.85)] p-8 text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[360px] md:w-[310px] md:hover:backdrop-blur-xl 2xl:h-[400px] 2xl:w-[350px]`}
+      className={`group flex h-[320px] w-[260px] flex-col flex-col rounded-[25px] bg-[rgba(18,18,18,0.85)] p-4 text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[360px] md:w-[310px] md:p-8 md:hover:backdrop-blur-xl 2xl:h-[400px] 2xl:w-[350px]`}
       whileHover={
         !isMobile
           ? {
@@ -56,7 +56,7 @@ const BikeCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="mb-4 h-[110px] w-full shrink-0 rounded-xl object-cover shadow-xl transition-opacity group-hover:opacity-50 md:h-[130px] 2xl:h-[180px]"
+        className="mb-4 h-[130px] w-full shrink-0 rounded-xl object-cover shadow-xl transition-opacity group-hover:opacity-50 md:h-[130px] 2xl:h-[180px]"
       />
       <h3 className="font-monaWide text-lg font-bold transition-all group-hover:text-black md:text-xl 2xl:text-2xl">
         {title}

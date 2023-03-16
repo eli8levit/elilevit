@@ -99,7 +99,7 @@ export default function Art() {
         <h1 className="heading">
           <AnimatedText>Work & Art</AnimatedText>
         </h1>
-        <h2 className="subheading mb-12">
+        <h2 className="subheading">
           Here you can see my art like photos, illustrations along with my
           projects
         </h2>

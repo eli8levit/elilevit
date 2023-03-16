@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 body {
-  cursor: url('../public/cursor.png') 15 15,auto;
+  cursor: url('../public/cursor.svg') 15 15,auto;
 }
 
 button, a {
-cursor: url('../public/cursor-pointer.png') 15 15,pointer;
+cursor: url('../public/cursor-pointer.svg') 15 15,pointer;
 }
 
 button:active, a:active {
-  cursor: url('../public/cursor-pressed.png') 15 15,pointer;
+  cursor: url('../public/cursor-pressed.svg') 15 15,pointer;
 }
 
 @layer components {
