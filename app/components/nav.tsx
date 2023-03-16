@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useLoaderData, useMatches } from "@remix-run/react";
+import { NavLink, useMatches } from "@remix-run/react";
 import { motion } from "framer-motion";
 import colors from "tailwindcss/colors";
 import { MotionNavLink } from "~/components/motion-nav-link";
@@ -45,38 +45,18 @@ const Link = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       to={`/${id}`}
-      className={`transition-text relative flex items-center rounded-md font-mona font-medium ${
-        active
-          ? "w-24 text-white md:w-32"
-          : "w-24 text-gray-700 hover:text-pink-600 md:w-28"
+      className={`transition-text relative flex w-24 items-center rounded-md font-mona font-medium md:w-32 ${
+        active ? "text-white" : "text-gray-700 hover:text-pink-600"
       }`}
     >
-      <span className="z-10 mx-auto inline-block">{children}</span>
-      {active ? (
-        <motion.svg
-          initial="hidden"
-          animate="visible"
-          viewBox="0 0 971 328"
-          fill="none"
-          className="absolute left-0 w-full object-contain"
-        >
-          <motion.path
-            d="M64.5 168C90.669 86.4088 827.831 19.7389 854 101.33C896.5 233.839 176.496 101.33 176.496 214.308C176.496 279.5 820 294 906.5 168"
-            variants={draw}
-            stroke="#1313ff"
-            strokeWidth="128"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </motion.svg>
-      ) : null}
+      <span className="mx-auto inline-block">{children}</span>
       {hover && !active && !isMobile ? (
         <motion.svg
           fill="none"
           initial="hidden"
           viewBox="0 0 866 131"
           animate="visible"
-          className="absolute left-2 -bottom-[60%]"
+          className="absolute left-2 -bottom-[60%] -z-10"
         >
           <motion.path
             d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
@@ -84,6 +64,24 @@ const Link = ({
             strokeWidth="50"
             strokeLinecap="round"
             variants={draw}
+            strokeLinejoin="round"
+          />
+        </motion.svg>
+      ) : null}{" "}
+      {active ? (
+        <motion.svg
+          initial="hidden"
+          animate="visible"
+          viewBox="0 0 971 328"
+          fill="none"
+          className="absolute left-0 -z-10 w-full object-contain"
+        >
+          <motion.path
+            d="M64.5 168C90.669 86.4088 827.831 19.7389 854 101.33C896.5 233.839 176.496 101.33 176.496 214.308C176.496 279.5 820 294 906.5 168"
+            variants={draw}
+            stroke="#1313ff"
+            strokeWidth="128"
+            strokeLinecap="round"
             strokeLinejoin="round"
           />
         </motion.svg>
@@ -106,7 +104,7 @@ export const Nav = ({
   };
 
   return (
-    <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:h-[80px] 2xl:text-lg">
+    <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:h-[80px]">
       <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
         <Link isMobile={isMobile} id="" active={isActive("")}>
           Home

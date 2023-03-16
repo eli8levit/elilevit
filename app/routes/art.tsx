@@ -2,9 +2,9 @@ import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useWillChange } from "framer-motion";
 import { AnimatedText, draw } from "~/components";
-import defaultTheme from "tailwindcss/defaultTheme";
 import { draw2 } from "~/components/utils";
 import { useLoaderData } from "@remix-run/react";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export { loader } from "../use-mobile-loader";
 
@@ -26,44 +26,43 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       whileHover={
         !isMobile
           ? {
-              padding: "28px",
+              scale: 1.03,
               boxShadow: defaultTheme.boxShadow["2xl"],
+              zIndex: 10,
+              backgroundColor: "rgba(0,0,255,0.3)",
             }
           : {}
       }
       transition={{ type: "ease-in", duration: 0.2 }}
       href={href}
-      className="flex w-full flex-col rounded-xl"
+      className="flex w-full flex-col rounded-xl bg-[rgba(0,0,255,0.1)] p-10 shadow-sm 2xl:p-12"
       style={{ willChange }}
       target="_blank"
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="relative mb-4 w-max font-apfel text-2xl font-bold text-primary lg:text-4xl">
+        <h3 className="relative mb-4 w-max font-apfel text-2xl font-bold text-gray-900 lg:text-4xl">
           {title}
           <motion.svg
             viewBox="0 0 1506 391"
             width="140%"
-            className="absolute -left-[15%] -bottom-2 stroke-primary"
+            className="absolute -left-[15%] -bottom-2 stroke-[rgba(0,0,255,0.3)]"
             fill="none"
-            whileInView="visible"
-            initial="hidden"
             viewport={{ once: true, amount: 0.8 }}
           >
             <motion.path
               d="M782.436 86.132S1296.48 5.737 1466.49 197.317C1574.55 319.089 1302.48 375 806.438 375c-496.04 0-931.985-48.859-747.06-164.854C346.403 30.112 1275.48 16 1275.48 16"
               strokeWidth="25"
               strokeLinecap="round"
-              variants={draw}
             />
           </motion.svg>
         </h3>
-        <p className="mb-2 max-w-[700px] font-mona text-base font-light text-gray-600 md:text-xl 2xl:text-2xl">
+        <p className="mb-2 max-w-[700px] font-mona text-base font-normal text-gray-600 md:text-xl">
           {description}
         </p>
       </div>
       <div
-        className={`flex rounded-xl ${background} h-full bg-cover bg-center bg-no-repeat shadow-2xl ${cardClass}`}
+        className={`flex rounded-lg ${background} h-full bg-cover bg-center bg-no-repeat ${cardClass}`}
       />
     </motion.a>
   );
@@ -72,7 +71,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 export default function Art() {
   return (
     <>
-      <FaidInMotionContainer className="content-container flex flex-col md:pt-0 2xl:h-[100vh]">
+      <FaidInMotionContainer className="content-container flex flex-col md:pt-0">
         <motion.svg
           viewBox="0 0 3341 1557"
           className="mb-12"
@@ -100,13 +99,13 @@ export default function Art() {
         <h1 className="heading">
           <AnimatedText>Work & Art</AnimatedText>
         </h1>
-        <h2 className="subheading mb-12 md:mb-[15vh]">
+        <h2 className="subheading mb-12">
           Here you can see my art like photos, illustrations along with my
           projects
         </h2>
       </FaidInMotionContainer>
-      <div className="bg-gradient-to-b from-[rgba(192,10,100,0.1)] to-transparent py-12 md:py-24">
-        <div className="content-container mx-auto grid grid-rows-[600px_auto_400px_auto_400px_auto_400px] gap-8 pt-0 md:mb-20 md:grid-cols-5 md:grid-rows-[500px_500px_400px]">
+      <div className="py-12 md:py-24">
+        <div className="content-container mx-auto grid grid-rows-[500px_500px_400px] gap-4 pt-0 md:mb-20 md:grid-cols-5">
           <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
             <ArtCard
               background="bg-haIsh"
@@ -115,7 +114,6 @@ export default function Art() {
               description="Here you can see very very young project about Israel. I love my country and want to share things that bother me. Wish it could help make this place better."
             />
           </div>
-          <div className="mx-6 h-[1px] bg-zinc-300 md:hidden" />
           <div className="flex md:col-start-4 md:col-end-6 md:row-start-1 md:row-end-2">
             <ArtCard
               background="bg-wallpaper"
@@ -123,7 +121,6 @@ export default function Art() {
               description="I love design and art. I don't have much of experience, but it's very fun so I play around with it in Affinity Designer and sometimes it looks not bad...So here are some stuff you can use as a wallpapers. (soon gallery will be available)"
             />
           </div>
-          <div className="mx-6 h-[1px] bg-zinc-300 md:hidden" />
           <div className="flex md:col-start-4 md:col-end-6">
             <ArtCard
               background="bg-oldSite"
@@ -132,7 +129,6 @@ export default function Art() {
               description="This is my previous web site, that I worked for 2 years on. I know that it doesn't seem so...it's unmaintained but I learned a lot about design and understood how to beat my perfectionism."
             />
           </div>
-          <div className="mx-6 h-[1px] bg-zinc-300 md:hidden" />
           <div className="flex md:col-span-full md:h-[500px]">
             <ArtCard
               href="https://my.spline.design/project-cca4dc6de45717fed5ca979536aa6a41/"
