@@ -47,7 +47,7 @@ const BikeCard = ({
       }
       whileTap={{ scale: 0.95 }}
       transition={{
-        scale: { type: "spring", stiffness: 100, damping: 10 },
+        scale: { type: "spring", stiffness: 80, damping: 10 },
         backgroundColor: { type: "easeInOut" },
       }}
     >
@@ -56,15 +56,15 @@ const BikeCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="mb-4 h-[130px] w-full shrink-0 rounded-xl object-cover shadow-xl transition-opacity group-hover:opacity-50 md:h-[130px] 2xl:h-[180px]"
+        className="mb-4 h-[130px] w-full shrink-0 rounded-xl object-cover shadow-xl transition-opacity md:h-[130px] md:group-hover:opacity-50 2xl:h-[180px]"
       />
-      <h3 className="font-monaWide text-lg font-bold transition-all group-hover:text-black md:text-xl 2xl:text-2xl">
+      <h3 className="font-monaWide text-lg font-bold transition-all md:text-xl md:group-hover:text-black 2xl:text-2xl">
         {title}
       </h3>
-      <p className="font-mona text-base font-normal text-gray-400 transition-all group-hover:text-black md:text-lg">
+      <p className="font-mona text-base font-normal text-gray-400 transition-all md:text-lg md:group-hover:text-black">
         {description}
       </p>
-      <div className="mt-auto flex flex-row items-center justify-between text-gray-400 transition-all group-hover:text-black">
+      <div className="mt-auto flex flex-row items-center justify-between text-gray-400 transition-all md:group-hover:text-black">
         <span className="w-max font-monaWide text-sm font-medium">{date}</span>
         <span className="ml-auto w-max font-monaWide text-sm font-bold">
           # {index}

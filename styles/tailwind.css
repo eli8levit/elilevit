@@ -64,7 +64,7 @@ button:active, a:active {
   }
 
   .subheading {
-    @apply max-w-[800px] font-normal text-2xl md:text-3xl font-mona text-gray-500;
+    @apply max-w-[800px] font-normal text-xl md:text-3xl font-mona text-gray-500;
 
     line-height: 1.4;
   }

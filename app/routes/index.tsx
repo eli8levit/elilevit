@@ -25,7 +25,7 @@ export default function Index() {
           </p>
         </FaidInMotionContainer>
         <motion.svg
-          className="mx-auto mb-20 h-[120px] w-full stroke-primary md:mb-32 lg:h-[240px] 2xl:h-[300px]"
+          className="mx-auto mb-20 h-[120px] w-full stroke-primary md:mb-32 md:mt-8 md:h-[180px] lg:h-[240px] 2xl:h-[300px]"
           fill="none"
           initial="hidden"
           animate="visible"
