@@ -11,36 +11,38 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <div className="content-container overflow-x-hidden lg:min-h-[calc(100vh-86px)] 2xl:min-h-[calc(100vh-96px)] 2xl:pt-[15vh]">
-        <h1 className="heading text-5xl text-primary md:text-6xl lg:mb-4 lg:text-7xl xl:text-7.5xl 2xl:mb-2">
-          <AnimatedText>Hey, good to see you!</AnimatedText>
-        </h1>
-        <FaidInMotionContainer>
-          <h2 className="mb-4 text-left font-apfel text-5xl font-bold text-black md:text-6xl lg:text-7xl xl:text-8xl">
-            <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
-          </h2>
-          <p className="subheading max-w-[600px]">
-            Hope I won't be lazy like with previous site and will publish some
-            nice things.
-          </p>
-        </FaidInMotionContainer>
-        <motion.svg
-          className="mx-auto mb-20 h-[120px] w-full stroke-primary md:mb-32 md:mt-8 md:h-[180px] lg:h-[240px] 2xl:h-[300px]"
-          fill="none"
-          initial="hidden"
-          animate="visible"
-          viewBox="0 0 884 325"
-        >
-          <motion.path
-            d="M34.5 260s22.5 18 71.5 4.5c40.92-11.274 51.5-30.826 74.5-33.5 19.877-2.311-8.645 27.628 17.017 52.538.311.302.673.586 1.042.815 26.366 16.366 56.437-3.546 82.941-30.853 15.77-16.248 31.034-58.996 44.625-60.991 1.221-.18 2.486-.342 3.7-.566C348.26 188.54 294.833 281 340 281c74 0 88-95 115-95 26.575 0-29.679 85.735-7.619 98.447.7.404 1.545.577 2.353.61C555.042 289.395 624.368 148.074 590.5 167c-34 19-44 86.5 20.5 98 58 6 144-156 113-143s-50 147.022 6 152.5c27.5 2.69 48.038-11.5 90.5-99.5S847 35 847 35"
-            strokeWidth="68"
-            strokeLinecap="round"
-            variants={draw}
-          />
-        </motion.svg>
+      <div className="content-container flex min-h-[calc(100vh-65px)] flex-col justify-center py-0 pb-6 md:h-auto md:min-h-[calc(100vh-86px)] 2xl:min-h-[calc(100vh-96px)]">
+        <div>
+          <h1 className="heading text-5xl text-primary md:text-6xl lg:mb-4 lg:text-7xl xl:text-7.5xl 2xl:mb-2">
+            <AnimatedText>Hey, good to see you!</AnimatedText>
+          </h1>
+          <FaidInMotionContainer>
+            <h2 className="mb-4 text-left font-apfel text-5xl font-bold text-black md:text-6xl lg:text-7xl xl:text-8xl">
+              <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
+            </h2>
+            <p className="subheading mb-8 max-w-[600px]">
+              Hope I won't be lazy like with previous site and will publish some
+              nice things.
+            </p>
+          </FaidInMotionContainer>
+          <motion.svg
+            className="h-[120px] w-full stroke-primary md:h-[180px] lg:h-[240px] 2xl:h-[300px]"
+            fill="none"
+            initial="hidden"
+            animate="visible"
+            viewBox="0 0 884 325"
+          >
+            <motion.path
+              d="M34.5 260s22.5 18 71.5 4.5c40.92-11.274 51.5-30.826 74.5-33.5 19.877-2.311-8.645 27.628 17.017 52.538.311.302.673.586 1.042.815 26.366 16.366 56.437-3.546 82.941-30.853 15.77-16.248 31.034-58.996 44.625-60.991 1.221-.18 2.486-.342 3.7-.566C348.26 188.54 294.833 281 340 281c74 0 88-95 115-95 26.575 0-29.679 85.735-7.619 98.447.7.404 1.545.577 2.353.61C555.042 289.395 624.368 148.074 590.5 167c-34 19-44 86.5 20.5 98 58 6 144-156 113-143s-50 147.022 6 152.5c27.5 2.69 48.038-11.5 90.5-99.5S847 35 847 35"
+              strokeWidth="68"
+              strokeLinecap="round"
+              variants={draw}
+            />
+          </motion.svg>
+        </div>
       </div>
-      <div className="bg-gradient-to-b from-[rgba(0,0,255,0.2)] to-transparent md:rounded-lg md:px-12">
-        <div className="content-container max-w-[1100px] px-4 text-center md:mt-20 md:px-12">
+      <div className="snap-start bg-gradient-to-b from-[rgba(0,0,255,0.2)] to-transparent md:px-12 xl:rounded-lg">
+        <div className="content-container max-w-[1100px] px-4 text-center md:px-12">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you{" "}
             <img

@@ -20,7 +20,7 @@ button:active, a:active {
 
 @layer components {
   .content-container {
-    @apply mx-auto w-full max-w-[1400px] px-4 pt-12 md:px-12 md:pt-24 lg:px-28 2xl:max-w-[2000px] 2xl:px-44 2xl:pt-32;
+    @apply mx-auto w-full max-w-[1400px] px-4 pt-10 md:px-12 md:pt-24 lg:px-28 2xl:max-w-[2000px] 2xl:px-44 2xl:pt-32;
   }
 
   .content p {
@@ -68,7 +68,7 @@ button:active, a:active {
   }
 
   .subheading {
-    @apply max-w-[800px] font-normal text-xl md:text-3xl font-mona text-gray-500;
+    @apply max-w-[650px] 2xl:max-w-[800px] font-normal text-xl md:text-3xl font-mona text-gray-500;
 
     line-height: 1.4;
   }

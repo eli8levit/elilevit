@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[320px] w-[260px] flex-col flex-col rounded-[25px] bg-[rgba(18,18,18,0.85)] p-4 text-pinkLighter shadow-md backdrop-blur-md hover:text-white hover:shadow-xl active:backdrop-blur-sm md:h-[360px] md:w-[310px] md:p-8 md:hover:backdrop-blur-xl 2xl:h-[400px] 2xl:w-[350px]`}
+      className={`group flex h-[400px] w-[300px] flex-col flex-col rounded-[25px] bg-[rgba(18,18,18,0.8)] p-6 text-pinkLighter shadow-md backdrop-blur-md hover:text-white active:backdrop-blur-sm md:h-[440px] md:w-[360px] md:p-8 md:hover:shadow-xl md:hover:backdrop-blur-xl 2xl:h-[480px] 2xl:w-[400px]`}
       whileHover={
         !isMobile
           ? {
@@ -56,17 +56,19 @@ const BikeCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="mb-4 h-[130px] w-full shrink-0 rounded-xl object-cover shadow-xl transition-opacity md:h-[130px] md:group-hover:opacity-50 2xl:h-[180px]"
+        className="mb-4 h-[210px] w-full shrink-0 rounded-xl object-cover transition-opacity md:h-[200px] md:rounded-lg md:group-hover:opacity-50 2xl:h-[260px]"
       />
-      <h3 className="font-monaWide text-lg font-bold transition-all md:text-xl md:group-hover:text-black 2xl:text-2xl">
+      <h3 className="font-monaWide text-xl font-bold transition-all md:group-hover:text-black 2xl:text-2xl">
         {title}
       </h3>
-      <p className="font-mona text-base font-normal text-gray-400 transition-all md:text-lg md:group-hover:text-black">
+      <p className="font-mona text-sm font-normal text-gray-400 transition-all md:text-base md:group-hover:text-black xl:text-lg">
         {description}
       </p>
       <div className="mt-auto flex flex-row items-center justify-between text-gray-400 transition-all md:group-hover:text-black">
-        <span className="w-max font-monaWide text-sm font-medium">{date}</span>
-        <span className="ml-auto w-max font-monaWide text-sm font-bold">
+        <span className="w-max font-monaWide text-xs font-light md:text-lg">
+          {date}
+        </span>
+        <span className="ml-auto w-max font-monaWide text-xs font-light md:text-lg">
           # {index}
         </span>
       </div>
@@ -129,13 +131,13 @@ export default function Bike() {
         <section className="relative flex flex-col">
           <h2
             className="h-max w-max origin-left
-             rounded-lg bg-[rgba(255,255,255,0.6)] p-2 font-apfel text-2xl font-bold text-black backdrop-blur-md md:text-4xl"
+             rounded-lg bg-[rgba(255,255,255,0.6)] p-2 font-apfel text-xl font-bold text-black shadow-sm backdrop-blur-sm md:text-3xl"
             id="rides"
           >
             # ride history
           </h2>
           <ModalContent route="bike" />
-          <ul className="flex flex-row gap-4 overflow-x-auto p-6 md:gap-8 md:p-10">
+          <ul className="mb-4 flex flex-row gap-4 overflow-x-auto p-4 md:gap-8 md:p-10">
             {bikePosts.map((post: Post, index) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
@@ -158,13 +160,13 @@ export default function Bike() {
           <section className="relative flex flex-col">
             <h2
               className="h-max w-max origin-left
-             rounded-lg bg-[rgba(255,255,255,0.6)] p-2 font-apfel text-2xl font-bold text-black backdrop-blur-md md:text-4xl"
+             rounded-lg bg-[rgba(255,255,255,0.6)] p-2 font-apfel text-xl font-bold text-black shadow-sm backdrop-blur-sm md:text-3xl"
               id="upgrades"
             >
               # upgrades
             </h2>
 
-            <ul className="flex flex-row gap-4 overflow-x-auto p-6 md:gap-8 md:p-10">
+            <ul className="flex flex-row gap-4 overflow-x-auto p-4 md:gap-8 md:p-10">
               {upgradePosts.map((post: Post, index) => {
                 return (
                   <Link
