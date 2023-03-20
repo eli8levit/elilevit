@@ -11,22 +11,112 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <div className="content-container flex min-h-[calc(100vh-65px)] flex-col justify-center py-0 pb-6 md:h-auto md:min-h-[calc(100vh-86px)] 2xl:min-h-[calc(100vh-96px)]">
+      <div className="content-container flex min-h-[calc(100vh-65px)] flex-col pb-[140px] md:h-auto md:min-h-[calc(100vh-86px)] md:justify-center 2xl:min-h-[calc(100vh-96px)]">
+        <motion.svg
+          viewBox="0 0 4707 3462"
+          className="absolute top-0 left-0 -z-10 h-full w-full"
+          fill="none"
+        >
+          <motion.g
+            filter="url(#a)"
+            animate={{ rotate: 360 }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20,
+              delay: 2,
+              type: "linear",
+            }}
+          >
+            <motion.circle
+              cx="1778.41"
+              cy="1683.41"
+              r="750"
+              fill="url(#b)"
+              animate={{ translateX: "200px", translateY: "-100px" }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 8,
+                delay: 2,
+                type: "linear",
+              }}
+            />
+            <motion.circle
+              cx="2929"
+              cy="1677"
+              r="750"
+              fill="url(#c)"
+              animate={{ translateX: "-300px", translateY: "100px" }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 10,
+                delay: 2,
+                type: "linear",
+              }}
+            />
+          </motion.g>
+          <defs>
+            <radialGradient
+              id="b"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="matrix(.00209 1196.26 -1831.22 .0032 1778.42 1683.41)"
+            >
+              <stop stop-color="#DB2877" stop-opacity=".4" />
+              <stop offset="1" stop-color="white" />
+            </radialGradient>
+            <radialGradient
+              id="c"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="matrix(.00209 1196.26 -1831.22 .0032 2929 1677)"
+            >
+              <stop stop-color="#00F" stop-opacity=".25" />
+              <stop offset="1" stop-color="white" />
+            </radialGradient>
+            <filter
+              id="a"
+              x="-427.604"
+              y="-544.604"
+              width="5555.21"
+              height="4455.21"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="400"
+                result="effect1_foregroundBlur_111_4"
+              />
+            </filter>
+          </defs>
+        </motion.svg>
         <div>
-          <h1 className="heading text-5xl text-primary md:text-6xl lg:mb-4 lg:text-7xl xl:text-7.5xl 2xl:mb-2">
+          <h1 className="heading text-3xl text-primary md:text-6xl xl:text-7xl">
             <AnimatedText>Hey, good to see you!</AnimatedText>
           </h1>
           <FaidInMotionContainer>
-            <h2 className="mb-4 text-left font-apfel text-5xl font-bold text-black md:text-6xl lg:text-7xl xl:text-8xl">
+            <h2 className="heading mb-4">
               <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
             </h2>
-            <p className="subheading mb-8 max-w-[600px]">
+            <p className="subheading mb-4 max-w-[600px] md:mb-8">
               Hope I won't be lazy like with previous site and will publish some
               nice things.
             </p>
           </FaidInMotionContainer>
           <motion.svg
-            className="h-[120px] w-full stroke-primary md:h-[180px] lg:h-[240px] 2xl:h-[300px]"
+            className="h-[100px] w-full stroke-primary md:h-[180px] lg:h-[210px] 2xl:h-[300px]"
             fill="none"
             initial="hidden"
             animate="visible"
@@ -41,7 +131,7 @@ export default function Index() {
           </motion.svg>
         </div>
       </div>
-      <div className="snap-start bg-gradient-to-b from-[rgba(0,0,255,0.2)] to-transparent md:px-12 xl:rounded-lg">
+      <div className="bg-gradient-to-b from-[rgba(0,0,255,0.2)] to-transparent md:px-12 xl:rounded-lg">
         <div className="content-container max-w-[1100px] px-4 text-center md:px-12">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you{" "}
@@ -52,7 +142,7 @@ export default function Index() {
               width="60px"
             />
           </h3>
-          <h3 className="font-apfel text-3xl font-light text-gray-500 lg:text-4xl">
+          <h3 className="text-center font-apfel text-3xl font-light text-gray-500 lg:px-20 lg:text-4xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:text-primary hover:decoration-primary"

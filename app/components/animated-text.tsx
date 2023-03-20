@@ -41,7 +41,7 @@ export function AnimatedText({
   return (
     <motion.div
       layout
-      className="flex flex-wrap"
+      className="flex flex-wrap justify-start"
       variants={container}
       initial="hidden"
       animate="visible"

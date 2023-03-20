@@ -64,11 +64,11 @@ button:active, a:active {
   }
 
   .heading {
-    @apply mb-2 text-left font-apfel text-6xl font-bold text-gray-900 md:text-8xl 2xl:text-9xl 2xl:mb-6;
+    @apply text-center font-apfel text-6xl font-bold text-gray-900 md:text-7xl xl:text-7.5xl 2xl:text-9xl;
   }
 
   .subheading {
-    @apply max-w-[650px] 2xl:max-w-[800px] font-normal text-xl md:text-3xl font-mona text-gray-500;
+    @apply max-w-[650px] 2xl:max-w-[800px] font-normal text-xl md:text-2xl font-mona text-gray-600;
 
     line-height: 1.4;
   }
