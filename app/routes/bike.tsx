@@ -57,7 +57,7 @@ const BikeCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="mb-4 h-[230px] w-full shrink-0 rounded-xl object-cover transition-opacity md:h-[240px] md:group-hover:opacity-50 2xl:h-[260px]"
+        className="mb-4 h-[230px] w-full shrink-0 rounded-xl object-cover transition-opacity md:h-[240px] md:group-hover:grayscale 2xl:h-[260px]"
       />
       <h3 className="mb-1 font-monaWide text-2xl font-extrabold transition-all md:group-hover:text-black">
         {title}

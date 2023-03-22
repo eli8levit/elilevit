@@ -37,7 +37,10 @@ export default function About() {
 
         <p className="mb-4 font-mona text-xl font-normal text-black md:mr-auto md:text-2xl">
           Shalom from Israel 🇮🇱. I'm Eli, currently I'm working in{" "}
-          <Link className="decoration underline decoration-secondary transition-colors hover:decoration-primary">
+          <Link
+            href="https://www.rapyd.net/"
+            className="decoration underline decoration-secondary transition-colors hover:decoration-primary"
+          >
             Rapyd
           </Link>{" "}
           for 4 years as a FullStack Developer. Apart from my work I enjoy
