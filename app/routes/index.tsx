@@ -132,8 +132,8 @@ export default function Index() {
         </div>
       </div>
       <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
-        <div className="content-container max-w-[1100px] py-0 px-4 md:px-12">
-          <h3 className="mb-4 text-left font-apfel text-4xl font-bold text-black lg:text-6xl">
+        <div className="content-container max-w-[900px] py-0 px-4 text-center">
+          <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you
             <img
               src={Heart}
@@ -142,7 +142,7 @@ export default function Index() {
               width="60px"
             />
           </h3>
-          <h3 className="text-right font-mona text-3xl font-light text-gray-500 lg:px-20 lg:text-4xl">
+          <h3 className="font-mona text-3xl font-light text-gray-500 lg:text-4xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted transition-colors hover:text-primary hover:decoration-primary"
