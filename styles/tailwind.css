@@ -70,7 +70,7 @@ a:active {
   }
 
   .subheading {
-    @apply max-w-[650px] font-mona text-xl font-normal text-gray-600 md:text-2xl 2xl:max-w-[800px] 2xl:text-3xl;
+    @apply max-w-[650px] font-mona text-xl font-light text-gray-600 md:text-2xl 2xl:max-w-[800px] 2xl:text-3xl;
 
     line-height: 1.4;
   }
@@ -108,9 +108,9 @@ a:active {
 }
 
 @font-face {
-  font-family: "Ignazio";
-  src: url("/fonts/Ignazio/IgnazioText-Regular.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "Mona";
+  src: url("/fonts/Mona/Mona-Sans-UltraLight.woff2") format("woff2");
+  font-weight: 100;
   font-display: swap;
 }
 
@@ -143,12 +143,6 @@ a:active {
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Mona Narrow";
-  src: url("/fonts/Mona/Mona-Sans-RegularNarrow.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
 
 @font-face {
   font-family: "Mona";
@@ -204,13 +198,6 @@ a:active {
 @font-face {
   font-family: "Mona Wide";
   src: url("/fonts/Mona/Mona-Sans-ExtraBoldWide.woff2") format("woff2");
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Mona Narrow";
-  src: url("/fonts/Mona/Mona-Sans-BoldNarrow.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }

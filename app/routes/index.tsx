@@ -132,8 +132,8 @@ export default function Index() {
         </div>
       </div>
       <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
-        <div className="content-container max-w-[1100px] py-0 px-4 text-center md:px-12">
-          <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
+        <div className="content-container max-w-[1100px] py-0 px-4 md:px-12">
+          <h3 className="mb-4 text-left font-apfel text-4xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you
             <img
               src={Heart}
@@ -142,7 +142,7 @@ export default function Index() {
               width="60px"
             />
           </h3>
-          <h3 className="text-center font-apfel text-3xl font-light text-gray-500 lg:px-20 lg:text-4xl">
+          <h3 className="text-right font-mona text-3xl font-light text-gray-500 lg:px-20 lg:text-4xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted transition-colors hover:text-primary hover:decoration-primary"
@@ -163,7 +163,7 @@ export default function Index() {
           >
             <motion.path
               d="M550.758 177.014s-37.916 36.648-67 33.5c-31.876-3.449-50.722-24.965-60.5-55.5-11.357-35.465-7.01-79.78 28.5-91 33.928-10.719 74.428 7.358 80 42.5 7.567 47.736-75.168 42.5-123.5 42.5-22 0-49-9.5-86.5 6-28.929 11.958-51.373 36.578-44 67 6.952 28.688 34.203 44.604 63.5 41 32.946-4.052 50.119-34.817 51-68 1.259-47.401-80.107-27.294-98.5-70.999-15.709-37.329-32.044-91.07 6.5-103.5 31.265-10.084 78.606 11.32 72 43.5-15.5 75.499-131.16 13.046-163.5 75.5C184.515 186.331 224 233 196.499 275m0 0c-36.394 41.593-113.5 38.33-159 39.5m159-39.5c27.173-41.5-52.499-63.5-93.999-63.5-26.5 0-59.5 5-73 27-13.869 22.599-20.504 76.733 8 76M196.499 275c-36.499 41.714-114.727 38.153-159 39.5m0 0c-29.5 0-9.741 296.014-9.741 296.014M37.5 314.5c-28.504.733 45.5-1.17 0 0Z"
-              strokeWidth="35"
+              strokeWidth="38"
               strokeLinecap="round"
               variants={draw}
             />

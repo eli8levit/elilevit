@@ -45,7 +45,7 @@ const Link = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       to={`/${id}`}
-      className={`transition-text relative flex w-24 items-center rounded-md font-mona font-medium md:w-32 ${
+      className={`transition-text relative flex w-24 items-center rounded-md font-mona font-normal md:w-32 ${
         active ? "text-white" : "text-gray-700 hover:text-pink-600"
       }`}
     >

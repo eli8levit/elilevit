@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[400px] w-[85vw] flex-col flex-col rounded-[25px] bg-[rgba(18,18,18,0.9)] p-6 text-pinkLighter shadow-md backdrop-blur-sm hover:text-white active:backdrop-blur-sm md:h-[440px] md:w-[360px] md:hover:shadow-xl md:hover:backdrop-blur-md lg:p-7 2xl:h-[480px] 2xl:w-[400px]`}
+      className={`group flex h-[400px] w-[85vw] flex-col flex-col rounded-[25px] bg-[rgba(18,18,18,0.9)] p-6 text-pinkLighter shadow-md backdrop-blur-sm hover:text-white active:backdrop-blur-sm md:h-[440px] md:w-[350px] md:hover:shadow-sm md:hover:backdrop-blur-md lg:p-7 2xl:h-[480px] 2xl:w-[400px]`}
       whileHover={
         !isMobile
           ? {
@@ -215,14 +215,14 @@ export default function Bike() {
         </motion.svg>
         <section className="relative flex flex-col">
           <h2
-            className="mb-2 h-max w-max
-             origin-left rounded-lg bg-[rgba(255,255,255,0.6)] p-2 font-mona text-xl font-medium text-black shadow-sm backdrop-blur-sm"
+            className="mb-2 h-max w-max origin-left rounded-lg
+             font-mona text-2xl font-extralight text-black md:mb-0 lg:text-5xl"
             id="rides"
           >
             # ride history
           </h2>
           <ModalContent route="bike" />
-          <ul className="mb-4 flex flex-row gap-4 overflow-x-auto p-2 md:gap-8 md:p-10">
+          <ul className="mb-4 flex flex-row gap-4 overflow-x-auto p-2 md:mb-8 md:-ml-10 md:gap-8 md:p-10 md:pt-6">
             {bikePosts.map((post: Post, index) => {
               return (
                 <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
@@ -244,14 +244,13 @@ export default function Bike() {
         {upgradePosts.length ? (
           <section className="relative flex flex-col">
             <h2
-              className="mb-2 h-max w-max
-             origin-left rounded-lg bg-[rgba(255,255,255,0.6)] p-2 font-mona text-xl font-medium text-black shadow-sm backdrop-blur-sm"
+              className="mb-2 h-max w-max origin-left rounded-lg font-mona text-2xl font-extralight text-black md:mb-0 lg:text-5xl"
               id="upgrades"
             >
               # upgrades
             </h2>
 
-            <ul className="flex flex-row gap-4 overflow-x-auto p-2 md:gap-8 md:p-10">
+            <ul className="flex flex-row gap-4 overflow-x-auto p-2 md:-ml-10 md:gap-8 md:p-10 md:pt-6">
               {upgradePosts.map((post: Post, index) => {
                 return (
                   <Link
