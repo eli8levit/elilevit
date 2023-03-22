@@ -104,7 +104,7 @@ export default function Art() {
           projects
         </h2>
       </FaidInMotionContainer>
-      <div className="py-12 md:py-24">
+      <div className="mb-44 py-12 md:py-24">
         <div className="content-container mx-auto grid grid-rows-[500px_500px_400px] gap-4 pt-0 md:mb-20 md:grid-cols-5">
           <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
             <ArtCard

@@ -27,6 +27,7 @@ export default function BikePost() {
       <motion.img
         src={genImageUrl(post.image)}
         className="-mt-[70px] h-[40%] max-h-[400px] min-h-[200px] w-full rounded-t-2xl object-cover"
+        alt="Probably photo of my bike"
       />
       <div className="mx-auto p-6 md:p-12 md:px-12 md:pt-8">
         <motion.div className="flex flex-col gap-y-6">

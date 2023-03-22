@@ -66,8 +66,8 @@ export default function Index() {
               gradientUnits="userSpaceOnUse"
               gradientTransform="matrix(.00209 1196.26 -1831.22 .0032 1778.42 1683.41)"
             >
-              <stop stop-color="#DB2877" stop-opacity=".4" />
-              <stop offset="1" stop-color="white" />
+              <stop stopColor="#DB2877" stopOpacity=".4" />
+              <stop offset="1" stopColor="white" />
             </radialGradient>
             <radialGradient
               id="c"
@@ -77,8 +77,8 @@ export default function Index() {
               gradientUnits="userSpaceOnUse"
               gradientTransform="matrix(.00209 1196.26 -1831.22 .0032 2929 1677)"
             >
-              <stop stop-color="#00F" stop-opacity=".25" />
-              <stop offset="1" stop-color="white" />
+              <stop stopColor="#00F" stopOpacity=".25" />
+              <stop offset="1" stopColor="white" />
             </radialGradient>
             <filter
               id="a"
@@ -87,9 +87,9 @@ export default function Index() {
               width="5555.21"
               height="4455.21"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 in="SourceGraphic"
                 in2="BackgroundImageFix"
@@ -103,7 +103,7 @@ export default function Index() {
           </defs>
         </motion.svg>
         <div>
-          <h1 className="heading text-3xl text-primary md:text-6xl xl:text-7xl">
+          <h1 className="heading mb-0 text-3xl text-primary md:text-6xl xl:text-7xl">
             <AnimatedText>Hey, good to see you!</AnimatedText>
           </h1>
           <FaidInMotionContainer>
@@ -116,7 +116,7 @@ export default function Index() {
             </p>
           </FaidInMotionContainer>
           <motion.svg
-            className="h-[100px] w-full stroke-primary md:h-[180px] lg:h-[210px] 2xl:h-[300px]"
+            className="h-[120px] w-full stroke-primary md:h-[180px] lg:h-[210px] 2xl:h-[300px]"
             fill="none"
             initial="hidden"
             animate="visible"
@@ -131,10 +131,10 @@ export default function Index() {
           </motion.svg>
         </div>
       </div>
-      <div className="bg-gradient-to-b from-[rgba(0,0,255,0.2)] to-transparent md:px-12 xl:rounded-lg">
-        <div className="content-container max-w-[1100px] px-4 text-center md:px-12">
+      <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
+        <div className="content-container max-w-[1100px] py-0 px-4 text-center md:px-12">
           <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
-            Here you can feel save, no cookie popup will destruct you{" "}
+            Here you can feel save, no cookie popup will destruct you
             <img
               src={Heart}
               alt="Heart blue ed emoji"
@@ -145,7 +145,7 @@ export default function Index() {
           <h3 className="text-center font-apfel text-3xl font-light text-gray-500 lg:px-20 lg:text-4xl">
             Also I care about privacy and use{" "}
             <OutsideLink
-              className="font-bold text-secondary underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:text-primary hover:decoration-primary"
+              className="font-bold text-secondary underline decoration-secondary decoration-dotted transition-colors hover:text-primary hover:decoration-primary"
               href="https://usefathom.com/ref/EVUCYP"
             >
               Fathom
@@ -193,7 +193,7 @@ export default function Index() {
             <li>
               <span className="text-secondary">1.</span>{" "}
               <Link
-                className="underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:decoration-primary"
+                className="underline decoration-secondary decoration-dotted transition-colors hover:decoration-primary"
                 to="/bike"
               >
                 Visit my bike blog
@@ -202,7 +202,7 @@ export default function Index() {
             <li className="ml-4 md:ml-12">
               <span className="text-secondary">2.</span>{" "}
               <Link
-                className="underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:decoration-primary"
+                className="underline decoration-secondary decoration-dotted transition-colors hover:decoration-primary"
                 to="/about"
               >
                 Read more about me
@@ -211,7 +211,7 @@ export default function Index() {
             <li className="ml-8 md:ml-24">
               <span className="text-secondary">3.</span>{" "}
               <Link
-                className="underline decoration-secondary decoration-dotted decoration-4 transition-colors hover:decoration-primary"
+                className="underline decoration-secondary decoration-dotted transition-colors hover:decoration-primary"
                 to="/art"
               >
                 See my projects

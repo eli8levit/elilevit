@@ -3,19 +3,21 @@
 @tailwind utilities;
 
 body {
-  cursor: url('../public/cursor.svg') 15 15,auto;
+  cursor: url("../public/cursor.svg") 15 15, auto;
 }
 
 *::selection {
-  @apply bg-blue-100
+  @apply bg-blue-100;
 }
 
-button, a {
-cursor: url('../public/cursor-pointer.svg') 15 15,pointer;
+button,
+a {
+  cursor: url("../public/cursor-pointer.svg") 15 15, pointer;
 }
 
-button:active, a:active {
-  cursor: url('../public/cursor-pressed.svg') 15 15,pointer;
+button:active,
+a:active {
+  cursor: url("../public/cursor-pressed.svg") 15 15, pointer;
 }
 
 @layer components {
@@ -64,13 +66,30 @@ button:active, a:active {
   }
 
   .heading {
-    @apply text-center font-apfel text-6xl font-bold text-gray-900 md:text-7xl xl:text-7.5xl 2xl:text-9xl;
+    @apply mb-2 text-center font-apfel text-6xl font-bold text-gray-900 md:mb-4 md:text-7xl xl:text-7.5xl 2xl:text-9xl;
   }
 
   .subheading {
-    @apply max-w-[650px] 2xl:max-w-[800px] font-normal text-xl md:text-2xl font-mona text-gray-600;
+    @apply max-w-[650px] font-mona text-xl font-normal text-gray-600 md:text-2xl 2xl:max-w-[800px] 2xl:text-3xl;
 
     line-height: 1.4;
+  }
+
+  .radial {
+    background: radial-gradient(
+      circle at left top,
+      rgba(0, 0, 255, 0.1) 0,
+      rgba(192, 9, 100, 0.1) 60%,
+      transparent 100%
+    );
+  }
+
+  .radial-center {
+    background: radial-gradient(
+      circle at bottom right,
+      rgba(0, 0, 255, 0.1) 0,
+      rgba(192, 9, 100, 0.1)
+    );
   }
 }
 
@@ -179,6 +198,13 @@ button:active, a:active {
   font-family: "Mona Wide";
   src: url("/fonts/Mona/Mona-Sans-SemiBoldWide.woff2") format("woff2");
   font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Wide";
+  src: url("/fonts/Mona/Mona-Sans-ExtraBoldWide.woff2") format("woff2");
+  font-weight: 700;
   font-display: swap;
 }
 

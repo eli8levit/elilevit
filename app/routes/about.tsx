@@ -6,7 +6,7 @@ import { AnimatedText, draw, Link } from "~/components";
 export default function About() {
   return (
     <FaidInMotionContainer>
-      <main className="content-container mb-22 grid items-center md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
+      <main className="content-container mb-44 grid items-center md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
         <h1 className="heading md:col-span-full">
           <AnimatedText>A bit about me</AnimatedText>
         </h1>
@@ -37,10 +37,13 @@ export default function About() {
 
         <p className="mb-4 font-mona text-xl font-normal text-black md:mr-auto md:text-2xl">
           Shalom from Israel 🇮🇱. I'm Eli, currently I'm working in{" "}
-          <Link>Rapyd</Link> as a FullStack Developer. Apart from my work I
-          enjoy cycling, music, photographing and a lot of other creative things
-          that I would like to share here with you. Don't hesitate to reach out
-          me and thanks for visiting!
+          <Link className="decoration underline decoration-secondary transition-colors hover:decoration-primary">
+            Rapyd
+          </Link>{" "}
+          for 4 years as a FullStack Developer. Apart from my work I enjoy
+          cycling, music, photographing and a lot of other creative things that
+          I would like to share here with you. Don't hesitate to reach out me
+          and thanks for visiting!
         </p>
       </main>
     </FaidInMotionContainer>
