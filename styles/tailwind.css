@@ -34,7 +34,7 @@ a:active {
   }
 
   .content h2 {
-    @apply mb-4 font-mona text-2xl font-bold;
+    @apply mb-1 font-mona text-2xl font-bold;
   }
 
   .content hr {
@@ -50,7 +50,7 @@ a:active {
   }
 
   .content img {
-    @apply my-6 rounded-xl object-contain;
+    @apply my-6 rounded-lg object-contain shadow-xl;
   }
 
   .content em {

@@ -39,28 +39,12 @@ export default function BikePost() {
               {post.createdAt}
             </motion.span>
           </motion.div>
-          <motion.h1 className="text-bold mb-3 whitespace-normal font-apfel text-5xl font-bold md:w-max md:text-6xl">
+          <motion.h1 className="mb-8 whitespace-normal font-monaWide text-4xl md:mb-12 md:w-max md:text-6xl">
             {post.title}
-            <motion.svg
-              fill="none"
-              initial="hidden"
-              width="100%"
-              viewBox="0 0 866 100"
-              animate="visible"
-              className="mb-8 rotate-180 stroke-secondary"
-            >
-              <motion.path
-                d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
-                strokeWidth="15"
-                strokeLinecap="round"
-                variants={draw}
-                strokeLinejoin="round"
-              />
-            </motion.svg>
           </motion.h1>
         </motion.div>
         <motion.div
-          className="content mx-auto max-w-[600px] font-mona"
+          className="content mx-auto  font-mona"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
