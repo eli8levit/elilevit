@@ -56,12 +56,12 @@ const Link = ({
           initial="hidden"
           viewBox="0 0 866 131"
           animate="visible"
-          className="absolute left-2 -bottom-[60%] -z-10"
+          className="absolute left-2 -bottom-[80%] -z-10"
         >
           <motion.path
             d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
             stroke={colors.pink["600"]}
-            strokeWidth="50"
+            strokeWidth="40"
             strokeLinecap="round"
             variants={draw}
             strokeLinejoin="round"

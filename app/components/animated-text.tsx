@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 export function AnimatedText({
   children,
   className = "",
+  animate = true,
 }: {
   children: string;
   className?: string;
+  animate?: boolean;
 }) {
   const words = children.split(" ");
 
@@ -42,9 +44,11 @@ export function AnimatedText({
     <motion.div
       layout
       className="flex flex-wrap justify-start"
-      variants={container}
-      initial="hidden"
-      animate="visible"
+      {...(animate && {
+        variants: container,
+        initial: "hidden",
+        animate: "visible",
+      })}
     >
       {words.map((word) => (
         <motion.span

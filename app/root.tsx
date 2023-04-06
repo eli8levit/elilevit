@@ -86,7 +86,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col overflow-x-hidden ">
         <Fathom />
         <motion.div
           initial={{ translateY: "-50%", opacity: 0 }}

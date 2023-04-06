@@ -4,14 +4,16 @@ import { FaidInMotionContainer } from "~/components/layout";
 import Heart from "~/sources/images/heart.png";
 import { motion } from "framer-motion";
 import config from "../../tailwind.config";
-import { Link } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 
 export { loader } from "../use-mobile-loader";
 
 export default function Index() {
+  const { isMobile } = useLoaderData();
+
   return (
     <>
-      <div className="content-container flex min-h-[calc(100vh-65px)] flex-col pb-[140px] md:h-auto md:min-h-[calc(100vh-86px)] md:justify-center 2xl:min-h-[calc(100vh-96px)]">
+      <div className="content-container flex min-h-[calc(100vh-65px)] flex-col justify-center pb-[140px] md:h-auto md:min-h-[calc(100vh-86px)]  2xl:min-h-[calc(100vh-96px)]">
         <motion.svg
           viewBox="0 0 4707 3462"
           className="absolute top-0 left-0 -z-10 h-full w-full"
@@ -102,38 +104,40 @@ export default function Index() {
             </filter>
           </defs>
         </motion.svg>
-        <div>
-          <h1 className="heading mb-0 text-3xl text-primary md:text-6xl xl:text-7xl">
-            <AnimatedText>Hey, good to see you!</AnimatedText>
+        <FaidInMotionContainer>
+          <h1 className="heading mb-0 text-3xl font-bold text-primary md:text-4xl xl:text-5xl">
+            <AnimatedText animate={!isMobile}>
+              Hey, good to see you!
+            </AnimatedText>
           </h1>
-          <FaidInMotionContainer>
-            <h2 className="heading mb-4">
-              <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
-            </h2>
-            <p className="subheading mb-4 max-w-[600px] md:mb-8">
-              Hope I won't be lazy like with previous site and will publish some
-              nice things.
-            </p>
-          </FaidInMotionContainer>
-          <motion.svg
-            className="h-[120px] w-full stroke-primary md:h-[180px] lg:h-[210px] 2xl:h-[300px]"
-            fill="none"
-            initial="hidden"
-            animate="visible"
-            viewBox="0 0 884 325"
-          >
-            <motion.path
-              d="M34.5 260s22.5 18 71.5 4.5c40.92-11.274 51.5-30.826 74.5-33.5 19.877-2.311-8.645 27.628 17.017 52.538.311.302.673.586 1.042.815 26.366 16.366 56.437-3.546 82.941-30.853 15.77-16.248 31.034-58.996 44.625-60.991 1.221-.18 2.486-.342 3.7-.566C348.26 188.54 294.833 281 340 281c74 0 88-95 115-95 26.575 0-29.679 85.735-7.619 98.447.7.404 1.545.577 2.353.61C555.042 289.395 624.368 148.074 590.5 167c-34 19-44 86.5 20.5 98 58 6 144-156 113-143s-50 147.022 6 152.5c27.5 2.69 48.038-11.5 90.5-99.5S847 35 847 35"
-              strokeWidth="68"
-              strokeLinecap="round"
-              variants={draw}
-            />
-          </motion.svg>
-        </div>
+          <h2 className="heading mb-4 font-bold">
+            <AnimatedText animate={!isMobile}>
+              I'm Eli, Developer & Creator
+            </AnimatedText>
+          </h2>
+          <p className="subheading mb-10 max-w-[600px]">
+            Hope I won't be lazy like with previous site and will publish some
+            nice things.
+          </p>
+        </FaidInMotionContainer>
+        <motion.svg
+          className="h-[90px] w-full stroke-primary md:h-[180px] md:w-auto lg:h-[210px] 2xl:h-[300px]"
+          fill="none"
+          initial="hidden"
+          animate="visible"
+          viewBox="0 0 884 325"
+        >
+          <motion.path
+            d="M34.5 260s22.5 18 71.5 4.5c40.92-11.274 51.5-30.826 74.5-33.5 19.877-2.311-8.645 27.628 17.017 52.538.311.302.673.586 1.042.815 26.366 16.366 56.437-3.546 82.941-30.853 15.77-16.248 31.034-58.996 44.625-60.991 1.221-.18 2.486-.342 3.7-.566C348.26 188.54 294.833 281 340 281c74 0 88-95 115-95 26.575 0-29.679 85.735-7.619 98.447.7.404 1.545.577 2.353.61C555.042 289.395 624.368 148.074 590.5 167c-34 19-44 86.5 20.5 98 58 6 144-156 113-143s-50 147.022 6 152.5c27.5 2.69 48.038-11.5 90.5-99.5S847 35 847 35"
+            strokeWidth="68"
+            strokeLinecap="round"
+            variants={draw}
+          />
+        </motion.svg>
       </div>
       <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
-        <div className="content-container max-w-[900px] py-0 px-4 text-center">
-          <h3 className="mb-4 font-apfel text-4xl font-bold text-black lg:text-6xl">
+        <div className="content-container max-w-[900px] py-0 px-4">
+          <h3 className="mb-4 font-apfel text-3xl font-bold text-black lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you
             <img
               src={Heart}
@@ -142,7 +146,7 @@ export default function Index() {
               width="60px"
             />
           </h3>
-          <h3 className="font-mona text-3xl font-light text-gray-500 lg:text-4xl">
+          <h3 className="font-mona text-2xl font-light text-gray-500 lg:text-4xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted transition-colors hover:text-primary hover:decoration-primary"
@@ -154,9 +158,8 @@ export default function Index() {
           </h3>
           <motion.svg
             viewBox="0 0 569 629"
-            height="400px"
             fill="none"
-            className="mx-auto mt-20 mb-12 block max-w-[90%] stroke-primary md:mt-32 md:mb-28"
+            className="mx-auto mt-20 mb-12 block h-[300px] max-w-[90%] stroke-primary md:mt-32 md:mb-28 md:h-[400px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
@@ -168,7 +171,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="pb-2 font-apfel text-4xl font-bold text-[rgb(34,34,34)] md:text-6xl">
+          <h4 className="pb-2 font-apfel text-3xl font-bold text-[rgb(34,34,34)] md:text-6xl">
             So far I don't have much content, but still you can checkout some
             things:
           </h4>

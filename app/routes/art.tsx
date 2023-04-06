@@ -35,7 +35,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       }
       transition={{ type: "ease-in", duration: 0.2 }}
       href={href}
-      className="flex w-full flex-col rounded-xl bg-[rgba(0,0,255,0.1)] p-10 shadow-sm 2xl:p-12"
+      className="flex w-full flex-col rounded-xl bg-[rgba(0,0,255,0.1)] p-8 shadow-sm 2xl:p-12"
       style={{ willChange }}
       target="_blank"
       rel="noopener noreferrer"

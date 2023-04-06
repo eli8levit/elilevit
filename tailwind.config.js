@@ -14,6 +14,9 @@ module.exports = {
         haIsh: "url(/ha-ish-studio.jpg)",
         player: "url(/player.png)",
       },
+      boxShadow: {
+        bikeCard: "rgba(0, 0, 0, 0.3) 6px 0px 12px -3px",
+      },
       fontSize: {
         "7.5xl": "5rem",
       },

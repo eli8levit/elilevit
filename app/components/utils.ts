@@ -13,6 +13,11 @@ export const draw = {
   },
 };
 
+export const drawMobile = {
+  ...draw,
+  hidden: { opacity: 0 },
+};
+
 export const draw2 = {
   hidden: draw.hidden,
   visible: {

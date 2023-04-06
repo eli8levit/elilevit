@@ -36,7 +36,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[400px] w-[85vw] flex-col flex-col rounded-[25px] bg-[rgba(18,18,18,0.9)] p-6 text-pinkLighter shadow-md backdrop-blur-sm hover:text-white active:backdrop-blur-sm md:h-[440px] md:w-[350px] md:hover:shadow-sm md:hover:backdrop-blur-md lg:p-7 2xl:h-[480px] 2xl:w-[400px]`}
+      className={`group flex h-[380px] w-[78vw] flex-col overflow-hidden rounded-xl bg-[rgba(18,18,18,0.9)] text-pinkLighter shadow-bikeCard backdrop-blur-sm hover:text-white active:backdrop-blur-sm md:h-[440px] md:w-[340px] md:hover:backdrop-blur-md 2xl:h-[480px] 2xl:w-[400px]`}
       whileHover={
         !isMobile
           ? {
@@ -57,19 +57,21 @@ const BikeCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="mb-4 h-[230px] w-full shrink-0 rounded-xl object-cover transition-opacity md:h-[240px] md:group-hover:grayscale 2xl:h-[260px]"
+        className="h-[230px] w-full shrink-0 object-cover transition-opacity md:h-[260px] md:group-hover:grayscale 2xl:h-[260px]"
       />
-      <h3 className="mb-1 font-monaWide text-2xl font-extrabold transition-all md:group-hover:text-black">
-        {title}
-      </h3>
-      <p className="font-mona text-sm font-normal text-gray-300 transition-all md:text-base md:group-hover:text-black xl:text-lg">
-        {description}
-      </p>
-      <div className="mt-auto flex flex-row items-center justify-between text-gray-400 transition-all md:group-hover:text-black">
-        <span className="w-max font-mona text-xs md:text-base">{date}</span>
-        <span className="ml-auto w-max font-mona text-xs md:text-base">
-          # {index}
-        </span>
+      <div className="flex h-full flex-col p-6">
+        <h3 className="mb-1 font-monaWide text-2xl font-extrabold transition-all md:group-hover:text-black">
+          {title}
+        </h3>
+        <p className="font-mona text-base font-normal text-gray-300 transition-all md:text-base md:group-hover:text-black xl:text-lg">
+          {description}
+        </p>
+        <div className="mt-auto flex flex-row items-center justify-between text-gray-400 transition-all md:group-hover:text-black">
+          <span className="w-max font-mona text-sm md:text-base">{date}</span>
+          <span className="ml-auto w-max font-mona text-sm md:text-base">
+            # {index}
+          </span>
+        </div>
       </div>
     </motion.li>
   );
@@ -98,7 +100,7 @@ export default function Bike() {
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container mb-12 md:mb-20 2xl:mb-28">
+      <div className="content-container mb-12 min-h-[30vh] md:mb-20 md:min-h-[40vh] 2xl:mb-28">
         <h1 className="heading shrink-0">
           <AnimatedText>Bike Blog</AnimatedText>
         </h1>
@@ -216,16 +218,21 @@ export default function Bike() {
         <section className="relative flex flex-col">
           <h2
             className="mb-2 h-max w-max origin-left rounded-lg
-             font-mona text-2xl font-extralight text-black md:mb-0 lg:text-5xl"
+             font-mona text-3xl font-extralight text-black md:mb-0 lg:text-5xl"
             id="rides"
           >
             # ride history
           </h2>
           <ModalContent route="bike" />
-          <ul className="mb-4 flex flex-row gap-4 overflow-x-auto p-2 md:mb-8 md:-ml-10 md:gap-8 md:p-10 md:pt-6">
+          <ul className="hide-scrollbar mb-4 flex snap-x snap-mandatory flex-row gap-4 overflow-x-auto p-2 md:mb-8 md:-ml-10 md:gap-8 md:p-10 md:pt-6">
             {bikePosts.map((post: Post, index) => {
               return (
-                <Link key={post.id} to={`/bike/${post.id}`} preventScrollReset>
+                <Link
+                  className="snap-start"
+                  key={post.id}
+                  to={`/bike/${post.id}`}
+                  preventScrollReset
+                >
                   <BikeCard
                     isMobile={isMobile}
                     image={genImageUrl(post.image, "600x600")}
@@ -244,19 +251,20 @@ export default function Bike() {
         {upgradePosts.length ? (
           <section className="relative flex flex-col">
             <h2
-              className="mb-2 h-max w-max origin-left rounded-lg font-mona text-2xl font-extralight text-black md:mb-0 lg:text-5xl"
+              className="mb-2 h-max w-max origin-left rounded-lg font-mona text-3xl font-extralight text-black md:mb-0 lg:text-5xl"
               id="upgrades"
             >
               # upgrades
             </h2>
 
-            <ul className="flex flex-row gap-4 overflow-x-auto p-2 md:-ml-10 md:gap-8 md:p-10 md:pt-6">
+            <ul className="hide-scrollbar flex snap-x snap-mandatory flex-row gap-4 overflow-x-auto p-2 md:-ml-10 md:gap-8 md:p-10 md:pt-6">
               {upgradePosts.map((post: Post, index) => {
                 return (
                   <Link
                     key={post.id}
                     to={`/bike/${post.id}`}
                     preventScrollReset
+                    className="snap-start"
                   >
                     <BikeCard
                       isMobile={isMobile}
