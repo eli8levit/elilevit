@@ -136,8 +136,8 @@ export default function Index() {
         </motion.svg>
       </div>
       <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
-        <div className="content-container max-w-[900px] py-0 px-4">
-          <h3 className="mb-4 font-apfel text-3xl font-bold text-black lg:text-6xl">
+        <div className="content-container max-w-[900px] py-0 md:px-4">
+          <h3 className="mb-4 font-apfel text-3xl font-bold text-black md:text-4xl lg:text-6xl">
             Here you can feel save, no cookie popup will destruct you
             <img
               src={Heart}
@@ -146,7 +146,7 @@ export default function Index() {
               width="60px"
             />
           </h3>
-          <h3 className="font-mona text-2xl font-light text-gray-500 lg:text-4xl">
+          <h3 className="font-mona text-2xl font-light text-gray-500 md:text-3xl lg:text-4xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted transition-colors hover:text-primary hover:decoration-primary"
@@ -171,7 +171,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="pb-2 font-apfel text-3xl font-bold text-[rgb(34,34,34)] md:text-6xl">
+          <h4 className="pb-2 font-apfel text-3xl font-bold text-[rgb(34,34,34)] md:text-4xl md:text-6xl">
             So far I don't have much content, but still you can checkout some
             things:
           </h4>
