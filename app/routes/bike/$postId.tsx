@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import type { LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { marked } from "marked";
-import { draw } from "~/components";
 import React from "react";
 import type { Post } from "~/types";
 import { getPost } from "~/models/posts";
@@ -30,21 +29,19 @@ export default function BikePost() {
         alt="Probably photo of my bike"
       />
       <div className="mx-auto p-6 md:p-12 md:px-12 md:pt-8">
-        <motion.div className="flex flex-col gap-y-6">
-          <motion.div className="flex flex-col">
-            <motion.span className="font-monaWide text-lg font-semibold text-[#DB2877]">
+        <motion.div className="flex flex-col">
+          <motion.span className="font-mona text-xl font-light text-black md:text-2xl">
+            {post.createdAt}
+          </motion.span>
+          <motion.h1 className="mb-8 whitespace-normal pb-0 font-apfel text-5xl font-bold md:mb-12">
+            {post.title}
+            <motion.span className="ml-2 inline-block font-mona text-lg font-light text-primary">
               #{post.tag}
             </motion.span>
-            <motion.span className="font-mona text-lg font-normal text-[#DB2877] md:text-xl">
-              {post.createdAt}
-            </motion.span>
-          </motion.div>
-          <motion.h1 className="mb-8 whitespace-normal font-monaWide text-4xl md:mb-12 md:w-max md:text-6xl">
-            {post.title}
           </motion.h1>
         </motion.div>
         <motion.div
-          className="content mx-auto  font-mona"
+          className="content mx-auto font-mona"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

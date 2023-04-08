@@ -26,15 +26,15 @@ a:active {
   }
 
   .content p {
-    @apply mx-auto mb-2 text-justify text-lg md:text-xl 2xl:text-2xl;
+    @apply mx-auto md:leading-relaxed mb-2 text-lg md:text-xl 2xl:text-2xl;
   }
 
   .content h1 {
-    @apply mb-4 font-mona text-3xl font-bold;
+    @apply hidden;
   }
 
   .content h2 {
-    @apply mb-1 font-mona text-2xl font-bold;
+    @apply mb-1 font-mona md:text-2xl text-xl font-medium;
   }
 
   .content hr {

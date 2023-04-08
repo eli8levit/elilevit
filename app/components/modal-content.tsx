@@ -6,25 +6,16 @@ const CloseLink = ({ className, to }: { className?: string; to: string }) => {
   return (
     <Link to={to} className={className} preventScrollReset>
       <motion.svg
-        viewBox="0 0 1015 887"
-        width="45px"
-        fill="none"
-        className="transition-fill group rounded-full"
+        viewBox="0 0 19.922 19.932"
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.8 }}
         transition={{ type: "spring", stiffness: 500, damping: 20 }}
+        className="transition-fill group"
+        width="30px"
       >
-        <motion.path
-          d="M980.5 443.5c0 221.663-207.254 409-473 409s-473-187.337-473-409 207.254-409 473-409 473 187.337 473 409Z"
-          strokeWidth="60"
-          fill="rgba(255,243,244,0.7)"
-        />
-        <motion.path
-          d="M374 273c152.568 91.011 221.491 156.355 313 300m0-319.5s-122.804 75.281-188 139.308C416.961 473.376 328 632.5 328 632.5"
-          strokeWidth="70"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="transition-stroke absolute z-30 stroke-[rgba(18,18,18,0.8)]"
+        <path
+          d="M9.96 19.922c5.45 0 9.962-4.522 9.962-9.961C19.922 4.51 15.4 0 9.952 0 4.511 0 0 4.512 0 9.96c0 5.44 4.521 9.962 9.96 9.962Zm-3.28-5.86a.8.8 0 0 1-.801-.81c0-.215.078-.42.234-.567l2.705-2.714-2.705-2.705a.782.782 0 0 1-.234-.567c0-.459.351-.8.8-.8.225 0 .401.078.557.224l2.725 2.715 2.744-2.725a.739.739 0 0 1 .557-.234.8.8 0 0 1 .81.8c0 .225-.068.401-.244.577L11.113 9.97l2.705 2.705a.746.746 0 0 1 .245.576.81.81 0 0 1-.82.81.773.773 0 0 1-.577-.234l-2.705-2.715-2.695 2.715a.81.81 0 0 1-.586.235Z"
+          fill="#black"
         />
       </motion.svg>
     </Link>
@@ -57,7 +48,7 @@ export function ModalContent({ route }: Props) {
             >
               <CloseLink
                 to={`/${route}`}
-                className="sticky top-0 ml-auto flex h-[60px] w-[70px] items-center justify-center rounded-tr-2xl"
+                className="sticky top-2 right-2 ml-auto flex w-max md:top-4 md:right-4"
               />
               <Outlet />
             </motion.div>
