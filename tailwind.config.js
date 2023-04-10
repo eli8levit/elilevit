@@ -15,7 +15,8 @@ module.exports = {
         player: "url(/player.png)",
       },
       boxShadow: {
-        bikeCard: "rgba(0, 0, 0, 0.3) 0 6px 12px -3px",
+        bikeCard:
+          "rgba(0, 0, 0, 0.3) 0 6px 12px -3px, 0 5px 45px 0 rgba(0, 0, 0, 0.4)",
       },
       fontSize: {
         "7.5xl": "5rem",

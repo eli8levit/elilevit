@@ -77,18 +77,18 @@ a:active {
 
   .radial {
     background: radial-gradient(
-      circle at left top,
-      rgba(0, 0, 255, 0.1) 0,
-      rgba(192, 9, 100, 0.1) 60%,
-      transparent 100%
+            circle at left top,
+            rgba(0, 0, 255, 0.1) 0,
+            rgba(192, 9, 100, 0.1) 60%,
+            transparent 100%
     );
   }
 
   .radial-center {
     background: radial-gradient(
-      circle at bottom right,
-      rgba(0, 0, 255, 0.1) 0,
-      rgba(192, 9, 100, 0.1)
+            circle at bottom right,
+            rgba(0, 0, 255, 0.1) 0,
+            rgba(192, 9, 100, 0.1)
     );
   }
 
