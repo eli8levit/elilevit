@@ -8,7 +8,6 @@ import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
 import { genImageUrl, getMobileDetect } from "~/utilities";
-import config from "tailwind.config";
 
 type Card = {
   image: string;
@@ -36,8 +35,6 @@ const BikeCard = ({
   isMobile,
   date,
 }: Card) => {
-  const { blackTransparentLighter } = config.theme.extend.colors;
-
   return (
     <motion.li
       layoutId={id.toString()}
