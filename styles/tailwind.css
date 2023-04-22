@@ -66,7 +66,7 @@ a:active {
   }
 
   .heading {
-    @apply mb-2 text-center font-apfel text-5xl font-normal text-gray-900 md:mb-4 2xl:text-8xl;
+    @apply mb-2 text-center font-apfel text-4xl font-normal text-gray-900 md:mb-4 xl:text-6xl;
   }
 
   .subheading {

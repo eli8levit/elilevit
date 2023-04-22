@@ -104,7 +104,7 @@ export const Nav = ({
   };
 
   return (
-    <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-base 2xl:h-[80px]">
+    <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-sm 2xl:h-[80px]">
       <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
         <Link isMobile={isMobile} id="" active={isActive("")}>
           Home

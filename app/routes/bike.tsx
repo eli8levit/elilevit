@@ -38,7 +38,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-blackTransparentLighter text-black shadow-bikeCard backdrop-blur-sm active:backdrop-blur-sm md:h-[440px] md:w-[340px] md:hover:backdrop-blur-md 2xl:h-[480px] 2xl:w-[400px]`}
+      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-blackTransparentLighter text-black shadow-bikeCard backdrop-blur-sm active:backdrop-blur-sm md:h-[440px] md:w-[340px] 2xl:h-[480px] 2xl:w-[400px]`}
       whileHover={
         !isMobile
           ? {
@@ -115,7 +115,7 @@ export default function Bike() {
           </span>
         </h2>
       </div>
-      <div className="content-container radial-center relative max-w-full px-0 py-0 pb-12 md:py-20 md:pb-36 2xl:pb-52">
+      <div className="content-container radial-center relative max-w-full !p-0">
         <motion.svg
           viewBox="0 0 4707 3462"
           className="absolute top-0 left-0 -z-10 h-full w-full"
@@ -123,54 +123,42 @@ export default function Bike() {
         >
           <motion.g
             filter="url(#a)"
-            {...(!isMobile
-              ? {
-                  animate: { rotate: 360 },
-                  transition: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 20,
-                    delay: 2,
-                    type: "linear",
-                  },
-                }
-              : {})}
+            animate={{ rotate: 360 }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20,
+              delay: 2,
+              type: "linear",
+            }}
           >
             <motion.circle
               cx="1778.41"
               cy="1683.41"
               r="750"
               fill="url(#b)"
-              {...(!isMobile
-                ? {
-                    animate: { translateX: "200px", translateY: "-100px" },
-                    transition: {
-                      repeat: Infinity,
-                      repeatType: "mirror",
-                      duration: 8,
-                      delay: 2,
-                      type: "linear",
-                    },
-                  }
-                : {})}
+              animate={{ translateX: "200px", translateY: "-100px" }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 8,
+                delay: 2,
+                type: "linear",
+              }}
             />
             <motion.circle
               cx="2929"
               cy="1677"
               r="750"
               fill="url(#c)"
-              {...(!isMobile
-                ? {
-                    animate: { translateX: "-300px", translateY: "100px" },
-                    transition: {
-                      repeat: Infinity,
-                      repeatType: "mirror",
-                      duration: 10,
-                      delay: 2,
-                      type: "linear",
-                    },
-                  }
-                : {})}
+              animate={{ translateX: "-300px", translateY: "100px" }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 10,
+                delay: 2,
+                type: "linear",
+              }}
             />
           </motion.g>
           <defs>
@@ -218,114 +206,47 @@ export default function Bike() {
             </filter>
           </defs>
         </motion.svg>
+        <div className="px-0 pb-12 md:py-20 md:pb-36 2xl:pb-52">
+          {POST_TYPES.map((type) => {
+            return (
+              <section className="hide-scrollbar flex flex-col overflow-auto p-12 px-6 md:p-16 md:px-12 lg:px-28 2xl:px-44">
+                <h2
+                  className="sticky left-0 mb-2 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl"
+                  id="rides"
+                >
+                  # {type.title}
+                </h2>
+                <ul className="flex snap-x snap-mandatory flex-row gap-4 md:gap-8">
+                  {(type.id === "rides" ? bikePosts : upgradePosts).map(
+                    (post: Post, index) => {
+                      return (
+                        <Link
+                          className="snap-start"
+                          key={post.id}
+                          to={`/bike/${post.id}`}
+                          preventScrollReset
+                        >
+                          <BikeCard
+                            isMobile={isMobile}
+                            image={genImageUrl(post.image, "600x600")}
+                            description={post.subtitle || ""}
+                            title={post.title}
+                            id={post.id}
+                            tag={post.tag}
+                            date={post.createdAt}
+                            index={index + 1}
+                          />
+                        </Link>
+                      );
+                    }
+                  )}
+                  <div className="h-12 min-w-[50px]" />
+                </ul>
+              </section>
+            );
+          })}
+        </div>
         <ModalContent route="bike" />
-        {POST_TYPES.map((type) => {
-          return (
-            <section className="hide-scrollbar flex flex-col overflow-auto p-12 px-6 md:p-16 md:px-12 lg:px-28 2xl:px-44">
-              <h2
-                className="sticky left-0 mb-2 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl"
-                id="rides"
-              >
-                # {type.title}
-              </h2>
-              <ul className="flex snap-x snap-mandatory flex-row gap-4 md:gap-8">
-                {(type.id === "rides" ? bikePosts : upgradePosts).map(
-                  (post: Post, index) => {
-                    return (
-                      <Link
-                        className="snap-start"
-                        key={post.id}
-                        to={`/bike/${post.id}`}
-                        preventScrollReset
-                      >
-                        <BikeCard
-                          isMobile={isMobile}
-                          image={genImageUrl(post.image, "600x600")}
-                          description={post.subtitle || ""}
-                          title={post.title}
-                          id={post.id}
-                          tag={post.tag}
-                          date={post.createdAt}
-                          index={index + 1}
-                        />
-                      </Link>
-                    );
-                  }
-                )}
-                <div className="h-12 min-w-[50px]" />
-              </ul>
-            </section>
-          );
-        })}
-        {/*<section className="hide-scrollbar flex flex-col overflow-auto p-20 px-6 md:px-12 lg:px-28 2xl:p-28 2xl:px-44">*/}
-        {/*  <ModalContent route="bike" />*/}
-        {/*  <h2*/}
-        {/*    className="sticky left-0 mb-2 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl"*/}
-        {/*    id="rides"*/}
-        {/*  >*/}
-        {/*    # ride history*/}
-        {/*  </h2>*/}
-        {/*  <ul className="flex snap-x snap-mandatory flex-row gap-4 md:gap-8">*/}
-        {/*    {bikePosts.map((post: Post, index) => {*/}
-        {/*      return (*/}
-        {/*        <Link*/}
-        {/*          className="snap-start"*/}
-        {/*          key={post.id}*/}
-        {/*          to={`/bike/${post.id}`}*/}
-        {/*          preventScrollReset*/}
-        {/*        >*/}
-        {/*          <BikeCard*/}
-        {/*            isMobile={isMobile}*/}
-        {/*            image={genImageUrl(post.image, "600x600")}*/}
-        {/*            description={post.subtitle || ""}*/}
-        {/*            title={post.title}*/}
-        {/*            id={post.id}*/}
-        {/*            tag={post.tag}*/}
-        {/*            date={post.createdAt}*/}
-        {/*            index={index + 1}*/}
-        {/*          />*/}
-        {/*        </Link>*/}
-        {/*      );*/}
-        {/*    })}*/}
-        {/*    <div className="h-12 min-w-[50px]" />*/}
-        {/*  </ul>*/}
-        {/*</section>*/}
-        {/*{upgradePosts.length ? (*/}
-        {/*  <section className="relative flex flex-col">*/}
-        {/*    <h2*/}
-        {/*      className="sticky left-0 mb-2 h-max w-max origin-left rounded-lg font-mona text-3xl font-extralight text-black md:mb-0 lg:text-5xl"*/}
-        {/*      id="upgrades"*/}
-        {/*    >*/}
-        {/*      # upgrades*/}
-        {/*    </h2>*/}
-        {/*    <ul className="hide-scrollbar flex snap-x snap-mandatory flex-row gap-4 overflow-x-auto p-2 md:gap-8 md:p-10 md:pt-6">*/}
-        {/*      {upgradePosts.map((post: Post, index) => {*/}
-        {/*        return (*/}
-        {/*          <Link*/}
-        {/*            key={post.id}*/}
-        {/*            to={`/bike/${post.id}`}*/}
-        {/*            preventScrollReset*/}
-        {/*            className="snap-start"*/}
-        {/*          >*/}
-        {/*            <BikeCard*/}
-        {/*              isMobile={isMobile}*/}
-        {/*              image={*/}
-        {/*                post?.image?.includes("ucarecdn.com")*/}
-        {/*                  ? genImageUrl(post.image, "600x600")*/}
-        {/*                  : post.image || ""*/}
-        {/*              }*/}
-        {/*              description={post.subtitle || ""}*/}
-        {/*              title={post.title}*/}
-        {/*              id={post.id}*/}
-        {/*              date={post.createdAt}*/}
-        {/*              index={index + 1}*/}
-        {/*            />*/}
-        {/*          </Link>*/}
-        {/*        );*/}
-        {/*      })}*/}
-        {/*    </ul>*/}
-        {/*  </section>*/}
-        {/*) : null}*/}
       </div>
     </FaidInMotionContainer>
   );
