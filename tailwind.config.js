@@ -17,6 +17,8 @@ module.exports = {
       boxShadow: {
         bikeCard:
           "inset 0 -3px 5px -3px rgba(255,255,255,0.45), rgba(0, 0, 0, 0.5) 0 6px 12px -5px, 0 5px 50px -7px rgba(0, 0, 0, 0.3)",
+        bikeCardSm:
+          "inset 0 -3px 5px -3px rgba(255,255,255,0.45), rgba(0, 0, 0, 0.5) 0 6px 12px -5px, 0 5px 30px -7px rgba(0, 0, 0, 0.2)",
       },
       fontSize: {
         "7.5xl": "5rem",
@@ -33,7 +35,7 @@ module.exports = {
         grayText: "#e3e3e3",
         pinkTransparentLighter: "rgba(192,9,100,0.4)",
         blackTransparent: "rgba(0, 0, 0, 0.75)",
-        blackTransparentLighter: "rgba(255,255,255,0.45)",
+        blackTransparentLighter: "rgba(255,255,255,0.4)",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

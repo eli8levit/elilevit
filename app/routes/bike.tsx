@@ -38,7 +38,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-blackTransparentLighter text-black shadow-bikeCard backdrop-blur-sm active:backdrop-blur-sm md:h-[440px] md:w-[340px] 2xl:h-[480px] 2xl:w-[400px]`}
+      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-blackTransparentLighter text-black shadow-bikeCardSm backdrop-blur-sm active:backdrop-blur-sm md:h-[440px] md:w-[340px] md:shadow-bikeCard 2xl:h-[480px] 2xl:w-[400px]`}
       whileHover={
         !isMobile
           ? {
@@ -209,11 +209,8 @@ export default function Bike() {
         <div className="px-0 pb-12 md:py-20 md:pb-36 2xl:pb-52">
           {POST_TYPES.map((type) => {
             return (
-              <section className="hide-scrollbar flex flex-col overflow-auto p-12 px-6 md:p-16 md:px-12 lg:px-28 2xl:px-44">
-                <h2
-                  className="sticky left-0 mb-2 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl"
-                  id="rides"
-                >
+              <section className="hide-scrollbar flex flex-col overflow-auto p-8 px-6 md:p-16 md:px-12 lg:px-28 2xl:px-44">
+                <h2 className="sticky left-0 mb-4 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl">
                   # {type.title}
                 </h2>
                 <ul className="flex snap-x snap-mandatory flex-row gap-4 md:gap-8">

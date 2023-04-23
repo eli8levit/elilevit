@@ -105,7 +105,7 @@ export default function Index() {
           </defs>
         </motion.svg>
         <FaidInMotionContainer>
-          <h1 className="heading mb-1 text-3xl font-bold text-primary md:text-4xl">
+          <h1 className="heading mb-1 text-2xl font-bold text-primary md:text-3xl lg:text-4xl">
             <AnimatedText className="!mr-2" animate={!isMobile}>
               Hey, good to see you!
             </AnimatedText>
