@@ -52,7 +52,7 @@ export function AnimatedText({
     >
       {words.map((word) => (
         <motion.span
-          className={`mr-2 2xl:mr-5 ${className}`}
+          className={`mr-2 w-max  2xl:mr-5 ${className}`}
           variants={child}
           key={word}
         >

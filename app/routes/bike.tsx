@@ -46,7 +46,7 @@ const BikeCard = ({
             }
           : {}
       }
-      whileTap={{ scale: 0.95 }}
+      whileTap={{ scale: 0.98 }}
       transition={{
         scale: { type: "spring", stiffness: 200, damping: 10 },
         backgroundColor: { type: "easeInOut" },

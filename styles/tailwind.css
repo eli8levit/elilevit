@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  cursor: url("../public/cursor.svg") 15 15, auto;
+  cursor: url("../public/cursor.svg") 0 0, auto;
 }
 
 *::selection {
@@ -12,12 +12,12 @@ body {
 
 button,
 a {
-  cursor: url("../public/cursor-pointer.svg") 15 15, pointer;
+  cursor: url("../public/cursor-pointer.svg") 0 0, pointer;
 }
 
 button:active,
 a:active {
-  cursor: url("../public/cursor-pressed.svg") 15 15, pointer;
+  cursor: url("../public/cursor-pressed.svg") 0 0, pointer;
 }
 
 @layer components {
@@ -70,7 +70,7 @@ a:active {
   }
 
   .subheading {
-    @apply max-w-[650px] font-mona text-xl font-light text-gray-600 md:text-2xl 2xl:max-w-[800px] 2xl:text-3xl;
+    @apply max-w-[650px] font-mona text-[18px] font-light text-gray-600 md:text-2xl 2xl:max-w-[800px] 2xl:text-3xl;
 
     line-height: 1.4;
   }

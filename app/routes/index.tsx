@@ -16,7 +16,9 @@ export default function Index() {
       <div className="content-container flex min-h-[calc(100vh-65px)] flex-col justify-center pb-[140px] md:h-auto md:min-h-[calc(100vh-86px)] 2xl:min-h-[calc(100vh-96px)]">
         <motion.svg
           viewBox="0 0 4707 3462"
-          className="absolute top-0 left-0 -z-10 h-full w-full"
+          className={`absolute top-0 left-0 -z-10 h-full w-full md:left-[50%] md:h-[110%] md:w-[110%] md:-translate-x-[50%] ${
+            isMobile ? "opacity-80" : ""
+          }`}
           fill="none"
         >
           <motion.g
@@ -120,20 +122,20 @@ export default function Index() {
             nice things.
           </p>
         </FaidInMotionContainer>
-        <motion.svg
-          className="h-[90px] w-full stroke-primary md:h-[140px] md:w-auto lg:h-[180px] 2xl:h-[250px]"
-          fill="none"
-          initial="hidden"
-          animate="visible"
-          viewBox="0 0 884 325"
-        >
-          <motion.path
-            d="M34.5 260s22.5 18 71.5 4.5c40.92-11.274 51.5-30.826 74.5-33.5 19.877-2.311-8.645 27.628 17.017 52.538.311.302.673.586 1.042.815 26.366 16.366 56.437-3.546 82.941-30.853 15.77-16.248 31.034-58.996 44.625-60.991 1.221-.18 2.486-.342 3.7-.566C348.26 188.54 294.833 281 340 281c74 0 88-95 115-95 26.575 0-29.679 85.735-7.619 98.447.7.404 1.545.577 2.353.61C555.042 289.395 624.368 148.074 590.5 167c-34 19-44 86.5 20.5 98 58 6 144-156 113-143s-50 147.022 6 152.5c27.5 2.69 48.038-11.5 90.5-99.5S847 35 847 35"
-            strokeWidth="68"
-            strokeLinecap="round"
-            variants={draw}
-          />
-        </motion.svg>
+        {/*<motion.svg*/}
+        {/*  className="h-[90px] w-full stroke-primary md:h-[140px] md:w-auto lg:h-[180px] 2xl:h-[250px]"*/}
+        {/*  fill="none"*/}
+        {/*  initial="hidden"*/}
+        {/*  animate="visible"*/}
+        {/*  viewBox="0 0 884 325"*/}
+        {/*>*/}
+        {/*  <motion.path*/}
+        {/*    d="M34.5 260s22.5 18 71.5 4.5c40.92-11.274 51.5-30.826 74.5-33.5 19.877-2.311-8.645 27.628 17.017 52.538.311.302.673.586 1.042.815 26.366 16.366 56.437-3.546 82.941-30.853 15.77-16.248 31.034-58.996 44.625-60.991 1.221-.18 2.486-.342 3.7-.566C348.26 188.54 294.833 281 340 281c74 0 88-95 115-95 26.575 0-29.679 85.735-7.619 98.447.7.404 1.545.577 2.353.61C555.042 289.395 624.368 148.074 590.5 167c-34 19-44 86.5 20.5 98 58 6 144-156 113-143s-50 147.022 6 152.5c27.5 2.69 48.038-11.5 90.5-99.5S847 35 847 35"*/}
+        {/*    strokeWidth="68"*/}
+        {/*    strokeLinecap="round"*/}
+        {/*    variants={draw}*/}
+        {/*  />*/}
+        {/*</motion.svg>*/}
       </div>
       <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
         <div className="content-container max-w-[600px] py-0 md:max-w-[800px] md:px-4 2xl:max-w-[1000px]">
@@ -143,10 +145,10 @@ export default function Index() {
               src={Heart}
               alt="Heart blue ed emoji"
               className="inline-block"
-              width="60px"
+              width="50px"
             />
           </h3>
-          <h3 className="font-mona text-2xl font-light text-gray-500 md:text-3xl">
+          <h3 className="font-mona text-xl font-light text-gray-500 md:text-3xl">
             Also I care about privacy and use{" "}
             <OutsideLink
               className="font-bold text-secondary underline decoration-secondary decoration-dotted transition-colors hover:text-primary hover:decoration-primary"
@@ -159,7 +161,7 @@ export default function Index() {
           <motion.svg
             viewBox="0 0 569 629"
             fill="none"
-            className="mx-auto mt-20 mb-12 block h-[300px] max-w-[90%] stroke-primary md:mt-32 md:mb-28 md:h-[400px]"
+            className="mx-auto mt-28 mb-20 block h-[250px] max-w-[90%] stroke-primary md:mt-32 md:mb-28 md:h-[400px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
@@ -171,7 +173,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="pb-2 font-apfel text-3xl font-bold text-[rgb(34,34,34)] md:text-5xl">
+          <h4 className="pb-2 font-apfel text-3xl text-[rgb(34,34,34)] md:text-5xl">
             So far I don't have much content, but still you can checkout some
             things:
           </h4>
@@ -192,7 +194,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <ul className="mb-16 flex flex-col gap-y-2 text-left font-mona text-3xl font-medium md:gap-y-8 md:pl-4 md:pl-16 md:text-4xl">
+          <ul className="mb-16 flex flex-col gap-y-2 text-left font-mona text-2xl font-medium md:gap-y-8 md:pl-4 md:pl-16 md:text-4xl">
             <li>
               <span className="text-secondary">1.</span>{" "}
               <Link

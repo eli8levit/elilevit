@@ -28,9 +28,9 @@ export default function BikePost() {
         className="-mt-[70px] h-[40%] max-h-[400px] min-h-[200px] w-full rounded-t-2xl object-cover"
         alt="Probably photo of my bike"
       />
-      <div className="mx-auto p-6 md:p-12 md:px-12 md:pt-8">
+      <div className="mx-auto max-w-[1000px] p-6 md:p-20">
         <motion.div className="flex flex-col">
-          <motion.span className="font-mona text-xl font-light text-black md:text-2xl">
+          <motion.span className="font-mona text-xl font-light text-black">
             {post.createdAt}
           </motion.span>
           <motion.h1 className="mb-8 whitespace-normal pb-0 font-apfel text-5xl font-bold md:mb-12">

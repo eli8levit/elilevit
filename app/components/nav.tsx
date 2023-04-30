@@ -1,35 +1,13 @@
 import React from "react";
 import { NavLink, useMatches } from "@remix-run/react";
 import { motion } from "framer-motion";
-import colors from "tailwindcss/colors";
 import { MotionNavLink } from "~/components/motion-nav-link";
 import config from "tailwind.config";
-
-const draw = {
-  tap: {
-    scale: 0.7,
-    pathLength: 1,
-    transition: {
-      scale: { type: "spring", duration: 0.6, bounce: 0 },
-    },
-  },
-  hidden: { pathLength: 0 },
-  visible: (i: any) => {
-    const delay = 1 + i * 1;
-    return {
-      pathLength: 1,
-      transition: {
-        pathLength: { delay, type: "spring", duration: 0.6, bounce: 0 },
-      },
-    };
-  },
-};
 
 const Link = ({
   id,
   children,
   active,
-  isMobile,
 }: {
   id: string;
   children: any;
@@ -45,47 +23,13 @@ const Link = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       to={`/${id}`}
-      className={`transition-text relative flex w-24 items-center rounded-md font-mona font-normal md:w-32 ${
-        active ? "text-white" : "text-gray-700 hover:text-pink-600"
-      }`}
+      className={`transition-text relative flex h-max w-max items-center rounded-lg ${
+        hover && !active ? "bg-[rgba(1,1,1,.01)] shadow-nav" : ""
+      } ${
+        active ? "font-semibold text-primary" : ""
+      } p-2 font-mona font-normal`}
     >
-      <span className="mx-auto inline-block">{children}</span>
-      {hover && !active && !isMobile ? (
-        <motion.svg
-          fill="none"
-          initial="hidden"
-          viewBox="0 0 866 131"
-          animate="visible"
-          className="absolute left-2 -bottom-[80%] -z-10"
-        >
-          <motion.path
-            d="M43 88s97.456-73.87 296.762-29.313C611.484 119.431 823 43 823 43"
-            stroke={colors.pink["600"]}
-            strokeWidth="40"
-            strokeLinecap="round"
-            variants={draw}
-            strokeLinejoin="round"
-          />
-        </motion.svg>
-      ) : null}{" "}
-      {active ? (
-        <motion.svg
-          initial="hidden"
-          animate="visible"
-          viewBox="0 0 971 328"
-          fill="none"
-          className="absolute left-0 -z-10 w-full object-contain"
-        >
-          <motion.path
-            d="M64.5 168C90.669 86.4088 827.831 19.7389 854 101.33C896.5 233.839 176.496 101.33 176.496 214.308C176.496 279.5 820 294 906.5 168"
-            variants={draw}
-            stroke="#1313ff"
-            strokeWidth="128"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </motion.svg>
-      ) : null}
+      {children}
     </MotionNavLink>
   );
 };
@@ -105,7 +49,7 @@ export const Nav = ({
 
   return (
     <header className="lg:px-22 2xl:px-42 h-[65px] px-2 text-xs md:mt-4 md:h-[70px] md:px-12 md:text-sm 2xl:h-[80px]">
-      <nav className="flex h-full w-full flex-row items-center whitespace-nowrap md:gap-x-1">
+      <nav className="flex h-full w-full flex-row items-center gap-1 whitespace-nowrap md:gap-2">
         <Link isMobile={isMobile} id="" active={isActive("")}>
           Home
         </Link>
