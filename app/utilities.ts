@@ -7,6 +7,10 @@ export const genImageUrl = (url: string | null, size?: string): string => {
   }-/quality/smart_retina/-/format/auto/`;
 };
 
+export const genImageUrlById = (id: string) => {
+  return genImageUrl(`https://ucarecdn.com/${id}`);
+};
+
 export const getMobileDetect = (userAgent: string) => {
   const isAndroid = (): boolean => Boolean(userAgent.match(/Android/i));
   const isIos = (): boolean => Boolean(userAgent.match(/iPhone|iPad|iPod/i));

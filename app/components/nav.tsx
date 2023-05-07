@@ -14,20 +14,15 @@ const Link = ({
   active: boolean;
   isMobile: boolean;
 }) => {
-  const [hover, setHover] = React.useState(false);
-
   return (
     <MotionNavLink
-      whileTap={{ scale: 0.8 }}
       transition={{ type: "spring", duration: 0.2, bounce: 0 }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
       to={`/${id}`}
-      className={`transition-text relative flex h-max w-max items-center rounded-lg ${
-        hover && !active ? "bg-[rgba(1,1,1,.01)] shadow-nav" : ""
-      } ${
-        active ? "font-semibold text-primary" : ""
-      } p-2 font-mona font-normal`}
+      className={`transition-text relative flex h-max w-max items-center rounded-lg p-2 font-hubot font-normal ${
+        !active
+          ? "hover:bg-[rgba(1,1,1,.01)] hover:shadow-nav active:shadow-navActive"
+          : ""
+      } ${active ? "text-primary" : "text-zinc-700"}`}
     >
       {children}
     </MotionNavLink>

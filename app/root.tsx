@@ -21,8 +21,6 @@ import CursorPointer from "../public/cursor-pointer.svg";
 import CursorPressed from "../public/cursor-pressed.svg";
 import Manifest from "../public/site.webmanifest";
 import AppleIcon from "../public/apple-touch-icon.png";
-import { motion } from "framer-motion";
-import { Fathom } from "~/components/fanthom";
 import { getRandomMemojiId } from "~/components/utils";
 import { getMobileDetect } from "~/utilities";
 
@@ -87,20 +85,11 @@ export default function App() {
         <Links />
       </head>
       <body className="flex min-h-full flex-col overflow-x-hidden ">
-        <Fathom />
-        <motion.div
-          initial={{ translateY: "-50%", opacity: 0 }}
-          animate={{ translateY: 0, opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: 0.1,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-        >
+        <div className="overflow-hidden">
           <Nav memojiId={memojiId} isMobile={isMobile} />
-        </motion.div>
-        <Outlet />
-        <Footer />
+          <Outlet />
+          <Footer />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

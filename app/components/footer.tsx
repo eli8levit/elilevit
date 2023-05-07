@@ -6,7 +6,7 @@ import { draw } from "~/components/utils";
 export const Footer = () => {
   return (
     <div className="mt-auto">
-      <footer className="grid grid-cols-2 grid-rows-[auto_auto] items-center gap-y-4 gap-x-1 bg-primary p-6 font-mona text-lg font-semibold text-white md:grid-cols-3 md:grid-rows-1 md:p-8 md:text-2xl">
+      <footer className="grid grid-cols-2 grid-rows-[auto_auto] items-center gap-y-4 gap-x-1 bg-primary p-6 font-mona text-lg font-semibold text-white md:grid-cols-3 md:grid-rows-1 md:p-8 md:text-xl 2xl:text-2xl">
         <div className="flex shrink-0 flex-col gap-2">
           <p>
             Created with{" "}
@@ -35,7 +35,7 @@ export const Footer = () => {
           </p>
         </div>
         <motion.svg
-          className="col-start-2 row-span-full mx-auto h-[100px] max-w-[100%] md:col-start-3 md:mx-0 md:ml-auto"
+          className="col-start-2 row-span-full mx-auto h-[80px] max-w-[100%] md:col-start-3 md:mx-0 md:ml-auto"
           viewBox="0 0 1381 815"
           fill="none"
           initial="hidden"
@@ -69,7 +69,7 @@ export const Footer = () => {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              className="h-[24px] w-[24px] md:h-[35px] md:w-[35px]"
+              className="h-[24px] w-[24px] md:h-[30px] md:w-[30px]"
               strokeLinejoin="round"
             >
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -84,7 +84,7 @@ export const Footer = () => {
               viewBox="0 0 24 24"
               strokeWidth="2"
               stroke="currentColor"
-              className="h-[24px] h-[24px] md:h-[35px] md:w-[35px]"
+              className="h-[24px] h-[24px] md:h-[30px] md:w-[30px]"
               fill="none"
             >
               <path d="M8.5,17c-2.73-.52-4.33-1.56-5-3"></path>
