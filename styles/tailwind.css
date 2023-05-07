@@ -26,7 +26,7 @@ a:active {
   }
 
   .content p {
-    @apply mx-auto md:leading-relaxed mb-2 text-lg 2xl:text-2xl;
+    @apply mx-auto md:leading-relaxed mb-2 text-lg 2xl:text-xl;
   }
 
   .content h1 {

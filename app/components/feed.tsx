@@ -8,7 +8,7 @@ export default function Feed() {
     <div className="content-container bg-transparent pb-20">
       <h3
         id="latest-stuff"
-        className="mb-8  w-max border-b-2 border-primary font-mona text-2xl font-bold text-primary md:mb-16 md:text-4xl"
+        className="mb-8  w-max border-b-2 border-primary font-apfel text-2xl font-bold text-primary md:mb-16 md:text-4xl"
       >
         Latest stuff
       </h3>
@@ -28,7 +28,7 @@ export default function Feed() {
           className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
         >
           See All
-          <Arrow className="fill-secondary" />
+          <Arrow className="fill-secondary" height="15px" />
         </Link>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-[3fr_2fr_2fr_3fr]">

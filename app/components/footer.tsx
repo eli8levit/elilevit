@@ -28,9 +28,9 @@ export const Footer = () => {
             §{" "}
             <Link
               className="text-blue-200 hover:text-blue-400"
-              href="https://www.collletttivo.it/"
+              href="https://github.com/mona-sans"
             >
-              Ignazio
+              Mona & Hubot Sans
             </Link>
           </p>
         </div>

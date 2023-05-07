@@ -6,6 +6,7 @@ import config from "../../tailwind.config";
 import { Link, useLoaderData } from "@remix-run/react";
 import MeshGradient from "~/components/mesh-gradient";
 import Feed from "~/components/feed";
+import Arrow from "~/components/arrow";
 
 export { loader } from "../use-mobile-loader";
 
@@ -32,7 +33,7 @@ export default function Index() {
       <Feed />
       <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
         <div className="content-container py-0 ">
-          <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-black lg:text-4xl">
+          <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 lg:text-4xl">
             Here you can feel save, no cookie popup will destruct you
             <img
               src={Heart}
@@ -59,7 +60,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="ml-auto max-w-[700px] pb-2 text-right font-mona text-3xl font-bold text-[rgb(34,34,34)] md:text-4xl">
+          <h4 className="ml-auto max-w-[700px] pb-2 text-right font-mona text-3xl font-bold text-zinc-900 md:text-4xl">
             So far I don't have much content, but still you can checkout some
             things:
             <motion.svg
@@ -80,32 +81,32 @@ export default function Index() {
               />
             </motion.svg>
           </h4>
-          <ul className="mx-auto mb-16 flex w-max flex-col gap-y-2 font-mona text-2xl md:gap-y-8 md:pl-4 md:pl-16 md:text-3xl">
+          <ul className="mx-auto mb-16 flex w-max flex-col font-hubot text-2xl">
             <li>
-              <span className="text-secondary">1.</span>{" "}
               <Link
-                className="underline decoration-secondary decoration-dotted transition-colors hover:decoration-primary"
+                className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"
                 to="/bike"
               >
                 Visit my bike blog
+                <Arrow className="fill-secondary" width="18px" />
               </Link>
             </li>
-            <li className="">
-              <span className="text-secondary">2.</span>{" "}
+            <li>
               <Link
-                className="underline decoration-secondary decoration-dotted transition-colors hover:decoration-primary"
+                className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"
                 to="/about"
               >
                 Read more about me
+                <Arrow className="fill-secondary" width="18px" />
               </Link>
             </li>
-            <li className="">
-              <span className="text-secondary">3.</span>{" "}
+            <li>
               <Link
-                className="underline decoration-secondary decoration-dotted transition-colors hover:decoration-primary"
+                className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"
                 to="/art"
               >
                 See my projects
+                <Arrow className="fill-secondary" width="18px" />
               </Link>
             </li>
           </ul>

@@ -1,10 +1,19 @@
 import React from "react";
 
-export default function Arrow({ className }: { className: string }) {
+export default function Arrow({
+  className,
+  height,
+  width,
+}: {
+  className?: string;
+  height?: string;
+  width?: string;
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="10px"
+      height={!height && !width ? "10px" : height}
+      width={width}
       viewBox="0 0 18.13 14.81"
       className={className}
     >

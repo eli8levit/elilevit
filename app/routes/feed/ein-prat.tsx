@@ -28,11 +28,11 @@ export default function EinPrat() {
           />
           <img
             src={genImageUrlById("d70c9d8d-75f6-417b-8823-43f1d55f794d")}
-            className="h-full w-full shrink-0 rounded-md object-cover shadow-lg"
+            className="h-full w-full shrink-0 rounded-md object-cover shadow-lg 2xl:max-h-[900px]"
             alt="Tree roots in the water of spring"
           />
         </div>
-        <div className="flex flex-col gap-4 md:gap-6">
+        <div className="flex flex-col gap-4">
           <h1 className="heading !mb-0">
             Ein Prat{" "}
             <span className="font-hubot text-2xl text-zinc-500">
@@ -47,7 +47,7 @@ export default function EinPrat() {
             </p>
           </div>
           <img
-            className="h-[450px] w-full rounded-md object-cover shadow-lg"
+            className="h-[450px] w-full rounded-md object-cover shadow-lg 2xl:h-[550px]"
             src={genImageUrlById("794b3a87-dfd9-4e0d-8cb4-2c8790da321c")}
             alt="Ein Prat entrance. Trees and tables for picknick"
           />
@@ -55,17 +55,17 @@ export default function EinPrat() {
       </div>
       <div className="hide-scrollbar relative flex w-full flex-row gap-4 overflow-auto md:grid md:grid-cols-[1fr_2fr_1fr]">
         <img
-          className="h-[300px] w-full rounded-md object-cover shadow-lg"
+          className="h-[300px] w-full rounded-md object-cover shadow-lg 2xl:h-[450px]"
           src={genImageUrlById("021cd876-f163-4095-8a8b-ad6f3eb19f4a")}
           alt="Open pool with view of reserve"
         />
         <img
-          className="h-[300px] w-full rounded-md object-cover shadow-lg"
+          className="h-[300px] w-full rounded-md object-cover shadow-lg 2xl:h-[450px]"
           src={genImageUrlById("fd53479e-f577-442e-930f-a7274d6a6ade")}
           alt="Tiny natural waterfall under reeds"
         />
         <img
-          className="h-[300px] w-full rounded-md object-cover shadow-lg"
+          className="h-[300px] w-full rounded-md object-cover shadow-lg 2xl:h-[450px]"
           src={genImageUrlById("beed224d-553c-40bc-8e7c-b971836c6266")}
           alt="Reeds on mountauns background"
         />
@@ -78,17 +78,17 @@ export default function EinPrat() {
       />
       <div className="hide-scrollbar relative flex  w-full flex-row gap-4 overflow-auto md:grid md:grid-cols-[2fr_1fr_1fr]">
         <img
-          className="h-[400px] w-full rounded-md object-cover shadow-lg"
+          className="h-[400px] w-full rounded-md object-cover shadow-lg 2xl:h-[500px]"
           src={genImageUrlById("11380ed0-6aa1-4855-98eb-6917ebfa133c")}
           alt="Hand holding glass with black turkish coffee. Rocky hill on thee background"
         />
         <img
-          className="h-[400px] w-full rounded-md object-cover shadow-lg"
+          className="h-[400px] w-full rounded-md object-cover shadow-lg 2xl:h-[500px]"
           src={genImageUrlById("55f676cd-3aa4-4a89-b520-4599fdca7b88")}
           alt="A stream running through a channel between two rock hills"
         />
         <img
-          className="h-[400px] w-full rounded-md object-cover shadow-lg"
+          className="h-[400px] w-full rounded-md object-cover shadow-lg 2xl:h-[500px]"
           src={genImageUrlById("de0597d6-66a7-4fb5-907d-9a2a7e8d579b")}
           alt="Spring under rock hill. Blue sky with single white cloud from above"
         />
