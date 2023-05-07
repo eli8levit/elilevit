@@ -25,7 +25,7 @@ export default function Feed() {
         </p>
         <Link
           to="/feed/ein-prat"
-          className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-[rgba(1,1,1,.01)] hover:shadow-nav active:shadow-navActive md:text-base"
+          className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
         >
           See All
           <Arrow className="fill-secondary" />
@@ -35,22 +35,26 @@ export default function Feed() {
         <img
           src={genImageUrlById("021cd876-f163-4095-8a8b-ad6f3eb19f4a")}
           height="45vh"
-          className="h-[200px] max-h-[600px] min-h-[200px] w-full -rotate-1 rounded-sm object-cover shadow-lg md:h-[45vh]"
+          className="h-[200px] max-h-[600px] min-h-[200px] w-full -rotate-1 rounded-md object-cover shadow-lg md:h-[45vh]"
+          alt="Open pool with view of reserve"
         />
         <img
           src={genImageUrlById("fd53479e-f577-442e-930f-a7274d6a6ade")}
           height="45vh"
-          className="h-[200px] max-h-[600px] min-h-[200px] w-full rotate-2 rounded-sm object-cover shadow-lg md:h-[45vh]"
+          className="h-[200px] max-h-[600px] min-h-[200px] w-full rotate-2 rounded-md object-cover shadow-lg md:h-[45vh]"
+          alt="Tiny natural waterfall under reeds"
         />
         <img
           src={genImageUrlById("f33f5640-5db1-4007-bfef-610ba62b0199")}
           height="45vh"
-          className="h-[200px] max-h-[600px] min-h-[200px] w-full rounded-sm object-cover shadow-lg md:h-[45vh]"
+          className="h-[200px] max-h-[600px] min-h-[200px] w-full rounded-md object-cover shadow-lg md:h-[45vh]"
+          alt="High rock hills from right and left, blue sky with clouds"
         />
         <img
           src={genImageUrlById("47a24a50-ff7c-4016-9d05-e4800342cce7")}
           height="45vh"
-          className="h-[200px] max-h-[600px] min-h-[200px] w-full -rotate-1 rounded-sm object-cover shadow-lg md:h-[45vh]"
+          className="h-[200px] max-h-[600px] min-h-[200px] w-full -rotate-1 rounded-md object-cover shadow-lg md:h-[45vh]"
+          alt="A stream running through a channel between two rock hills"
         />
       </div>
     </div>

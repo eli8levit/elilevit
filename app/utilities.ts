@@ -8,7 +8,7 @@ export const genImageUrl = (url: string | null, size?: string): string => {
 };
 
 export const genImageUrlById = (id: string) => {
-  return genImageUrl(`https://ucarecdn.com/${id}`);
+  return genImageUrl(`https://ucarecdn.com/${id}/`);
 };
 
 export const getMobileDetect = (userAgent: string) => {

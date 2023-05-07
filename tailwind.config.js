@@ -23,22 +23,13 @@ module.exports = {
         navActive: "0 0 0 0.5px rgba(1,1,1,.06)",
         scrollable: "-5px 0 40px 29px #ffffffcf",
       },
-      fontSize: {
-        "7.5xl": "5rem",
-      },
-      borderWidth: {
-        mini: "0.5px",
-      },
       colors: {
         primary: "#0000ff",
         secondary: "#db2877",
         pinkLighter: "#fff3f4",
-        pinkTransparent: "rgba(192,10,100,0.75)",
-        pinkText: "#fff3f7",
-        grayText: "#e3e3e3",
-        pinkTransparentLighter: "rgba(192,9,100,0.4)",
         blackTransparent: "rgba(0, 0, 0, 0.75)",
         blackTransparentLighter: "rgba(255,255,255,0.4)",
+        lightGray: "rgba(1,1,1,.01)",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

@@ -20,7 +20,7 @@ const Link = ({
       to={`/${id}`}
       className={`transition-text relative flex h-max w-max items-center rounded-lg p-2 font-hubot font-normal ${
         !active
-          ? "hover:bg-[rgba(1,1,1,.01)] hover:shadow-nav active:shadow-navActive"
+          ? "hover:bg-lightGray hover:shadow-nav active:shadow-navActive"
           : ""
       } ${active ? "text-primary" : "text-zinc-700"}`}
     >
