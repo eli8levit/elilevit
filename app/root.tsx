@@ -85,11 +85,9 @@ export default function App() {
         <Links />
       </head>
       <body className="flex min-h-full flex-col overflow-x-hidden ">
-        <div className="overflow-hidden">
-          <Nav memojiId={memojiId} isMobile={isMobile} />
-          <Outlet />
-          <Footer />
-        </div>
+        <Nav memojiId={memojiId} isMobile={isMobile} />
+        <Outlet />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

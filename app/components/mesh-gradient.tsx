@@ -6,42 +6,42 @@ export default function MeshGradient({ className }: { className: string }) {
     <motion.svg viewBox="0 0 4707 3462" className={className} fill="none">
       <motion.g
         filter="url(#a)"
-        animate={{ rotate: 360 }}
-        transition={{
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 20,
-          delay: 2,
-          type: "linear",
-        }}
+        // animate={{ rotate: 360 }}
+        // transition={{
+        //   repeat: Infinity,
+        //   repeatType: "loop",
+        //   duration: 20,
+        //   delay: 2,
+        //   type: "linear",
+        // }}
       >
         <motion.circle
           cx="1778.41"
           cy="1683.41"
           r="750"
           fill="url(#b)"
-          animate={{ translateX: "200px", translateY: "-100px" }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "mirror",
-            duration: 8,
-            delay: 2,
-            type: "linear",
-          }}
+          // animate={{ translateX: "200px", translateY: "-100px" }}
+          // transition={{
+          //   repeat: Infinity,
+          //   repeatType: "mirror",
+          //   duration: 8,
+          //   delay: 2,
+          //   type: "linear",
+          // }}
         />
         <motion.circle
           cx="2929"
           cy="1677"
           r="750"
           fill="url(#c)"
-          animate={{ translateX: "-300px", translateY: "100px" }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "mirror",
-            duration: 10,
-            delay: 2,
-            type: "linear",
-          }}
+          // animate={{ translateX: "-300px", translateY: "100px" }}
+          // transition={{
+          //   repeat: Infinity,
+          //   repeatType: "mirror",
+          //   duration: 10,
+          //   delay: 2,
+          //   type: "linear",
+          // }}
         />
       </motion.g>
       <defs>
@@ -79,7 +79,7 @@ export default function MeshGradient({ className }: { className: string }) {
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur
-            stdDeviation="400"
+            stdDeviation="350"
             result="effect1_foregroundBlur_111_4"
           />
         </filter>

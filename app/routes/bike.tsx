@@ -8,6 +8,7 @@ import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
 import { genImageUrl, getMobileDetect } from "~/utilities";
+import Circle from "~/sources/images/grad2.svg";
 
 type Card = {
   image: string;
@@ -103,147 +104,65 @@ export default function Bike() {
 
   return (
     <FaidInMotionContainer className="overflow-hidden">
-      <div className="content-container mb-20 2xl:mb-28">
-        <h1 className="heading shrink-0">
-          <AnimatedText>Bike Blog</AnimatedText>
-        </h1>
-        <h2 className="subheading">
-          This page is about my bike and stuff related to cycling: my rides,
-          photos and{" "}
-          <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">
-            upgrading evolution
-          </span>
-        </h2>
-      </div>
-      <div className="content-container radial-center relative max-w-full !p-0">
-        <motion.svg
-          viewBox="0 0 4707 3462"
-          className="absolute top-0 left-0 -z-10 h-full w-full"
-          fill="none"
-        >
-          <motion.g
-            filter="url(#a)"
-            animate={{ rotate: 360 }}
-            transition={{
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 20,
-              delay: 2,
-              type: "linear",
-            }}
-          >
-            <motion.circle
-              cx="1778.41"
-              cy="1683.41"
-              r="750"
-              fill="url(#b)"
-              animate={{ translateX: "200px", translateY: "-100px" }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 8,
-                delay: 2,
-                type: "linear",
-              }}
-            />
-            <motion.circle
-              cx="2929"
-              cy="1677"
-              r="750"
-              fill="url(#c)"
-              animate={{ translateX: "-300px", translateY: "100px" }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 10,
-                delay: 2,
-                type: "linear",
-              }}
-            />
-          </motion.g>
-          <defs>
-            <radialGradient
-              id="b"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="matrix(.00209 1196.26 -1831.22 .0032 1778.42 1683.41)"
-            >
-              <stop stopColor="#DB2877" stopOpacity=".4" />
-              <stop offset="1" stopColor="white" />
-            </radialGradient>
-            <radialGradient
-              id="c"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="matrix(.00209 1196.26 -1831.22 .0032 2929 1677)"
-            >
-              <stop stopColor="#00F" stopOpacity=".25" />
-              <stop offset="1" stopColor="white" />
-            </radialGradient>
-            <filter
-              id="a"
-              x="-427.604"
-              y="-544.604"
-              width="5555.21"
-              height="4455.21"
-              filterUnits="userSpaceOnUse"
-              colorInterpolationFilters="sRGB"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
-              <feGaussianBlur
-                stdDeviation="400"
-                result="effect1_foregroundBlur_111_4"
-              />
-            </filter>
-          </defs>
-        </motion.svg>
-        <div className="px-0 pb-12 md:py-20 md:pb-36 2xl:pb-52">
-          {POST_TYPES.map((type) => {
-            return (
-              <section className="hide-scrollbar flex flex-col overflow-auto p-8 px-6 md:p-16 md:px-12 lg:px-28 2xl:px-44">
-                <h2 className="sticky left-0 mb-4 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl">
-                  # {type.title}
-                </h2>
-                <ul className="flex snap-x snap-mandatory flex-row gap-4 md:gap-8">
-                  {(type.id === "rides" ? bikePosts : upgradePosts).map(
-                    (post: Post, index) => {
-                      return (
-                        <Link
-                          className="snap-start"
-                          key={post.id}
-                          to={`/bike/${post.id}`}
-                          preventScrollReset
-                        >
-                          <BikeCard
-                            isMobile={isMobile}
-                            image={genImageUrl(post.image, "600x600")}
-                            description={post.subtitle || ""}
-                            title={post.title}
-                            id={post.id}
-                            tag={post.tag}
-                            date={post.createdAt}
-                            index={index + 1}
-                          />
-                        </Link>
-                      );
-                    }
-                  )}
-                  <div className="h-12 min-w-[50px]" />
-                </ul>
-              </section>
-            );
-          })}
+      <div className="content-container pt-10">
+        <div className="pb-10 md:p-20">
+          <h1 className="heading shrink-0">
+            <AnimatedText>Bike Blog</AnimatedText>
+          </h1>
+          <h2 className="subheading">
+            This page is about my bike and stuff related to cycling: my rides,
+            photos and{" "}
+            <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">
+              upgrading evolution
+            </span>
+          </h2>
         </div>
-        <ModalContent route="bike" />
+      </div>
+      <div className="content-container relative pt-6">
+        <img
+          src={Circle}
+          className="absolute left-[50%] top-0 -z-[10] h-[1200px] -translate-x-[50%]"
+        />
+        <div className="mb-40 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] !p-0 backdrop-blur-2xl">
+          <div>
+            {POST_TYPES.map((type) => {
+              return (
+                <section className="hide-scrollbar flex flex-col overflow-auto p-8 md:p-20">
+                  <h2 className="sticky left-0 mb-4 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl">
+                    # {type.title}
+                  </h2>
+                  <ul className="flex snap-x snap-mandatory flex-row gap-4 md:gap-8">
+                    {(type.id === "rides" ? bikePosts : upgradePosts).map(
+                      (post: Post, index) => {
+                        return (
+                          <Link
+                            className="snap-start"
+                            key={post.id}
+                            to={`/bike/${post.id}`}
+                            preventScrollReset
+                          >
+                            <BikeCard
+                              isMobile={isMobile}
+                              image={genImageUrl(post.image, "600x600")}
+                              description={post.subtitle || ""}
+                              title={post.title}
+                              id={post.id}
+                              tag={post.tag}
+                              date={post.createdAt}
+                              index={index + 1}
+                            />
+                          </Link>
+                        );
+                      }
+                    )}
+                    <div className="h-12 min-w-[50px]" />
+                  </ul>
+                </section>
+              );
+            })}
+          </div>
+          <ModalContent route="bike" />
+        </div>
       </div>
     </FaidInMotionContainer>
   );

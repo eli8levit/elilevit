@@ -1,54 +1,54 @@
 import React from "react";
-import { draw } from "~/components";
-import Heart from "~/sources/images/heart.png";
+import { AnimatedText, draw } from "~/components";
 import { motion } from "framer-motion";
-import config from "../../tailwind.config";
-import { Link, useLoaderData } from "@remix-run/react";
-import MeshGradient from "~/components/mesh-gradient";
+import { Link } from "@remix-run/react";
+import Circle from "~/sources/images/grad2.svg";
+import Circle2 from "~/sources/images/grad.svg";
 import Feed from "~/components/feed";
 import Arrow from "~/components/arrow";
+import { FaidInMotionContainer } from "~/components/layout";
 
 export { loader } from "../use-mobile-loader";
 
 export default function Index() {
-  const { isMobile } = useLoaderData();
-
   return (
     <>
-      <div className="content-container flex min-h-[calc(100vh-65px)] flex-col justify-center overflow-visible pb-[140px] md:h-auto md:min-h-[calc(100vh-86px)] 2xl:min-h-[calc(100vh-96px)]">
-        <MeshGradient
-          className={`absolute top-0 left-0 -z-10 h-full w-full md:left-[50%] md:h-[110%] md:w-[110%] md:-translate-x-[50%] ${
-            isMobile ? "opacity-80" : ""
-          }`}
+      <FaidInMotionContainer className="content-container items-center pt-10 md:h-[400px] 2xl:h-[500px]">
+        <img
+          src={Circle}
+          className="absolute left-[50%] top-0 -z-[10] h-[1400px] -translate-x-[50%] opacity-80"
         />
-        <h1 className="z-10 mb-1 font-mona text-2xl font-semibold text-primary md:text-3xl 2xl:text-4xl">
-          Hey, good to see you!
-        </h1>
-        <h2 className="heading mb-4 font-bold">I'm Eli, Developer & Creator</h2>
-        <p className="subheading mb-10 max-w-[600px]">
-          Hope I won't be lazy like with previous site and will publish some
-          nice things.
-        </p>
-      </div>
+        <div className="pb-10 md:p-20">
+          <h1 className="z-10 mb-1 font-mona text-2xl font-medium text-primary md:text-3xl 2xl:text-4xl">
+            Hey, good to see you!
+          </h1>
+          <h2 className="heading mb-4 font-bold text-black">
+            <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
+          </h2>
+          <p className="subheading max-w-[600px]">
+            Hope I won't be lazy like with previous site and will publish some
+            nice things.
+          </p>
+        </div>
+      </FaidInMotionContainer>
       <Feed />
-      <div className="radial py-20 md:py-32 md:px-12 xl:rounded-lg xl:py-44">
-        <div className="content-container py-0 ">
-          <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 lg:text-4xl">
-            Here you can feel save, no cookie popup will destruct you
-            <img
-              src={Heart}
-              alt="Heart blue ed emoji"
-              className="ml-4 inline-block"
-              width="50px"
-            />
+      <div className="content-container relative mb-28 pb-20 pt-0">
+        <img
+          src={Circle2}
+          className="absolute left-[50%] top-0 -z-[10] h-[1000px] -translate-x-[50%] opacity-80 md:h-[1200px]"
+        />
+        <div className="rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-6 backdrop-blur-2xl md:p-20">
+          <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 2xl:text-4xl">
+            Here you can feel save, no cookie popup will destruct you, no one
+            will know you have been here 🤐
           </h3>
-          <h3 className="font-mona text-xl font-light text-gray-500 md:text-3xl">
+          <h3 className="font-mona text-xl font-light text-gray-500 md:text-2xl">
             Also I care about privacy and don't use analytics
           </h3>
           <motion.svg
             viewBox="0 0 569 629"
             fill="none"
-            className="mx-auto mt-28 mb-20 block h-[250px] max-w-[90%] stroke-primary md:mt-32 md:mb-28 md:h-[400px]"
+            className="mx-auto mt-28 mb-20 block h-[250px] max-w-[90%] stroke-[rgba(0,0,0,0.3)] md:mt-32 md:mb-28 md:h-[400px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
@@ -60,7 +60,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="ml-auto max-w-[700px] pb-2 text-right font-mona text-3xl font-bold text-zinc-900 md:text-4xl">
+          <h4 className="ml-auto max-w-[700px] pb-2 text-right font-mona text-3xl font-bold text-zinc-900 2xl:text-4xl">
             So far I don't have much content, but still you can checkout some
             things:
             <motion.svg
@@ -69,12 +69,11 @@ export default function Index() {
               width="100%"
               viewBox="0 0 1531 193"
               whileInView="visible"
-              className="mt-6 mb-10"
+              className="mt-6 mb-10 stroke-[rgba(0,0,0,0.3)]"
               viewport={{ once: true, amount: 0.8 }}
             >
               <motion.path
                 d="M18 45.045s811-60.545 1084 0c418.74 92.867-87 196.457 69.5 73.956 156.5-122.501 341-73.956 341-73.956"
-                stroke={config.theme.extend.colors.secondary}
                 strokeWidth="16"
                 strokeLinecap="round"
                 variants={draw}
@@ -111,6 +110,15 @@ export default function Index() {
             </li>
           </ul>
         </div>
+        {/*<div className="content-container">*/}
+        {/*  <h5 className="mb-4 font-monaWide text-xl">*/}
+        {/*    Things I created recently*/}
+        {/*  </h5>*/}
+        {/*  <img*/}
+        {/*    src={Cubism}*/}
+        {/*    className="h-[500px] rounded-xl object-contain shadow-xl"*/}
+        {/*  />*/}
+        {/*</div>*/}
       </div>
     </>
   );

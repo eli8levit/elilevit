@@ -1,10 +1,10 @@
 import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion, useWillChange } from "framer-motion";
-import { AnimatedText, draw } from "~/components";
-import { draw2 } from "~/components/utils";
+import Circle from "~/sources/images/grad.svg";
 import { useLoaderData } from "@remix-run/react";
 import defaultTheme from "tailwindcss/defaultTheme";
+import { AnimatedText } from "~/components";
 
 export { loader } from "../use-mobile-loader";
 
@@ -29,35 +29,35 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
               scale: 1.03,
               boxShadow: defaultTheme.boxShadow["2xl"],
               zIndex: 10,
-              backgroundColor: "rgba(0,0,255,0.3)",
+              backgroundColor: "rgba(0,0,255,0.1)",
             }
           : {}
       }
       transition={{ type: "ease-in", duration: 0.2 }}
       href={href}
-      className="flex w-full flex-col rounded-xl bg-[rgba(0,0,255,0.1)] p-8 shadow-lg 2xl:p-12"
+      className="flex w-full flex-col rounded-xl bg-lightGray p-8 shadow-nav backdrop-blur-2xl 2xl:p-12"
       style={{ willChange }}
       target="_blank"
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="relative mb-4 w-max font-apfel text-2xl font-bold text-gray-900 lg:text-4xl">
+        <h3 className="relative mb-4 w-max font-apfel text-2xl font-bold text-gray-900 lg:text-3xl">
           {title}
-          <motion.svg
-            viewBox="0 0 1506 391"
-            width="140%"
-            className="absolute -left-[15%] -bottom-2 stroke-[rgba(0,0,255,0.3)]"
-            fill="none"
-            viewport={{ once: true, amount: 0.8 }}
-          >
-            <motion.path
-              d="M782.436 86.132S1296.48 5.737 1466.49 197.317C1574.55 319.089 1302.48 375 806.438 375c-496.04 0-931.985-48.859-747.06-164.854C346.403 30.112 1275.48 16 1275.48 16"
-              strokeWidth="25"
-              strokeLinecap="round"
-            />
-          </motion.svg>
+          {/*<motion.svg*/}
+          {/*  viewBox="0 0 1506 391"*/}
+          {/*  width="140%"*/}
+          {/*  className="absolute -left-[15%] -bottom-2 stroke-[rgba(0,0,255,0.3)]"*/}
+          {/*  fill="none"*/}
+          {/*  viewport={{ once: true, amount: 0.8 }}*/}
+          {/*>*/}
+          {/*  <motion.path*/}
+          {/*    d="M782.436 86.132S1296.48 5.737 1466.49 197.317C1574.55 319.089 1302.48 375 806.438 375c-496.04 0-931.985-48.859-747.06-164.854C346.403 30.112 1275.48 16 1275.48 16"*/}
+          {/*    strokeWidth="25"*/}
+          {/*    strokeLinecap="round"*/}
+          {/*  />*/}
+          {/*</motion.svg>*/}
         </h3>
-        <p className="mb-2 max-w-[700px] font-mona text-base font-normal text-gray-600 md:text-xl">
+        <p className="mb-2 max-w-[700px] font-hubot text-base font-normal text-gray-600 md:text-lg">
           {description}
         </p>
       </div>
@@ -72,39 +72,21 @@ export default function Art() {
   return (
     <>
       <FaidInMotionContainer className="content-container flex flex-col md:pt-0">
-        <motion.svg
-          viewBox="0 0 3341 1557"
-          className="mb-12"
-          fill="none"
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.path
-            variants={draw}
-            d="M282 809.5s357.5 306 452 278C881.27 1043.86 412.459 432 546 432c160.5 0 640.2 745 706 608.5 80.07-166.1-167.88-589.793 52-448.5 131.5 84.5 376.5 495.5 565 495.5 278.55 0-407.65-810.34-42.5-622.5 329.5 169.5 498.9 996.61 744 622.5 180.81-275.99-534.66-781.639-297-762.5 565 45.5 871.5 780 932.5 563.5 58.15-206.375-183.5-640 0-762.5"
-            stroke="#DB2877"
-            strokeWidth="230"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <motion.path
-            variants={draw2}
-            d="M126 1063s357.5 306 452 278c147.27-43.64-227.541-433-94-433 160.5 0 546.2 522.5 612 386 80.07-166.1-339-546-99-442.5 99 42.694 527.5 489.5 716 489.5 278.55 0-467.05-536.5-188.5-536.5 489.5 0 644.9 910.61 890 536.5 180.81-275.99-593.91-762.5-297-762.5 461.5 0 725.5 786 786.5 569.5 58.15-206.375 99-569.5 282.5-692"
-            stroke="#00F"
-            strokeWidth="200"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </motion.svg>
-        <h1 className="heading">
-          <AnimatedText>Work & Art</AnimatedText>
-        </h1>
-        <h2 className="subheading">
-          Here you can see my art like photos, illustrations along with my
-          projects
-        </h2>
+        <div className="pb-10 md:p-20">
+          <h1 className="heading">
+            <AnimatedText>Work & Art</AnimatedText>
+          </h1>
+          <h2 className="subheading">
+            Here you can see my art like photos, illustrations along with my
+            projects
+          </h2>
+        </div>
       </FaidInMotionContainer>
-      <div className="mb-44 py-12 md:py-24">
+      <div className=" relative mb-44 py-12 !pt-0 md:py-24">
+        <img
+          src={Circle}
+          className="absolute left-[50%] top-[10%] -z-[10] h-[1000px] -translate-x-[50%] opacity-80 blur-lg"
+        />
         <div className="content-container mx-auto grid grid-rows-[500px_500px_400px] gap-4 pt-0 md:mb-20 md:grid-cols-5">
           <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
             <ArtCard

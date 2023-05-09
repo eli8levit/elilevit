@@ -1,41 +1,20 @@
 import React from "react";
+import { AnimatedText, Link } from "~/components";
+import Circle from "~/sources/images/grad.svg";
 import { FaidInMotionContainer } from "~/components/layout";
-import { motion } from "framer-motion";
-import { AnimatedText, draw, Link } from "~/components";
 
 export default function About() {
   return (
-    <FaidInMotionContainer>
-      <main className="content-container mb-44 grid items-center md:grid-cols-[2fr_3fr] md:grid-rows-[auto_100%]">
-        <h1 className="heading md:col-span-full">
+    <main className="content-container relative flex h-[calc(100vh-300px)] flex-col items-center justify-center p-0">
+      <img
+        src={Circle}
+        className="absolute -z-10 h-[90vh] opacity-60 blur-2xl"
+      />
+      <FaidInMotionContainer className="max-w-[700px] rounded-2xl border-black border-opacity-10 p-6">
+        <h1 className="heading text-black opacity-90">
           <AnimatedText>A bit about me</AnimatedText>
         </h1>
-        <motion.svg
-          viewBox="0 0 980 2239"
-          fill="none"
-          className="mx-auto mb-12 h-[250px] md:h-[500px]"
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.path
-            d="M71 992.5C71 437.5 466.5 71 466.5 71s426 357 442 968.5c17.478 668-332.5 1129-332.5 1129S71 1648 71 992.5Z"
-            stroke="#00F"
-            strokeWidth="141"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            variants={draw}
-          />
-          <motion.path
-            d="M591 426.5 442 312l236.5 324.5-343-167.5L716 844 272 636.5l486.5 452L239 844l477 444-477-229 477 449.5-457.5-194 399 367-322-125L591 1854"
-            stroke="#00F"
-            strokeWidth="95"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            variants={draw}
-          />
-        </motion.svg>
-
-        <p className="mb-4 font-mona text-xl font-normal text-black md:mr-auto md:text-2xl">
+        <p className="font-mona text-xl font-normal leading-relaxed text-black">
           Shalom from Israel 🇮🇱. I'm Eli, currently I'm working in{" "}
           <Link
             href="https://www.rapyd.net/"
@@ -48,7 +27,7 @@ export default function About() {
           I would like to share here with you. Don't hesitate to reach out me
           and thanks for visiting!
         </p>
-      </main>
-    </FaidInMotionContainer>
+      </FaidInMotionContainer>
+    </main>
   );
 }

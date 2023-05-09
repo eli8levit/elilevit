@@ -10,7 +10,7 @@ export default function EinPrat() {
   const { isMobile } = useLoaderData();
 
   return (
-    <div className="content-container flex flex-col gap-6 pt-4 pb-40 md:gap-8">
+    <div className="content-container flex flex-col gap-6 pt-4 pb-40 md:gap-8 2xl:max-w-[1800px] 2xl:gap-12">
       <Link
         to="/#latest-stuff"
         className="mb-4 flex w-max flex-row items-baseline gap-2 rounded-md px-2 py-2 font-hubot text-sm text-zinc-600 hover:bg-lightGray hover:shadow-nav active:shadow-navActive 2xl:px-3 2xl:py-2 2xl:text-base"
@@ -19,7 +19,7 @@ export default function EinPrat() {
         <Arrow className="rotate-180" />
         Back to home
       </Link>
-      <div className="grid grid-cols-1 items-end gap-16 md:grid-cols-2 md:gap-8">
+      <div className="grid grid-cols-1 items-end gap-16 md:grid-cols-[1.5fr_2fr] md:gap-8 2xl:gap-12">
         <div className="relative h-[250px] w-full md:h-full">
           <MeshGradient
             className={`absolute -z-10 h-full w-full scale-[3] ${
@@ -28,11 +28,11 @@ export default function EinPrat() {
           />
           <img
             src={genImageUrlById("d70c9d8d-75f6-417b-8823-43f1d55f794d")}
-            className="h-full w-full shrink-0 rounded-md object-cover shadow-lg 2xl:max-h-[900px]"
+            className="h-full w-full shrink-0 rounded-md object-cover shadow-lg 2xl:max-h-[700px]"
             alt="Tree roots in the water of spring"
           />
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:gap-6 2xl:gap-8">
           <h1 className="heading !mb-0">
             Ein Prat{" "}
             <span className="font-hubot text-2xl text-zinc-500">
@@ -40,20 +40,20 @@ export default function EinPrat() {
             </span>
           </h1>
           <div className="content">
-            <p className="!mb-0 font-mona text-lg">
+            <p className="!mb-0 !mr-auto !ml-0 max-w-[600px] font-mona text-lg">
               Ein Prat is beautiful reserve which is located near Jerusalem. It
               has a lot of springs where you can take a dip. It's good for
               tracks and also for picking with children.{" "}
             </p>
           </div>
           <img
-            className="h-[450px] w-full rounded-md object-cover shadow-lg 2xl:h-[550px]"
+            className="h-[400px] w-full rounded-md object-cover shadow-lg  md:max-h-[450px]"
             src={genImageUrlById("794b3a87-dfd9-4e0d-8cb4-2c8790da321c")}
             alt="Ein Prat entrance. Trees and tables for picknick"
           />
         </div>
       </div>
-      <div className="hide-scrollbar relative flex w-full flex-row gap-4 overflow-auto md:grid md:grid-cols-[1fr_2fr_1fr]">
+      <div className="hide-scrollbar relative flex w-full flex-row gap-4 overflow-auto md:grid md:grid-cols-[1fr_2fr_1fr] 2xl:gap-6">
         <img
           className="h-[300px] w-full rounded-md object-cover shadow-lg 2xl:h-[450px]"
           src={genImageUrlById("021cd876-f163-4095-8a8b-ad6f3eb19f4a")}
@@ -76,7 +76,7 @@ export default function EinPrat() {
         src={genImageUrlById("637461c6-b097-491b-bfb1-61fef4bfa4da")}
         alt="Rocky hill close shot. Bushes from below"
       />
-      <div className="hide-scrollbar relative flex  w-full flex-row gap-4 overflow-auto md:grid md:grid-cols-[2fr_1fr_1fr]">
+      <div className="hide-scrollbar relative flex w-full flex-row gap-4 overflow-auto md:grid md:grid-cols-[2fr_1fr_1fr] 2xl:gap-6">
         <img
           className="h-[400px] w-full rounded-md object-cover shadow-lg 2xl:h-[500px]"
           src={genImageUrlById("11380ed0-6aa1-4855-98eb-6917ebfa133c")}

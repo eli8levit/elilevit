@@ -72,10 +72,9 @@ export const Nav = ({
                 ? {}
                 : {
                     scale: 1.3,
-                    border: `3px solid ${config.theme.extend.colors.primary}`,
                   }
             }
-            style={isActive("about") ? { boxShadow: "0 0 0 3px #0000ff" } : {}}
+            style={isActive("about") ? { border: "0.5px solid #0000ff" } : {}}
             className="transition-bg mr-2 h-[55px] w-[55px] rounded-full bg-white shadow-2xl md:h-[70px] md:w-[70px] 2xl:h-[80px] 2xl:w-[80px]"
           ></motion.video>
           <span className="hidden">About me</span>
