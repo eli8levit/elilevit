@@ -7,28 +7,26 @@ import { FaidInMotionContainer } from "~/components/layout";
 
 export default function Feed() {
   return (
-    <FaidInMotionContainer className="content-container mb-6 pt-6 md:mb-14">
-      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-4 shadow-feed backdrop-blur-2xl md:p-20">
-        <div className="mb-6 flex flex-row items-center gap-x-2 opacity-30 md:mb-14 md:gap-x-4">
-          <h3
-            id="latest-stuff"
-            className=" flex flex-row gap-x-4 font-mona text-2xl font-semibold text-black md:text-4xl"
-          >
-            Latest stuff
-          </h3>
-        </div>
+    <FaidInMotionContainer className="content-container mb-6 pt-6">
+      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel p-6 shadow-feed backdrop-blur-2xl md:p-16">
+        <h3
+          id="latest-stuff"
+          className="mb-6 flex flex-row font-mona text-2xl font-semibold text-black opacity-40 md:text-4xl"
+        >
+          Latest stuff
+        </h3>
         <div className="flex flex-col gap-8 md:gap-20">
           <div>
-            <p className="mb-1 font-hubot text-sm font-bold text-black md:text-base">
+            <p className="mb-2 font-hubot text-base font-bold text-black md:mb-1">
               21.4.2023
             </p>
             <div className="mb-4 flex flex-wrap items-center justify-between md:flex-row">
-              <p className="flex w-max flex-row items-center gap-x-2 fill-zinc-600 font-mona text-base font-light text-zinc-600 md:text-xl">
+              <p className="flex w-max flex-row items-center gap-x-2 fill-zinc-600 font-mona text-lg font-light text-zinc-600 md:text-xl">
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 15.4889 24.6191"
-                  className="mb-auto w-[12px] md:w-[15px]"
+                  className="mb-auto w-[15px]"
                   width="15px"
                 >
                   <g>
@@ -84,11 +82,11 @@ export default function Feed() {
           </div>
           <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10" />
           <div>
-            <p className="mb-1 font-hubot text-sm font-bold text-zinc-700 md:text-base">
+            <p className="mb-2 font-hubot text-base font-bold text-zinc-700 md:mb-1">
               30.3.2023
             </p>
             <div className="mb-4 flex flex-wrap items-center justify-between md:flex-row">
-              <p className="w-max flex-wrap font-mona text-base font-light text-zinc-600 md:text-xl">
+              <p className="w-max flex-wrap font-mona text-lg font-light text-zinc-600 md:text-xl">
                 🇬🇪 Georgia. Tbilisi
               </p>
               <Link

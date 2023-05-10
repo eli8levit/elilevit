@@ -13,17 +13,17 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <FaidInMotionContainer className="content-container h-[350px] items-center pt-10 2xl:h-[400px]">
+      <FaidInMotionContainer className="content-container h-max items-center pt-10 md:h-[350px] 2xl:h-[400px]">
         <img
           src={Circle}
-          className="absolute left-[50%] -top-[3%] -z-[10] h-full max-h-[1000px] w-[200%] max-w-[180%] -translate-x-[50%] opacity-80 md:h-[1400px] md:max-h-full md:w-full md:max-w-full"
+          className="absolute left-[50%] -top-[250px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-80 md:h-full md:h-[1400px] md:w-full md:max-w-full"
         />
         <div className="pb-4 md:p-20 md:pb-10">
           <h1 className="z-10 mb-1 font-mona text-2xl font-medium text-primary md:text-3xl 2xl:text-4xl">
             Hey, good to see you!
           </h1>
           <h2 className="heading mb-4 font-bold text-black">
-            <AnimatedText>I'm Eli, Developer & Creator</AnimatedText>
+            I'm Eli, Developer & Creator
           </h2>
           <p className="subheading max-w-[600px]">
             Hope I won't be lazy like with previous site and will publish some
@@ -37,7 +37,7 @@ export default function Index() {
           src={Circle2}
           className="absolute left-[50%] top-0 -z-[10] h-[1000px] -translate-x-[50%] opacity-80 md:h-[1200px]"
         />
-        <div className="rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-6 shadow-feed backdrop-blur-2xl md:p-20">
+        <div className="rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel p-6 shadow-feed backdrop-blur-2xl md:p-20">
           <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 2xl:text-4xl">
             Here you can feel save, no cookie popup will destruct you, no one
             will know you have been here 🤐
