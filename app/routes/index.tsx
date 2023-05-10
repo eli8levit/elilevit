@@ -16,9 +16,9 @@ export default function Index() {
       <FaidInMotionContainer className="content-container items-center pt-10 md:h-[400px]">
         <img
           src={Circle}
-          className="absolute left-[50%] top-0 -z-[10] h-[1400px] -translate-x-[50%] opacity-80"
+          className="absolute top-0 left-[50%] -z-[10] h-full w-[200%] max-w-[200%] -translate-x-[50%] opacity-80 md:top-0 md:h-[1400px]"
         />
-        <div className="pb-10 md:p-20">
+        <div className="pb-4 md:p-20 md:pb-10">
           <h1 className="z-10 mb-1 font-mona text-2xl font-medium text-primary md:text-3xl 2xl:text-4xl">
             Hey, good to see you!
           </h1>
@@ -32,7 +32,7 @@ export default function Index() {
         </div>
       </FaidInMotionContainer>
       <Feed />
-      <div className="content-container relative mb-28 pb-20 pt-0">
+      <div className="content-container relative mb-8 pb-20 pt-0 md:mb-28">
         <img
           src={Circle2}
           className="absolute left-[50%] top-0 -z-[10] h-[1000px] -translate-x-[50%] opacity-80 md:h-[1200px]"
@@ -80,7 +80,7 @@ export default function Index() {
               />
             </motion.svg>
           </h4>
-          <ul className="mx-auto mb-16 flex w-max flex-col font-hubot text-2xl">
+          <ul className="mx-auto mb-16 flex w-max flex-col font-hubot text-lg md:text-2xl">
             <li>
               <Link
                 className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"

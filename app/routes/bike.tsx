@@ -105,7 +105,7 @@ export default function Bike() {
   return (
     <FaidInMotionContainer className="overflow-hidden">
       <div className="content-container pt-10">
-        <div className="pb-10 md:p-20">
+        <div className="pb-4 md:p-20 md:pb-10">
           <h1 className="heading shrink-0">
             <AnimatedText>Bike Blog</AnimatedText>
           </h1>
@@ -123,7 +123,7 @@ export default function Bike() {
           src={Circle}
           className="absolute left-[50%] top-[50%] -z-[10] h-[1200px] -translate-x-[50%] -translate-y-[50%] opacity-80"
         />
-        <div className="mb-40 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] !p-0 backdrop-blur-2xl">
+        <div className="mb-20 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] !p-0 backdrop-blur-2xl md:mb-40">
           <div>
             {POST_TYPES.map((type) => {
               return (

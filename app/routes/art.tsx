@@ -35,7 +35,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       }
       transition={{ type: "ease-in", duration: 0.2 }}
       href={href}
-      className="flex w-full flex-col rounded-xl bg-lightGray p-8 shadow-nav backdrop-blur-2xl 2xl:p-12"
+      className="flex w-full flex-col rounded-xl bg-lightGray p-6 shadow-nav backdrop-blur-2xl 2xl:p-12"
       style={{ willChange }}
       target="_blank"
       rel="noopener noreferrer"
@@ -71,8 +71,8 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 export default function Art() {
   return (
     <>
-      <FaidInMotionContainer className="content-container flex flex-col md:pt-0">
-        <div className="pb-10 md:p-20">
+      <FaidInMotionContainer className="content-container flex flex-col pb-4 md:p-10 md:pt-0">
+        <div>
           <h1 className="heading">
             <AnimatedText>Work & Art</AnimatedText>
           </h1>
@@ -82,12 +82,12 @@ export default function Art() {
           </h2>
         </div>
       </FaidInMotionContainer>
-      <div className=" relative mb-44 py-12 !pt-0 md:py-24">
+      <div className="relative mb-44 py-12 !pt-0 md:py-24">
         <img
           src={Circle}
           className="absolute left-[50%] top-[10%] -z-[10] h-[1000px] -translate-x-[50%] opacity-80 blur-lg"
         />
-        <div className="content-container mx-auto grid grid-rows-[500px_500px_400px] gap-4 pt-0 md:mb-20 md:grid-cols-5">
+        <div className="content-container mx-auto grid grid-rows-[500px_500px_400px] gap-4 pt-6 md:mb-20 md:grid-cols-5">
           <div className="flex md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3">
             <ArtCard
               background="bg-haIsh"

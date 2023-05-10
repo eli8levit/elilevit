@@ -11,7 +11,7 @@ export const Footer = () => {
           <p>
             Created with{" "}
             <Link
-              className="rounded-lg p-2 text-primary hover:bg-lightGray hover:shadow-nav"
+              className="rounded-lg p-1 text-primary hover:bg-lightGray hover:shadow-nav md:p-2"
               href="https://remix.run/"
             >
               Remix
@@ -20,14 +20,14 @@ export const Footer = () => {
           <p>
             Fonts{" "}
             <Link
-              className="rounded-lg p-2 text-primary hover:bg-lightGray hover:shadow-nav"
+              className="rounded-lg p-1 text-primary hover:bg-lightGray hover:shadow-nav md:p-2"
               href="https://www.collletttivo.it/"
             >
               Apfel
             </Link>{" "}
             §{" "}
             <Link
-              className="rounded-lg p-2 text-primary hover:bg-lightGray hover:shadow-nav"
+              className="rounded-lg p-1 text-primary hover:bg-lightGray hover:shadow-nav md:p-2"
               href="https://github.com/mona-sans"
             >
               Mona & Hubot Sans
