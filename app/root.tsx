@@ -84,7 +84,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex min-h-full flex-col overflow-x-hidden ">
+      <body className="relative flex max-w-full flex-col overflow-x-hidden">
         <Nav memojiId={memojiId} isMobile={isMobile} />
         <Outlet />
         <Footer />

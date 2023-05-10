@@ -15,7 +15,7 @@ module.exports = {
         player: "url(/player.png)",
       },
       boxShadow: {
-        feed: "0 2px 30px -4px rgba(0, 0, 0, 0.03), 0 -6px 20px 0 rgba(219,40,119,0.05), 0 -10px 50px 0 rgba(0,0,255,0.05)",
+        feed: "0 2px 30px -4px rgba(0, 0, 0, 0.02),0 -10px 50px 0 rgba(0,0,255,0.05)",
         bikeCard:
           "inset 0 -3px 5px -3px rgba(255,255,255,0.45), rgba(0, 0, 0, 0.3) 0 6px 12px -5px",
         bikeCardSm:

@@ -8,7 +8,7 @@ import { FaidInMotionContainer } from "~/components/layout";
 export default function Feed() {
   return (
     <FaidInMotionContainer className="content-container mb-6 pt-6 md:mb-14">
-      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-4 backdrop-blur-2xl md:p-20">
+      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-4 shadow-feed backdrop-blur-2xl md:p-20">
         <div className="mb-6 flex flex-row items-center gap-x-2 opacity-30 md:mb-14 md:gap-x-4">
           <h3
             id="latest-stuff"
@@ -16,7 +16,6 @@ export default function Feed() {
           >
             Latest stuff
           </h3>
-          <Arrow className="h-[10px] rotate-90 md:h-[18px]" />
         </div>
         <div className="flex flex-col gap-8 md:gap-20">
           <div>
@@ -56,7 +55,7 @@ export default function Feed() {
                 />
               </Link>
             </div>
-            <div className="hide-scrollbar relative grid w-[105%] grid-cols-[repeat(4,200px)_auto] gap-2 overflow-x-auto md:w-full md:grid-cols-[3fr_2fr_2fr_3fr]">
+            <div className="hide-scrollbar relative grid grid-cols-[repeat(4,200px)_auto] gap-2 overflow-x-auto md:grid-cols-[3fr_2fr_2fr_3fr]">
               <img
                 src={genImageUrlById("021cd876-f163-4095-8a8b-ad6f3eb19f4a")}
                 height="45vh"
@@ -103,7 +102,7 @@ export default function Feed() {
                 />
               </Link>
             </div>
-            <div className="hide-scrollbar relative grid w-[106%] grid-cols-[300px_450px_auto] gap-2 overflow-x-auto md:w-full md:grid-cols-[6fr_4fr]">
+            <div className="hide-scrollbar relative grid grid-cols-[300px_450px_auto] gap-2 overflow-x-auto md:grid-cols-[6fr_4fr]">
               <img
                 src={genImageUrlById("24a1eddf-5136-4d94-9f8f-015d10c9e69e")}
                 height="45vh"
