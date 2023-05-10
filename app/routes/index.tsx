@@ -13,7 +13,7 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <FaidInMotionContainer className="content-container items-center pt-10 md:h-[400px] 2xl:h-[500px]">
+      <FaidInMotionContainer className="content-container items-center pt-10 md:h-[400px]">
         <img
           src={Circle}
           className="absolute left-[50%] top-0 -z-[10] h-[1400px] -translate-x-[50%] opacity-80"

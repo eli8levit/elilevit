@@ -3,6 +3,7 @@ import React from "react";
 import { genImageUrlById } from "~/utilities";
 import Arrow from "~/components/arrow";
 import MeshGradient from "~/components/mesh-gradient";
+import { FaidInMotionContainer } from "~/components/layout";
 
 export { loader } from "../../use-mobile-loader";
 
@@ -10,7 +11,7 @@ export default function EinPrat() {
   const { isMobile } = useLoaderData();
 
   return (
-    <div className="content-container flex flex-col gap-6 pt-4 pb-40 md:gap-8 2xl:max-w-[1800px] 2xl:gap-12">
+    <FaidInMotionContainer className="content-container flex flex-col gap-6 pt-4 pb-40 md:gap-8 2xl:max-w-[1800px] 2xl:gap-12">
       <Link
         to="/#latest-stuff"
         className="mb-4 flex w-max flex-row items-baseline gap-2 rounded-md px-2 py-2 font-hubot text-sm text-zinc-600 hover:bg-lightGray hover:shadow-nav active:shadow-navActive 2xl:px-3 2xl:py-2 2xl:text-base"
@@ -94,6 +95,6 @@ export default function EinPrat() {
         />
         <div className="sticky right-0 z-10 h-[380px] w-[0px] bg-transparent shadow-scrollable md:hidden" />
       </div>
-    </div>
+    </FaidInMotionContainer>
   );
 }

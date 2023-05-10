@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink, useMatches } from "@remix-run/react";
 import { motion } from "framer-motion";
 import { MotionNavLink } from "~/components/motion-nav-link";
-import config from "tailwind.config";
 
 const Link = ({
   id,

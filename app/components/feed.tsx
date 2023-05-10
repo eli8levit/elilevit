@@ -7,7 +7,7 @@ import { FaidInMotionContainer } from "~/components/layout";
 
 export default function Feed() {
   return (
-    <FaidInMotionContainer className="content-container mb-14 pb-20 pt-6">
+    <FaidInMotionContainer className="content-container mb-14 pb-4 pt-6">
       <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-6 backdrop-blur-2xl md:p-20">
         <div className="mb-6 flex flex-row items-center gap-x-4 opacity-30 md:mb-14">
           <h3
@@ -87,14 +87,14 @@ export default function Feed() {
           <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10" />
           <div>
             <p className="font-hubot text-sm font-bold text-zinc-700 md:-mb-2 md:text-base">
-              21.4.2023
+              30.3.2023
             </p>
             <div className="mb-4 flex flex-wrap items-center justify-between md:flex-row">
               <p className="mr-4 w-max flex-wrap font-mona text-base font-light text-zinc-600 md:text-xl">
                 🇬🇪 Georgia. Tbilisi
               </p>
               <Link
-                to="/feed/ein-prat"
+                to="/feed/georgia"
                 className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
               >
                 Read more
@@ -117,15 +117,15 @@ export default function Feed() {
             </div>
           </div>
         </div>
-        <div className="absolute -bottom-[30px] z-10 h-[0] w-[calc(100%-10rem)] bg-transparent shadow-cloud" />
+        {/*<div className="absolute -bottom-[30px] z-10 h-[0] w-[calc(100%-10rem)] bg-transparent shadow-cloud" />*/}
       </div>
-      <Link
-        to="/feed/ein-prat"
-        className="absolute left-[50%] z-20 flex -translate-x-[50%] flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-base text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-lg"
-      >
-        To all feed
-        <Arrow className="fill-secondary" height="15px" />
-      </Link>
+      {/*<Link*/}
+      {/*  to="/feed/ein-prat"*/}
+      {/*  className="absolute left-[50%] z-20 flex -translate-x-[50%] flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-base text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-lg"*/}
+      {/*>*/}
+      {/*  To all feed*/}
+      {/*  <Arrow className="fill-secondary" height="15px" />*/}
+      {/*</Link>*/}
     </FaidInMotionContainer>
   );
 }
