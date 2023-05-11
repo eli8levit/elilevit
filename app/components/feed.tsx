@@ -18,7 +18,7 @@ interface IFeedRow {
 const FeedRow = ({ date, title, linkProps, children }: IFeedRow) => {
   return (
     <div>
-      <div className="mb-2 flex flex-wrap items-center justify-between gap-x-2 md:flex-row">
+      <div className="mb-1 flex flex-wrap items-center justify-between gap-x-2 md:mb-2 md:flex-row">
         <p className="font-hubot text-base font-bold text-zinc-700 md:mb-1">
           {date}
         </p>
@@ -33,7 +33,7 @@ const FeedRow = ({ date, title, linkProps, children }: IFeedRow) => {
           />
         </Link>
       </div>
-      <p className="mb-4 flex-row items-center gap-x-2 fill-zinc-600 font-mona text-lg font-light text-zinc-600 md:text-xl">
+      <p className="mb-4 flex flex-row items-center gap-x-2 fill-zinc-600 font-mona text-lg font-light text-zinc-600 md:text-xl">
         {title}
       </p>
       {children}
@@ -44,7 +44,7 @@ const FeedRow = ({ date, title, linkProps, children }: IFeedRow) => {
 export default function Feed() {
   return (
     <FaidInMotionContainer className="content-container mb-6 pt-6">
-      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel p-6 shadow-feed backdrop-blur-2xl md:p-16">
+      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:p-16">
         <h3
           id="latest-stuff"
           className="mb-6 flex flex-row font-mona text-2xl font-semibold text-black opacity-40 md:text-4xl"

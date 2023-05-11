@@ -16,7 +16,7 @@ export default function Index() {
       <FaidInMotionContainer className="content-container h-max items-center pt-10 md:h-[350px] 2xl:h-[400px]">
         <img
           src={Circle}
-          className="absolute left-[50%] -top-[250px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%]  opacity-50 md:h-[1600px] md:w-full md:max-w-full"
+          className="absolute left-[50%] -top-[250px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-40 md:h-[1600px] md:w-full md:max-w-full md:opacity-50"
         />
         <div className="pb-4 md:p-20 md:pb-10">
           <h1 className="z-10 mb-1 font-mona text-2xl font-medium text-primary md:text-3xl 2xl:text-4xl">
@@ -35,7 +35,7 @@ export default function Index() {
       <div className="content-container relative mb-8 pb-20 pt-0 md:mb-28">
         <img
           src={Circle2}
-          className="absolute left-[50%] top-0 -z-[10] h-[1000px] -translate-x-[50%] opacity-80 md:h-[1200px]"
+          className="absolute left-[50%] top-[40%] -z-[10] h-[550px] w-[600px] max-w-[600px] -translate-y-[50%] -translate-x-[50%] opacity-80 md:top-0 md:h-[1200px] md:w-full md:max-w-full md:translate-y-0"
         />
         <div className="rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel p-6 shadow-feed backdrop-blur-2xl md:p-20">
           <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 2xl:text-4xl">

@@ -42,19 +42,6 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       <div className="mb-5 flex-col">
         <h3 className="relative mb-4 w-max font-apfel text-2xl font-bold text-gray-900 lg:text-3xl">
           {title}
-          {/*<motion.svg*/}
-          {/*  viewBox="0 0 1506 391"*/}
-          {/*  width="140%"*/}
-          {/*  className="absolute -left-[15%] -bottom-2 stroke-[rgba(0,0,255,0.3)]"*/}
-          {/*  fill="none"*/}
-          {/*  viewport={{ once: true, amount: 0.8 }}*/}
-          {/*>*/}
-          {/*  <motion.path*/}
-          {/*    d="M782.436 86.132S1296.48 5.737 1466.49 197.317C1574.55 319.089 1302.48 375 806.438 375c-496.04 0-931.985-48.859-747.06-164.854C346.403 30.112 1275.48 16 1275.48 16"*/}
-          {/*    strokeWidth="25"*/}
-          {/*    strokeLinecap="round"*/}
-          {/*  />*/}
-          {/*</motion.svg>*/}
         </h3>
         <p className="mb-2 max-w-[700px] font-hubot text-base font-normal text-gray-600 md:text-lg">
           {description}
