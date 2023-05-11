@@ -47,7 +47,7 @@ export default function Feed() {
       <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:p-16">
         <h3
           id="latest-stuff"
-          className="mb-6 flex flex-row font-mona text-2xl font-semibold text-black opacity-40 md:text-4xl"
+          className="mb-5 flex flex-row font-apfel text-2xl font-bold text-black opacity-40 md:text-4xl"
         >
           Latest stuff
         </h3>

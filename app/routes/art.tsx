@@ -57,13 +57,15 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
 export default function Art() {
   return (
     <>
-      <FaidInMotionContainer className="content-container flex flex-col pb-4 md:p-10 md:pt-0">
-        <div>
-          <h1 className="heading">Work & Art</h1>
-          <h2 className="subheading">
-            Here you can see my art like photos, illustrations along with my
-            projects
-          </h2>
+      <FaidInMotionContainer>
+        <div className="content-container pt-10">
+          <div className="pb-4 md:p-20 md:pb-10">
+            <h1 className="heading shrink-0">Work & Art</h1>
+            <h2 className="subheading">
+              This page is about my bike and stuff related to cycling: my rides,
+              photos and{" "}
+            </h2>
+          </div>
         </div>
       </FaidInMotionContainer>
       <div className="relative mb-44 py-12 !pt-0 md:py-24">

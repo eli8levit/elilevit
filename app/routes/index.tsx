@@ -16,7 +16,7 @@ export default function Index() {
       <FaidInMotionContainer className="content-container h-max items-center pt-10 md:h-[350px] 2xl:h-[400px]">
         <img
           src={Circle}
-          className="absolute left-[50%] -top-[250px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-40 md:h-[1600px] md:w-full md:max-w-full md:opacity-50"
+          className="absolute left-[50%] -top-[230px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-40 md:h-[1600px] md:w-full md:max-w-full"
         />
         <div className="pb-4 md:p-20 md:pb-10">
           <h1 className="z-10 mb-1 font-mona text-2xl font-medium text-primary md:text-3xl 2xl:text-4xl">

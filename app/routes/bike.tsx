@@ -7,7 +7,7 @@ import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
 import { genImageUrl, getMobileDetect } from "~/utilities";
-import Circle from "~/sources/images/grad2.svg";
+import Circle from "~/sources/images/grad.svg";
 
 type Card = {
   image: string;
@@ -38,14 +38,7 @@ const BikeCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-blackTransparentLighter text-black shadow-bikeCardSm backdrop-blur-sm active:backdrop-blur-sm md:h-[440px] md:w-[340px] md:shadow-bikeCard 2xl:h-[480px] 2xl:w-[400px]`}
-      whileHover={
-        !isMobile
-          ? {
-              scale: 1.03,
-            }
-          : {}
-      }
+      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-2xl active:backdrop-blur-sm md:h-[440px] md:w-[340px] 2xl:h-[480px] 2xl:w-[400px]`}
       whileTap={{ scale: 0.98 }}
       transition={{
         scale: { type: "spring", stiffness: 200, damping: 10 },
@@ -102,7 +95,7 @@ export default function Bike() {
   const upgradePosts = posts.filter((post) => post.tag === "upgrades");
 
   return (
-    <FaidInMotionContainer className="overflow-hidden">
+    <FaidInMotionContainer>
       <div className="content-container pt-10">
         <div className="pb-4 md:p-20 md:pb-10">
           <h1 className="heading shrink-0">Bike Blog</h1>
@@ -115,49 +108,46 @@ export default function Bike() {
           </h2>
         </div>
       </div>
-      <div className="content-container relative pt-6">
+      <div className="md:content-container pt-6">
         <img
           src={Circle}
-          className="absolute left-[50%] top-[50%] -z-[10] h-[1200px] -translate-x-[50%] -translate-y-[50%] opacity-80"
+          className="absolute left-[50%] top-[60%] -z-[10] h-[400px] -translate-x-[50%] -translate-y-[50%] opacity-40 md:h-[1000px] md:max-w-[unset]"
         />
-        <div className="mb-20 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel !p-0 shadow-feed backdrop-blur-2xl md:mb-40">
-          <div>
-            {POST_TYPES.map((type) => {
-              return (
-                <section className="hide-scrollbar flex flex-col overflow-auto p-8 md:p-20">
-                  <h2 className="sticky left-0 mb-4 font-mona text-3xl font-extralight text-black md:mb-6 lg:text-4xl">
-                    # {type.title}
-                  </h2>
-                  <ul className="flex snap-x snap-mandatory flex-row gap-4 md:gap-8">
-                    {(type.id === "rides" ? bikePosts : upgradePosts).map(
-                      (post: Post, index) => {
-                        return (
-                          <Link
-                            className="snap-start"
-                            key={post.id}
-                            to={`/bike/${post.id}`}
-                            preventScrollReset
-                          >
-                            <BikeCard
-                              isMobile={isMobile}
-                              image={genImageUrl(post.image, "600x600")}
-                              description={post.subtitle || ""}
-                              title={post.title}
-                              id={post.id}
-                              tag={post.tag}
-                              date={post.createdAt}
-                              index={index + 1}
-                            />
-                          </Link>
-                        );
-                      }
-                    )}
-                    <div className="h-12 min-w-[50px]" />
-                  </ul>
-                </section>
-              );
-            })}
-          </div>
+        <div className="mb-20 flex flex-col gap-y-4 rounded-2xl border-black border-opacity-10 bg-panel md:mb-40 md:border-[0.5px] md:p-16 md:shadow-feed md:backdrop-blur-2xl">
+          {POST_TYPES.map((type) => {
+            return (
+              <section className="flex flex-col">
+                <h2 className="sticky left-0 ml-4 font-mona text-2xl font-extralight text-black lg:text-4xl">
+                  # {type.title}
+                </h2>
+                <ul className="hide-scrollbar flex flex-row gap-4 overflow-auto p-6 pl-4 md:gap-8">
+                  {(type.id === "rides" ? bikePosts : upgradePosts).map(
+                    (post: Post, index) => {
+                      return (
+                        <Link
+                          key={post.id}
+                          to={`/bike/${post.id}`}
+                          preventScrollReset
+                        >
+                          <BikeCard
+                            isMobile={isMobile}
+                            image={genImageUrl(post.image, "600x600")}
+                            description={post.subtitle || ""}
+                            title={post.title}
+                            id={post.id}
+                            tag={post.tag}
+                            date={post.createdAt}
+                            index={index + 1}
+                          />
+                        </Link>
+                      );
+                    }
+                  )}
+                  <div className="h-12 min-w-[50px]" />
+                </ul>
+              </section>
+            );
+          })}
           <ModalContent route="bike" />
         </div>
       </div>
