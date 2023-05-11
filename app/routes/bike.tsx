@@ -1,7 +1,6 @@
 import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
 import { motion } from "framer-motion";
-import { AnimatedText } from "~/components";
 import { ModalContent } from "~/components/modal-content";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getBikePosts } from "~/models/posts";
@@ -106,9 +105,7 @@ export default function Bike() {
     <FaidInMotionContainer className="overflow-hidden">
       <div className="content-container pt-10">
         <div className="pb-4 md:p-20 md:pb-10">
-          <h1 className="heading shrink-0">
-            <AnimatedText>Bike Blog</AnimatedText>
-          </h1>
+          <h1 className="heading shrink-0">Bike Blog</h1>
           <h2 className="subheading">
             This page is about my bike and stuff related to cycling: my rides,
             photos and{" "}

@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatedText, draw } from "~/components";
+import { draw } from "~/components";
 import { motion } from "framer-motion";
 import { Link } from "@remix-run/react";
 import Circle from "~/sources/images/grad2.svg";
@@ -16,7 +16,7 @@ export default function Index() {
       <FaidInMotionContainer className="content-container h-max items-center pt-10 md:h-[350px] 2xl:h-[400px]">
         <img
           src={Circle}
-          className="absolute left-[50%] -top-[250px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-80 md:h-full md:h-[1400px] md:w-full md:max-w-full"
+          className="absolute left-[50%] -top-[250px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%]  opacity-50 md:h-[1600px] md:w-full md:max-w-full"
         />
         <div className="pb-4 md:p-20 md:pb-10">
           <h1 className="z-10 mb-1 font-mona text-2xl font-medium text-primary md:text-3xl 2xl:text-4xl">
@@ -26,8 +26,8 @@ export default function Index() {
             I'm Eli, Developer & Creator
           </h2>
           <p className="subheading max-w-[600px]">
-            Hope I won't be lazy like with previous site and will publish some
-            nice things.
+            Here is my place to learn to beat my perfectionism and to tell about
+            some things I like.
           </p>
         </div>
       </FaidInMotionContainer>
@@ -43,7 +43,7 @@ export default function Index() {
             will know you have been here 🤐
           </h3>
           <h3 className="font-mona text-xl font-light text-gray-500 md:text-2xl">
-            Also I care about privacy and don't use analytics
+            Also I care about user privacy and don't use any analytic service
           </h3>
           <motion.svg
             viewBox="0 0 569 629"

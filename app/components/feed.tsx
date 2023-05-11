@@ -2,8 +2,44 @@ import { Link } from "@remix-run/react";
 import Arrow from "~/components/arrow";
 import { genImageUrlById } from "~/utilities";
 
-import React from "react";
+import React, { ReactElement } from "react";
 import { FaidInMotionContainer } from "~/components/layout";
+
+interface IFeedRow {
+  date: string;
+  title: string | ReactElement;
+  linkProps: {
+    to: string;
+    text: string;
+  };
+  children: ReactElement | ReactElement[];
+}
+
+const FeedRow = ({ date, title, linkProps, children }: IFeedRow) => {
+  return (
+    <div>
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-x-2 md:flex-row">
+        <p className="font-hubot text-base font-bold text-zinc-700 md:mb-1">
+          {date}
+        </p>
+        <Link
+          to={linkProps.to}
+          className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
+        >
+          {linkProps.text}
+          <Arrow
+            className="h-[10px] fill-secondary md:h-[15px]"
+            height="15px"
+          />
+        </Link>
+      </div>
+      <p className="mb-4 flex-row items-center gap-x-2 fill-zinc-600 font-mona text-lg font-light text-zinc-600 md:text-xl">
+        {title}
+      </p>
+      {children}
+    </div>
+  );
+};
 
 export default function Feed() {
   return (
@@ -16,12 +52,31 @@ export default function Feed() {
           Latest stuff
         </h3>
         <div className="flex flex-col gap-8 md:gap-20">
-          <div>
-            <p className="mb-2 font-hubot text-base font-bold text-black md:mb-1">
-              21.4.2023
-            </p>
-            <div className="mb-4 flex flex-wrap items-center justify-between md:flex-row">
-              <p className="flex w-max flex-row items-center gap-x-2 fill-zinc-600 font-mona text-lg font-light text-zinc-600 md:text-xl">
+          <FeedRow
+            title="🇬🇪 Georgia. Tbilisi"
+            date="30.3.2023"
+            linkProps={{ to: "/feed/georgia", text: "Read more" }}
+          >
+            <div className="hide-scrollbar relative grid grid-cols-[300px_450px_auto] gap-2 overflow-x-auto md:grid-cols-[6fr_4fr]">
+              <img
+                src={genImageUrlById("24a1eddf-5136-4d94-9f8f-015d10c9e69e")}
+                height="45vh"
+                className="h-[250px]  w-full rounded-md object-cover shadow-lg md:h-[380px] 2xl:h-[450px]"
+                alt="Open pool with view of reserve"
+              />
+              <img
+                src={genImageUrlById("4966445b-b4b0-4872-af96-82d30e3c9129")}
+                height="450px"
+                className="h-[250px]  w-full rounded-md object-cover shadow-lg md:h-[380px] 2xl:h-[450px]"
+                alt="High rock hills from right and left, blue sky with clouds"
+              />
+            </div>
+          </FeedRow>
+          <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10" />
+          <FeedRow
+            date="21.4.2023"
+            title={
+              <>
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -41,18 +96,10 @@ export default function Feed() {
                   </g>
                 </svg>
                 Photos from Ein Prat Nature Reserve trip
-              </p>
-              <Link
-                to="/feed/ein-prat"
-                className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
-              >
-                See All
-                <Arrow
-                  className="h-[10px] fill-secondary md:h-[15px]"
-                  height="15px"
-                />
-              </Link>
-            </div>
+              </>
+            }
+            linkProps={{ to: "/feed/ein-prat", text: "See All" }}
+          >
             <div className="hide-scrollbar relative grid grid-cols-[repeat(4,200px)_auto] gap-2 overflow-x-auto md:grid-cols-[3fr_2fr_2fr_3fr]">
               <img
                 src={genImageUrlById("021cd876-f163-4095-8a8b-ad6f3eb19f4a")}
@@ -79,42 +126,7 @@ export default function Feed() {
                 alt="A stream running through a channel between two rock hills"
               />
             </div>
-          </div>
-          <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10" />
-          <div>
-            <p className="mb-2 font-hubot text-base font-bold text-zinc-700 md:mb-1">
-              30.3.2023
-            </p>
-            <div className="mb-4 flex flex-wrap items-center justify-between md:flex-row">
-              <p className="w-max flex-wrap font-mona text-lg font-light text-zinc-600 md:text-xl">
-                🇬🇪 Georgia. Tbilisi
-              </p>
-              <Link
-                to="/feed/georgia"
-                className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
-              >
-                Read more
-                <Arrow
-                  className="h-[10px] fill-secondary md:h-[15px]"
-                  height="15px"
-                />
-              </Link>
-            </div>
-            <div className="hide-scrollbar relative grid grid-cols-[300px_450px_auto] gap-2 overflow-x-auto md:grid-cols-[6fr_4fr]">
-              <img
-                src={genImageUrlById("24a1eddf-5136-4d94-9f8f-015d10c9e69e")}
-                height="45vh"
-                className="h-[250px]  w-full rounded-md object-cover shadow-lg md:h-[380px] 2xl:h-[450px]"
-                alt="Open pool with view of reserve"
-              />
-              <img
-                src={genImageUrlById("4966445b-b4b0-4872-af96-82d30e3c9129")}
-                height="450px"
-                className="h-[250px]  w-full rounded-md object-cover shadow-lg md:h-[380px] 2xl:h-[450px]"
-                alt="High rock hills from right and left, blue sky with clouds"
-              />
-            </div>
-          </div>
+          </FeedRow>
         </div>
         {/*<div className="absolute -bottom-[30px] z-10 h-[0] w-[calc(100%-10rem)] bg-transparent shadow-cloud" />*/}
       </div>

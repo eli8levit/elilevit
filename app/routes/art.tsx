@@ -4,7 +4,6 @@ import { motion, useWillChange } from "framer-motion";
 import Circle from "~/sources/images/grad.svg";
 import { useLoaderData } from "@remix-run/react";
 import defaultTheme from "tailwindcss/defaultTheme";
-import { AnimatedText } from "~/components";
 
 export { loader } from "../use-mobile-loader";
 
@@ -73,9 +72,7 @@ export default function Art() {
     <>
       <FaidInMotionContainer className="content-container flex flex-col pb-4 md:p-10 md:pt-0">
         <div>
-          <h1 className="heading">
-            <AnimatedText>Work & Art</AnimatedText>
-          </h1>
+          <h1 className="heading">Work & Art</h1>
           <h2 className="subheading">
             Here you can see my art like photos, illustrations along with my
             projects
