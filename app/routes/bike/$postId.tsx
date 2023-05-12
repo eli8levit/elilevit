@@ -30,12 +30,12 @@ export default function BikePost() {
       />
       <div className="mx-auto max-w-[1000px] p-6 md:p-20">
         <motion.div className="flex flex-col">
-          <motion.span className="font-mona text-xl font-light text-black">
+          <motion.span className="font-hubot text-xl font-light text-black">
             {post.createdAt}
           </motion.span>
           <motion.h1 className="mb-8 whitespace-normal pb-0 font-apfel text-5xl font-bold md:mb-12">
             {post.title}
-            <motion.span className="ml-2 inline-block font-mona text-lg font-light text-primary">
+            <motion.span className="ml-2 inline-block font-hubot text-lg font-light text-primary">
               #{post.tag}
             </motion.span>
           </motion.h1>

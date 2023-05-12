@@ -6,8 +6,8 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { getBikePosts } from "~/models/posts";
 import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
-import { genImageUrl, getMobileDetect } from "~/utilities";
-import Circle from "~/sources/images/grad.svg";
+import { genImageUrl } from "~/utilities";
+import Circle2 from "~/sources/images/grad.svg";
 
 type Card = {
   image: string;
@@ -16,7 +16,6 @@ type Card = {
   cardClass?: string;
   tag?: string | null;
   id: number;
-  isMobile: boolean;
   date: string;
   index: number;
 };
@@ -26,15 +25,7 @@ const POST_TYPES = [
   { id: "upgrades", title: "upgrades" },
 ];
 
-const BikeCard = ({
-  index,
-  image,
-  title,
-  description,
-  id,
-  isMobile,
-  date,
-}: Card) => {
+const BikeCard = ({ index, image, title, description, id, date }: Card) => {
   return (
     <motion.li
       layoutId={id.toString()}
@@ -73,22 +64,15 @@ const BikeCard = ({
   );
 };
 
-export const loader: LoaderFunction = async (
-  params: any
-): Promise<{ posts: Post[]; isMobile: boolean }> => {
-  const userAgent = params.request.headers.get("user-agent");
-  const detect = getMobileDetect(userAgent);
-
+export const loader: LoaderFunction = async (): Promise<{ posts: Post[] }> => {
   return {
     posts: (await getBikePosts({ isDetailed: false })) || [],
-    isMobile: detect.isMobile(),
   };
 };
 
 export default function Bike() {
-  const { posts = [], isMobile } = useLoaderData<{
+  const { posts = [] } = useLoaderData<{
     posts: Post[];
-    isMobile: boolean;
   }>();
 
   const bikePosts = posts.filter((post) => post.tag === "rides");
@@ -98,7 +82,7 @@ export default function Bike() {
     <FaidInMotionContainer>
       <div className="content-container pt-10">
         <div className="pb-4 md:p-20 md:pb-10">
-          <h1 className="heading shrink-0">Bike Blog</h1>
+          <h1 className="heading">Bike Blog</h1>
           <h2 className="subheading">
             This page is about my bike and stuff related to cycling: my rides,
             photos and{" "}
@@ -108,10 +92,10 @@ export default function Bike() {
           </h2>
         </div>
       </div>
-      <div className="md:content-container pt-6">
+      <div className="md:content-container relative pt-6">
         <img
-          src={Circle}
-          className="absolute left-[50%] top-[60%] -z-[10] h-[400px] -translate-x-[50%] -translate-y-[50%] opacity-40 md:h-[1000px] md:max-w-[unset]"
+          src={Circle2}
+          className="absolute left-[50%] top-[50%] -z-[10] h-[800px] w-[600px] max-w-[600px] -translate-y-[50%]  -translate-x-[50%] rotate-90 opacity-40 md:h-[1000px] md:w-full md:max-w-[unset] md:rotate-0"
         />
         <div className="mb-20 flex flex-col gap-y-4 rounded-2xl border-black border-opacity-10 bg-panel md:mb-40 md:border-[0.5px] md:p-16 md:shadow-feed md:backdrop-blur-2xl">
           {POST_TYPES.map((type) => {
@@ -130,7 +114,6 @@ export default function Bike() {
                           preventScrollReset
                         >
                           <BikeCard
-                            isMobile={isMobile}
                             image={genImageUrl(post.image, "600x600")}
                             description={post.subtitle || ""}
                             title={post.title}
@@ -148,8 +131,8 @@ export default function Bike() {
               </section>
             );
           })}
-          <ModalContent route="bike" />
         </div>
+        <ModalContent route="bike" />
       </div>
     </FaidInMotionContainer>
   );

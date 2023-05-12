@@ -22,7 +22,7 @@
 
 @layer components {
   .content-container {
-    @apply mx-auto w-full max-w-[1400px] px-5 pt-10 md:px-12 md:pt-24 lg:px-28 2xl:max-w-[2000px] 2xl:px-44 2xl:pt-32;
+    @apply mx-auto w-full max-w-[1400px] px-6 pt-10 md:px-12 md:pt-24 lg:px-28 2xl:max-w-[2000px] 2xl:px-44 2xl:pt-32;
   }
 
   .content p {
