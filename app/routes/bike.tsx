@@ -92,7 +92,7 @@ export default function Bike() {
           </h2>
         </div>
       </div>
-      <div className="md:content-container relative pt-6">
+      <div className="md:content-container relative md:pt-6">
         <img
           src={Circle2}
           className="absolute left-[50%] top-[50%] -z-[10] h-[800px] w-[600px] max-w-[600px] -translate-y-[50%]  -translate-x-[50%] rotate-90 opacity-40 md:h-[1000px] md:w-full md:max-w-[unset] md:rotate-0"
