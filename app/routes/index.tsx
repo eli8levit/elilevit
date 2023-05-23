@@ -21,7 +21,7 @@ export default function Index() {
         <div className="mb-10 grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20 md:px-14">
           <div className="mx-auto">
             <h1 className="z-10 mb-1 font-shantell text-2xl font-normal text-primary md:text-3xl 2xl:text-4xl">
-              Hey, good to see you!
+              Hey, good to see you ♡
             </h1>
             <h2 className="heading mb-6 font-bold text-black">
               I'm Eli, Developer & Creator

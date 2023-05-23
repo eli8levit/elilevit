@@ -45,9 +45,9 @@ export default function Feed() {
       <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:p-16 md:pt-10">
         <h3
           id="latest-stuff"
-          className="mb-10 flex flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
+          className="mx-auto mb-10 flex w-max flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
         >
-          Latest stuff
+          Latest stuff ↓
         </h3>
         <div className="flex flex-col gap-8 md:gap-12">
           <FeedRow

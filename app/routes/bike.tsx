@@ -102,7 +102,7 @@ export default function Bike() {
             return (
               <section className="flex flex-col">
                 <h2 className="sticky left-0 ml-4 font-shantell text-2xl font-medium text-black opacity-80 md:opacity-60 lg:text-3xl">
-                  # {type.title}
+                  ◌ {type.title}
                 </h2>
                 <ul className="hide-scrollbar flex flex-row gap-4 overflow-auto p-6 pl-4 md:gap-8">
                   {(type.id === "rides" ? bikePosts : upgradePosts).map(
