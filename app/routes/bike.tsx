@@ -52,10 +52,10 @@ const BikeCard = ({ index, image, title, description, id, date }: Card) => {
           {description}
         </p>
         <div className="mt-auto flex flex-row items-center justify-between text-gray-700 transition-all md:group-hover:text-black">
-          <span className="w-max font-mona text-xs md:text-sm 2xl:text-base">
+          <span className="w-max font-hubot text-xs md:text-sm 2xl:text-base">
             {date}
           </span>
-          <span className="ml-auto w-max font-mona text-xs md:text-sm 2xl:text-base">
+          <span className="ml-auto w-max font-hubot text-xs md:text-sm 2xl:text-base">
             # {index}
           </span>
         </div>
@@ -92,16 +92,16 @@ export default function Bike() {
           </h2>
         </div>
       </div>
-      <div className="md:content-container relative md:pt-6">
+      <div className="md:content-container relative py-8 md:pt-6">
         <img
           src={Circle2}
           className="absolute left-[50%] top-[50%] -z-[10] h-[800px] w-[600px] max-w-[600px] -translate-y-[50%]  -translate-x-[50%] rotate-90 opacity-40 md:h-[1000px] md:w-full md:max-w-[unset] md:rotate-0"
         />
-        <div className="mb-20 flex flex-col gap-y-4 rounded-2xl border-black border-opacity-10 bg-panel md:mb-40 md:border-[0.5px] md:p-16 md:shadow-feed md:backdrop-blur-2xl">
+        <div className="mb-20 flex flex-col gap-y-4 rounded-2xl border-black border-opacity-10 bg-panel md:mb-40 md:gap-y-12 md:border-[0.5px] md:p-16 md:shadow-feed md:backdrop-blur-2xl">
           {POST_TYPES.map((type) => {
             return (
               <section className="flex flex-col">
-                <h2 className="sticky left-0 ml-4 font-mona text-2xl font-extralight text-black lg:text-4xl">
+                <h2 className="sticky left-0 ml-4 font-shantell text-2xl font-medium text-black opacity-80 md:opacity-60 lg:text-3xl">
                   # {type.title}
                 </h2>
                 <ul className="hide-scrollbar flex flex-row gap-4 overflow-auto p-6 pl-4 md:gap-8">

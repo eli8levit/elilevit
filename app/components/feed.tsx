@@ -18,10 +18,8 @@ interface IFeedRow {
 const FeedRow = ({ date, title, linkProps, children }: IFeedRow) => {
   return (
     <div>
-      <div className="mb-1 flex flex-wrap items-center justify-between gap-x-2 md:mb-2 md:flex-row">
-        <p className="font-hubot text-base font-bold text-zinc-700 md:mb-1">
-          {date}
-        </p>
+      <div className="flex flex-wrap items-center justify-between gap-x-2 md:mb-1 md:flex-row">
+        <p className="font-hubot text-base font-bold text-zinc-700">{date}</p>
         <Link
           to={linkProps.to}
           className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
@@ -33,7 +31,7 @@ const FeedRow = ({ date, title, linkProps, children }: IFeedRow) => {
           />
         </Link>
       </div>
-      <p className="mb-4 flex flex-row items-center gap-x-2 fill-zinc-600 font-mona text-lg font-light text-zinc-600 md:text-xl">
+      <p className="mb-4 flex flex-row items-center gap-x-2 fill-zinc-600 font-mona text-base font-light text-zinc-600 md:text-xl">
         {title}
       </p>
       {children}
@@ -44,14 +42,14 @@ const FeedRow = ({ date, title, linkProps, children }: IFeedRow) => {
 export default function Feed() {
   return (
     <FaidInMotionContainer className="content-container mb-6 pt-6">
-      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:p-16">
+      <div className="relative rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:p-16 md:pt-10">
         <h3
           id="latest-stuff"
-          className="mb-5 flex flex-row font-apfel text-3xl font-bold text-black opacity-20 md:text-4xl"
+          className="mb-10 flex flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
         >
           Latest stuff
         </h3>
-        <div className="flex flex-col gap-8 md:gap-20">
+        <div className="flex flex-col gap-8 md:gap-12">
           <FeedRow
             title="🇬🇪 Georgia. Tbilisi"
             date="30.3.2023"

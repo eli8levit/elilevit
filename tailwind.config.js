@@ -29,7 +29,7 @@ module.exports = {
         blackTransparent: "rgba(0, 0, 0, 0.75)",
         blackTransparentLighter: "rgba(233,233,233,0.2)",
         lightGray: "rgba(1,1,1,.01)",
-        panel: "rgba(255,255,255,0.01)",
+        panel: "rgba(255,255,255,0.05)",
         new: "rgba(255,47,141,0.1)",
       },
       fontFamily: {
@@ -37,6 +37,7 @@ module.exports = {
         mona: ["Mona", ...defaultTheme.fontFamily.sans],
         monaWide: ["Mona Wide", ...defaultTheme.fontFamily.sans],
         hubot: ["Hubot", ...defaultTheme.fontFamily.sans],
+        shantell: ["Shantell", ...defaultTheme.fontFamily.sans],
       },
     },
   },

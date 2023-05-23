@@ -80,7 +80,7 @@ export const Footer = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
-              className="h-[24px] h-[24px] stroke-primary 2xl:h-[30px] 2xl:w-[30px]"
+              className="h-[24px] stroke-primary 2xl:h-[30px] 2xl:w-[30px]"
               fill="none"
             >
               <path d="M8.5,17c-2.73-.52-4.33-1.56-5-3"></path>

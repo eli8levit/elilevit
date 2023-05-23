@@ -6,7 +6,7 @@ export const draw = {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { delay, type: "spring", duration: 2, bounce: 0 },
+        pathLength: { delay, type: "spring", duration: 3, bounce: 0 },
         opacity: { delay, duration: 0.5 },
       },
     };
