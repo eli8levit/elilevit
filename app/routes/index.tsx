@@ -62,12 +62,12 @@ export default function Index() {
           <h3 className="font-mona text-xl font-light text-gray-500 md:text-2xl">
             Also I care about user privacy and don't use any analytic service
           </h3>
-
           <motion.svg
-            className="mx-auto my-[100px] block w-[200px] max-w-[90%] -translate-y-[20px] stroke-[rgba(0,0,0,0.3)] md:my-[200px] md:w-[400px]"
+            className="mx-auto my-[100px] w-[200px] -translate-y-[20px] stroke-[rgba(0,0,0,0.3)] md:my-[200px] md:w-[400px]"
             fill="none"
+            width="100%"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
             viewBox="0 0 884 325"
             viewport={{ once: true, amount: 0.8 }}
           >
