@@ -11,13 +11,13 @@ import Circle2 from "~/sources/images/grad.svg";
 
 type Card = {
   image: string;
-  title: string;
+  title: string | React.ReactElement;
   description: string;
-  cardClass?: string;
   tag?: string | null;
   id: number;
   date: string;
   index: number;
+  className?: string;
 };
 
 const POST_TYPES = [
@@ -25,11 +25,19 @@ const POST_TYPES = [
   { id: "upgrades", title: "upgrades" },
 ];
 
-const BikeCard = ({ index, image, title, description, id, date }: Card) => {
+export const BikeCard = ({
+  index,
+  image,
+  title,
+  description,
+  id,
+  date,
+  className,
+}: Card) => {
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-2xl active:backdrop-blur-sm md:h-[440px] md:w-[340px] 2xl:h-[480px] 2xl:w-[400px]`}
+      className={`group flex h-[380px] w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-2xl active:backdrop-blur-sm md:h-[440px] md:w-[340px] 2xl:h-[480px] 2xl:w-[400px] ${className}`}
       whileTap={{ scale: 0.98 }}
       transition={{
         scale: { type: "spring", stiffness: 200, damping: 10 },
@@ -42,13 +50,13 @@ const BikeCard = ({ index, image, title, description, id, date }: Card) => {
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="h-[230px] w-full shrink-0 object-cover md:h-[260px] md:group-hover:grayscale 2xl:h-[260px]"
+        className="h-[230px] w-full shrink-0 object-cover md:h-[280px] md:group-hover:grayscale"
       />
       <div className="flex h-full flex-col p-6">
-        <h3 className="mb-1 font-monaWide text-lg font-extrabold transition-all md:text-xl md:group-hover:text-black 2xl:text-2xl">
+        <h3 className="mb-1 font-monaWide text-lg font-extrabold transition-all md:mb-4 md:text-lg md:group-hover:text-black 2xl:text-2xl">
           {title}
         </h3>
-        <p className="font-mona text-sm font-normal text-gray-700 transition-all md:text-base md:group-hover:text-black xl:text-lg">
+        <p className="font-mona text-sm font-normal text-gray-700 transition-all md:text-base md:group-hover:text-black lg:text-lg">
           {description}
         </p>
         <div className="mt-auto flex flex-row items-center justify-between text-gray-700 transition-all md:group-hover:text-black">
