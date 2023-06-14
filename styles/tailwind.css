@@ -191,6 +191,13 @@
 }
 
 @font-face {
+  font-family: "Hubot";
+  src: url("/fonts/Hubot/Hubot-Sans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Shantell";
   src: url("/fonts/Shantell_Sans-Informal_Regular.woff2") format("woff2");
   font-weight: 400;

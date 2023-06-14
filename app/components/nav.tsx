@@ -53,6 +53,9 @@ export const Nav = ({
         <Link isMobile={isMobile} id="art" active={isActive("art")}>
           Some work
         </Link>
+        <Link isMobile={isMobile} id="feed" active={isActive("feed")}>
+          Feed
+        </Link>
 
         <NavLink to="/about" className="ml-auto">
           <motion.video

@@ -4,7 +4,8 @@ import { genImageUrlById } from "~/utilities";
 
 import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
-import { BikeCard } from "~/routes/bike";
+
+import { PostCard } from "~/components/PostCard";
 
 export default function Feed() {
   return (
@@ -18,7 +19,7 @@ export default function Feed() {
         </h3>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           <Link to="/feed/georgia">
-            <BikeCard
+            <PostCard
               className="!w-full max-w-none"
               image={genImageUrlById("24a1eddf-5136-4d94-9f8f-015d10c9e69e")}
               title="🇬🇪 Georgia. Tbilisi"
@@ -29,7 +30,7 @@ export default function Feed() {
             />
           </Link>
           <Link to="/feed/ein-prat">
-            <BikeCard
+            <PostCard
               className="!w-full max-w-none"
               image={genImageUrlById("021cd876-f163-4095-8a8b-ad6f3eb19f4a")}
               title={
