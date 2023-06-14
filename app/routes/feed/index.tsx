@@ -24,8 +24,18 @@ const FeedRow = ({
 }: IFeedRow) => {
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-between gap-x-2  md:flex-row md:gap-x-4">
-        <p className="font-hubot text-base font-medium text-gray-400">{date}</p>
+      <p className="mb-2 font-hubot text-base font-medium text-gray-400 md:mb-4">
+        {date}
+      </p>
+      <div className="mb-2 flex flex-wrap items-end justify-between gap-x-2 md:mb-4 md:flex-row md:gap-x-4">
+        <div className="flex flex-col gap-y-2">
+          <h3 className="flex flex-row items-center gap-x-2 fill-black font-apfel text-base font-bold text-black md:text-3xl">
+            {title}
+          </h3>
+          <p className="font-mona text-sm font-normal text-gray-500 transition-all md:text-base md:group-hover:text-black lg:text-xl">
+            {description}
+          </p>
+        </div>
         <Link
           to={linkProps.to}
           className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
@@ -36,14 +46,6 @@ const FeedRow = ({
             height="15px"
           />
         </Link>
-      </div>
-      <div className="mb-4 flex flex-col gap-y-1">
-        <h3 className="flex flex-row items-center gap-x-2 fill-black font-monaWide text-base text-black md:text-2xl">
-          {title}
-        </h3>
-        <p className="font-mona text-sm font-normal text-gray-500 transition-all md:text-base md:group-hover:text-black lg:text-lg">
-          {description}
-        </p>
       </div>
       {children}
     </div>
@@ -61,10 +63,10 @@ export default function Index() {
         <Arrow className="rotate-180" />
         Back to home
       </Link>
-      <div className="relative flex flex-col gap-8 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:gap-20 md:p-20 md:py-10">
+      <div className="relative flex flex-col gap-8 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:gap-20 md:p-20 md:py-10 md:pb-20">
         <h3
           id="latest-stuff"
-          className="mx-auto mb-10 flex w-max flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
+          className="mx-auto flex w-max flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
         >
           Feed
         </h3>

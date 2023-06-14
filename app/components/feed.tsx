@@ -5,7 +5,7 @@ import { genImageUrlById } from "~/utilities";
 import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
 
-import { PostCard } from "~/components/PostCard";
+import { PostCard } from "~/components/post-card";
 
 export default function Feed() {
   return (
@@ -17,7 +17,7 @@ export default function Feed() {
         >
           Latest stuff ↓
         </h3>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <Link to="/feed/georgia">
             <PostCard
               className="!w-full max-w-none"

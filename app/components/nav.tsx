@@ -48,10 +48,10 @@ export const Nav = ({
           Home
         </Link>
         <Link isMobile={isMobile} id="bike" active={isActive("bike")}>
-          Bike Blog
+          Bike
         </Link>
         <Link isMobile={isMobile} id="art" active={isActive("art")}>
-          Some work
+          Work
         </Link>
         <Link isMobile={isMobile} id="feed" active={isActive("feed")}>
           Feed

@@ -40,17 +40,17 @@ export const PostCard = ({
         className="h-[230px] w-full shrink-0 object-cover md:h-[280px] md:group-hover:grayscale"
       />
       <div className="flex h-full flex-col p-6">
-        <h3 className="mb-1 font-monaWide text-lg font-extrabold transition-all md:mb-4 md:text-lg md:group-hover:text-black 2xl:text-2xl">
+        <h3 className="mb-1 font-monaWide text-lg font-extrabold transition-all md:text-lg md:group-hover:text-black 2xl:text-2xl">
           {title}
         </h3>
-        <p className="font-mona text-sm font-normal text-gray-700 transition-all md:text-base md:group-hover:text-black lg:text-lg">
+        <p className="font-mona text-sm font-normal text-gray-700 transition-all md:text-base md:group-hover:text-black 2xl:text-lg">
           {description}
         </p>
-        <div className="mt-auto flex flex-row items-center justify-between text-gray-700 transition-all md:group-hover:text-black">
-          <span className="w-max font-hubot text-xs md:text-sm 2xl:text-base">
+        <div className="mt-auto flex flex-row items-center justify-between text-gray-500 transition-all md:group-hover:text-black">
+          <span className="w-max font-hubot text-xs font-medium md:text-sm 2xl:text-base">
             {date}
           </span>
-          <span className="ml-auto w-max font-hubot text-xs md:text-sm 2xl:text-base">
+          <span className="ml-auto w-max font-shantell text-xs font-medium md:text-sm 2xl:text-base">
             # {index}
           </span>
         </div>

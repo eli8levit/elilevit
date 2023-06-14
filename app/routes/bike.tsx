@@ -7,7 +7,7 @@ import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
 import { genImageUrl } from "~/utilities";
 import Circle2 from "~/sources/images/grad.svg";
-import { PostCard } from "~/components/PostCard";
+import { PostCard } from "~/components/post-card";
 
 const POST_TYPES = [
   { id: "rides", title: "ride history" },
