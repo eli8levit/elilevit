@@ -24,28 +24,30 @@ const FeedRow = ({
 }: IFeedRow) => {
   return (
     <div>
-      <p className="mb-2 font-hubot text-base font-medium text-gray-400 md:mb-4">
+      <p className="mb-2 font-hubot text-sm font-medium text-gray-400 md:mb-4 md:text-base">
         {date}
       </p>
       <div className="mb-2 flex flex-wrap items-end justify-between gap-x-2 md:mb-4 md:flex-row md:gap-x-4">
-        <div className="flex flex-col gap-y-2">
-          <h3 className="flex flex-row items-center gap-x-2 fill-black font-apfel text-base font-bold text-black md:text-3xl">
+        <div className="mb-2 flex flex-col gap-y-1 md:mb-0 md:gap-y-2">
+          <h3 className="flex flex-row items-center gap-x-2 fill-black font-apfel text-2xl font-bold text-black md:text-3xl">
             {title}
           </h3>
           <p className="font-mona text-sm font-normal text-gray-500 transition-all md:text-base md:group-hover:text-black lg:text-xl">
             {description}
           </p>
         </div>
-        <Link
-          to={linkProps.to}
-          className="ml-auto flex w-auto flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
-        >
-          {linkProps.text}
-          <Arrow
-            className="h-[10px] fill-secondary md:h-[15px]"
-            height="15px"
-          />
-        </Link>
+        <div className="w-full md:w-auto">
+          <Link
+            to={linkProps.to}
+            className="ml-auto flex w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
+          >
+            {linkProps.text}
+            <Arrow
+              className="h-[10px] fill-secondary md:h-[15px]"
+              height="15px"
+            />
+          </Link>
+        </div>
       </div>
       {children}
     </div>
@@ -63,10 +65,10 @@ export default function Index() {
         <Arrow className="rotate-180" />
         Back to home
       </Link>
-      <div className="relative flex flex-col gap-8 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel py-6 px-4 shadow-feed backdrop-blur-2xl md:gap-20 md:p-20 md:py-10 md:pb-20">
+      <div className="relative flex flex-col gap-8 rounded-2xl border-black border-opacity-10 bg-panel py-6 md:gap-20 md:border-[0.5px] md:p-20 md:px-4 md:py-10 md:pb-20 md:shadow-feed md:backdrop-blur-2xl">
         <h3
           id="latest-stuff"
-          className="mx-auto flex w-max flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
+          className="mx-auto flex w-max flex-row font-shantell text-4xl font-medium text-black opacity-60 md:text-4xl"
         >
           Feed
         </h3>

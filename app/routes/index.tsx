@@ -128,15 +128,6 @@ export default function Index() {
             </li>
           </ul>
         </div>
-        {/*<div className="content-container">*/}
-        {/*  <h5 className="mb-4 font-monaWide text-xl">*/}
-        {/*    Things I created recently*/}
-        {/*  </h5>*/}
-        {/*  <img*/}
-        {/*    src={Cubism}*/}
-        {/*    className="h-[500px] rounded-xl object-contain shadow-xl"*/}
-        {/*  />*/}
-        {/*</div>*/}
       </div>
     </>
   );

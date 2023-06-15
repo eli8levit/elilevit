@@ -54,7 +54,7 @@
   }
 
   .content em {
-    @apply -mt-4 mb-8 block text-center font-monaWide text-sm font-normal italic text-gray-700;
+    @apply -mt-4 mb-8 block text-center font-apfel text-sm font-normal italic text-gray-700;
   }
 
   .content a {
@@ -156,23 +156,9 @@
 }
 
 @font-face {
-  font-family: "Mona Wide";
-  src: url("/fonts/Mona/Mona-Sans-SemiBoldWide.woff2") format("woff2");
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Mona";
   src: url("/fonts/Mona/Mona-Sans-Bold.woff2") format("woff2");
   font-weight: 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Mona Wide";
-  src: url("/fonts/Mona/Mona-Sans-ExtraBoldWide.woff2") format("woff2");
-  font-weight: 700;
   font-display: swap;
 }
 

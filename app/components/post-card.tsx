@@ -40,7 +40,7 @@ export const PostCard = ({
         className="h-[230px] w-full shrink-0 object-cover md:h-[280px] md:group-hover:grayscale"
       />
       <div className="flex h-full flex-col p-6">
-        <h3 className="mb-2 font-monaWide text-lg font-extrabold leading-[1.2] transition-all md:text-lg md:leading-normal md:group-hover:text-black 2xl:text-2xl">
+        <h3 className="mb-2 font-apfel text-lg font-extrabold leading-[1.2] transition-all md:text-lg md:leading-normal md:group-hover:text-black lg:text-2xl 2xl:text-3xl">
           {title}
         </h3>
         <p className="mb-6 font-mona text-sm font-normal text-gray-700 transition-all md:text-base md:group-hover:text-black 2xl:text-lg">
