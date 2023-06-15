@@ -3,6 +3,7 @@ import { FaidInMotionContainer } from "~/components/layout";
 import React, { ReactElement } from "react";
 import { Link } from "@remix-run/react";
 import Arrow from "~/components/arrow";
+import Bamba from "~/sources/images/bamba-site.jpg";
 
 interface IFeedRow {
   date: string;
@@ -65,13 +66,26 @@ export default function Index() {
         <Arrow className="rotate-180" />
         Back to home
       </Link>
-      <div className="relative flex flex-col gap-8 rounded-2xl border-black border-opacity-10 bg-panel py-6 md:gap-20 md:border-[0.5px] md:p-20 md:px-4 md:py-10 md:pb-20 md:shadow-feed md:backdrop-blur-2xl">
+      <div className="relative flex flex-col gap-8 rounded-2xl border-black border-opacity-10 bg-panel py-6 md:gap-20 md:border-[0.5px] md:p-20 md:px-16 md:py-10 md:pb-20 md:shadow-feed md:backdrop-blur-2xl">
         <h3
           id="latest-stuff"
-          className="mx-auto flex w-max flex-row font-shantell text-4xl font-medium text-black opacity-60 md:text-4xl"
+          className="mx-auto flex w-max flex-row font-shantell text-4xl font-medium text-black opacity-60  md:text-4xl"
         >
           Feed
         </h3>
+        <FeedRow
+          title="🦮 Bamba"
+          date="15.6.2034"
+          linkProps={{ to: "/feed/bamba", text: "Read more" }}
+          description="Tiny website that I made for new little friend"
+        >
+          <img
+            src={Bamba}
+            height="45vh"
+            className="h-[250px] w-full rounded-md object-cover shadow-lg md:h-[380px] 2xl:h-[450px]"
+            alt="Website screenshot with dog portrait hero and text on the left"
+          />
+        </FeedRow>
         <FeedRow
           title="🇬🇪 Georgia. Tbilisi"
           date="30.3.2023"
