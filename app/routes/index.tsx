@@ -18,8 +18,8 @@ export default function Index() {
           src={Circle}
           className="absolute left-[50%] -top-[200px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-50 md:h-[1600px] md:w-full md:max-w-full"
         />
-        <div className="mb-10 grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20 md:px-14">
-          <div className="mx-auto">
+        <div className="mb-10 grid w-full grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20 md:px-14">
+          <div className="md:mx-auto">
             <h1 className="z-10 mb-1 font-shantell text-2xl font-normal text-primary md:text-3xl 2xl:text-4xl">
               Hey, good to see you ♡
             </h1>
