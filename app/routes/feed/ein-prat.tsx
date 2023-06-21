@@ -1,9 +1,5 @@
-import { Link, useLoaderData } from "@remix-run/react";
 import React from "react";
 import { genImageUrlById } from "~/utilities";
-import Arrow from "~/components/arrow";
-import MeshGradient from "~/components/mesh-gradient";
-import { FaidInMotionContainer } from "~/components/layout";
 import { PostPage } from "~/components/post-page";
 
 export { loader } from "../../use-mobile-loader";
