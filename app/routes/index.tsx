@@ -2,7 +2,6 @@ import React from "react";
 import { draw } from "~/components";
 import { motion } from "framer-motion";
 import { Link } from "@remix-run/react";
-import Circle from "~/sources/images/grad2.svg";
 import Circle2 from "~/sources/images/grad.svg";
 import Feed from "~/components/feed";
 import Arrow from "~/components/arrow";
@@ -14,10 +13,6 @@ export default function Index() {
   return (
     <>
       <FaidInMotionContainer className="content-container flex items-center pt-10 md:h-[500px] 2xl:h-[650px]">
-        <img
-          src={Circle}
-          className="absolute left-[50%] -top-[120px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-50 md:h-[2400px] md:w-full md:max-w-full"
-        />
         <div className="mb-10 grid w-full grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20 md:px-14 2xl:mb-20">
           <div className="md:mx-auto">
             <h1 className="z-10 mb-1 font-shantell text-2xl font-normal text-primary md:text-3xl 2xl:text-4xl">
@@ -32,19 +27,129 @@ export default function Index() {
             </p>
           </div>
           <motion.svg
-            viewBox="0 0 569 629"
+            className="row-start-1 mx-auto block w-[800px] max-w-none -translate-x-[200px]"
+            viewBox="0 0 2351 1537"
             fill="none"
-            className="row-start-1 mx-auto block h-[180px] max-w-[90%] stroke-[rgba(0,0,0,0.4)] md:h-[300px] 2xl:h-[450px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
           >
-            <motion.path
-              d="M550.758 177.014s-37.916 36.648-67 33.5c-31.876-3.449-50.722-24.965-60.5-55.5-11.357-35.465-7.01-79.78 28.5-91 33.928-10.719 74.428 7.358 80 42.5 7.567 47.736-75.168 42.5-123.5 42.5-22 0-49-9.5-86.5 6-28.929 11.958-51.373 36.578-44 67 6.952 28.688 34.203 44.604 63.5 41 32.946-4.052 50.119-34.817 51-68 1.259-47.401-80.107-27.294-98.5-70.999-15.709-37.329-32.044-91.07 6.5-103.5 31.265-10.084 78.606 11.32 72 43.5-15.5 75.499-131.16 13.046-163.5 75.5C184.515 186.331 224 233 196.499 275m0 0c-36.394 41.593-113.5 38.33-159 39.5m159-39.5c27.173-41.5-52.499-63.5-93.999-63.5-26.5 0-59.5 5-73 27-13.869 22.599-20.504 76.733 8 76M196.499 275c-36.499 41.714-114.727 38.153-159 39.5m0 0c-29.5 0-9.741 296.014-9.741 296.014M37.5 314.5c-28.504.733 45.5-1.17 0 0Z"
-              strokeWidth="38"
-              strokeLinecap="round"
-              variants={draw}
-            />
+            <path fill="#fff" fillOpacity="0.1" d="M118 149h2072v1355H118z" />
+            <g filter="url(#a)">
+              <motion.path
+                variants={draw}
+                d="M1590.78 694.078s-55.88 62.764-102.4 61.159c-50.99-1.76-83.43-33.796-102.53-81.249-22.19-55.116-20.49-126.154 34.55-148.166 52.58-21.032 118.98 2.998 131.95 58.276 17.61 75.088-114.3 76.439-191.01 82.096-34.91 2.575-78.88-9.384-136.57 19.674-44.51 22.417-77.23 64.228-61.96 111.783 14.4 44.845 59.51 66.986 105.59 57.821 51.81-10.306 75.45-61.279 72.95-114.194-3.57-75.589-130.33-34.064-164.65-101.47-29.31-57.571-61.55-141.189-1.84-165.486 48.44-19.708 126.08 8.816 119.37 60.805-15.73 121.975-206.62 36.117-250.61 139.299-32.98 77.347 35.16 147.002-3.55 217.065m0 0c-52.874 70.457-175.624 74.289-247.695 81.477m247.695-81.477c38.25-69.229-90.769-94.918-156.63-90.06-42.055 3.102-93.839 14.922-112.682 51.516-19.356 37.59-23.532 124.524 21.617 120.021m247.695-81.477c-53.028 70.662-177.593 74.151-247.695 81.477m0 0c-46.816 3.453 19.287 472.262 19.287 472.262m-19.287-472.262c-45.149 4.503 72.071-7.188 0 0Z"
+                stroke="url(#b)"
+                strokeOpacity=".9"
+                strokeWidth="50"
+                strokeLinecap="round"
+                shapeRendering="crispEdges"
+              />
+            </g>
+            <g filter="url(#c)">
+              <ellipse
+                cx="464.614"
+                cy="412.372"
+                rx="464.614"
+                ry="412.372"
+                transform="scale(1.18098 .778) rotate(-45 1275.722 304.49)"
+                fill="url(#d)"
+              />
+              <ellipse
+                cx="1608.42"
+                cy="941.566"
+                rx="342.577"
+                ry="194.605"
+                fill="url(#e)"
+              />
+            </g>
+            <defs>
+              <radialGradient
+                id="d"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="matrix(0 412.372 -464.614 0 464.614 412.372)"
+              >
+                <stop stopColor="#2C2CFE" stopOpacity=".9" />
+                <stop offset="1" stopColor="#DB2877" stopOpacity=".41" />
+                <stop offset="1" stopColor="#DB2877" />
+              </radialGradient>
+              <radialGradient
+                id="e"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="matrix(0 194.605 -342.577 0 1608.42 941.566)"
+              >
+                <stop stopColor="#00F" />
+                <stop offset="1" stopColor="#6060FF" />
+              </radialGradient>
+              <filter
+                id="a"
+                x="707.926"
+                y="425.05"
+                width="931.85"
+                height="1075.18"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="6" />
+                <feGaussianBlur stdDeviation="12" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                <feBlend
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_439_18"
+                />
+                <feBlend
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_439_18"
+                  result="shape"
+                />
+              </filter>
+              <filter
+                id="c"
+                x=".578"
+                y=".699"
+                width="2350.42"
+                height="1535.47"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation="200"
+                  result="effect1_foregroundBlur_439_18"
+                />
+              </filter>
+              <linearGradient
+                id="b"
+                x1="1639.5"
+                y1="679"
+                x2="728.788"
+                y2="684.937"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#A9A9A9" />
+                <stop offset=".082" />
+                <stop offset=".939" />
+                <stop offset="1" stopColor="#7E7E7E" />
+              </linearGradient>
+            </defs>
           </motion.svg>
         </div>
       </FaidInMotionContainer>

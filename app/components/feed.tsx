@@ -14,7 +14,7 @@ export default function Feed() {
       <div className="relative rounded-2xl border-opacity-10 py-6 md:p-20 md:px-6 md:py-10">
         <h3
           id="latest-stuff"
-          className="mb-10 flex w-max flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
+          className="mb-10 flex w-max flex-row font-shantell text-3xl text-primary md:ml-auto md:text-4xl"
         >
           Latest stuff ↓
         </h3>

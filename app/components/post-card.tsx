@@ -24,7 +24,7 @@ export const PostCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-xl active:backdrop-blur-sm md:w-[340px]  2xl:w-[400px] ${className}`}
+      className={`group flex w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-xl active:backdrop-blur-sm md:w-[200px]  2xl:w-[400px] ${className}`}
       whileTap={{ scale: 0.98 }}
       transition={{
         scale: { type: "spring", stiffness: 200, damping: 10 },
@@ -46,11 +46,11 @@ export const PostCard = ({
         <p className="mb-6 font-mona text-sm font-normal text-gray-700 transition-all md:text-base md:group-hover:text-black 2xl:text-lg">
           {description}
         </p>
-        <div className="mt-auto flex flex-row items-center justify-between text-gray-500 transition-all md:group-hover:text-black">
-          <span className="w-max font-hubot text-xs font-medium md:text-sm 2xl:text-base">
+        <div className="mt-auto flex flex-row items-center justify-between text-gray-600 transition-all md:group-hover:text-black">
+          <span className="w-max font-hubot text-xs md:text-sm 2xl:text-base">
             {date}
           </span>
-          <span className="ml-auto w-max font-shantell text-xs font-medium md:text-sm 2xl:text-base">
+          <span className="ml-auto w-max font-shantell text-xs md:text-sm 2xl:text-base">
             # {index}
           </span>
         </div>
