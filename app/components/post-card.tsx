@@ -24,7 +24,7 @@ export const PostCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-2xl active:backdrop-blur-sm md:w-[340px]  2xl:w-[400px] ${className}`}
+      className={`group flex w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-xl active:backdrop-blur-sm md:w-[340px]  2xl:w-[400px] ${className}`}
       whileTap={{ scale: 0.98 }}
       transition={{
         scale: { type: "spring", stiffness: 200, damping: 10 },

@@ -16,7 +16,7 @@ module.exports = {
       },
       boxShadow: {
         feed: "0 2px 40px -6px rgba(0,0,0,0.01),0 0 10px -4px rgba(255,47,141,0.1), 0 -10px 50px 0 rgba(0,0,255,0.08)",
-        bikeCard: "rgba(0, 0, 0, 0.2) 0 6px 18px -3px",
+        bikeCard: "rgba(0, 0, 0, 0.18) 0 4px 24px -3px",
         nav: "0 0 0 1px rgba(1,1,1,.06), 0 0 2px 0 rgba(1,1,1,.02)",
         navActive: "0 0 0 0.5px rgba(1,1,1,.06)",
         scrollable: "-5px 0 40px 29px rgba(255,255,255,0.85)",
@@ -28,7 +28,7 @@ module.exports = {
         pinkLighter: "#ededff",
         blackTransparent: "rgba(0, 0, 0, 0.75)",
         blackTransparentLighter: "rgba(233,233,233,0.2)",
-        lightGray: "rgba(1,1,1,.01)",
+        lightGray: "rgba(1,1,1,.03)",
         panel: "rgba(255,255,255,0.05)",
         new: "rgba(255,47,141,0.1)",
       },

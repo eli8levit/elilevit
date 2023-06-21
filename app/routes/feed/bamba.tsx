@@ -6,8 +6,8 @@ import { Link } from "~/components";
 export default function Bamba() {
   return (
     <PostPage title="Hi I'am Bamba">
-      <div className="flex max-w-[800px] flex-col gap-6 2xl:gap-8">
-        <p className="max-w-[600px] font-mona text-lg xl:text-xl 2xl:max-w-[800px] 2xl:text-2xl">
+      <div className="flex max-w-[800px] flex-col gap-6">
+        <p className="mt-8 max-w-[600px] font-mona text-lg xl:text-xl 2xl:max-w-[800px] 2xl:text-2xl">
           New website that I made for my new little friend - Bamba.
         </p>
         <img

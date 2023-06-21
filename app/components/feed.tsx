@@ -11,10 +11,10 @@ import { PostCard } from "~/components/post-card";
 export default function Feed() {
   return (
     <FaidInMotionContainer className="content-container mb-6 pt-6">
-      <div className="relative rounded-2xl border-black border-opacity-10 bg-panel py-6 md:border-[0.5px] md:p-20 md:px-6 md:py-10 md:shadow-feed md:backdrop-blur-2xl">
+      <div className="relative rounded-2xl border-opacity-10 py-6 md:p-20 md:px-6 md:py-10">
         <h3
           id="latest-stuff"
-          className="mx-auto mb-10 flex w-max flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
+          className="mb-10 flex w-max flex-row font-shantell text-3xl font-medium text-black opacity-60 md:text-4xl"
         >
           Latest stuff ↓
         </h3>
