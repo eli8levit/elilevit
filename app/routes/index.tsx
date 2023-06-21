@@ -13,12 +13,12 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <FaidInMotionContainer className="content-container flex items-center pt-10 md:h-[500px]">
+      <FaidInMotionContainer className="content-container flex items-center pt-10 md:h-[500px] 2xl:h-[650px]">
         <img
           src={Circle}
           className="absolute left-[50%] -top-[200px] -z-[10] h-max w-[700px] max-w-[700px] -translate-x-[50%] opacity-50 md:h-[1600px] md:w-full md:max-w-full"
         />
-        <div className="mb-10 grid w-full grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20 md:px-14">
+        <div className="mb-10 grid w-full grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20 md:px-14 2xl:mb-20">
           <div className="md:mx-auto">
             <h1 className="z-10 mb-1 font-shantell text-2xl font-normal text-primary md:text-3xl 2xl:text-4xl">
               Hey, good to see you ♡
@@ -26,7 +26,7 @@ export default function Index() {
             <h2 className="heading mb-6 font-bold text-black">
               I'm Eli, Developer & Creator
             </h2>
-            <p className="subheading max-w-[450px] leading-relaxed">
+            <p className="subheading max-w-[450px] leading-relaxed 2xl:max-w-[650px]">
               Here is my place to learn to beat my perfectionism and to tell
               about some things I like.
             </p>
@@ -34,7 +34,7 @@ export default function Index() {
           <motion.svg
             viewBox="0 0 569 629"
             fill="none"
-            className="row-start-1 mx-auto block h-[180px] max-w-[90%] stroke-[rgba(0,0,0,0.4)] md:h-[300px]"
+            className="row-start-1 mx-auto block h-[180px] max-w-[90%] stroke-[rgba(0,0,0,0.4)] md:h-[300px] 2xl:h-[450px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
@@ -63,7 +63,7 @@ export default function Index() {
             Also I care about user privacy and don't use any analytic service
           </h3>
           <motion.svg
-            className="mx-auto my-[100px] w-[200px] -translate-y-[20px] stroke-[rgba(0,0,0,0.3)] md:my-[200px] md:w-[400px]"
+            className="mx-auto my-[100px] w-[200px] -translate-y-[20px] stroke-[rgba(0,0,0,0.3)] md:my-[200px] md:w-[400px] 2xl:w-[600px]"
             fill="none"
             width="100%"
             initial="hidden"

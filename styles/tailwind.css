@@ -66,11 +66,11 @@
   }
 
   .heading {
-    @apply mb-2 font-apfel text-4xl font-normal text-primary md:mb-4 lg:text-5xl xl:text-6xl;
+    @apply mb-2 font-apfel text-4xl font-normal text-primary md:mb-4 lg:text-5xl xl:text-6xl 2xl:text-8xl;
   }
 
   .subheading {
-    @apply max-w-[650px] font-mona text-[18px] font-light text-zinc-600 md:text-xl 2xl:max-w-[800px];
+    @apply max-w-[650px] font-mona text-[18px] font-light text-zinc-600 md:text-xl 2xl:max-w-[800px] 2xl:text-2xl;
 
     line-height: 1.4;
   }
