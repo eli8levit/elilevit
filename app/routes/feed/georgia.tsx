@@ -1,25 +1,18 @@
 import { genImageUrlById } from "~/utilities";
 import React from "react";
-import Arrow from "~/components/arrow";
-import { Link } from "@remix-run/react";
-import { FaidInMotionContainer } from "~/components/layout";
+import { PostPage } from "~/components/post-page";
 
 export default function Georgia() {
   return (
-    <FaidInMotionContainer className="content-container pb-40 2xl:max-w-[1800px]">
-      <Link
-        to="/#latest-stuff"
-        className="mb-4 flex w-max flex-row items-baseline gap-2 rounded-md px-2 py-2 font-hubot text-sm text-zinc-600 hover:bg-lightGray hover:shadow-nav active:shadow-navActive 2xl:px-3 2xl:py-2 2xl:text-base"
-        preventScrollReset
-      >
-        <Arrow className="rotate-180" />
-        Back to home
-      </Link>
-      <h1 className="heading">
-        Tbilisi{" "}
-        <span className="font-hubot text-2xl text-zinc-500">Georgia</span>
-      </h1>
-      <p className="mb-8 max-w-[600px] font-mona text-lg">
+    <PostPage
+      title={
+        <>
+          Tbilisi{" "}
+          <span className="font-hubot text-2xl text-zinc-500">Georgia</span>
+        </>
+      }
+    >
+      <p className="!mb-0 !mr-auto !ml-0 max-w-[600px] max-w-[800px] font-mona text-lg 2xl:text-2xl">
         Tbisisi is great place to travel. A lot of history, beautiful
         architecture and most important - dereliction wine and food. I enjoyed
         to walk through its old streets in old town and to take a pictures.
@@ -126,6 +119,6 @@ export default function Georgia() {
           className="h-full w-full rounded-sm object-cover"
         />
       </div>
-    </FaidInMotionContainer>
+    </PostPage>
   );
 }
