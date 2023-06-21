@@ -75,7 +75,7 @@ export default function Index() {
         </h3>
         <FeedRow
           title="🦮 Bamba"
-          date="15.6.2034"
+          date="15.6.2032"
           linkProps={{ to: "/feed/bamba", text: "Read more" }}
           description="Tiny website that I made for new little friend"
         >

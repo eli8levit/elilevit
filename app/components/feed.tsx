@@ -19,7 +19,7 @@ export default function Feed() {
           Latest stuff ↓
         </h3>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <Link to="/feed/georgia">
+          <Link to="/feed/bamba">
             <PostCard
               className="!w-full max-w-none"
               image={Bamba}

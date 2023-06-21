@@ -12,7 +12,7 @@ export default function Georgia() {
         </>
       }
     >
-      <p className="!mb-0 !mr-auto !ml-0 max-w-[600px] max-w-[800px] font-mona text-lg 2xl:text-2xl">
+      <p className="mb-8 max-w-[600px] font-mona text-lg 2xl:max-w-[800px] 2xl:text-2xl">
         Tbisisi is great place to travel. A lot of history, beautiful
         architecture and most important - dereliction wine and food. I enjoyed
         to walk through its old streets in old town and to take a pictures.
