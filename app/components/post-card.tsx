@@ -24,7 +24,7 @@ export const PostCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex w-[72vw] min-w-[200px] max-w-[400px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard backdrop-blur-xl active:backdrop-blur-sm md:w-[200px]  2xl:w-[400px] ${className}`}
+      className={`group flex h-[250px] w-[250px] flex-col overflow-hidden rounded-xl bg-lightGray bg-gradient bg-[length:300px] bg-bottom bg-no-repeat text-black shadow-bikeCard active:backdrop-blur-sm  ${className}`}
       whileTap={{ scale: 0.98 }}
       transition={{
         scale: { type: "spring", stiffness: 200, damping: 10 },
@@ -37,22 +37,18 @@ export const PostCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="h-[230px] w-full shrink-0 object-cover md:h-[280px] md:group-hover:grayscale"
+        className="h-[130px] w-full shrink-0 object-cover md:group-hover:grayscale"
       />
-      <div className="flex h-full flex-col p-6">
-        <h3 className="mb-2 font-apfel text-lg font-extrabold leading-[1.2] transition-all md:text-lg md:leading-normal md:group-hover:text-black lg:text-2xl 2xl:text-3xl">
+      <div className="flex h-full flex-col p-3">
+        <h3 className="font-apfel text-lg font-extrabold leading-[1.2] transition-all md:text-lg md:leading-normal md:group-hover:text-black">
           {title}
         </h3>
-        <p className="mb-6 font-mona text-sm font-normal text-gray-700 transition-all md:text-base md:group-hover:text-black 2xl:text-lg">
+        <p className="mb-4 font-mona text-xs font-normal text-gray-700 transition-all md:text-sm md:group-hover:text-black">
           {description}
         </p>
-        <div className="mt-auto flex flex-row items-center justify-between text-gray-600 transition-all md:group-hover:text-black">
-          <span className="w-max font-hubot text-xs md:text-sm 2xl:text-base">
-            {date}
-          </span>
-          <span className="ml-auto w-max font-shantell text-xs md:text-sm 2xl:text-base">
-            # {index}
-          </span>
+        <div className="mt-auto flex flex-row items-center justify-between text-xs text-gray-600 transition-all md:group-hover:text-black">
+          <span className="w-max font-hubot">{date}</span>
+          <span className="ml-auto w-max font-shantell"># {index}</span>
         </div>
       </div>
     </motion.li>

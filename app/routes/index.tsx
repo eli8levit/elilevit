@@ -12,7 +12,7 @@ export { loader } from "../use-mobile-loader";
 export default function Index() {
   return (
     <>
-      <FaidInMotionContainer className="content-container flex items-center pt-10 md:h-[500px] 2xl:h-[650px]">
+      <FaidInMotionContainer className="content-container flex items-center pt-0 md:h-[500px] 2xl:h-[650px]">
         <div className="mb-10 grid w-full grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-20 md:px-14 2xl:mb-20">
           <div className="md:mx-auto">
             <h1 className="z-10 mb-1 font-shantell text-2xl font-normal text-primary md:text-3xl 2xl:text-4xl">
@@ -27,7 +27,7 @@ export default function Index() {
             </p>
           </div>
           <motion.svg
-            className="row-start-1 mx-auto block w-[800px] max-w-none -translate-x-[200px]"
+            className="row-start-1 ml-[50%] block w-[500px] max-w-none -translate-x-[50%] md:mx-auto md:-translate-x-[100px] lg:w-[800px] lg:-translate-x-[200px] 2xl:w-[900px]"
             viewBox="0 0 2351 1537"
             fill="none"
             initial="hidden"
@@ -168,8 +168,9 @@ export default function Index() {
             Also I care about user privacy and don't use any analytic service
           </h3>
           <motion.svg
-            className="mx-auto my-[100px] w-[200px] -translate-y-[20px] stroke-[rgba(0,0,0,0.3)] md:my-[200px] md:w-[400px] 2xl:w-[600px]"
+            className="mx-auto my-[100px] w-[200px] -translate-y-[20px] stroke-black md:my-[200px] md:w-[400px] 2xl:w-[600px]"
             fill="none"
+            strokeOpacity="0.7"
             width="100%"
             initial="hidden"
             whileInView="visible"
@@ -192,7 +193,8 @@ export default function Index() {
               width="100%"
               viewBox="0 0 1531 193"
               whileInView="visible"
-              className="mt-6 mb-10 stroke-[rgba(0,0,0,0.3)]"
+              strokeOpacity="0.7"
+              className="mt-6 mb-10 stroke-black"
               viewport={{ once: true, amount: 0.8 }}
             >
               <motion.path
@@ -203,7 +205,7 @@ export default function Index() {
               />
             </motion.svg>
           </h4>
-          <ul className="mx-auto mb-16 flex w-max flex-col font-hubot text-lg md:text-2xl">
+          <ul className="mx-auto mb-16 flex w-max flex-col font-shantell text-lg md:text-2xl">
             <li>
               <Link
                 className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"

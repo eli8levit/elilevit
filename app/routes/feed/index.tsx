@@ -25,7 +25,7 @@ const FeedRow = ({
 }: IFeedRow) => {
   return (
     <div>
-      <p className="mb-2 font-hubot text-sm font-medium text-gray-400 md:mb-4 md:text-base">
+      <p className="mb-2 font-hubot text-sm text-gray-400 md:mb-4 md:text-base">
         {date}
       </p>
       <div className="mb-2 flex flex-wrap items-end justify-between gap-x-2 md:mb-4 md:flex-row md:gap-x-4">
@@ -40,7 +40,7 @@ const FeedRow = ({
         <div className="w-full md:w-auto">
           <Link
             to={linkProps.to}
-            className="ml-auto flex w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-hubot text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
+            className="ml-auto flex w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
           >
             {linkProps.text}
             <Arrow
@@ -69,7 +69,7 @@ export default function Index() {
       <div className="relative flex flex-col gap-8 rounded-2xl border-black border-opacity-10 bg-panel py-6 md:gap-20 md:border-[0.5px] md:p-20 md:px-16 md:py-10 md:pb-20 md:shadow-feed md:backdrop-blur-2xl">
         <h3
           id="latest-stuff"
-          className="mx-auto flex w-max flex-row font-shantell text-4xl font-medium text-black opacity-60  md:text-4xl"
+          className="mx-auto flex w-max flex-row font-shantell text-4xl font-medium text-primary md:text-4xl"
         >
           Feed
         </h3>
