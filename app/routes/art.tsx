@@ -40,7 +40,7 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="relative mb-4 w-max font-apfel text-2xl font-bold text-gray-900 lg:text-3xl">
+        <h3 className="relative mb-4 w-max font-shantell text-2xl font-bold text-gray-900 lg:text-3xl">
           {title}
         </h3>
         <p className="mb-2 max-w-[700px] font-hubot text-base font-normal text-gray-600 md:text-lg">

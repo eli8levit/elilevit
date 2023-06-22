@@ -66,10 +66,10 @@ export default function Index() {
         <Arrow className="rotate-180" />
         Back to home
       </Link>
-      <div className="relative flex flex-col gap-8 rounded-2xl border-black border-opacity-10 bg-panel py-6 md:gap-20 md:border-[0.5px] md:p-20 md:px-16 md:py-10 md:pb-20 md:shadow-feed md:backdrop-blur-2xl">
+      <div className="relative flex flex-col gap-8 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel bg-blueCircle bg-[length:800px] bg-right px-6 py-6 shadow-feed backdrop-blur-2xl md:gap-20 md:p-20 md:px-16 md:py-10 md:pb-20">
         <h3
           id="latest-stuff"
-          className="mx-auto flex w-max flex-row font-shantell text-4xl font-medium text-primary md:text-4xl"
+          className="mx-auto flex w-max flex-row font-shantell text-4xl font-bold text-primary md:text-4xl"
         >
           Feed
         </h3>
