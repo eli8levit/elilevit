@@ -18,7 +18,7 @@ export default function Feed() {
         >
           Latest stuff ↓
         </h3>
-        <div className="flex flex-row items-center gap-8 overflow-auto py-4">
+        <div className="flex flex-row items-center gap-8 overflow-auto py-4 md:overflow-visible">
           <Link to="/feed/bamba">
             <PostCard
               image={Bamba}

@@ -24,7 +24,7 @@ export const PostCard = ({
   return (
     <motion.li
       layoutId={id.toString()}
-      className={`group flex h-[250px] w-[250px] flex-col overflow-hidden rounded-xl bg-lightGray bg-gradient bg-[length:300px] bg-bottom bg-no-repeat text-black shadow-bikeCard active:backdrop-blur-sm  ${className}`}
+      className={`group flex h-[250px] w-[250px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard 2xl:h-[280px] 2xl:w-[280px]  ${className}`}
       whileTap={{ scale: 0.98 }}
       transition={{
         scale: { type: "spring", stiffness: 200, damping: 10 },
@@ -37,13 +37,13 @@ export const PostCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="h-[130px] w-full shrink-0 object-cover md:group-hover:grayscale"
+        className="h-[130px] w-full shrink-0  object-cover md:group-hover:grayscale 2xl:h-[150px]"
       />
-      <div className="flex h-full flex-col p-3">
+      <div className="flex h-full flex-col bg-blueCircle bg-[length:400px] bg-left bg-no-repeat p-3">
         <h3 className="mb-1 font-apfel text-lg font-extrabold leading-[1.2] transition-all md:text-lg md:leading-normal md:group-hover:text-black">
           {title}
         </h3>
-        <p className="mb-4 font-mona text-sm font-normal text-gray-700 transition-all md:text-sm md:group-hover:text-black">
+        <p className="mb-4 font-mona text-sm font-normal text-gray-700 transition-all md:text-sm md:group-hover:text-black 2xl:text-base">
           {description}
         </p>
         <div className="mt-auto flex flex-row items-center justify-between text-xs text-gray-600 transition-all md:group-hover:text-black">
