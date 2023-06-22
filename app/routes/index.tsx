@@ -27,14 +27,13 @@ export default function Index() {
             </p>
           </div>
           <motion.svg
-            className="row-start-1 ml-[50%] block w-[500px] max-w-none -translate-x-[50%] md:mx-auto md:-translate-x-[100px] lg:w-[800px] lg:-translate-x-[200px] 2xl:w-[900px]"
+            className="row-start-1 ml-[50%] w-[500px] max-w-none -translate-x-[50%] md:mx-auto md:-translate-x-[100px] lg:w-[800px] lg:-translate-x-[200px] 2xl:w-[900px]"
             viewBox="0 0 2351 1537"
             fill="none"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.8 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
-            <path fill="#fff" fillOpacity="0.1" d="M118 149h2072v1355H118z" />
             <g filter="url(#a)">
               <motion.path
                 variants={draw}
