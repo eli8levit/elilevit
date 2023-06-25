@@ -10,15 +10,15 @@ import { PostCard } from "~/components/post-card";
 
 export default function Feed() {
   return (
-    <FaidInMotionContainer className="content-container mb-6 !pr-0 md:mb-12">
+    <FaidInMotionContainer className="content-container mb-10 !pr-0 md:mb-12">
       <div className="relative rounded-2xl">
         <h3
           id="latest-stuff"
-          className="flexflex-row mb-6 font-shantell text-2xl text-primary 2xl:text-3xl"
+          className="flexflex-row mb-2 font-shantell text-2xl text-primary md:mb-6 2xl:text-3xl"
         >
           Latest stuff ↓
         </h3>
-        <div className="-ml-10 flex flex-row items-center gap-8 overflow-auto py-8 pl-10 md:px-10">
+        <div className="-ml-10 flex flex-row items-center gap-4 overflow-auto py-8 px-10 md:gap-8">
           <Link to="/feed/bamba">
             <PostCard
               image={Bamba}
