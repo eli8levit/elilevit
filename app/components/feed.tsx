@@ -10,15 +10,15 @@ import { PostCard } from "~/components/post-card";
 
 export default function Feed() {
   return (
-    <FaidInMotionContainer className="content-container mb-6 pt-6 md:mb-12">
-      <div className="relative rounded-2xl py-6 md:p-20 md:px-6 md:py-10">
+    <FaidInMotionContainer className="content-container mb-6 !pr-0 md:mb-12">
+      <div className="relative rounded-2xl">
         <h3
           id="latest-stuff"
-          className="mx-auto mb-6 flex w-max flex-row font-shantell text-2xl text-primary md:mb-12 2xl:text-3xl"
+          className="flexflex-row mb-6 font-shantell text-2xl text-primary 2xl:text-3xl"
         >
           Latest stuff ↓
         </h3>
-        <div className="flex flex-row items-center gap-8 overflow-auto py-4 md:overflow-visible">
+        <div className="-ml-10 flex flex-row items-center gap-8 overflow-auto py-8 pl-10 md:px-10">
           <Link to="/feed/bamba">
             <PostCard
               image={Bamba}
@@ -71,17 +71,17 @@ export default function Feed() {
               index={3}
             />
           </Link>
-          <Link
-            to="/feed"
-            className="flex h-max w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
-          >
-            To all feed
-            <Arrow
-              className="h-[10px] fill-secondary md:h-[15px]"
-              height="15px"
-            />
-          </Link>
         </div>
+        <Link
+          to="/feed"
+          className="flex h-max w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
+        >
+          To all feed
+          <Arrow
+            className="h-[10px] fill-secondary md:h-[15px]"
+            height="15px"
+          />
+        </Link>
       </div>
     </FaidInMotionContainer>
   );
