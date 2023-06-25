@@ -153,12 +153,12 @@ export default function Index() {
         </div>
       </FaidInMotionContainer>
       <Feed />
-      <div className="content-container relative pb-20 pt-0 md:mb-28">
-        <img
-          src={Circle2}
-          className="absolute top-0 left-0 -z-[10] h-full w-full opacity-80 md:top-0 md:h-[1200px] md:translate-y-0"
-        />
-        <div className="rounded-2xl py-10 md:border-[0.5px] md:border-black md:border-opacity-10 md:bg-panel md:p-20 md:shadow-feed md:backdrop-blur-2xl">
+      <div className="content-container overflow-hidden pb-20 pt-0 md:mb-28 md:overflow-visible">
+        <div className="relative rounded-2xl py-10 md:border-[0.5px] md:border-black md:border-opacity-10 md:bg-panel md:p-20 md:shadow-feed md:backdrop-blur-2xl">
+          <img
+            src={Circle2}
+            className="absolute top-0 left-0 bottom-0 right-0 -z-[10] h-full w-full -translate-y-[100px] scale-[2] opacity-80 md:translate-y-0 md:scale-[1]"
+          />
           <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 2xl:text-4xl">
             Here you can feel save, no cookie popup will destruct you, no one
             will know you have been here 🤐
