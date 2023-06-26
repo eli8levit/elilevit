@@ -7,7 +7,7 @@ import type { LoaderFunction } from "@remix-run/node";
 import type { Post } from "~/types";
 import { genImageUrl } from "~/utilities";
 import { PostCard } from "~/components/post-card";
-import BlueCircle from "~/../public/blue-circle.svg";
+import Circle2 from "~/sources/images/grad.svg";
 
 const POST_TYPES = [
   { id: "rides", title: "ride history" },
@@ -42,19 +42,19 @@ export default function Bike() {
           </h2>
         </div>
       </div>
-      <div className="md:content-container relative py-8 md:pt-6">
-        <img
-          src={BlueCircle}
-          className="absolute left-[50%] top-[50%] -z-[10] h-[800px] w-[600px] max-w-[600px] -translate-y-[50%] -translate-x-[50%] rotate-90 opacity-40 md:h-[1000px] md:w-full md:max-w-[unset] md:rotate-0"
-        />
-        <div className="mb-20 flex flex-col gap-y-4 rounded-2xl border-black border-opacity-10 bg-panel md:mb-40 md:gap-y-12 md:border-[0.5px] md:p-16 md:shadow-feed md:backdrop-blur-2xl">
+      <div className="md:content-container py-8 md:pt-6">
+        <div className="relative mb-20 flex flex-col gap-y-4 rounded-2xl py-10 md:mb-40 md:gap-y-12 md:border-[0.5px] md:border-black md:border-opacity-10 md:bg-panel md:p-20 md:shadow-feed md:backdrop-blur-2xl">
+          <img
+            src={Circle2}
+            className="absolute top-0 bottom-0 left-0 -z-[10] h-full w-full opacity-40"
+          />
           {POST_TYPES.map((type) => {
             return (
-              <section className="flex flex-col">
-                <h2 className="sticky left-0 ml-4 font-shantell text-2xl font-medium text-primary opacity-80 md:opacity-60 lg:text-3xl">
+              <section key={type.id} className="flex flex-col">
+                <h2 className="sticky left-0 ml-4 font-shantell text-2xl font-medium text-primary lg:text-3xl">
                   ◌ {type.title}
                 </h2>
-                <ul className="hide-scrollbar flex flex-row gap-4 overflow-auto p-6 pl-4 md:gap-8">
+                <ul className="hide-scrollbar flex flex-row gap-4 overflow-auto p-6 pl-4">
                   {(type.id === "rides" ? bikePosts : upgradePosts).map(
                     (post: Post, index) => {
                       return (

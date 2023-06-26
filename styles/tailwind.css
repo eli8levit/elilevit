@@ -61,25 +61,20 @@
     line-height: 1.4;
   }
 
-  .radial {
-    background: radial-gradient(
-            circle at left top,
-            rgba(0, 0, 255, 0.1) 0,
-            rgba(192, 9, 100, 0.1) 60%,
-            transparent 100%
-    );
-  }
-
-  .radial-center {
-    background: radial-gradient(
-            circle at bottom right,
-            rgba(0, 0, 255, 0.1) 0,
-            rgba(192, 9, 100, 0.1)
-    );
-  }
-
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+
+  .show-scrollbar::-webkit-scrollbar {
+    display: initial;
+  }
+
+  .post-page p {
+    @apply mb-2
+  }
+
+  .post-page img {
+    @apply my-10
   }
 }
 

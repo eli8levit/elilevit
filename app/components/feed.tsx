@@ -1,5 +1,4 @@
 import { Link } from "@remix-run/react";
-import Arrow from "~/components/arrow";
 import { genImageUrlById } from "~/utilities";
 import Bamba from "~/sources/images/bamba-site.jpg";
 
@@ -7,6 +6,7 @@ import React from "react";
 import { FaidInMotionContainer } from "~/components/layout";
 
 import { PostCard } from "~/components/post-card";
+import { ArrowLink } from "~/components/motion-nav-link";
 
 export default function Feed() {
   return (
@@ -14,11 +14,11 @@ export default function Feed() {
       <div className="relative rounded-2xl">
         <h3
           id="latest-stuff"
-          className="flexflex-row mb-2 font-shantell text-2xl text-primary md:mb-6 2xl:text-3xl"
+          className="flexflex-row font-shantell text-2xl text-primary md:text-3xl 2xl:text-4xl"
         >
           Latest stuff ↓
         </h3>
-        <div className="-ml-10 flex flex-row items-center gap-4 overflow-auto py-8 px-10 md:gap-8">
+        <div className="-ml-10 flex flex-row items-center gap-4 overflow-auto py-8 px-10 md:gap-5">
           <Link to="/feed/bamba">
             <PostCard
               image={Bamba}
@@ -72,16 +72,7 @@ export default function Feed() {
             />
           </Link>
         </div>
-        <Link
-          to="/feed"
-          className="flex h-max w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
-        >
-          To all feed
-          <Arrow
-            className="h-[10px] fill-secondary md:h-[15px]"
-            height="15px"
-          />
-        </Link>
+        <ArrowLink to="/feed">To all feed</ArrowLink>
       </div>
     </FaidInMotionContainer>
   );

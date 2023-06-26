@@ -1,10 +1,8 @@
 import React from "react";
-import { draw } from "~/components";
+import { ArrowLink, draw } from "~/components";
 import { motion } from "framer-motion";
-import { Link } from "@remix-run/react";
 import Circle2 from "~/sources/images/grad.svg";
 import Feed from "~/components/feed";
-import Arrow from "~/components/arrow";
 import { FaidInMotionContainer } from "~/components/layout";
 
 export { loader } from "../use-mobile-loader";
@@ -27,7 +25,7 @@ export default function Index() {
             </p>
           </div>
           <motion.svg
-            className="row-start-1 ml-[50%] w-[500px] max-w-none -translate-x-[50%] md:mx-auto md:-translate-x-[100px] lg:w-[800px] lg:-translate-x-[200px] 2xl:w-[900px]"
+            className="-z-[10] row-start-1 ml-[50%] w-[500px] max-w-none -translate-x-[50%] md:mx-auto md:-translate-x-[100px] lg:w-[800px] lg:-translate-x-[200px] 2xl:w-[900px]"
             viewBox="0 0 2351 1537"
             fill="none"
             initial="hidden"
@@ -204,33 +202,21 @@ export default function Index() {
               />
             </motion.svg>
           </h4>
-          <ul className="mx-auto mb-16 flex w-max flex-col font-shantell text-lg md:text-2xl">
+          <ul className="mx-auto mb-16 flex w-max flex-col gap-2">
             <li>
-              <Link
-                className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"
-                to="/bike"
-              >
+              <ArrowLink to="/bike" className="!text-lg md:!text-xl">
                 Visit my bike blog
-                <Arrow className="fill-secondary" width="18px" />
-              </Link>
+              </ArrowLink>
             </li>
             <li>
-              <Link
-                className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"
-                to="/about"
-              >
+              <ArrowLink to="/about" className="!text-lg md:!text-xl">
                 Read more about me
-                <Arrow className="fill-secondary" width="18px" />
-              </Link>
+              </ArrowLink>
             </li>
             <li>
-              <Link
-                className="flex flex-row items-center gap-x-2 rounded-lg p-3 text-secondary hover:bg-lightGray hover:decoration-primary hover:shadow-nav active:shadow-navActive"
-                to="/art"
-              >
+              <ArrowLink to="/art" className="!text-lg md:!text-xl">
                 See my projects
-                <Arrow className="fill-secondary" width="18px" />
-              </Link>
+              </ArrowLink>
             </li>
           </ul>
         </div>

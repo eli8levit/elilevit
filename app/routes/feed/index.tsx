@@ -1,9 +1,8 @@
 import { genImageUrlById } from "~/utilities";
 import { FaidInMotionContainer } from "~/components/layout";
 import React, { ReactElement } from "react";
-import { Link } from "@remix-run/react";
-import Arrow from "~/components/arrow";
 import Bamba from "~/sources/images/bamba-site.jpg";
+import { ArrowLink, BackHomeLink } from "~/components";
 
 interface IFeedRow {
   date: string;
@@ -33,21 +32,12 @@ const FeedRow = ({
           <h3 className="flex flex-row items-center gap-x-2 fill-black font-apfel text-2xl font-bold text-black md:text-3xl">
             {title}
           </h3>
-          <p className="font-mona text-sm font-normal text-gray-500 transition-all md:text-base md:group-hover:text-black lg:text-xl">
+          <p className="font-mona text-sm font-normal text-gray-500 transition-all md:text-base md:group-hover:text-black lg:text-lg 2xl:text-xl">
             {description}
           </p>
         </div>
         <div className="w-full md:w-auto">
-          <Link
-            to={linkProps.to}
-            className="ml-auto flex w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base"
-          >
-            {linkProps.text}
-            <Arrow
-              className="h-[10px] fill-secondary md:h-[15px]"
-              height="15px"
-            />
-          </Link>
+          <ArrowLink to={linkProps.to}>{linkProps.text}</ArrowLink>
         </div>
       </div>
       {children}
@@ -58,14 +48,7 @@ const FeedRow = ({
 export default function Index() {
   return (
     <FaidInMotionContainer className="content-container mb-20 pt-6 md:mb-40">
-      <Link
-        to="/#latest-stuff"
-        className="mb-4 flex w-max flex-row items-baseline gap-2 rounded-md px-2 py-2 font-hubot text-sm text-zinc-600 hover:bg-lightGray hover:shadow-nav active:shadow-navActive 2xl:px-3 2xl:py-2 2xl:text-base"
-        preventScrollReset
-      >
-        <Arrow className="rotate-180" />
-        Back to home
-      </Link>
+      <BackHomeLink to="/#latest-stuff" />
       <div className="relative flex flex-col gap-8 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel bg-blueCircle bg-[length:800px] bg-right px-6 py-6 shadow-feed backdrop-blur-2xl md:gap-20 md:p-20 md:px-16 md:py-10 md:pb-20">
         <h3
           id="latest-stuff"
