@@ -18,7 +18,7 @@ export default function Feed() {
         >
           Latest stuff ↓
         </h3>
-        <div className="-ml-10 flex flex-row items-center gap-4 overflow-auto py-8 px-10 md:gap-5">
+        <div className="hide-scrollbar md:show-scrollbar -ml-10 flex flex-row items-center gap-4 overflow-auto py-8 px-10 md:gap-5">
           <Link to="/feed/bamba">
             <PostCard
               image={Bamba}

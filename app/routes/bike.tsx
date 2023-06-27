@@ -54,7 +54,7 @@ export default function Bike() {
                 <h2 className="sticky left-0 ml-4 font-shantell text-2xl font-medium text-primary lg:text-3xl">
                   ◌ {type.title}
                 </h2>
-                <ul className="hide-scrollbar flex flex-row gap-4 overflow-auto p-6 pl-4">
+                <ul className="hide-scrollbar md:show-scrollbar flex-row gap-4 overflow-auto p-6 pl-4">
                   {(type.id === "rides" ? bikePosts : upgradePosts).map(
                     (post: Post, index) => {
                       return (
