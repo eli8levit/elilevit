@@ -10,7 +10,7 @@ export default function EinPrat() {
       title={
         <>
           Ein Prat{" "}
-          <span className="font-hubot text-2xl text-zinc-500">
+          <span className="font-shantell text-2xl font-normal text-zinc-500">
             Nature Reserve
           </span>
         </>

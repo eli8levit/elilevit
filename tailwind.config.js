@@ -28,11 +28,8 @@ module.exports = {
         primary: "#0000ff",
         secondary: "#db2877",
         pinkLighter: "#ededff",
-        blackTransparent: "rgba(0, 0, 0, 0.75)",
-        blackTransparentLighter: "rgba(233,233,233,0.2)",
         lightGray: "rgba(1,1,1,.03)",
         panel: "rgba(255,255,255,0.05)",
-        new: "rgba(255,47,141,0.1)",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],

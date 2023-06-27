@@ -8,7 +8,9 @@ export default function Georgia() {
       title={
         <>
           Tbilisi{" "}
-          <span className="font-hubot text-2xl text-zinc-500">Georgia</span>
+          <span className="font-shantell text-2xl font-normal text-zinc-500">
+            Georgia
+          </span>
         </>
       }
     >

@@ -39,7 +39,7 @@ export default function Feed() {
               index={2}
             />
           </Link>
-          <Link to="/feed/georgia">
+          <Link to="/feed/ein-prat">
             <PostCard
               image={genImageUrlById("021cd876-f163-4095-8a8b-ad6f3eb19f4a")}
               title={

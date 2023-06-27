@@ -7,6 +7,7 @@ const Link = ({
   id,
   children,
   active,
+  isMobile,
 }: {
   id: string;
   children: any;
@@ -15,6 +16,8 @@ const Link = ({
 }) => {
   return (
     <MotionNavLink
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.96 }}
       transition={{ type: "spring", duration: 0.2, bounce: 0 }}
       to={`/${id}`}
       className={`transition-text relative flex h-max w-max items-center rounded-lg p-2 font-hubot font-normal ${
