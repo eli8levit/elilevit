@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useOutletContext } from "@remix-run/react";
 
 type Card = {
   image: string;
@@ -21,12 +22,16 @@ export const PostCard = ({
   date,
   className,
 }: Card) => {
+  const { isMobile }: { isMobile: boolean } = useOutletContext();
+
   return (
     <motion.li
       layoutId={id.toString()}
       className={`group flex h-[250px] w-[250px] flex-col overflow-hidden rounded-xl bg-lightGray text-black shadow-bikeCard md:h-[280px] md:w-[280px] 2xl:h-[300px] 2xl:w-[300px]  ${className}`}
+      {...(!isMobile && {
+        whileHover: { scale: 1.05 },
+      })}
       whileTap={{ scale: 0.98 }}
-      whileHover={{ scale: 1.05 }}
       transition={{
         scale: { type: "spring", stiffness: 500, damping: 20 },
         backgroundColor: { type: "easeInOut" },

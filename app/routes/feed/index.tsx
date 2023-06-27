@@ -49,10 +49,10 @@ export default function Index() {
   return (
     <FaidInMotionContainer className="content-container mb-20 pt-6 md:mb-40">
       <BackHomeLink to="/#latest-stuff" />
-      <div className="relative flex flex-col gap-8 rounded-2xl border-[0.5px] border-black border-opacity-10 bg-panel bg-blueCircle bg-[length:800px] bg-right px-6 py-6 shadow-feed backdrop-blur-2xl md:gap-20 md:p-20 md:px-16 md:py-10 md:pb-20">
+      <div className="relative flex flex-col gap-8 border-black border-opacity-10 bg-[length:800px] bg-right py-6 md:gap-20 md:rounded-2xl md:border-[0.5px] md:bg-panel md:bg-blueCircle md:p-20 md:px-16 md:py-10 md:pb-20 md:shadow-feed md:backdrop-blur-2xl">
         <h3
           id="latest-stuff"
-          className="mx-auto flex w-max flex-row font-shantell text-4xl font-bold text-primary md:text-4xl"
+          className="mx-auto flex w-max flex-row font-shantell text-3xl font-bold text-primary md:text-4xl"
         >
           Feed
         </h3>
@@ -69,6 +69,7 @@ export default function Index() {
             alt="Website screenshot with dog portrait hero and text on the left"
           />
         </FeedRow>
+        <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10" />
         <FeedRow
           title="🇬🇪 Georgia. Tbilisi"
           date="30.3.2023"

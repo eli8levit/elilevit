@@ -87,7 +87,7 @@ export default function App() {
       <body className="flex min-h-full grow flex-col">
         <div className="relative flex grow flex-col overflow-x-hidden">
           <Nav memojiId={memojiId} isMobile={isMobile} />
-          <Outlet />
+          <Outlet context={{ isMobile }} />
         </div>
         <Footer />
         <ScrollRestoration />

@@ -46,7 +46,7 @@ export default function Bike() {
         <div className="relative mb-20 flex flex-col gap-y-4 rounded-2xl py-10 md:mb-40 md:gap-y-12 md:border-[0.5px] md:border-black md:border-opacity-10 md:bg-panel md:p-20 md:shadow-feed md:backdrop-blur-2xl">
           <img
             src={Circle2}
-            className="absolute top-0 bottom-0 left-0 -z-[10] h-full w-full opacity-40"
+            className="absolute top-0 bottom-0 left-0 -z-[10] h-full w-full opacity-30"
           />
           {POST_TYPES.map((type) => {
             return (
@@ -54,7 +54,7 @@ export default function Bike() {
                 <h2 className="sticky left-0 ml-4 font-shantell text-2xl font-medium text-primary lg:text-3xl">
                   ◌ {type.title}
                 </h2>
-                <ul className="hide-scrollbar md:show-scrollbar flex-row gap-4 overflow-auto p-6 pl-4">
+                <ul className="hide-scrollbar md:show-scrollbar flex flex-row gap-4 overflow-auto p-6 pl-4 md:gap-8">
                   {(type.id === "rides" ? bikePosts : upgradePosts).map(
                     (post: Post, index) => {
                       return (
