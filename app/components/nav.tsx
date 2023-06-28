@@ -16,7 +16,7 @@ const Link = ({
 }) => {
   return (
     <MotionNavLink
-      whileHover={{ scale: 1.03 }}
+      {...(!isMobile && { whileHover: { scale: 1.03 } })}
       whileTap={{ scale: 0.96 }}
       transition={{ type: "spring", duration: 0.2, bounce: 0 }}
       to={`/${id}`}
@@ -24,7 +24,7 @@ const Link = ({
         !active
           ? "hover:bg-lightGray hover:shadow-nav active:shadow-navActive"
           : ""
-      } ${active ? "text-primary" : "text-zinc-700"}`}
+      } ${active ? "text-primary" : "text-zinc-700 dark:text-zinc-500"}`}
     >
       {children}
     </MotionNavLink>

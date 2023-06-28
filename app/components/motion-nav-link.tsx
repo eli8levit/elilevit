@@ -29,7 +29,7 @@ export const ArrowLink = ({
         backgroundColor: { type: "easeInOut" },
       }}
       to={to}
-      className={`flex h-max w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base ${className}`}
+      className={`flex h-max w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive dark:hover:shadow-navDark md:text-base ${className}`}
     >
       {children}
       <Arrow className="h-[10px] fill-secondary md:h-[15px]" height="15px" />

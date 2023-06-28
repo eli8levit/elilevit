@@ -48,8 +48,8 @@ export default function Feed() {
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 15.4889 24.6191"
-                    className="mb-auto w-[15px]"
-                    width="15px"
+                    className="mb-auto w-[15px] dark:fill-[#fceeff]"
+                    width="14px"
                   >
                     <g>
                       <rect
