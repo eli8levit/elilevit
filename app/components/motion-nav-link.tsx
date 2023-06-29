@@ -29,7 +29,7 @@ export const ArrowLink = ({
         backgroundColor: { type: "easeInOut" },
       }}
       to={to}
-      className={`flex h-max w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive md:text-base ${className}`}
+      className={`flex h-max w-max flex-row items-center gap-x-3 whitespace-nowrap rounded-lg px-3 py-2 font-shantell text-sm text-secondary hover:bg-lightGray hover:shadow-nav active:shadow-navActive dark:hover:shadow-navDark md:text-base ${className}`}
     >
       {children}
       <Arrow className="h-[10px] fill-secondary md:h-[15px]" height="15px" />
@@ -49,7 +49,7 @@ export const BackHomeLink = ({
   return (
     <MotionLink
       to={to}
-      className={`mb-4 flex w-max flex-row items-baseline gap-2 rounded-md px-2 py-2 font-hubot text-sm text-zinc-600 hover:bg-lightGray hover:shadow-nav active:shadow-navActive 2xl:px-3 2xl:py-2 2xl:text-base ${className}`}
+      className={`mb-4 flex w-max flex-row items-baseline gap-2 rounded-md px-2 py-2 font-hubot text-sm text-zinc-600 hover:bg-lightGray hover:shadow-nav active:shadow-navActive dark:text-zinc-400 dark:hover:shadow-navDark 2xl:px-3 2xl:py-2 2xl:text-base ${className}`}
       preventScrollReset
       {...(!isMobile && {
         whileHover: { scale: 1.05 },
@@ -60,7 +60,7 @@ export const BackHomeLink = ({
         backgroundColor: { type: "easeInOut" },
       }}
     >
-      <Arrow className="rotate-180" />
+      <Arrow className="rotate-180 dark:fill-zinc-400" />
       Back to home
     </MotionLink>
   );

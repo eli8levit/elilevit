@@ -29,10 +29,10 @@ const FeedRow = ({
       </p>
       <div className="mb-2 flex flex-wrap items-end justify-between gap-x-2 md:mb-4 md:flex-row md:gap-x-4">
         <div className="mb-2 flex flex-col gap-y-1 md:mb-0 md:gap-y-2">
-          <h3 className="flex flex-row items-center gap-x-2 fill-black font-apfel text-2xl font-bold text-black md:text-3xl">
+          <h3 className="flex flex-row items-center gap-x-2 fill-black font-apfel text-2xl font-bold text-black dark:text-[#fceeff] md:text-3xl">
             {title}
           </h3>
-          <p className="font-mona text-sm font-normal text-gray-500 transition-all md:text-base md:group-hover:text-black lg:text-lg 2xl:text-xl">
+          <p className="font-mona text-sm font-normal text-gray-500 transition-all dark:text-gray-400 md:text-base md:group-hover:text-black lg:text-lg 2xl:text-xl">
             {description}
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Index() {
             alt="Website screenshot with dog portrait hero and text on the left"
           />
         </FeedRow>
-        <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10" />
+        <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10 dark:bg-gray-500 dark:opacity-100" />
         <FeedRow
           title="🇬🇪 Georgia. Tbilisi"
           date="30.3.2023"
@@ -91,7 +91,7 @@ export default function Index() {
             />
           </div>
         </FeedRow>
-        <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10" />
+        <div className="mx-auto h-[1px] w-[50%] bg-black opacity-10 dark:bg-gray-500 dark:opacity-100" />
         <FeedRow
           date="21.4.2023"
           title={
@@ -100,7 +100,7 @@ export default function Index() {
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 15.4889 24.6191"
-                className="mb-auto w-[15px]"
+                className="mb-auto w-[15px] dark:fill-[#fceeff]"
                 width="15px"
               >
                 <g>

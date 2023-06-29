@@ -16,7 +16,7 @@ export default function Index() {
             <h1 className="z-10 mb-1 font-shantell text-2xl font-normal text-primary md:text-3xl 2xl:text-4xl">
               Hey, good to see you ♡
             </h1>
-            <h2 className="heading mb-6 font-bold text-black">
+            <h2 className="heading mb-6 font-bold text-black dark:text-white">
               I'm Eli, Developer & Creator
             </h2>
             <p className="subheading max-w-[450px] leading-relaxed 2xl:max-w-[650px]">
@@ -25,7 +25,7 @@ export default function Index() {
             </p>
           </div>
           <motion.svg
-            className="-z-[10] row-start-1 ml-[50%] w-[500px] max-w-none -translate-x-[50%] md:mx-auto md:-translate-x-[100px] lg:w-[800px] lg:-translate-x-[200px] 2xl:w-[900px]"
+            className="-z-[10] row-start-1 ml-[50%] w-[500px] max-w-none -translate-x-[50%] md:mx-auto md:-translate-x-[100px] lg:w-[750px] lg:-translate-x-[200px] 2xl:w-[900px]"
             viewBox="0 0 2351 1537"
             fill="none"
             initial="hidden"
@@ -37,10 +37,10 @@ export default function Index() {
                 variants={draw}
                 d="M1590.78 694.078s-55.88 62.764-102.4 61.159c-50.99-1.76-83.43-33.796-102.53-81.249-22.19-55.116-20.49-126.154 34.55-148.166 52.58-21.032 118.98 2.998 131.95 58.276 17.61 75.088-114.3 76.439-191.01 82.096-34.91 2.575-78.88-9.384-136.57 19.674-44.51 22.417-77.23 64.228-61.96 111.783 14.4 44.845 59.51 66.986 105.59 57.821 51.81-10.306 75.45-61.279 72.95-114.194-3.57-75.589-130.33-34.064-164.65-101.47-29.31-57.571-61.55-141.189-1.84-165.486 48.44-19.708 126.08 8.816 119.37 60.805-15.73 121.975-206.62 36.117-250.61 139.299-32.98 77.347 35.16 147.002-3.55 217.065m0 0c-52.874 70.457-175.624 74.289-247.695 81.477m247.695-81.477c38.25-69.229-90.769-94.918-156.63-90.06-42.055 3.102-93.839 14.922-112.682 51.516-19.356 37.59-23.532 124.524 21.617 120.021m247.695-81.477c-53.028 70.662-177.593 74.151-247.695 81.477m0 0c-46.816 3.453 19.287 472.262 19.287 472.262m-19.287-472.262c-45.149 4.503 72.071-7.188 0 0Z"
                 stroke="url(#b)"
-                strokeOpacity=".9"
                 strokeWidth="50"
                 strokeLinecap="round"
                 shapeRendering="crispEdges"
+                className="opacity-90 dark:stroke-white dark:opacity-100"
               />
             </g>
             <g filter="url(#c)">
@@ -157,7 +157,7 @@ export default function Index() {
             src={Circle2}
             className="absolute top-0 left-0 bottom-0 right-0 -z-[10] h-full w-full -translate-y-[100px] scale-[2] opacity-80 md:translate-y-0 md:scale-[1]"
           />
-          <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 2xl:text-4xl">
+          <h3 className="mb-2 max-w-[700px] font-apfel text-3xl font-bold text-zinc-900 dark:text-zinc-300 2xl:text-4xl">
             Here you can feel save, no cookie popup will destruct you, no one
             will know you have been here 🤐
           </h3>
@@ -181,7 +181,7 @@ export default function Index() {
               variants={draw}
             />
           </motion.svg>
-          <h4 className="ml-auto max-w-[700px] pb-2 text-right font-mona text-3xl font-bold text-zinc-900 2xl:text-4xl">
+          <h4 className="ml-auto max-w-[700px] pb-2 text-right font-mona text-3xl font-bold text-zinc-900 dark:text-zinc-300 2xl:text-4xl">
             So far I don't have much content, but still you can checkout some
             things:
             <motion.svg
@@ -204,17 +204,26 @@ export default function Index() {
           </h4>
           <ul className="mx-auto mb-16 flex w-max flex-col gap-2">
             <li>
-              <ArrowLink to="/bike" className="!text-lg md:!text-xl">
+              <ArrowLink
+                to="/bike"
+                className="!text-lg dark:hover:bg-[rgba(1,1,1,0.4)] md:!text-xl"
+              >
                 Visit my bike blog
               </ArrowLink>
             </li>
             <li>
-              <ArrowLink to="/about" className="!text-lg md:!text-xl">
+              <ArrowLink
+                to="/about"
+                className="!text-lg dark:hover:bg-[rgba(1,1,1,0.4)] md:!text-xl"
+              >
                 Read more about me
               </ArrowLink>
             </li>
             <li>
-              <ArrowLink to="/art" className="!text-lg md:!text-xl">
+              <ArrowLink
+                to="/art"
+                className="!text-lg dark:hover:bg-[rgba(1,1,1,0.4)] md:!text-xl"
+              >
                 See my projects
               </ArrowLink>
             </li>

@@ -6,6 +6,23 @@
   @apply bg-blue-100;
 }
 
+@layer base {
+  :root {
+    --color-primary: #000fff;
+    --lightGray: rgba(1, 1, 1, .03);
+    --panel: rgba(255, 255, 255, 0.05);
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #747cff;
+      --lightGray: #141414;
+      --panel: rgba(255, 255, 255, 0.06)
+    }
+  }
+}
+
 @layer components {
   .content-container {
     @apply mx-auto w-full max-w-[1400px] px-6 pt-10 md:px-12 md:pt-24 lg:px-28 2xl:max-w-[2000px] 2xl:px-44 2xl:pt-32;
@@ -52,11 +69,11 @@
   }
 
   .heading {
-    @apply mb-2 font-apfel text-4xl font-bold text-primary md:mb-4 lg:text-5xl xl:text-6xl 2xl:text-8xl;
+    @apply mb-2 font-apfel text-4xl font-bold text-primary md:mb-4 lg:text-5xl xl:text-6xl 2xl:text-8xl dark:text-white;
   }
 
   .subheading {
-    @apply max-w-[650px] font-mona text-[18px] font-light text-zinc-600 md:text-xl 2xl:max-w-[800px] 2xl:text-2xl;
+    @apply max-w-[650px] font-mona text-[18px] font-light text-zinc-600 dark:text-zinc-400 md:text-lg xl:text-xl 2xl:max-w-[800px] 2xl:text-2xl;
 
     line-height: 1.4;
   }
@@ -70,7 +87,7 @@
   }
 
   .post-page p {
-    @apply mb-2
+    @apply mb-2 dark:text-gray-300
   }
 
   .post-page img {

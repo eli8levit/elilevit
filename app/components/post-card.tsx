@@ -43,16 +43,16 @@ export const PostCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="h-[130px] w-full shrink-0 object-cover  md:h-[140px] md:group-hover:grayscale 2xl:h-[150px]"
+        className="h-[130px] w-full shrink-0 object-cover md:h-[140px] md:group-hover:grayscale 2xl:h-[150px]"
       />
       <div className="flex h-full flex-col bg-blueCircle bg-[length:400px] bg-left bg-no-repeat p-3 2xl:p-4">
-        <h3 className="mb-1 font-apfel text-lg font-extrabold transition-all md:leading-normal md:group-hover:text-black 2xl:text-xl">
+        <h3 className="mb-1 font-apfel text-lg font-extrabold transition-all dark:text-[#fceeff] md:leading-normal md:group-hover:text-black md:dark:group-hover:text-white 2xl:text-xl ">
           {title}
         </h3>
-        <p className="mb-4 font-mona text-sm font-normal text-gray-700 transition-all md:text-sm md:group-hover:text-black 2xl:text-base">
+        <p className="mb-4 font-mona text-sm font-normal text-gray-700 transition-all dark:text-gray-400 md:text-sm md:group-hover:text-black md:dark:group-hover:text-gray-400 2xl:text-base">
           {description}
         </p>
-        <div className="mt-auto flex flex-row items-center justify-between text-xs text-gray-600 transition-all md:group-hover:text-black">
+        <div className="mt-auto flex flex-row items-center justify-between text-xs text-gray-600 transition-all dark:text-gray-400 md:group-hover:text-black md:dark:group-hover:text-gray-200">
           <span className="w-max font-hubot">{date}</span>
           <span className="ml-auto w-max font-shantell"># {index}</span>
         </div>

@@ -5,6 +5,7 @@ import { PostPage } from "~/components/post-page";
 export default function Georgia() {
   return (
     <PostPage
+      className="post-page"
       title={
         <>
           Tbilisi{" "}

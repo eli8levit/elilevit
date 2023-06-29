@@ -79,7 +79,7 @@ export default function App() {
   const { memojiId, isMobile } = useLoaderData();
 
   return (
-    <html lang="en" className="h-full bg-pinkLighter">
+    <html lang="en" className="h-full bg-pinkLighter dark:bg-black">
       <head>
         <Meta />
         <Links />
