@@ -43,7 +43,7 @@ export const PostCard = ({
         transition={{
           scale: { type: "spring", stiffness: 200, damping: 15 },
         }}
-        className="h-[130px] w-full shrink-0 object-cover  md:h-[140px] md:group-hover:grayscale 2xl:h-[150px]"
+        className="h-[130px] w-full shrink-0 object-cover md:h-[140px] md:group-hover:grayscale 2xl:h-[150px]"
       />
       <div className="flex h-full flex-col bg-blueCircle bg-[length:400px] bg-left bg-no-repeat p-3 2xl:p-4">
         <h3 className="mb-1 font-apfel text-lg font-extrabold transition-all dark:text-[#fceeff] md:leading-normal md:group-hover:text-black md:dark:group-hover:text-white 2xl:text-xl ">

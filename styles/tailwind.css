@@ -10,12 +10,15 @@
   :root {
     --color-primary: #000fff;
     --lightGray: rgba(1, 1, 1, .03);
+    --panel: rgba(255, 255, 255, 0.05);
+
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --color-primary: #747cff;
-      --lightGray: #0f0f0f;
+      --lightGray: #141414;
+      --panel: rgba(255, 255, 255, 0.06)
     }
   }
 }
@@ -70,7 +73,7 @@
   }
 
   .subheading {
-    @apply max-w-[650px] font-mona text-[18px] font-light text-zinc-600 dark:text-zinc-500 md:text-xl 2xl:max-w-[800px] 2xl:text-2xl;
+    @apply max-w-[650px] font-mona text-[18px] font-light text-zinc-600 dark:text-zinc-400 md:text-lg xl:text-xl 2xl:max-w-[800px] 2xl:text-2xl;
 
     line-height: 1.4;
   }

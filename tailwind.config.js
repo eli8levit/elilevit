@@ -34,7 +34,7 @@ module.exports = {
         secondary: "#db2877",
         pinkLighter: "#ededff",
         lightGray: "var(--lightGray)",
-        panel: "rgba(255,255,255,0.05)",
+        panel: "var(--panel)",
       },
       fontFamily: {
         apfel: ["Apfel", ...defaultTheme.fontFamily.sans],
