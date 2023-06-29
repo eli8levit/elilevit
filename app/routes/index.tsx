@@ -204,17 +204,26 @@ export default function Index() {
           </h4>
           <ul className="mx-auto mb-16 flex w-max flex-col gap-2">
             <li>
-              <ArrowLink to="/bike" className="!text-lg md:!text-xl">
+              <ArrowLink
+                to="/bike"
+                className="!text-lg dark:hover:bg-[rgba(1,1,1,0.4)] md:!text-xl"
+              >
                 Visit my bike blog
               </ArrowLink>
             </li>
             <li>
-              <ArrowLink to="/about" className="!text-lg md:!text-xl">
+              <ArrowLink
+                to="/about"
+                className="!text-lg dark:hover:bg-[rgba(1,1,1,0.4)] md:!text-xl"
+              >
                 Read more about me
               </ArrowLink>
             </li>
             <li>
-              <ArrowLink to="/art" className="!text-lg md:!text-xl">
+              <ArrowLink
+                to="/art"
+                className="!text-lg dark:hover:bg-[rgba(1,1,1,0.4)] md:!text-xl"
+              >
                 See my projects
               </ArrowLink>
             </li>

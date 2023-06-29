@@ -6,7 +6,7 @@ import { draw } from "~/components/utils";
 export const Footer = () => {
   return (
     <div className="mt-auto">
-      <footer className="grid grid-cols-2 grid-rows-[auto_auto] items-center gap-y-2 gap-x-1 border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-4 font-mona text-base font-normal text-black md:grid-cols-3 md:grid-rows-1 md:gap-y-4 2xl:text-xl">
+      <footer className="grid grid-cols-2 grid-rows-[auto_auto] items-center gap-y-2 gap-x-1 border-[0.5px] border-black border-opacity-10 bg-[rgba(0,0,255,0.02)] p-4 font-mona text-base font-normal text-black dark:bg-[rgba(255,255,255,0.06)] dark:text-gray-400 md:grid-cols-3 md:grid-rows-1 md:gap-y-4 2xl:text-xl">
         <div className="flex shrink-0 flex-col gap-1">
           <p>
             Created with{" "}

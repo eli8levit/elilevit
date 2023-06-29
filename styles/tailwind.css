@@ -84,7 +84,7 @@
   }
 
   .post-page p {
-    @apply mb-2
+    @apply mb-2 dark:text-gray-300
   }
 
   .post-page img {

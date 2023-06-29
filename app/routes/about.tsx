@@ -9,7 +9,7 @@ export default function About() {
       <img src={Circle} className="absolute -z-10 opacity-60 blur-2xl" />
       <FaidInMotionContainer className="max-w-[700px] rounded-2xl border-black border-opacity-10 p-6">
         <h1 className="heading">A bit about me</h1>
-        <p className="font-mona text-lg font-normal !leading-relaxed text-black md:text-xl">
+        <p className="font-mona text-lg font-normal !leading-relaxed text-black dark:font-light dark:text-gray-300 md:text-xl">
           Shalom from Israel 🇮🇱. I'm Eli, currently I'm working in{" "}
           <Link
             href="https://www.rapyd.net/"

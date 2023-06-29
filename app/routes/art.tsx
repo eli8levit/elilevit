@@ -34,16 +34,16 @@ const ArtCard = ({ background, title, description, cardClass, href }: Card) => {
       }
       transition={{ type: "ease-in", duration: 0.2 }}
       href={href}
-      className="flex w-full flex-col rounded-xl bg-lightGray p-6 shadow-nav backdrop-blur-2xl 2xl:p-12"
+      className="group flex w-full flex-col rounded-xl bg-lightGray p-6 shadow-nav backdrop-blur-2xl 2xl:p-12"
       style={{ willChange }}
       target="_blank"
       rel="noopener noreferrer"
     >
       <div className="mb-5 flex-col">
-        <h3 className="relative mb-4 w-max font-shantell text-2xl font-bold text-gray-900 lg:text-3xl">
+        <h3 className="relative mb-4 w-max font-shantell text-2xl font-bold text-gray-900 dark:text-primary lg:text-3xl">
           {title}
         </h3>
-        <p className="mb-2 max-w-[700px] font-hubot text-base font-normal text-gray-600 md:text-lg">
+        <p className="mb-2 max-w-[700px] font-hubot text-base font-normal text-gray-600 dark:text-gray-400 dark:group-hover:text-white md:text-lg">
           {description}
         </p>
       </div>

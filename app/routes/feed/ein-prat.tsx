@@ -16,8 +16,8 @@ export default function EinPrat() {
         </>
       }
     >
-      <div className="flex flex-col md:gap-6 2xl:gap-8">
-        <p className="!mb-0 !mr-auto !ml-0 max-w-[600px] max-w-[800px] font-mona text-lg 2xl:text-2xl">
+      <div className="flex flex-col dark:text-gray-300 md:gap-6 2xl:gap-8">
+        <p className="!mb-0 !mr-auto !ml-0 max-w-[800px] font-mona text-lg 2xl:text-2xl">
           Ein Prat is beautiful reserve which is located near Jerusalem. It has
           a lot of springs where you can take a dip. It's good for tracks and
           also for picking with children.{" "}

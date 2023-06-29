@@ -36,7 +36,7 @@ export default function Bike() {
           <h2 className="subheading">
             This page is about my bike and stuff related to cycling: my rides,
             photos and{" "}
-            <span className="font-monaWide font-semibold leading-8 text-[#0000FF]">
+            <span className="font-monaWide font-semibold leading-8 text-primary">
               upgrading evolution
             </span>
           </h2>
