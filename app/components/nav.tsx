@@ -22,7 +22,7 @@ const Link = ({
       to={`/${id}`}
       className={`transition-text relative flex h-max w-max items-center rounded-lg p-2 font-hubot font-normal ${
         !active
-          ? "hover:bg-lightGray hover:shadow-nav active:shadow-navActive dark:hover:bg-[rgba(255,255,255,0.0.08)] dark:hover:shadow-navDark"
+          ? "hover:bg-lightGray hover:shadow-nav active:shadow-navActive dark:hover:bg-[rgba(255,255,255,0.08)] dark:hover:shadow-navDark"
           : ""
       } ${active ? "text-primary" : "text-zinc-700 dark:text-zinc-500"}`}
     >
